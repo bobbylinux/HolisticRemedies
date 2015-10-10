@@ -17,6 +17,7 @@ return array(
     'ingredienti' => 'INGREDIENTI',
     'acquista' => 'ACQUISTA',
     'consigli_titolo' => 'Consigli Utili',
+    'consigli_paragrafo1' => '',
     'ingredienti_titolo' => 'Ingredienti',
     'ingredienti_paragrafo_1' => "Caisse Formula &egrave; la formula pi&ugrave; recente, evoluta negli anni dagli indiani
                 Ojibwa e

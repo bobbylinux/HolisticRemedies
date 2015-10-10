@@ -10,14 +10,14 @@ html {
 }
 
 @media(min-width:767px) {
-    .navbar {
+    .navbar-front {
         padding: 20px 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
 
-    .top-nav-collapse {
+    .top-nav-collapse-front {
         padding: 0;
     }
 }
@@ -27,6 +27,7 @@ html {
     src: url('../fonts/fanwood-webfont.eot?') format('eot'), url('../fonts/fanwood-webfont.woff') format('woff'), url('../fonts/fanwood-webfont.ttf') format('truetype');
 }
 
+/*front*/
 .intro-section {
     min-height: 100%;
     padding-top: 150px;
@@ -58,6 +59,6 @@ html {
     background: #edebd6;
 }
 
-.navbar {
+.navbar-front {
     background: #edebd6;
 }

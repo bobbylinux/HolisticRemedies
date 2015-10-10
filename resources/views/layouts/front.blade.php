@@ -31,7 +31,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav-main">
+<nav class="navbar navbar-front navbar-default navbar-fixed-top" role="navigation" id="nav-main">
     <div class="container">
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -106,7 +106,7 @@
 
 <!-- Scrolling Nav JavaScript -->
 <script src="js/jquery.easing.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/front.script.js"></script>
 
 </body>
 
