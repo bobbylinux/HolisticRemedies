@@ -1,0 +1,63 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #62643f;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+@font-face {
+    font-family: 'Fanwood';
+    src: url('../fonts/fanwood-webfont.eot?') format('eot'), url('../fonts/fanwood-webfont.woff') format('woff'), url('../fonts/fanwood-webfont.ttf') format('truetype');
+}
+
+.intro-section {
+    min-height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: url(../img/intro.png) no-repeat center center fixed;
+}
+
+.tips-section {
+    font-family: 'Fanwood';
+    min-height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #edebd6;
+}
+
+.ingredients-section {
+    min-height: 100%;
+    font-family: 'Fanwood';
+    padding-top: 150px;
+    text-align: center;
+    background: #edebd6;
+}
+
+.contact-section {
+    min-height: 100%;
+    font-family: 'Fanwood';
+    padding-top: 150px;
+    text-align: center;
+    background: #edebd6;
+}
+
+.navbar {
+    background: #edebd6;
+}
