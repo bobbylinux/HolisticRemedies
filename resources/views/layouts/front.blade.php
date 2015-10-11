@@ -12,10 +12,10 @@
     <title>Holistic Remedies</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -99,14 +99,14 @@
 </section>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="{{ url('js/jquery.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ url('js/bootstrap.min.js') }}"></script>
 
 <!-- Scrolling Nav JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/front.script.js"></script>
+<script src="{{ url('js/jquery.easing.min.js') }}"></script>
+<script src="{{ url('js/front.script.js') }}"></script>
 
 </body>
 

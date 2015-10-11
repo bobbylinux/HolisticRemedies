@@ -41,5 +41,22 @@ return array(
                 svelata da un uomo di medicina degli indiani Ojibwa all&rsquo;erborista canadese Rick De
                 Silva:
                 trifoglio, corteccia di frassino spinoso (variet&agrave; autoctona canadese) e
-                Piantaggine. "
+                Piantaggine. ",
+    /*pannello di controllo / dash*/
+    'dash_prodotti_index_titolo' => 'Gestione Prodotti',
+    'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',
+    'dash_prodotti_index_prodotto_nome' => 'Prodotto',
+    'dash_prodotti_index_azioni_nome' => 'Azioni',
+    'dash_prodotti_create_titolo' => 'Nuovo Prodotto',
+    'dash_prodotti_create_prodotto_nome' => 'Prodotto',
+    'dash_prodotti_create_prodotto_descrizione' => 'Descrizione',
+    'dash_prodotti_create_prodotto_immagine' => 'Immagine',
+    'dash_prodotti_create_prodotto_prezzo' => 'Prezzo',
+    'dash_prodotti_create_pulsante_crea' => 'Salva',
+    'dash_prodotti_edit_titolo' => 'Modifica Prodotto',
+
+
+    /*pulsangi generici*/
+    'pulsante_modifica' => 'Modifica',
+    'pulsante_elimina' => 'Elimina'
 );

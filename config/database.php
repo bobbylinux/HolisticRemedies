@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'holistic'),
-            'username'  => env('DB_USERNAME', 'holistic'),
-            'password'  => env('DB_PASSWORD', 'holistic'),
+            'host'      => 'localhost',
+            'database'  => 'holistic',
+            'username'  => 'holistic',
+            'password'  => 'holistic',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

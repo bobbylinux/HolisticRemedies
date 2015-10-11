@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('admin', function(){
     return view('dash');
 });
+
+
+Route::resource('admin/prodotti','ProdottiController');
