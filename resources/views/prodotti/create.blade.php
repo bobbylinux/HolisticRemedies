@@ -15,13 +15,6 @@
         </li>
     </ol>
     {!!Form::open(array('url'=>'admin/prodotti','method'=>'POST','files' => true,'id'=>'form-prodotto' ))!!}
-    @foreach($errors->get('codice') as $message)
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <p class="bg-danger">{!! $message !!}</p>
-            </div>
-        </div>
-    @endforeach
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">

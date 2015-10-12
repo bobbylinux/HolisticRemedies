@@ -21,3 +21,4 @@ Route::get('admin', function(){
 
 
 Route::resource('admin/prodotti','ProdottiController');
+Route::resource('admin/sconti/quantita','ScontiQuantitaController');

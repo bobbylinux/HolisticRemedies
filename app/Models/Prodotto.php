@@ -95,7 +95,7 @@ class Prodotto extends BaseModel
 
     public function immagine()
     {
-        return $this->belongsTo('Immagine','immagine');
+        return $this->hasOne('App\Models\Immagine','prodotto');
     }
 
 }

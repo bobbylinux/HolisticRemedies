@@ -1,8 +1,6 @@
 <?php   namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Cliente extends Model
+class Cliente extends BaseModel
 {
     //
 }

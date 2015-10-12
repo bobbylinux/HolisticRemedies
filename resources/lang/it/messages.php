@@ -54,6 +54,21 @@ return array(
     'dash_prodotti_create_prodotto_prezzo' => 'Prezzo',
     'dash_prodotti_create_pulsante_crea' => 'Salva',
     'dash_prodotti_edit_titolo' => 'Modifica Prodotto',
+    'dash_prodotti_edit_pulsante_modifica' => 'Modifica Prodotto',
+    'dash_sconti_quantita_index_titolo' => 'Gestione Sconti Quantità',
+    'dash_sconti_quantita_create_quantita_massima' => 'Quantità Massima',
+    'dash_sconti_quantita_create_quantita_minima' => 'Quantità Minima',
+    'dash_sconti_quantita_create_sconto' => 'Sconto Percentuale',
+    'dash_sconti_quantita_create_pulsante_crea' => 'Salva',
+    'dash_sconti_quantita_create_titolo' => 'Nuogo Sconto Quantità',
+    'dash_sconti_quantita_edit_titolo' => 'Nuogo Sconto Quantità',
+    'dash_sconti_quantita_index_pulsante_nuovo' => 'Nuovo Sconto',
+    'dash_sconti_quantita_index_quantita_massima' => 'Quantità Massima',
+    'dash_sconti_quantita_index_quantita_minima' => 'Quantità Minima',
+    'dash_sconti_quantita_index_sconto' => 'Sconto',
+    'dash_sconti_quantita_index_azioni_nome' => 'Azioni',
+    'dash_sconti_quantita_edit_titolo' => 'Modifica Sconto Quantità',
+    'dash_sconti_quantita_edit_pulsante_modifica' => 'Modifica Sconto',
 
 
     /*pulsangi generici*/
