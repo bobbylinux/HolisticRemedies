@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect as Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Models\ScontoQuantita as ScontoQuantita;
-
-class ScontiQuantitaController extends Controller
+class ScontiTipoPagamentoController extends Controller
 {
-    
-    protected $scontoQuantita;
+    protected $scontoPagamento;
 
     /**
      * Constructor for Dipendency Injection
@@ -20,8 +16,8 @@ class ScontiQuantitaController extends Controller
      * @return none
      *
      */
-    public function __construct(ScontoQuantita $scontoQuantita) {
-        $this->scontoQuantita = $scontoQuantita;
+    public function __construct(ScontoTipoPagamento $scontoPagamento) {
+        $this->scontoPagamento = $scontoPagamento;
     }
     /**
      * Display a listing of the resource.
@@ -52,19 +48,7 @@ class ScontiQuantitaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = array(
-            'quantita_min'  => $request->get('quantita_min'),
-            'quantita_max'  => $request->get('quantita_max'),
-            'sconto'        => $request->get('sconto')
-        );
-
-        if ($this->scontoQuantita->validate($data)) {
-            $this->scontoQuantita->store($data);
-            return Redirect::action('ScontiQuantitaController@index');
-        } else {
-            $errors = $this->scontoQuantita->getErrors();
-            return Redirect::action('ScontiQuantitaController@create')->withInput()->withErrors($errors);
-        }
+        //
     }
 
     /**
@@ -86,8 +70,7 @@ class ScontiQuantitaController extends Controller
      */
     public function edit($id)
     {
-        $scontoquantita = $this->scontoQuantita->find($id);
-        return view('sconti.quantita.edit',compact('scontoquantita'));
+        //
     }
 
     /**

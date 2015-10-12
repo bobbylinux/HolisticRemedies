@@ -2,16 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\Validator as Validator;
+use Illuminate\Database\Eloquent\Model;
 
-class ScontoQuantita extends BaseModel
+class ScontoTipoPagamento extends Model
 {
-    protected $table = 'sconti_quantita';
-    /**
-     * The array containing the names of database columns that can't be empty on storage
-     *
-     */
-    protected $fillable = array('quantita_min', 'quantita_max','sconto');
+    protected $table = "sconti_tipopagamento";
+
+    protected $fillable = array('pagamento','sconto');
 
     /**
      * The variable for system date time
@@ -24,8 +21,7 @@ class ScontoQuantita extends BaseModel
      *
      */
     private $rules = array(
-        'quantita_min' => 'required|min:0',
-        'quantita_max' => 'required|min:0',
+        'pagamento' => 'required|min:0',
         'sconto' => 'required|min:0'
     );
 
@@ -70,8 +66,7 @@ class ScontoQuantita extends BaseModel
      */
     public function store($data)
     {
-        $this->quantita_min = $data['quantita_min'];
-        $this->quantita_max = $data['quantita_max'];
+        $this->pagamento = $data['pagamento'];
         $this->sconto       = $data['sconto'];
         self::save();
     }
