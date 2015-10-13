@@ -66,7 +66,7 @@ class ScontoTipoPagamento extends Model
      */
     public function store($data)
     {
-        $this->pagamento = $data['pagamento'];
+        $this->pagamento    = $data['pagamento'];
         $this->sconto       = $data['sconto'];
         self::save();
     }

@@ -14,7 +14,8 @@ class CreateScontiTipopagamento extends Migration
     {
         Schema::create('sconti_tipopagamento', function (Blueprint $table) {
             $table->increments('id'); 
-            $table->integer('pagamento')->references('id')->on('tipopagamento');                 
+            $table->integer('pagamento')->unsigned();
+            $table->foreign('pagamento')->references('id')->on('tipopagamento');                 
             $table->tinyInteger('sconto');
             $table->boolean('cancellato')->default(false); //flag di cancellazione: true = cancellato, false = non cancellato, default = false
             $table->timestamp('data_creazione')->default(DB::raw('CURRENT_TIMESTAMP')); //data creazione default sysdate

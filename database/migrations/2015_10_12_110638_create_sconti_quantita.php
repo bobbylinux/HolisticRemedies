@@ -14,9 +14,9 @@ class CreateScontiQuantita extends Migration
     {
         Schema::create('sconti_quantita', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('quantita_min');
-            $table->integer('quantita_max');
-            $table->integer('sconto');
+            $table->integer('quantita_min')->unsigned();
+            $table->integer('quantita_max')->unsigned();
+            $table->integer('sconto')->unsigned();
             $table->boolean('cancellato')->default(false); //flag di cancellazione: true = cancellato, false = non cancellato, default = false
             $table->timestamp('data_creazione')->default(DB::raw('CURRENT_TIMESTAMP')); //data creazione default sysdate
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate

@@ -5,20 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\ScontoTipoPagamento as ScontoTipoPagamento;
-class ScontiTipoPagamentoController extends Controller
-{
-    protected $scontoPagamento;
 
-    /**
-     * Constructor for Dipendency Injection
-     *
-     * @return none
-     *
-     */
-    public function __construct(ScontoTipoPagamento $scontoPagamento) {
-        $this->scontoPagamento = $scontoPagamento;
-    }
+class OrdiniController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +15,7 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function index()
     {
-        $scontipagamento = $this->scontoPagamento->where('cancellato', '=', 0)->orderBy('pagamento', 'asc')->paginate(10);/* recupero tutti i prodotti dalla classe modello */
-        return view('sconti.pagamento.index',compact('scontipagamento'));
+        //
     }
 
     /**
@@ -37,7 +25,7 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function create()
     {
-        return view('sconti.quantita.create');
+        //
     }
 
     /**
