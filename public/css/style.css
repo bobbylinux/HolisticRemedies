@@ -9,6 +9,13 @@ html {
     height: 100%;
 }
 
+/*SMALL SCREENS*/
+@media(max-width:767px){
+    .intro-section {
+        padding-top: 50px;
+    }
+}
+
 @media(min-width:767px) {
     .navbar-front {
         padding: 20px 0;
@@ -20,6 +27,10 @@ html {
     .top-nav-collapse-front {
         padding: 0;
     }
+
+    .intro-section {
+        padding-top: 150px;
+    }
 }
 
 @font-face {
@@ -27,19 +38,16 @@ html {
     src: url('../fonts/fanwood-webfont.eot?') format('eot'), url('../fonts/fanwood-webfont.woff') format('woff'), url('../fonts/fanwood-webfont.ttf') format('truetype');
 }
 
-/*front*/
 .intro-section {
     min-height: 100%;
-    padding-top: 150px;
     text-align: center;
-    background: url(../img/intro.png) no-repeat center center fixed;
 }
 
 .tips-section {
     font-family: 'Fanwood';
     min-height: 100%;
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #edebd6;
 }
 
@@ -47,7 +55,7 @@ html {
     min-height: 100%;
     font-family: 'Fanwood';
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #edebd6;
 }
 
@@ -55,10 +63,18 @@ html {
     min-height: 100%;
     font-family: 'Fanwood';
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
     background: #edebd6;
 }
 
 .navbar-front {
     background: #edebd6;
+}
+
+.video-wrapper {
+    margin-top:10%;
+}
+
+p {
+    font-size: 25px;
 }

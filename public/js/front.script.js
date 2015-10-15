@@ -19,9 +19,15 @@ $(function() {
 });
 
 $(function(){
-   /* var navMain = $("#nav-main");
-    navMain.on("click", "a", null, function () {
-        //navMain.collapse('hide');
-        $(".navbar-toggle").trigger("click");
-    });*/
+    $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') ) {
+            $(this).collapse('hide');
+        }
+    });
 });
+
+$(function(){
+    $(window).scroll(function(){
+        $('.navbar-collapse.in').collapse('hide');
+    });
+})

@@ -2,38 +2,599 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5e89e8-73e8-4465-a840-4ae86ec1c9ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/ScontoTipoPagamento.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TipoPagamento.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/1444646489activity_lifecycle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/1444647589activity_lifecycle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/1444647625activity_lifecycle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/1444647656activity_lifecycle.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flacone1-lg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flacone1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flacone2-lg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flacone2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/testata-xs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ad.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ad.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ae.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ae.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/af.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/af.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ag.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ag.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ai.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ai.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/al.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/al.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/am.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/am.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ao.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ao.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/aq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/aq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ar.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ar.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/as.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/as.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/at.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/at.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/au.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/au.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/logs/auth.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/aw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/aw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ax.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ax.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/az.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/az.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ba.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ba.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/be.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/be.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/br.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/br.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/by.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/by.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/bz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/bz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ca.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ca.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ch.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ch.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ci.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ci.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ck.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ck.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/co.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/co.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/cz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/cz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/de.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/de.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/dj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/dj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/dk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/dk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/dm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/dm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/do.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/do.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/dz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/dz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ec.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ec.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ee.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ee.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/eg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/eg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/eh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/eh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/er.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/er.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/es.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/es.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/et.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/et.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/flag-icon.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/fr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/fr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ga.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ga.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ge.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ge.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/gy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/gy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/hk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/hk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/hm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/hm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/hn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/hn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/hr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/hr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ht.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ht.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/hu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/hu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/id.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/id.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ie.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ie.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/il.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/il.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/im.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/im.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/in.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/in.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/home/ingredients.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/home/intro.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/io.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/io.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/iq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/iq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/is.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/is.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/it.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/it.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/je.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/je.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/jm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/jm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/jo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/jo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/jp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/jp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ke.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ke.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ki.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ki.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/km.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/km.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ky.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ky.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/kz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/kz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/la.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/la.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/li.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/li.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/lv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/lv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ly.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ly.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ma.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ma.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/md.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/md.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/me.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/me.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ml.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ml.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ms.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ms.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/my.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/my.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/mz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/mz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/na.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/na.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ne.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ne.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ni.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ni.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/no.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/no.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/np.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/np.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/nz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/nz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/om.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/om.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pe.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pe.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ph.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ph.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ps.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ps.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/pw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/pw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/py.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/py.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/qa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/qa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/re.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/re.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ro.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ro.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/rs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/rs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ru.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ru.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/rw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/rw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/se.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/se.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/home/shop.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/si.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/si.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/so.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/so.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ss.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ss.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/st.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/st.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/sz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/sz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/td.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/td.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/th.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/th.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/home/tips.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/to.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/to.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/tz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/tz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ua.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ua.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ug.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ug.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/um.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/um.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/us.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/us.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/uy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/uy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/uz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/uz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/va.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/va.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/vc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/vc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ve.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ve.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/vg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/vg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/vi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/vi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/vn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/vn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/vu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/vu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/wf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/wf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ws.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ws.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/ye.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/ye.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/yt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/yt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/za.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/za.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/zm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/zm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/1x1/zw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/flags/4x3/zw.svg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/interimg.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/spinning.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/spinning.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_spinning.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_spinning.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/public/fonts/font-awesome/scss/font-awesome.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/intro-xs.png" afterPath="$PROJECT_DIR$/public/img/intro-xs.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_09_192200_create_prodotti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_09_192200_create_prodotti.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_10_192138_create_immagini.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_192138_create_immagini.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_10_193148_create_utenti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_193148_create_utenti.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_11_140035_create_clienti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_11_140035_create_clienti.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_12_073102_create_spedizione.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_12_073102_create_spedizione.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_12_110638_create_sconti_quantita.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_12_110638_create_sconti_quantita.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_12_111336_create_tipopagamento.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_12_111336_create_tipopagamento.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_12_111344_create_sconti_tipopagamento.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_12_111344_create_sconti_tipopagamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Cliente.php" afterPath="$PROJECT_DIR$/app/Models/Cliente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Immagine.php" afterPath="$PROJECT_DIR$/app/Models/Immagine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Prodotto.php" afterPath="$PROJECT_DIR$/app/Models/Prodotto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ScontiQuantitaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScontiQuantitaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/ScontoQuantita.php" afterPath="$PROJECT_DIR$/app/Models/ScontoQuantita.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_072906_create_ordini_testa.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_072906_create_ordini_testa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_072923_create_ordini_dettaglio.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_072923_create_ordini_dettaglio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_072945_create_stati.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_072945_create_stati.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_073004_create_ordini_stato.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_073004_create_ordini_stato.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_073017_create_ordini_vettura.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_073017_create_ordini_vettura.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_083739_create_informazioni.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_083739_create_informazioni.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_083753_create_carrello.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_083753_create_carrello.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_13_090057_create_configurazione.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_13_090057_create_configurazione.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CarrelliController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarrelliController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Carrello.php" afterPath="$PROJECT_DIR$/app/Models/Carrello.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientiController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/OrdineDettaglio.php" afterPath="$PROJECT_DIR$/app/Models/OrdineDettaglio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/OrdineStato.php" afterPath="$PROJECT_DIR$/app/Models/OrdineStato.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/OrdineTesta.php" afterPath="$PROJECT_DIR$/app/Models/OrdineTesta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/OrdineVettura.php" afterPath="$PROJECT_DIR$/app/Models/OrdineVettura.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdiniController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdiniController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/ScontoTipoPagamento.php" afterPath="$PROJECT_DIR$/app/Models/ScontoTipoPagamento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Spedizione.php" afterPath="$PROJECT_DIR$/app/Models/Spedizione.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Stato.php" afterPath="$PROJECT_DIR$/app/Models/Stato.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/TipoPagamento.php" afterPath="$PROJECT_DIR$/app/Models/TipoPagamento.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Utente.php" afterPath="$PROJECT_DIR$/app/Models/Utente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/auth.php" afterPath="$PROJECT_DIR$/config/auth.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/back.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/back.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/prodotti/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/prodotti/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/quantita/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/quantita/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/prodotti/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/prodotti/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/quantita/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/quantita/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/pagamento/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/pagamento/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ordini/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/ordini/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/pagamento/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/pagamento/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/utenti/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/utenti/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/front.script.js" afterPath="$PROJECT_DIR$/public/js/front.script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ordini/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/ordini/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/pagamento/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/pagamento/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/quantita/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/quantita/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/sconti/tipopagamento/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/utenti/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/utenti/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/it/messages.php" afterPath="$PROJECT_DIR$/resources/lang/it/messages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="holisticremedies.iws" />
@@ -60,21 +621,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScontiTipoPagamentoController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php">
+      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="1530">
-              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+            <state vertical-scroll-proportion="-9.294118" vertical-offset="516" max-vertical-offset="1995">
+              <caret line="75" column="97" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScontiQuantitaController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScontiQuantitaController.php">
+      <file leaf-file-name="ingredients.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/ingredients.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="435" max-vertical-offset="1740">
-              <caret line="44" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+            <state vertical-scroll-proportion="-21.666666" vertical-offset="545" max-vertical-offset="1800">
+              <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tips.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/tips.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1245">
+              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.75" vertical-offset="525" max-vertical-offset="1965">
+              <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/it/messages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.363636" vertical-offset="0" max-vertical-offset="1530">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3791209" vertical-offset="0" max-vertical-offset="910">
+              <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -90,10 +691,7 @@
       <list>
         <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/resources/lang/it/pagination.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/back.script.js" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Models/BaseModel.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_utenti.php" />
@@ -108,17 +706,13 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Models/Cliente.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/Models/Utente.php" />
         <option value="$PROJECT_DIR$/resources/views/dash/prodotti/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dash.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/public/css/back.style.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/back.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/prodotti/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/prodotti/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/it/messages.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProdottiController.php" />
         <option value="$PROJECT_DIR$/resources/views/prodotti/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_10_10_192200_create_prodotti.php" />
@@ -126,9 +720,24 @@
         <option value="$PROJECT_DIR$/app/Models/Prodotto.php" />
         <option value="$PROJECT_DIR$/app/Models/Immagine.php" />
         <option value="$PROJECT_DIR$/app/Models/ScontoTipoPagamento.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ScontiQuantitaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Utente.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/shop.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/intro.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/back.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/front.script.js" />
+        <option value="$PROJECT_DIR$/resources/views/home/tips.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/it/messages.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/ingredients.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
       </list>
     </option>
   </component>
@@ -198,6 +807,180 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prodotti" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -212,7 +995,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -226,11 +1013,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,11 +1031,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,6 +1147,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="holisticremedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HolisticRemedies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -342,12 +1191,13 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/resources/lang/it" />
+      <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/resources/lang/it" />
       <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/public/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views" />
     </key>
@@ -367,6 +1217,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -374,9 +1227,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -404,7 +1254,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444594515546</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="creati modelli per tipologia di spedizione e sconti">
+      <created>1444692799874</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1444692799874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -418,42 +1274,43 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27103302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27103302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -473,7 +1330,8 @@
     </option>
     <MESSAGE value="Aggiunto templater per back e configurata connessione a db" />
     <MESSAGE value="Iniziata gestione prodotti di backoffice&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniziata gestione prodotti di backoffice&#10;" />
+    <MESSAGE value="creati modelli per tipologia di spedizione e sconti" />
+    <option name="LAST_COMMIT_MESSAGE" value="creati modelli per tipologia di spedizione e sconti" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -482,97 +1340,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1020">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="195">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="540">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/it/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/it/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="375">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/it/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="615">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="450">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17665952" vertical-offset="0" max-vertical-offset="98850">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="934">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="934">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34785">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/front.script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40149894" vertical-offset="0" max-vertical-offset="934">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/it/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/it/validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650">
@@ -587,13 +1354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36263737" vertical-offset="0" max-vertical-offset="910">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/back.script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="934">
@@ -601,24 +1361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/font-awesome/css/font-awesome.css">
+    <entry file="file://$PROJECT_DIR$/public/fonts/font-awesome/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32119915" vertical-offset="0" max-vertical-offset="25170">
           <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="540">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19448946" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -678,27 +1424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="910">
-          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Utente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13186814" vertical-offset="0" max-vertical-offset="910">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5" vertical-offset="255" max-vertical-offset="1785">
-          <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="1980">
@@ -706,52 +1431,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/back.style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1111112" vertical-offset="120" max-vertical-offset="3480">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/prodotti/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="750">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dash.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34452298" vertical-offset="0" max-vertical-offset="3990">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/back.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.319788" vertical-offset="2044" max-vertical-offset="3015">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/prodotti/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="1305">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/it/messages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.333334" vertical-offset="172" max-vertical-offset="885">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/prodotti/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="495" max-vertical-offset="1500">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -766,13 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="615">
           <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_10_10_192200_create_prodotti.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.083333" vertical-offset="13" max-vertical-offset="615">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -801,7 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="600">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,15 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8333333" vertical-offset="275" max-vertical-offset="1185">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="315">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,13 +1491,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30769232" vertical-offset="290" max-vertical-offset="1260">
           <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScontiQuantitaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="435" max-vertical-offset="1740">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1740">
           <caret line="44" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
           <folding />
         </state>
@@ -839,8 +1504,228 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScontiTipoPagamentoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1515">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04945055" vertical-offset="0" max-vertical-offset="910">
+          <caret line="3" column="75" selection-start-line="3" selection-start-column="75" selection-end-line="3" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.532967" vertical-offset="0" max-vertical-offset="9675">
+          <caret line="649" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="649" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="240">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.416667" vertical-offset="725" max-vertical-offset="1635">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="21" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.583333" vertical-offset="5449" max-vertical-offset="15255">
+          <caret line="377" column="7" selection-start-line="377" selection-start-column="7" selection-end-line="377" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.137255" vertical-offset="1487" max-vertical-offset="2370">
+          <caret line="139" column="25" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="35" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Utente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="690">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+          <folding>
+            <element signature="e#30#66#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032967035" vertical-offset="0" max-vertical-offset="910">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dash.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="37.708332" vertical-offset="1400" max-vertical-offset="3990">
+          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/prodotti/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32967034" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="20" column="112" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/shop.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016483517" vertical-offset="0" max-vertical-offset="910">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/prodotti/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18131869" vertical-offset="0" max-vertical-offset="910">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/flags/1x1/ad.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/flag-icon.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="934">
+          <caret line="0" column="166" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="166" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/intro.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06593407" vertical-offset="0" max-vertical-offset="910">
+          <caret line="4" column="104" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/back.style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="3480">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/back.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="150" max-vertical-offset="3135">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/front.script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49785867" vertical-offset="0" max-vertical-offset="934">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/tips.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.75" vertical-offset="525" max-vertical-offset="1965">
+          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/ingredients.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.666666" vertical-offset="545" max-vertical-offset="1800">
+          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.294118" vertical-offset="516" max-vertical-offset="1995">
+          <caret line="75" column="97" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/it/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.363636" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3791209" vertical-offset="0" max-vertical-offset="910">
+          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
           <folding />
         </state>
       </provider>

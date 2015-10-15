@@ -17,6 +17,13 @@
     <!-- Custom CSS -->
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
+    <!-- font-flag CSS-->
+    <link href="{{ url('css/flag-icon.min.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url('fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,21 +52,30 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-left">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden">
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#tips">CONSIGLI</a>
+                    <a class="page-scroll" href="#tips"> {!!Lang::choice('messages.menu_front_consigli',0)!!}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#ingredients">INGREDIENTI</a>
+                    <a class="page-scroll" href="#ingredients"> {!!Lang::choice('messages.menu_front_ingredienti',0)!!}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#buy">ACQUISTA</a>
+                    <a class="page-scroll" href="#buy"> {!!Lang::choice('messages.menu_front_acquista',0)!!}</a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about"><i class="fa fa-facebook"></i> FACEBOOK</a></li>
+                @if (App::getLocale() == 'it')
+                    <li><a href="{!! url('lang/en')!!}"><span class="flag-icon flag-icon-gb"></span> ENGLISH</a></li>
+                @elseif (App::getLocale() == 'en')
+                    <li><a href="{!! url('lang/it')!!}"><span class="flag-icon flag-icon-it"></span> ITALIANO</a></li>
+                @endif
+            </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -69,11 +85,7 @@
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-
-            </div>
-        </div>
+        @yield('intro')
     </div>
 </section>
 
@@ -94,7 +106,7 @@
 <!-- Contact Section -->
 <section id="buy" class="contact-section">
     <div class="container">
-        @yield('buy')
+        @yield('shop')
     </div>
 </section>
 

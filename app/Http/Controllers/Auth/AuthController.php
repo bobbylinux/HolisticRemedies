@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+
 class AuthController extends Controller
 {
     /*
@@ -28,8 +32,17 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    private $validator_log;
+
+    private $username = 'username';
+
     public function __construct()
     {
+
+        $this->validator_log = new Logger('Auth Controller Logs');
+        $this->validator_log->pushHandler(new StreamHandler(__DIR__.'/../../../storage/logs/auth.log', Logger::DEBUG));
+        $this->validator_log->addInfo("Validazione utente Constructor");
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
@@ -41,6 +54,8 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+
+        $this->validator_log->addInfo("Validazione utente ". $data['username']);
         return Validator::make($data, [
             'username' => 'required|email|max:255|unique:utenti',
             'password' => 'required|confirmed|min:6',
@@ -56,7 +71,7 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -67,9 +82,22 @@ class AuthController extends Controller
      */
     public function authenticate()
     {
-        if (Auth::attempt(['username' => $email, 'password' => $password]))
+        Log::debug('Inizio login '. $username);
+        if (Auth::attempt(['username' => $username, 'password' => $password]))
         {
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/admin');
         }
+
+        $user = User::where('username', '=', $username)->first();
+
+        if(isset($user)) {
+            if($user->password == md5(Input::get('password'))) { // If their password is still MD5
+                $user->password = Hash::make(Input::get('password')); // Convert to new format
+                $user->save();
+                Auth::login(Input::get('username'));
+            }
+        }
+
+
     }
 }

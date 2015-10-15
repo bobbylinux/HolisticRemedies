@@ -13,11 +13,25 @@
 
 return array(
     /*menu*/
-    'consigli' => 'CONSIGLI',
-    'ingredienti' => 'INGREDIENTI',
-    'acquista' => 'ACQUISTA',
-    'consigli_titolo' => 'Consigli Utili',
-    'consigli_paragrafo1' => '',
+    'menu_front_consigli' => 'CONSIGLI PER L\'USO',
+    'menu_front_ingredienti' => 'INGREDIENTI',
+    'menu_front_acquista' => 'ACQUISTA',
+    'consigli_titolo' => 'Consigli Per L\'Uso',
+    'consigli_paragrafo1' => "Caisse Formula è in confezioni da 60 grammi 120 grammi contenenti polvere microtiturata. <br>
+                Una dose corrisponde ad un cucchiaino raso da tè del peso di circa un grammo e mezzo.",
+    'consigli_titolo_polvere' => 'Caisse formula in polvere',
+    'consigli_titolo_capsule' => 'Caisse formula in capsule',
+    'consigli_come_si_prepara' => 'Come si prepara',
+    'consigli_preparazione_polvere' => "E’ semplicissimo. Si versa un cucchiaino da tè raso della polvere contenuta nel barattolo in una tazza di circa
+                                        250 ml. Si aggiunge acqua appena bollita, si gira e si attende 15 minuti che la polvere si depositi sul fondo.
+                                        Dopo si filtra con un filtro di carta o cotone oppure si sorseggia il tè lasciando i depositi sul fondo della tazza.",
+    'consigli_preparazione_capsule' => "Le capsule si presentano in confezioni da 100 e 200 pezzi.
+                                        Se ne assumeranno 3 per raggiungere la dose corrispondente ad un cucchiaino raso di polvere. Assumerle con un paio di bicchieri d’acqua.",
+    'consigli_titolo_dosaggio' => 'Dosaggio',
+    'consigli_paragrofo_dosaggio' => "Rick de Silva consiglia un dosaggio di un cucchiaino due volte al giorno da assumere preferibilmente un ora prima o due ore dopo i pasti. Consiglia inoltre di cominciare l’assunzione con metà dose e dopo tre giorni raggiungere quella consigliata.",
+    'consigli_titolo_attenzione' => 'Attenzione',
+    'consigli_paragrafo_attenzione' => "Attenzione alle imitazioni chiamate con nomi simili: Formula Caisse, La formula di Rene Caisse, eccetera, poichè sono composte con erbe di dubbia origine e non rispettano la formula di Rick De Silva e degli indiani Ojibwa.
+Le informazioni contenute in questo sito non possono essere utilizzate in sostituzione dei consigli del medico curante (Leggere Nota Privacy).",
     'ingredienti_titolo' => 'Ingredienti',
     'ingredienti_paragrafo_1' => "Caisse Formula &egrave; la formula pi&ugrave; recente, evoluta negli anni dagli indiani
                 Ojibwa e
@@ -42,6 +56,7 @@ return array(
                 Silva:
                 trifoglio, corteccia di frassino spinoso (variet&agrave; autoctona canadese) e
                 Piantaggine. ",
+
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
     'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',
