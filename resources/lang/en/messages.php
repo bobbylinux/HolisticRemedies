@@ -88,6 +88,8 @@ return array(
     'ingredienti_paragrafo_32' => "Parts used: the bark and the seeds",
     'ingredienti_paragrafo_33' => "Properties and Indications for use: prickly ash re-establishes healthy, nutritive processes and generally stimulates body functions. It is a powerful detoxifier and purifier of the blood. It is known for its antiseptic and analgesic properties and its use is suggested in the treatment of :<br>poor digestion (colic or flatulence), abdominal pains, chronic colds, intestinal worms, infections of micro-organisms, and arthritis.",
     'ingredienti_paragrafo_34' => "It is called \"Tumburu\" by the Indians in Ayurvedic medicine, and \"Hua Jiao\" by the Chinese. DeSylva adds: \"... it has a history in the treatment of tuberculosis, cholera and syphilis. Recent research has identified a class of substances known as Furano-coumarins. While research still continues, it appears to have a strong effect on cancer. This helps me understand the insistence of the medicine-man I met on the island of Manitoulin, that I include it in the CAISSE FORMULA.\"",
+    'shop_titolo' => 'Shop',
+
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
     'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',

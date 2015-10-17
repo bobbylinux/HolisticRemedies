@@ -56,6 +56,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
                 Silva:
                 trifoglio, corteccia di frassino spinoso (variet&agrave; autoctona canadese) e
                 Piantaggine. ",
+    'shop_titolo' => 'Shop',
 
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',

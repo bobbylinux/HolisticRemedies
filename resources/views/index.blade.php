@@ -9,5 +9,5 @@
     @include('home.ingredients')
 @stop
 @section('shop')
-
+    @include('home.shop')
 @stop

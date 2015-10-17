@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2028846337">
+    <data-source source="LOCAL" name="PostgreSQL - holistic@localhost" uuid="c6270beb-166b-4c0b-ad0c-68c824c1cacc">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/holistic</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

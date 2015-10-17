@@ -15,23 +15,25 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('admin', function () {
-    return view('dash');
-});
 
-// Authentication routes... 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('admin', 'DashBoardController@index');
+Route::get('debug',function(){
+    return view('debug');
+});
+// Authentication routes...
 Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
-// Registration routes... 
+// Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-// Gestione backoffice 
-Route::resource('admin/prodotti', 'ProdottiController');
-Route::resource('admin/sconti/quantita', 'ScontiQuantitaController');
-Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
-
+// Gestione backoffice
+Route::group(array('middleware' => 'auth'), function() {
+    Route::resource('admin/prodotti', 'ProdottiController');
+    Route::resource('admin/sconti/quantita', 'ScontiQuantitaController');
+    Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
+});
 // Cambio linguaggio
 Route::get('lang/en', function () {
     Session::put('language', 'en');

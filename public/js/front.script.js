@@ -31,3 +31,8 @@ $(function(){
         $('.navbar-collapse.in').collapse('hide');
     });
 })
+
+/*login*/
+$(document).ready(function(){
+
+});

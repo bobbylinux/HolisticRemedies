@@ -1,103 +1,129 @@
-<?php
+<?php namespace App\Http\Controllers\Auth;
 
-namespace App\Http\Controllers\Auth;
-
-use App\User;
-use Validator;
+use App\Models\Utente as User;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Lang;
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 
+class AuthController extends Controller {
 
-class AuthController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
-
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    /**
+     * the model instance
+     * @var User
+     */
+    protected $user;
+    /**
+     * The Guard implementation.
+     *
+     * @var Authenticator
+     */
+    protected $auth;
 
     /**
      * Create a new authentication controller instance.
      *
+     * @param  Authenticator  $auth
      * @return void
      */
-
-    private $validator_log;
-
-    private $username = 'username';
-
-    public function __construct()
+    public function __construct(Guard $auth, User $user)
     {
+        $this->user = $user;
+        $this->auth = $auth;
 
-        $this->validator_log = new Logger('Auth Controller Logs');
-        $this->validator_log->pushHandler(new StreamHandler(__DIR__.'/../../../storage/logs/auth.log', Logger::DEBUG));
-        $this->validator_log->addInfo("Validazione utente Constructor");
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => ['getLogout']]);
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-
-        $this->validator_log->addInfo("Validazione utente ". $data['username']);
-        return Validator::make($data, [
-            'username' => 'required|email|max:255|unique:utenti',
-            'password' => 'required|confirmed|min:6',
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'username' => $data['username'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
-    /**
-     * Handle an authentication attempt.
+     * Show the application registration form.
      *
      * @return Response
      */
-    public function authenticate()
+    public function getRegister()
     {
-        Log::debug('Inizio login '. $username);
-        if (Auth::attempt(['username' => $username, 'password' => $password]))
-        {
-            return redirect()->intended('/admin');
-        }
+        return view('auth.register');
+    }
 
-        $user = User::where('username', '=', $username)->first();
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  RegisterRequest  $request
+     * @return Response
+     */
+    public function postRegister(RegisterRequest $request)
+    {
+        $this->user->username = $request->username;
+        $this->user->password = Hash::make($request->getPassword());
+        $this->user->save();
+        $this->auth->login($this->user);
+        return redirect('/');
+    }
 
+    /**
+     * Show the application login form.
+     *
+     * @return Response
+     */
+    public function getLogin()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Handle a login request to the application.
+     *
+     * @param  LoginRequest  $request
+     * @return Response
+     */
+    public function postLogin(LoginRequest $request)
+    {
+
+        $user = User::where('username', '=', $request->username)->first();
+        return redirect('/auth/login')->withErrors([
+            'email' => ($user->username) .' '.($user->password )
+        ]);
         if(isset($user)) {
-            if($user->password == md5(Input::get('password'))) { // If their password is still MD5
-                $user->password = Hash::make(Input::get('password')); // Convert to new format
+            if($user->password == md5($request->getPassword())) { // If their password is still MD5
+                $user->password = Hash::make($request->getPassword()); // Convert to new format
                 $user->save();
-                Auth::login(Input::get('username'));
+                Auth::login($request->email);
+                return redirect('/');
             }
         }
 
+        if ($this->auth->attempt($request->only('username', 'password')))
+        {
 
+            return redirect('/');
+        }
+        return redirect('/auth/login')->withErrors([
+            'email' => $this->getFailedLoginMessage()
+        ]);
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return Response
+     */
+    public function getLogout()
+    {
+        $this->auth->logout();
+
+        return redirect('/');
+    }
+
+    /**
+     * Get the failed login message.
+     *
+     * @return string
+     */
+    protected function getFailedLoginMessage()
+    {
+        return Lang::has('auth.failed')
+            ? Lang::get('auth.failed')
+            : 'These credentials do not match our records.';
     }
 }
