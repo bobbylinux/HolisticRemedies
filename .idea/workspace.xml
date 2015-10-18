@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5e89e8-73e8-4465-a840-4ae86ec1c9ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/Language.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/LanguageController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Ruolo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/UserRolesSeeder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/languages.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Models/User.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfNotAdmin.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Administrator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2015_10_09_192200_create_prodotti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_192200_create_prodotti.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_10_191709_create_ruolo_utenti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_191709_create_ruolo_utenti.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_10_192138_create_immagini.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_192138_create_immagini.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_10_193148_create_utenti.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_10_193148_create_utenti.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_10_12_073102_create_spedizione.php" afterPath="$PROJECT_DIR$/database/migrations/2015_10_12_073102_create_spedizione.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Utente.php" afterPath="$PROJECT_DIR$/app/Models/Utente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/back.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/back.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/debug.blade.php" afterPath="$PROJECT_DIR$/resources/views/debug.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/intro.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/intro.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/it/messages.php" afterPath="$PROJECT_DIR$/resources/lang/it/messages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/shop.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/shop.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="holisticremedies.iws" />
@@ -737,12 +709,18 @@
       <option name="project" value="LOCAL" />
       <updated>1445040110668</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cercata soluzione persistenza cambio lingua&#10;corrette migration per riportare foreign key su prodotti anzichè su immagini&#10;aggiunti db seeds per utente e ruolo utente">
+      <created>1445185790123</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1445185790123</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-381" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33160084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -751,18 +729,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28434506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28434506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -808,7 +786,8 @@
     <MESSAGE value="creati modelli per tipologia di spedizione e sconti" />
     <MESSAGE value="ottimizzata interfaccia front&#10;iniziata gestione multilingua&#10;aggiunti font-flag-css&#10;ottimizzata navbar in navigazione mobile&#10;ottimizzato layout in navigazione dispositivi vari&#10;" />
     <MESSAGE value="iniziata gestione login" />
-    <option name="LAST_COMMIT_MESSAGE" value="iniziata gestione login" />
+    <MESSAGE value="cercata soluzione persistenza cambio lingua&#10;corrette migration per riportare foreign key su prodotti anzichè su immagini&#10;aggiunti db seeds per utente e ruolo utente" />
+    <option name="LAST_COMMIT_MESSAGE" value="cercata soluzione persistenza cambio lingua&#10;corrette migration per riportare foreign key su prodotti anzichè su immagini&#10;aggiunti db seeds per utente e ruolo utente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -870,6 +849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -877,6 +857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26373628">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -884,6 +865,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.125">
           <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -941,6 +923,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18131869">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,6 +931,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-28.125">
           <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+          <folding>
+            <element signature="e#38#50#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,6 +941,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.041667">
           <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+          <folding>
+            <element signature="e#44#74#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -976,6 +965,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43956044">
           <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
