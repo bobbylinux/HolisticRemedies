@@ -99,8 +99,23 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_sconti_pagamento_edit_titolo' => 'Modifica Sconto',
     'dash_sconti_pagamento_edit_pulsante_modifica' => 'Modifica Sconto',
 
+    'menu_accedi' => 'ACCEDI',
 
     /*pulsangi generici*/
+    'registrazione' => 'Registrazione',
     'pulsante_modifica' => 'Modifica',
-    'pulsante_elimina' => 'Elimina'
+    'pulsante_elimina' => 'Elimina',
+    'pulsante_annulla' => 'Undo',
+    'pulsante_registrati' => 'Registrati',
+    'pulsante_accedi' => 'Accedi',
+    'pulsante_iscriviti' => 'Iscriviti',
+    'pulsante_crea_account' => 'Crea Account',
+    'check_ricordami' => 'Ricordami',
+
+    /*registrazione*/
+
+    'username' => 'Indirizzo e-mail',
+    'username_c' => 'Inserisci di nuovo per confermare',
+    'password' => 'Password',
+    'password_c' => 'Inserisci di nuovo per confermare'
 );

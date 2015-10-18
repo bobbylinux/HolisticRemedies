@@ -131,8 +131,23 @@ return array(
     'dash_sconti_pagamento_edit_titolo' => 'Modifica Sconto',
     'dash_sconti_pagamento_edit_pulsante_modifica' => 'Modifica Sconto',
 
+    'menu_accedi' => 'SIGN IN',
 
     /*pulsangi generici*/
+    'registrazione' => 'Sign Up',
     'pulsante_modifica' => 'Modifica',
-    'pulsante_elimina' => 'Elimina'
+    'pulsante_elimina' => 'Elimina',
+    'pulsante_annulla' => 'Annulla',
+    'pulsante_registrati' => 'Sign Up',
+    'pulsante_accedi' => 'Sign In',
+    'pulsante_iscriviti' => 'Sign Up',
+    'pulsante_crea_account' => 'Create Account',
+    'check_ricordami' => 'Remember me',
+
+    /*registrazione*/
+    'registrazione' => 'Registrazione',
+    'username' => 'Mail Address',
+    'username_c' => 'Insert again to confirm',
+    'password' => 'Password',
+    'password_c' => 'Insert again to confirm',
 );

@@ -2,9 +2,8 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Support\Facades\Redirect as Redirect;
 
-class RedirectIfNotAdmin
+class Administrator
 {
     /**
      * The Guard implementation.
@@ -33,10 +32,15 @@ class RedirectIfNotAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->auth->check() || ($this->auth->user()->ruolo != 3 && $this->auth->user()->ruolo != 2)) {
-            return redirect('/');
+        if ($this->auth->guest() || $this->auth->user()->ruolo != 1) {
+            if ($request->ajax()) {
+                return response('Unauthorized.', 401);
+            } else {
+                return redirect()->guest('/auth/login');
+            }
         }
 
         return $next($request);
+
     }
 }

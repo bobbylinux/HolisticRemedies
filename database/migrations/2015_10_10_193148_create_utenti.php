@@ -25,6 +25,12 @@ class CreateUtenti extends Migration {
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate
             $table->timestamp('data_cancellazione')->nullable(); //data cancellazione 
         });
+
+        DB::table('utenti')->insert(
+            array(
+                array('username' => 'roberto.bani@gmail.com','password' => '25d55ad283aa400af464c76d713c07ad','ruolo'=>'1','confermato' => true),
+                array('username' => 'bobbylinux@hotmail.it','password' => '25d55ad283aa400af464c76d713c07ad','ruolo'=>'2','confermato' => true),
+            ));
     }
 
     /**

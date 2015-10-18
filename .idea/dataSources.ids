@@ -330,9 +330,6 @@
       <column name="contoencoding" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="conproc" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="condefault" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <index name="pg_conversion_default_index" unique="true" columns="connamespace,conforencoding,contoencoding,oid"/>
-      <index name="pg_conversion_name_nsp_index" unique="true" columns="conname,connamespace"/>
-      <index name="pg_conversion_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_conversion_default_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="connamespace" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -369,8 +366,6 @@
       <column name="datminmxid" sqlType="xid" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="dattablespace" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="datacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_database_datname_index" unique="true" columns="datname"/>
-      <index name="pg_database_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_database_datname_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="datname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -382,7 +377,6 @@
       <column name="setdatabase" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="setrole" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="setconfig" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_db_role_setting_databaseid_rol_index" unique="true" columns="setdatabase,setrole"/>
     </table>
     <table name="pg_db_role_setting_databaseid_rol_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="setdatabase" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -393,8 +387,6 @@
       <column name="defaclnamespace" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="defaclobjtype" sqlType="char" precision="1" scale="0" nullable="false" jdbcType="1"/>
       <column name="defaclacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_default_acl_oid_index" unique="true" columns="oid"/>
-      <index name="pg_default_acl_role_nsp_obj_index" unique="true" columns="defaclrole,defaclnamespace,defaclobjtype"/>
     </table>
     <table name="pg_default_acl_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -412,8 +404,6 @@
       <column name="refobjid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="refobjsubid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="deptype" sqlType="char" precision="1" scale="0" nullable="false" jdbcType="1"/>
-      <index name="pg_depend_depender_index" unique="false" columns="classid,objid,objsubid"/>
-      <index name="pg_depend_reference_index" unique="false" columns="refclassid,refobjid,refobjsubid"/>
     </table>
     <table name="pg_depend_depender_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="classid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -430,7 +420,6 @@
       <column name="classoid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="objsubid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <index name="pg_description_o_c_o_index" unique="true" columns="objoid,classoid,objsubid"/>
     </table>
     <table name="pg_description_o_c_o_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="objoid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -441,9 +430,6 @@
       <column name="enumtypid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="enumsortorder" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
       <column name="enumlabel" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <index name="pg_enum_oid_index" unique="true" columns="oid"/>
-      <index name="pg_enum_typid_label_index" unique="true" columns="enumtypid,enumlabel"/>
-      <index name="pg_enum_typid_sortorder_index" unique="true" columns="enumtypid,enumsortorder"/>
     </table>
     <table name="pg_enum_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -463,8 +449,6 @@
       <column name="evtfoid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="evtenabled" sqlType="char" precision="1" scale="0" nullable="false" jdbcType="1"/>
       <column name="evttags" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_event_trigger_evtname_index" unique="true" columns="evtname"/>
-      <index name="pg_event_trigger_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_event_trigger_evtname_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="evtname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -480,8 +464,6 @@
       <column name="extversion" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="extconfig" sqlType="_oid" precision="10" scale="0" nullable="true" jdbcType="2003"/>
       <column name="extcondition" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_extension_name_index" unique="true" columns="extname"/>
-      <index name="pg_extension_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_extension_name_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="extname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -496,8 +478,6 @@
       <column name="fdwvalidator" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="fdwacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
       <column name="fdwoptions" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_foreign_data_wrapper_name_index" unique="true" columns="fdwname"/>
-      <index name="pg_foreign_data_wrapper_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_foreign_data_wrapper_name_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="fdwname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -513,8 +493,6 @@
       <column name="srvversion" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="srvacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
       <column name="srvoptions" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_foreign_server_name_index" unique="true" columns="srvname"/>
-      <index name="pg_foreign_server_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_foreign_server_name_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="srvname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -526,7 +504,6 @@
       <column name="ftrelid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="ftserver" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="ftoptions" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_foreign_table_relid_index" unique="true" columns="ftrelid"/>
     </table>
     <table name="pg_foreign_table_relid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="ftrelid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -555,8 +532,6 @@
       <column name="indoption" sqlType="int2vector" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="indexprs" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
       <column name="indpred" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
-      <index name="pg_index_indexrelid_index" unique="true" columns="indexrelid"/>
-      <index name="pg_index_indrelid_index" unique="false" columns="indrelid"/>
     </table>
     <table name="pg_index_indexrelid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="indexrelid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -575,8 +550,6 @@
       <column name="inhrelid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="inhparent" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="inhseqno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <index name="pg_inherits_relid_seqno_index" unique="true" columns="inhrelid,inhseqno"/>
-      <index name="pg_inherits_parent_index" unique="false" columns="inhparent"/>
     </table>
     <table name="pg_inherits_parent_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="inhparent" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -594,8 +567,6 @@
       <column name="laninline" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="lanvalidator" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="lanacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_language_name_index" unique="true" columns="lanname"/>
-      <index name="pg_language_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_language_name_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="lanname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -607,7 +578,6 @@
       <column name="loid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="pageno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="data" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
-      <index name="pg_largeobject_loid_pn_index" unique="true" columns="loid,pageno"/>
     </table>
     <table name="pg_largeobject_loid_pn_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="loid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -616,7 +586,6 @@
     <table name="pg_largeobject_metadata" schema="pg_catalog" catalog="holistic" type="SYSTEM TABLE">
       <column name="lomowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="lomacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_largeobject_metadata_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_largeobject_metadata_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -651,8 +620,6 @@
       <column name="nspname" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="nspowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="nspacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_namespace_nspname_index" unique="true" columns="nspname"/>
-      <index name="pg_namespace_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_namespace_nspname_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="nspname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -669,8 +636,6 @@
       <column name="opcintype" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="opcdefault" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="opckeytype" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
-      <index name="pg_opclass_am_name_nsp_index" unique="true" columns="opcmethod,opcname,opcnamespace"/>
-      <index name="pg_opclass_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_opclass_am_name_nsp_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="opcmethod" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -695,8 +660,6 @@
       <column name="oprcode" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="oprrest" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="oprjoin" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
-      <index name="pg_operator_oid_index" unique="true" columns="oid"/>
-      <index name="pg_operator_oprname_l_r_n_index" unique="true" columns="oprname,oprleft,oprright,oprnamespace"/>
     </table>
     <table name="pg_operator_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -712,8 +675,6 @@
       <column name="opfname" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="opfnamespace" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="opfowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
-      <index name="pg_opfamily_am_name_nsp_index" unique="true" columns="opfmethod,opfname,opfnamespace"/>
-      <index name="pg_opfamily_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_opfamily_am_name_nsp_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="opfmethod" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -732,7 +693,6 @@
       <column name="tmplvalidator" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="tmpllibrary" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="tmplacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_pltemplate_name_index" unique="true" columns="tmplname"/>
     </table>
     <table name="pg_pltemplate_name_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="tmplname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -779,8 +739,6 @@
       <column name="probin" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="proconfig" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
       <column name="proacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_proc_oid_index" unique="true" columns="oid"/>
-      <index name="pg_proc_proname_args_nsp_index" unique="true" columns="proname,proargtypes,pronamespace"/>
     </table>
     <table name="pg_proc_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -797,7 +755,6 @@
       <column name="rngsubopc" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="rngcanonical" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="rngsubdiff" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
-      <index name="pg_range_rngtypid_index" unique="true" columns="rngtypid"/>
     </table>
     <table name="pg_range_rngtypid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="rngtypid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -811,8 +768,6 @@
       <column name="is_instead" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="ev_qual" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
       <column name="ev_action" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
-      <index name="pg_rewrite_oid_index" unique="true" columns="oid"/>
-      <index name="pg_rewrite_rel_rulename_index" unique="true" columns="ev_class,rulename"/>
     </table>
     <table name="pg_rewrite_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -848,7 +803,6 @@
       <column name="objsubid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="provider" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="label" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <index name="pg_seclabel_object_index" unique="true" columns="objoid,classoid,objsubid,provider"/>
     </table>
     <table name="pg_seclabel_object_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="objoid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -903,8 +857,6 @@
       <column name="refclassid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="refobjid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="deptype" sqlType="char" precision="1" scale="0" nullable="false" jdbcType="1"/>
-      <index name="pg_shdepend_depender_index" unique="false" columns="dbid,classid,objid,objsubid"/>
-      <index name="pg_shdepend_reference_index" unique="false" columns="refclassid,refobjid"/>
     </table>
     <table name="pg_shdepend_depender_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="dbid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -920,7 +872,6 @@
       <column name="objoid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="classoid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <index name="pg_shdescription_o_c_index" unique="true" columns="objoid,classoid"/>
     </table>
     <table name="pg_shdescription_o_c_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="objoid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -931,7 +882,6 @@
       <column name="classoid" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="provider" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="label" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <index name="pg_shseclabel_object_index" unique="true" columns="objoid,classoid,provider"/>
     </table>
     <table name="pg_shseclabel_object_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="objoid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1284,7 +1234,6 @@
       <column name="stavalues3" sqlType="anyarray" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
       <column name="stavalues4" sqlType="anyarray" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
       <column name="stavalues5" sqlType="anyarray" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
-      <index name="pg_statistic_relid_att_inh_index" unique="true" columns="starelid,staattnum,stainherit"/>
     </table>
     <table name="pg_statistic_relid_att_inh_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="starelid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1321,8 +1270,6 @@
       <column name="spcowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="spcacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
       <column name="spcoptions" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_tablespace_oid_index" unique="true" columns="oid"/>
-      <index name="pg_tablespace_spcname_index" unique="true" columns="spcname"/>
     </table>
     <table name="pg_tablespace_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1357,9 +1304,6 @@
       <column name="tgattr" sqlType="int2vector" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="tgargs" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
       <column name="tgqual" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
-      <index name="pg_trigger_oid_index" unique="true" columns="oid"/>
-      <index name="pg_trigger_tgrelid_tgname_index" unique="true" columns="tgrelid,tgname"/>
-      <index name="pg_trigger_tgconstraint_index" unique="false" columns="tgconstraint"/>
     </table>
     <table name="pg_trigger_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1376,8 +1320,6 @@
       <column name="cfgnamespace" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="cfgowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="cfgparser" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
-      <index name="pg_ts_config_cfgname_index" unique="true" columns="cfgname,cfgnamespace"/>
-      <index name="pg_ts_config_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_ts_config_cfgname_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="cfgname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -1388,7 +1330,6 @@
       <column name="maptokentype" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="mapseqno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="mapdict" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
-      <index name="pg_ts_config_map_index" unique="true" columns="mapcfg,maptokentype,mapseqno"/>
     </table>
     <table name="pg_ts_config_map_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="mapcfg" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1404,8 +1345,6 @@
       <column name="dictowner" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="dicttemplate" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="dictinitoption" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <index name="pg_ts_dict_dictname_index" unique="true" columns="dictname,dictnamespace"/>
-      <index name="pg_ts_dict_oid_index" unique="true" columns="oid"/>
     </table>
     <table name="pg_ts_dict_dictname_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="dictname" sqlType="cstring" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
@@ -1422,8 +1361,6 @@
       <column name="prsend" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="prsheadline" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="prslextype" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
-      <index name="pg_ts_parser_oid_index" unique="true" columns="oid"/>
-      <index name="pg_ts_parser_prsname_index" unique="true" columns="prsname,prsnamespace"/>
     </table>
     <table name="pg_ts_parser_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1437,8 +1374,6 @@
       <column name="tmplnamespace" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="tmplinit" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
       <column name="tmpllexize" sqlType="regproc" precision="2147483647" scale="0" nullable="false" jdbcType="1111"/>
-      <index name="pg_ts_template_oid_index" unique="true" columns="oid"/>
-      <index name="pg_ts_template_tmplname_index" unique="true" columns="tmplname,tmplnamespace"/>
     </table>
     <table name="pg_ts_template_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1478,8 +1413,6 @@
       <column name="typdefaultbin" sqlType="pg_node_tree" precision="2147483647" scale="0" nullable="true" jdbcType="1111"/>
       <column name="typdefault" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="typacl" sqlType="_aclitem" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_type_oid_index" unique="true" columns="oid"/>
-      <index name="pg_type_typname_nsp_index" unique="true" columns="typname,typnamespace"/>
     </table>
     <table name="pg_type_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1503,8 +1436,6 @@
       <column name="umuser" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="umserver" sqlType="oid" precision="10" scale="0" nullable="false" jdbcType="-5"/>
       <column name="umoptions" sqlType="_text" precision="2147483647" scale="0" nullable="true" jdbcType="2003"/>
-      <index name="pg_user_mapping_oid_index" unique="true" columns="oid"/>
-      <index name="pg_user_mapping_user_server_index" unique="true" columns="umuser,umserver"/>
     </table>
     <table name="pg_user_mapping_oid_index" schema="pg_catalog" catalog="holistic" type="SYSTEM INDEX">
       <column name="oid" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
@@ -1526,435 +1457,6 @@
       <column name="viewname" sqlType="name" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="viewowner" sqlType="name" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="definition" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="carrello" schema="public" catalog="holistic" type="TABLE">
-      <column name="sessione" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="prodotto" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="quantita" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
-      <primary-key name="carrello_pkey" columns="sessione,prodotto"/>
-      <foreign-key name="carrello_prodotto_foreign" columns="prodotto" ref-table="prodotti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="clienti" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY2xpZW50aV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="nome" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cognome" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="societa" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="indirizzo" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cap" sqlType="varchar" precision="5" scale="0" nullable="true" jdbcType="12"/>
-      <column name="comune" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="provincia" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="nazione" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="telefono" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fax" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="utente" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="clienti_pkey" columns="id"/>
-      <foreign-key name="clienti_nazione_foreign" columns="nazione" ref-table="nazioni" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="clienti_utente_foreign" columns="utente" ref-table="utenti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="clienti_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="configurazione" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29uZmlndXJhemlvbmVfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="codice" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="valore" sqlType="varchar" precision="1000" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="configurazione_pkey" columns="id"/>
-    </table>
-    <table name="configurazione_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="immagini" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaW1tYWdpbmlfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="nomefile" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="didascalia" sqlType="varchar" precision="1000" scale="0" nullable="false" jdbcType="12"/>
-      <column name="prodotto" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="immagini_pkey" columns="id"/>
-      <foreign-key name="immagini_prodotto_foreign" columns="prodotto" ref-table="prodotti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="immagini_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="informazioni" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaW5mb3JtYXppb25pX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="sezione" sqlType="varchar" precision="200" scale="0" nullable="false" jdbcType="12"/>
-      <column name="informazione" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="data_inizio" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93"/>
-      <column name="data_fine" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93"/>
-      <primary-key name="informazioni_pkey" columns="id"/>
-    </table>
-    <table name="informazioni_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="migrations" schema="public" catalog="holistic" type="TABLE">
-      <column name="migration" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="batch" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-    </table>
-    <table name="nazioni" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbmF6aW9uaV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="nomefile" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="inizio_validita" sqlType="date" precision="13" scale="0" nullable="false" jdbcType="91"/>
-      <column name="fine_validita" sqlType="date" precision="13" scale="0" nullable="false" jdbcType="91"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="nazioni_pkey" columns="id"/>
-      <exported-key name="clienti_nazione_foreign" table="clienti" schema="public" catalog="holistic" columns="nazione"/>
-    </table>
-    <table name="nazioni_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="ordini_dettaglio" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkaW5pX2RldHRhZ2xpb19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="ordine" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="prodotto" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="quantita" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="costo" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2" def="MDo6bnVtZXJpYw=="/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="ordini_dettaglio_pkey" columns="id"/>
-      <foreign-key name="ordini_dettaglio_ordine_foreign" columns="ordine" ref-table="ordini_testa" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="ordini_dettaglio_prodotto_foreign" columns="prodotto" ref-table="prodotti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="ordini_stato_dettaglio_foreign" table="ordini_stato" schema="public" catalog="holistic" columns="dettaglio"/>
-    </table>
-    <table name="ordini_dettaglio_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="ordini_stato" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkaW5pX3N0YXRvX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="ordine" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="dettaglio" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="stato" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="ordini_stato_pkey" columns="id"/>
-      <foreign-key name="ordini_stato_dettaglio_foreign" columns="dettaglio" ref-table="ordini_dettaglio" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="ordini_stato_ordine_foreign" columns="ordine" ref-table="ordini_testa" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="ordini_stato_stato_foreign" columns="stato" ref-table="stati" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="ordini_stato_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="ordini_testa" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkaW5pX3Rlc3RhX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="utente" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="costo" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2" def="MDo6bnVtZXJpYw=="/>
-      <column name="costospedizione" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2" def="MDo6bnVtZXJpYw=="/>
-      <column name="sconto" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2" def="MDo6bnVtZXJpYw=="/>
-      <column name="tipo_pagamento" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="ordini_testa_pkey" columns="id"/>
-      <foreign-key name="ordini_testa_tipo_pagamento_foreign" columns="tipo_pagamento" ref-table="tipopagamento" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="ordini_testa_utente_foreign" columns="utente" ref-table="utenti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="ordini_dettaglio_ordine_foreign" table="ordini_dettaglio" schema="public" catalog="holistic" columns="ordine"/>
-      <exported-key name="ordini_stato_ordine_foreign" table="ordini_stato" schema="public" catalog="holistic" columns="ordine"/>
-      <exported-key name="ordini_vettura_ordine_foreign" table="ordini_vettura" schema="public" catalog="holistic" columns="ordine"/>
-    </table>
-    <table name="ordini_testa_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="ordini_vettura" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnb3JkaW5pX3ZldHR1cmFfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="ordine" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="vettura" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="ordini_vettura_pkey" columns="id"/>
-      <foreign-key name="ordini_vettura_ordine_foreign" columns="ordine" ref-table="ordini_testa" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="ordini_vettura_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="prodotti" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZG90dGlfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="prodotto" sqlType="varchar" precision="200" scale="0" nullable="false" jdbcType="12"/>
-      <column name="descrizione" sqlType="varchar" precision="1000" scale="0" nullable="false" jdbcType="12"/>
-      <column name="prezzo" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="prodotti_pkey" columns="id"/>
-      <exported-key name="carrello_prodotto_foreign" table="carrello" schema="public" catalog="holistic" columns="prodotto"/>
-      <exported-key name="immagini_prodotto_foreign" table="immagini" schema="public" catalog="holistic" columns="prodotto"/>
-      <exported-key name="ordini_dettaglio_prodotto_foreign" table="ordini_dettaglio" schema="public" catalog="holistic" columns="prodotto"/>
-    </table>
-    <table name="prodotti_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="ruolo_utenti" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncnVvbG9fdXRlbnRpX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="ruolo" sqlType="varchar" precision="32" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="ruolo_utenti_pkey" columns="id"/>
-      <exported-key name="utenti_ruolo_foreign" table="utenti" schema="public" catalog="holistic" columns="ruolo"/>
-    </table>
-    <table name="ruolo_utenti_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="sconti_quantita" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc2NvbnRpX3F1YW50aXRhX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="quantita_min" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="quantita_max" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="sconto" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="sconti_quantita_pkey" columns="id"/>
-    </table>
-    <table name="sconti_quantita_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="sconti_tipopagamento" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc2NvbnRpX3RpcG9wYWdhbWVudG9faWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="pagamento" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="sconto" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="sconti_tipopagamento_pkey" columns="id"/>
-      <foreign-key name="sconti_tipopagamento_pagamento_foreign" columns="pagamento" ref-table="tipopagamento" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="sconti_tipopagamento_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="spedizione" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3BlZGl6aW9uZV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="spedizione" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
-      <column name="costo" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2"/>
-      <column name="massimale" sqlType="numeric" precision="10" scale="2" nullable="false" jdbcType="2"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="spedizione_pkey" columns="id"/>
-    </table>
-    <table name="spedizione_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="stati" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3RhdGlfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="descrizione" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="stati_pkey" columns="id"/>
-      <exported-key name="ordini_stato_stato_foreign" table="ordini_stato" schema="public" catalog="holistic" columns="stato"/>
-    </table>
-    <table name="stati_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="tipopagamento" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGlwb3BhZ2FtZW50b19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="pagamento" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="informazioni" sqlType="varchar" precision="2000" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="tipopagamento_pkey" columns="id"/>
-      <exported-key name="ordini_testa_tipo_pagamento_foreign" table="ordini_testa" schema="public" catalog="holistic" columns="tipo_pagamento"/>
-      <exported-key name="sconti_tipopagamento_pagamento_foreign" table="sconti_tipopagamento" schema="public" catalog="holistic" columns="pagamento"/>
-    </table>
-    <table name="tipopagamento_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="utenti" schema="public" catalog="holistic" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXRlbnRpX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="username" sqlType="varchar" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="ruolo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="confermato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="codice_conferma" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="remember_token" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cancellato" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7" def="ZmFsc2U="/>
-      <column name="data_creazione" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_modifica" sqlType="timestamp" precision="22" scale="0" nullable="false" jdbcType="93" def="bm93KCk="/>
-      <column name="data_cancellazione" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="utenti_pkey" columns="id"/>
-      <foreign-key name="utenti_ruolo_foreign" columns="ruolo" ref-table="ruolo_utenti" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="clienti_utente_foreign" table="clienti" schema="public" catalog="holistic" columns="utente"/>
-      <exported-key name="ordini_testa_utente_foreign" table="ordini_testa" schema="public" catalog="holistic" columns="utente"/>
-      <index name="utenti_username_unique" unique="true" columns="username"/>
-    </table>
-    <table name="utenti_id_seq" schema="public" catalog="holistic" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="holistic" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">
       <prototype>

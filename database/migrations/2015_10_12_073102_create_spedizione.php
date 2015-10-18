@@ -1,4 +1,4 @@
-<?php
+43<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -22,6 +22,11 @@ class CreateSpedizione extends Migration
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate
             $table->timestamp('data_cancellazione')->nullable(); //data cancellazione
         });
+
+        DB::table('spedizione')->insert(
+            array(
+                array('spedizione' => 'spedizione da italia','costo' => 9.60,'massimale'=> 79.99),
+            ));
     }
 
     /**

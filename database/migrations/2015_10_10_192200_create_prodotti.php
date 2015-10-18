@@ -17,6 +17,8 @@ class CreateProdotti extends Migration
             $table->string('prodotto',200);
             $table->string('descrizione',1000);
             $table->decimal('prezzo',10,2)->defalt(0);
+            $table->integer('immagine')->unsigned();
+            $table->foreign('immagine')->references('id')->on('immagini');
             $table->boolean('cancellato')->default(false); //flag di cancellazione: true = cancellato, false = non cancellato, default = false
             $table->timestamp('data_creazione')->default(DB::raw('CURRENT_TIMESTAMP')); //data creazione default sysdate
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate

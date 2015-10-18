@@ -10,7 +10,8 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class Utente extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
+class Utente extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
+{
 
     use Authenticatable,
         Authorizable,
@@ -36,5 +37,12 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /** * Get the role that owns the user. */
+    public function post()
+    {
+        return $this->belongsTo('App\Models\Ruolo','ruolo');
+    }
+
 
 }

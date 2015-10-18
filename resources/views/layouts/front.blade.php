@@ -68,11 +68,35 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about"><i class="fa fa-facebook"></i> FACEBOOK</a></li>
+                @if (!Auth::check())
+                <li class="dropdown hidden-xs hidden-sm">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! Lang::choice('messages.menu_accedi',0) !!}<span class="caret"></span></a>
+                    <div class="dropdown-menu">
+                        @foreach($errors->all() as $error)
+                            <p class="alert alert-danger" style="font-size: 12px;">{!!$error!!}</p>
+                        @endforeach
+                        {!!Form::open(['url'=>'auth/login','class'=>'form-signin','style'=>'margin-top:10px'])!!}
+                        <label for="inputEmail" class="sr-only">Email</label>
+                        {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        {!! Form::password('password',['class'=>'form-control']) !!}
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
+                            </label>
+                        </div>
+                        {!!Form::submit(Lang::choice('messages.pulsante_accedi',0),['class'=>'btn btn-lg btn-default btn-block'])!!}
+                        <a href="{!! url('auth/register')!!}" class="btn btn-default btn-lg btn-block">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
+                        {!!Form::close()!!}
+
+                    </div>
+                </li>
+                @endif
+                <li><a href="#about"><i class="fa fa-facebook"></i><span class="hidden-sm"> FACEBOOK</span></a></li>
                 @if (App::getLocale() == 'it')
-                    <li><a href="{!! url('lang/en')!!}"><span class="flag-icon flag-icon-gb"></span> ENGLISH</a></li>
+                    <li><a href="{!! url('lang/en')!!}"><span class="flag-icon flag-icon-gb"></span><span class="hidden-sm"> ENGLISH</span></a></li>
                 @elseif (App::getLocale() == 'en')
-                    <li><a href="{!! url('lang/it')!!}"><span class="flag-icon flag-icon-it"></span> ITALIANO</a></li>
+                    <li><a href="{!! url('lang/it')!!}"><span class="flag-icon flag-icon-it"></span><span class="hidden-sm"> ITALIANO</span></a></li>
                 @endif
             </ul>
 

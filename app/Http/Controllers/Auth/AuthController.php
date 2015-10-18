@@ -81,14 +81,12 @@ class AuthController extends Controller {
     {
 
         $user = User::where('username', '=', $request->username)->first();
-        return redirect('/auth/login')->withErrors([
-            'email' => ($user->username) .' '.($user->password )
-        ]);
+
         if(isset($user)) {
-            if($user->password == md5($request->getPassword())) { // If their password is still MD5
-                $user->password = Hash::make($request->getPassword()); // Convert to new format
+            if($user->password == md5($request->password)) { // If their password is still MD5
+                $user->password = bcrypt($request->password); // Convert to new format
                 $user->save();
-                Auth::login($request->email);
+                $this->auth->login($request->username);
                 return redirect('/');
             }
         }

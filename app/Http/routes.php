@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('admin', 'DashBoardController@index');
-Route::get('debug',function(){
+Route::get('debug', function () {
     return view('debug');
 });
+
+Route::get('admin', 'DashBoardController@index');
+
 // Authentication routes...
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -35,13 +37,4 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
 });
 // Cambio linguaggio
-Route::get('lang/en', function () {
-    Session::put('language', 'en');
-    App::setLocale('en');
-    return view('index');
-});
-Route::get('lang/it', function () {
-    Session::put('language', 'it');
-    App::setLocale('it');
-    return view('index');
-});
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);

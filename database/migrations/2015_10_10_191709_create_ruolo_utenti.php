@@ -19,6 +19,12 @@ class CreateRuoloUtenti extends Migration {
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate
             $table->timestamp('data_cancellazione')->nullable(); //data cancellazione 
         });
+
+        DB::table('ruolo_utenti')->insert(
+            array(
+                array('ruolo' => 'admin'),
+                array('ruolo' => 'user'),
+            ));
     }
 
     /**

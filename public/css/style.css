@@ -85,6 +85,7 @@ p {
 
 .form-signin {
     max-width: 330px;
+    min-width: 250px;
     padding: 15px;
     margin: 0 auto;
 }
@@ -102,7 +103,7 @@ p {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px;
-    font-size: 16px;
+    font-size: 12px;
 }
 .form-signin .form-control:focus {
     z-index: 2;
