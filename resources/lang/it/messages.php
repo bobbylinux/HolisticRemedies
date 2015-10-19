@@ -117,5 +117,10 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'username' => 'Indirizzo e-mail',
     'username_c' => 'Inserisci di nuovo per confermare',
     'password' => 'Password',
-    'password_c' => 'Inserisci di nuovo per confermare'
+    'password_c' => 'Inserisci di nuovo per confermare',
+    
+    'titolo_newsletter' => 'Iscriviti alla nostra mailing list',
+
+    'newsletter' => 'Se siete interessati a ricevere informazioni da Holistic Remedies<br>iscrivetevi alla nostra mailing list.',
+
 );

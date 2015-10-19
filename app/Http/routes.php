@@ -15,11 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-Route::get('debug', function () {
-    return view('debug');
-});
-
 Route::get('admin', 'DashBoardController@index');
 
 // Authentication routes...
@@ -37,4 +32,4 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
 });
 // Cambio linguaggio
-Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguagesController@switchLang']);

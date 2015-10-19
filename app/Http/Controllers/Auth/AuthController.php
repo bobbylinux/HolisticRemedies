@@ -86,14 +86,14 @@ class AuthController extends Controller {
             if($user->password == md5($request->password)) { // If their password is still MD5
                 $user->password = bcrypt($request->password); // Convert to new format
                 $user->save();
-                $this->auth->login($request->username);
-                return redirect('/');
             }
         }
 
         if ($this->auth->attempt($request->only('username', 'password')))
         {
-
+            if ($this->auth->user()->ruolo == 1) {
+                return redirect('admin');
+            }
             return redirect('/');
         }
         return redirect('/auth/login')->withErrors([

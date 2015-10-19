@@ -1,0 +1,134 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #62643f;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/*SMALL SCREENS*/
+@media(max-width:767px){
+    .intro-section {
+        padding-top: 50px;
+    }
+}
+
+@media(min-width:767px) {
+    .navbar-front {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse-front {
+        padding: 0;
+    }
+
+    .intro-section {
+        padding-top: 150px;
+    }
+}
+
+@font-face {
+    font-family: 'Fanwood';
+    src: url('../fonts/fanwood-webfont.eot?') format('eot'), url('../fonts/fanwood-webfont.woff') format('woff'), url('../fonts/fanwood-webfont.ttf') format('truetype');
+}
+
+.intro-section {
+    min-height: 100%;
+    text-align: center;
+}
+
+.tips-section {
+    font-family: 'Fanwood';
+    min-height: 100%;
+    padding-top: 150px;
+    text-align: left;
+    background: #edebd6;
+}
+
+.ingredients-section {
+    min-height: 100%;
+    font-family: 'Fanwood';
+    padding-top: 150px;
+    text-align: left;
+    background: #edebd6;
+}
+
+.contact-section {
+    min-height: 100%;
+    font-family: 'Fanwood';
+    padding-top: 150px;
+    text-align: left;
+    background: #edebd6;
+}
+
+.navbar-front {
+    background: #edebd6;
+}
+
+.video-wrapper {
+    margin-top:10%;
+}
+
+p {
+    font-size: 25px;
+}
+
+#panel-newsletter {
+    background: #edebd6;
+}
+
+.form-signin {
+    max-width: 330px;
+    min-width: 250px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 12px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dropdown-login {
+    background: #edebd6;
+    padding: 10px;
+}
+
+.dropdown-langs {
+    background: #edebd6;
+    padding: 10px;
+}
+
+a:link  {
+    color: #62643f;
+}

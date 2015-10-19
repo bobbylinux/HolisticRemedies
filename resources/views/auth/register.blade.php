@@ -1,5 +1,5 @@
-@extends('layouts.front')
-@section('intro')
+@extends('layouts.basic')
+@section('content')
     <div class="col-md-4 col-md-offset-4 col-xs-8">
         {!!Form::open(array('url'=>'auth/register','method'=>'POST'))!!}
         <div class="panel panel-default">
