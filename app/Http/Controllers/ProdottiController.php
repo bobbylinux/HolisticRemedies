@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect as Redirect;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Prodotto as Prodotto;
@@ -114,7 +114,7 @@ class ProdottiController extends Controller {
             'didascalia' => $request->get('titolo_prodotto')
         );
         //validate images
-        if (isset($request->file('immagine_prodotto'))) {
+        if (null !== $request->file('immagine_prodotto')) {
             if (!$this->immagine->validate($data)) {
                 $errors = $this->prodotto->getErrors();
                 return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
@@ -126,7 +126,7 @@ class ProdottiController extends Controller {
             return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
         }
         
-        if (isset($request->file('immagine_prodotto'))) {
+        if (null !==$request->file('immagine_prodotto')) {
             $img_id = $this->immagine->store($data);
         }
         $data['immagine'] = $img_id;

@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator as Validator;
 
-class ScontoTipoPagamento extends Model
+class ScontoTipoPagamento extends BaseModel
 {
     protected $table = "sconti_tipopagamento";
 
@@ -21,7 +22,7 @@ class ScontoTipoPagamento extends Model
      *
      */
     private $rules = array(
-        'pagamento' => 'required|min:0',
+        'pagamento' => 'required|min:1',
         'sconto' => 'required|min:0'
     );
 
@@ -38,14 +39,14 @@ class ScontoTipoPagamento extends Model
      */
     public function validate($data)
     {
-        /*$validation = Validator::make($data, $this->rules, $this->messages);
+        $validation = Validator::make($data, $this->rules, $this->messages);
 
         if ($validation->fails()) {
             // set errors and return false
             $this->errors = $validation->errors();
             return false;
         }
-        */
+
         return true;
     }
 
@@ -69,5 +70,26 @@ class ScontoTipoPagamento extends Model
         $this->pagamento    = $data['pagamento'];
         $this->sconto       = $data['sconto'];
         self::save();
+    }
+
+    /**
+     * The function for update in database from view
+     *
+     * @data array
+     */
+    public function edit($data)
+    {
+        $this->pagamento    = $data['pagamento'];
+        $this->sconto       = $data['sconto'];
+        $this->save();
+    }
+
+    /**
+     * The relationships
+     *
+     */
+    public function TipoPagamento() {
+
+        return  $this->belongsTo('App\Models\TipoPagamento','pagamento'); // default
     }
 }

@@ -25,7 +25,7 @@
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                 <tr>
-                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_pagamento_index_quantita_massima',0) }}</th>
+                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_pagamento_create_tipo_pagamento',0) }}</th>
                     <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_pagamento_index_sconto',0) }}</th>
                     <th class="col-lg-3 col-md-4">{{ Lang::choice('messages.dash_prodotti_index_azioni_nome',0) }}</th>
                 </tr>
@@ -33,11 +33,11 @@
                 <tbody>
                 @foreach($scontipagamento as $scontopagamento)
                     <tr>
-                        <td>{{$scontopagamento['tipo_pagamento']}}</td>
+                        <td>{{$scontopagamento['pagamento']}}</td>
                         <td>{{$scontopagamento['sconto']}}</td>
                         <td>
-                            <a href="{{ url('/admin/sconti/pagamento/'.$prodotto['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
-                            <a href="{{ url('/admin/sconti/pagamento/'.$prodotto['id']) }}" class="btn btn-danger btn-cancella"
+                            <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
+                            <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id']) }}" class="btn btn-danger btn-cancella"
                                data-token="<?= csrf_token() ?>">{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
                         </td>
                     </tr>

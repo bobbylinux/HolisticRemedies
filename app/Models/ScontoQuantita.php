@@ -42,14 +42,13 @@ class ScontoQuantita extends BaseModel
      */
     public function validate($data)
     {
-        /*$validation = Validator::make($data, $this->rules, $this->messages);
+        $validation = Validator::make($data, $this->rules, $this->messages);
 
         if ($validation->fails()) {
             // set errors and return false
             $this->errors = $validation->errors();
             return false;
         }
-        */
         return true;
     }
 
@@ -74,5 +73,18 @@ class ScontoQuantita extends BaseModel
         $this->quantita_max = $data['quantita_max'];
         $this->sconto       = $data['sconto'];
         self::save();
+    }
+
+    /**
+     * The function for update in database from view
+     *
+     * @data array
+     */
+    public function edit($data)
+    {
+        $this->quantita_min = $data['quantita_min'];
+        $this->quantita_max = $data['quantita_max'];
+        $this->sconto       = $data['sconto'];
+        $this->save();
     }
 }

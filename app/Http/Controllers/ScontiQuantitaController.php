@@ -99,7 +99,21 @@ class ScontiQuantitaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array(
+            'quantita_min'  => $request->get('quantita_min'),
+            'quantita_max'  => $request->get('quantita_max'),
+            'sconto'        => $request->get('sconto')
+        );
+
+        $scontoQuantita = $this->scontoQuantita->find($id);
+
+        if ($scontoQuantita->validate($data)) {
+            $scontoQuantita->edit($data);
+            return Redirect::action('ScontiQuantitaController@index');
+        } else {
+            $errors = $this->scontoQuantita->getErrors();
+            return Redirect::action('ScontiQuantitaController@edit')->withInput()->withErrors($errors);
+        }
     }
 
     /**

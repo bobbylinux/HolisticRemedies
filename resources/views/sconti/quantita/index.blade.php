@@ -38,8 +38,8 @@
                         <td>{{@$scontoquantita['quantita_max']}}</td>
                         <td>{{@$scontoquantita['sconto']}}</td>
                         <td>
-                            <a href="{{ url('/admin/sconti/quantita/'.$prodotto['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
-                            <a href="{{ url('/admin/sconti/quantita/'.$prodotto['id']) }}" class="btn btn-danger btn-cancella"
+                            <a href="{{ url('/admin/sconti/quantita/'.$scontoquantita['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
+                            <a href="{{ url('/admin/sconti/quantita/'.$scontoquantita['id']) }}" class="btn btn-danger btn-cancella"
                                data-token="<?= csrf_token() ?>">{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
                         </td>
                     </tr>

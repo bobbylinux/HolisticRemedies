@@ -69,7 +69,7 @@
                 {!! Form::submit(Lang::choice('messages.dash_sconti_quantita_create_pulsante_crea',0), array('class' =>'btn btn-success'))!!}
             </div>
         </div>
-    </div>z                
+    </div>
     {!!Form::close()!!}
 @stop
 
