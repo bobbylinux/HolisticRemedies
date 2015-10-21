@@ -101,6 +101,7 @@ return array(
     'dash_prodotti_create_prodotto_immagine' => 'Immagine',
     'dash_prodotti_create_prodotto_prezzo' => 'Prezzo',
     'dash_prodotti_create_pulsante_crea' => 'Salva',
+    'dash_prodotti_edit_prodotto_immagine' => 'Cambia Immagine',
     'dash_prodotti_edit_titolo' => 'Modifica Prodotto',
     'dash_prodotti_edit_pulsante_modifica' => 'Modifica Prodotto',
     'dash_sconti_quantita_index_titolo' => 'Gestione sconti quantità',

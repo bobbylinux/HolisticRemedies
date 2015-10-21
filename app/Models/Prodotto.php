@@ -78,24 +78,25 @@ class Prodotto extends BaseModel
         $this->prodotto = $data['prodotto'];
         $this->descrizione = $data['descrizione'];
         $this->prezzo = $data['prezzo'];
+        $this->immagine = $data['immagine'];
 
-        $nomeImmagine = time() . $data['immagine']->getClientOriginalName();
-
-        /*save file on filesystem*/
-        $data['immagine']->move(
-            base_path() . '/public/uploads/', $nomeImmagine
-        );
-
-        /*save file information on database*/
-        $this->immagine = new Immagine();
-        $this->immagine->nome = $nomeImmagine;
-        $this->immagine->didascalia = $data['prodotto'];
-        $this->push();
+        self::save();
     }
-
-    public function immagine()
+    
+    /**
+     * The function for update in database from view
+     *
+     * @data array
+     */
+    public function edit($data)
     {
-        return $this->hasOne('App\Models\Immagine','prodotto');
+        $this->prodotto = $data['prodotto'];
+        $this->descrizione = $data['descrizione'];
+        $this->prezzo = $data['prezzo'];
+        $this->immagine = $data['immagine'];
+
+        $this->save();
     }
+
 
 }
