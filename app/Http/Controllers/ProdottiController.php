@@ -31,7 +31,7 @@ class ProdottiController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $prodotti = $this->prodotto->where('cancellato', '=', 0)->orderBy('prodotto', 'asc')->paginate(10); /* recupero tutti i prodotti dalla classe modello */
+        $prodotti = $this->prodotto->where('cancellato', '=', false)->orderBy('prodotto', 'asc')->paginate(10); /* recupero tutti i prodotti dalla classe modello */
         return view('prodotti.index', compact('prodotti'));
     }
 

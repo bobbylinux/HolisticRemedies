@@ -99,6 +99,15 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_sconti_pagamento_index_azioni_nome' => 'Azioni',
     'dash_sconti_pagamento_edit_titolo' => 'Modifica Sconto',
     'dash_sconti_pagamento_edit_pulsante_modifica' => 'Modifica Sconto',
+    'dash_clienti_index_titolo' => 'Gestione Clienti',
+    'dash_clienti_index_pulsante_nuovo' => 'Nuovo Cliente',
+    'dash_clienti_index_cognome' => 'Cognome',
+    'dash_clienti_index_nome' => 'Nome',
+    'dash_clienti_index_societa' => 'Società',
+    'dash_clienti_index_username' => 'Username',
+    'dash_clienti_index_attivo' => 'Attivo',
+    'dash_clienti_index_ruolo' => 'Ruolo',
+    'dash_clienti_index_azioni_nome' => 'Azioni',
 
     'menu_accedi' => 'ACCEDI',
 

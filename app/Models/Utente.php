@@ -38,11 +38,24 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      */
     protected $hidden = ['password', 'remember_token'];
 
-    /** * Get the role that owns the user. */
-    public function post()
+    /**
+     * set the relationships
+     *
+     *
+     */
+    public function ruolo()
     {
         return $this->belongsTo('App\Models\Ruolo','ruolo');
     }
-
+    
+    /**
+     * set the relationships
+     *
+     *
+     */
+    public function cliente()
+    {
+        return $this->hasOne('App\Models\Cliente','utente');
+    }
 
 }

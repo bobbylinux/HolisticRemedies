@@ -42,7 +42,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">HOLISTIC</a>
+                    <a class="navbar-brand" href="/">HOLISTIC REMEDIES</a>
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
@@ -101,8 +101,8 @@
                         <li @if(Request::url() === url('/admin/prodotti')) class="active" @endif >
                              <a href="{{ url('/admin/prodotti') }}"><i class="fa fa-fw fa-th-large"></i> Prodotti</a>
                         </li>
-                        <li @if(Request::url() === url('/admin/utenti')) class="active" @endif >
-                             <a href="{{ url('/admin/utenti') }}"><i class="fa fa-fw fa-user"></i> Utenti</a>
+                        <li @if(Request::url() === url('/admin/clienti')) class="active" @endif >
+                             <a href="{{ url('/admin/clienti') }}"><i class="fa fa-fw fa-user"></i> Clienti</a>
                         </li>
                         <li>
                             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-money"></i> Sconti <i class="fa fa-fw fa-caret-down"></i></a>

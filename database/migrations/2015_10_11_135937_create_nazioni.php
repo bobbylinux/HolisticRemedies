@@ -14,7 +14,7 @@ class CreateNazioni extends Migration
     {
         Schema::create('nazioni', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nomefile',255);
+            $table->string('nazione',255);
             $table->date('inizio_validita');
             $table->date('fine_validita');
             $table->boolean('cancellato')->default(false); //flag di cancellazione: true = cancellato, false = non cancellato, default = false

@@ -5,9 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Cliente;
 
 class ClientiController extends Controller
 {
+    
+    protected $cliente;
+    
+    /**
+     * Constructor for Dipendency Injection
+     *
+     * @return none
+     *
+     */
+    public function __construct(Cliente $cliente) {
+        $this->cliente = $cliente;
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +29,8 @@ class ClientiController extends Controller
      */
     public function index()
     {
-        //
+        $clienti = $this->cliente->with('utente')->where('cancellato','=',false)->orderby('cognome','asc')->paginate(10);  
+        return view('clienti.index',compact('clienti'));
     }
 
     /**

@@ -30,6 +30,7 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::resource('admin/prodotti', 'ProdottiController');
     Route::resource('admin/sconti/quantita', 'ScontiQuantitaController');
     Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
+    Route::resource('admin/clienti', 'ClientiController');
 });
 // Cambio linguaggio
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguagesController@switchLang']);
