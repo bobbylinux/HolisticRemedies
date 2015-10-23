@@ -88,7 +88,7 @@ class ScontoTipoPagamento extends BaseModel
      * The relationships
      *
      */
-    public function TipoPagamento() {
+    public function tipiPagamento() {
 
         return  $this->belongsTo('App\Models\TipoPagamento','pagamento'); // default
     }

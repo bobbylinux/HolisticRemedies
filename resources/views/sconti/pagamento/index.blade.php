@@ -33,8 +33,8 @@
                 <tbody>
                 @foreach($scontipagamento as $scontopagamento)
                     <tr>
-                        <td>{{$scontopagamento['pagamento']}}</td>
-                        <td>{{$scontopagamento['sconto']}}</td>
+                        <td>{{$scontopagamento->tipiPagamento->pagamento}}</td>
+                        <td>{{$scontopagamento->sconto}}</td>
                         <td>
                             <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
                             <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id']) }}" class="btn btn-danger btn-cancella"

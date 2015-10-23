@@ -33,7 +33,7 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function index()
     {
-        $scontipagamento = $this->scontoPagamento->where('cancellato', '=', false)->orderBy('pagamento', 'asc')->paginate(10);/* recupero tutti i prodotti dalla classe modello */
+        $scontipagamento = $this->scontoPagamento->with('tipiPagamento')->where('cancellato', '=', false)->orderBy('pagamento', 'asc')->paginate(10);/* recupero tutti i prodotti dalla classe modello */
         return view('sconti.pagamento.index',compact('scontipagamento'));
     }
 

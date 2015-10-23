@@ -29,7 +29,7 @@ class ClientiController extends Controller
      */
     public function index()
     {
-        $clienti = $this->cliente->with('utente')->where('cancellato','=',false)->orderby('cognome','asc')->paginate(10);  
+        $clienti = $this->cliente->with('utenti.ruoli')->where('cancellato','=',false)->orderby('cognome','asc')->paginate(20);  
         return view('clienti.index',compact('clienti'));
     }
 

@@ -14,11 +14,17 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
             
-        //$this->call(NazioniTableSeeder::class);
-        //$this->call(RuoloUtentiTableSeeder::class);
-        //$this->call(UtentiTableSeeder::class);
+        $this->call(NazioniTableSeeder::class);
+        $this->call(RuoloUtentiTableSeeder::class);
+        $this->call(UtentiTableSeeder::class);
         $this->call(ClientiTableSeeder::class);
-        // $this->call(UserTableSeeder::class);
+        $this->call(ImmaginiTableSeeder::class);
+        $this->call(ProdottiTableSeeder::class);
+        $this->call(SpedizioneTableSeeder::class);
+        $this->call(TipoPagamentoTableSeeder::class);
+        $this->call(ScontiPagamentoTableSeeder::class);
+        $this->call(ScontiQuantitaTableSeeder::class);
+        $this->call(StatiTableSeeder::class);
 
         Model::reguard();
     }

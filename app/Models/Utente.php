@@ -43,7 +43,7 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      *
      *
      */
-    public function ruolo()
+    public function ruoli()
     {
         return $this->belongsTo('App\Models\Ruolo','ruolo');
     }
@@ -53,7 +53,7 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      *
      *
      */
-    public function cliente()
+    public function clienti()
     {
         return $this->hasOne('App\Models\Cliente','utente');
     }

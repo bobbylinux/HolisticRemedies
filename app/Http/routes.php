@@ -26,11 +26,12 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // Gestione backoffice
-Route::group(array('middleware' => 'auth'), function() {
+Route::group(array('middleware' => 'admin'), function() {
     Route::resource('admin/prodotti', 'ProdottiController');
     Route::resource('admin/sconti/quantita', 'ScontiQuantitaController');
     Route::resource('admin/sconti/pagamento', 'ScontiTipoPagamentoController');
     Route::resource('admin/clienti', 'ClientiController');
+    Route::resource('admin/ordini', 'OrdiniController');
 });
 // Cambio linguaggio
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguagesController@switchLang']);

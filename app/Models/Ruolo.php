@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ruolo extends Model
+class Ruolo extends BaseModel
 {
     protected $table = "ruolo_utenti";
 

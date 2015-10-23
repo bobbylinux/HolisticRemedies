@@ -9,7 +9,7 @@ class Cliente extends BaseModel
      *
      *
      */
-    public function utente()
+    public function utenti()
     {
         return $this->belongsTo('App\Models\Utente','utente');
     }
