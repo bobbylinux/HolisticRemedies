@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\ScontoQuantita;
+use Illuminate\Support\Facades\File;
 
 class ScontiQuantitaTableSeeder extends Seeder {
 
@@ -10,12 +12,17 @@ class ScontiQuantitaTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        DB::table('sconti_quantita')->insert(
-                array(
-                    array('quantita_min' => 2, 'quantita_max' => 3, 'sconto' => 5),
-                    array('quantita_min' => 4, 'quantita_max' => 5, 'sconto' => 8),
-                    array('quantita_min' => 6, 'quantita_max' => 0, 'sconto' => 10),
-        ));
+        $json = File::get(database_path() . '/data/sconto_quantita.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            ScontoQuantita::create(array(
+                'id' => $obj->id,
+                'quantita_min' => $obj->quantita_min,
+                'quantita_max' => $obj->quantita_max,
+                'sconto'       => $obj->sconto
+            ));
+        }
+        $this->command->info("tabella sconti_quantita popolata");
     }
 
 }

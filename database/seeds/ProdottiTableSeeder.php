@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Prodotto;
+use Illuminate\Support\Facades\File;
 
 class ProdottiTableSeeder extends Seeder {
 
@@ -9,14 +11,19 @@ class ProdottiTableSeeder extends Seeder {
      *
      * @return void
      */
-    public function run() {
-        DB::table('prodotti')->insert(
-                array(
-                    array('id' => 21, 'prodotto' => 'Capsule 100 - Caps 100 pcs', 'descrizione' => 'Confezione da 100<br>Capsule Caps 100 pcs.', 'prezzo' => 35),
-                    array('id' => 22, 'prodotto' => 'Capsule 200 - Caps 200 pcs', 'descrizione' => 'Confezione da 200<br>Capsule Caps 200 pcs.', 'prezzo' => 55),
-                    array('id' => 23, 'prodotto' => 'Polvere 60 gr - Powder 60 gr', 'descrizione' => 'Confezione Polvere 60 grammi<br>Powder 60 grams', 'prezzo' => 32),
-                    array('id' => 24, 'prodotto' => 'Polvere 120 gr - Powder 120 gr', 'descrizione' => 'Confezione Polvere 120 grammi<br>Powder 120 grams', 'prezzo' => 36),
-        ));
+    public function run()
+    {
+        $json = File::get(database_path() . '/data/prodotti.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            Prodotto::create(array(
+                'id' => $obj->id,
+                'prodotto' => $obj->prodotto,
+                'descrizione' => $obj->descrizione,
+                'prezzo' => $obj->prezzo,
+                'immagine' => $obj->immagine
+            ));
+        }
+        $this->command->info("tabella prodotti popolata");
     }
-
 }

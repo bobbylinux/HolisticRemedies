@@ -98,5 +98,15 @@ class Prodotto extends BaseModel
         $this->save();
     }
 
+    /*
+     *
+     * set the relationships
+     *
+     * */
+    public function ordini() {
+
+        return $this->belongsToMany('App\User\OrdineTesta', 'ordini_dettaglio','prodotto','ordine');
+    }
+
 
 }

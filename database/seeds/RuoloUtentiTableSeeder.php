@@ -1,16 +1,25 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Ruolo;
+use Illuminate\Support\Facades\File;
 
-class RuoloUtentiTableSeeder extends Seeder {
+class RuoloUtentiTableSeeder extends Seeder
+{
 
-    public function run() {
-        DB::table('ruolo_utenti')->insert(
-                array(
-                    array('id' => '1', 'ruolo' => 'amministatore'),
-                    array('id' => '2', 'ruolo' => 'utente standard'),
-        ));
+    public function run()
+    {
+        DB::table('ruolo_utenti')->delete();
+        $json = File::get(database_path() . '/data/ruolo_utenti.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            Ruolo::create(array(
+                'id' => $obj->id,
+                'ruolo' => $obj->ruolo
+            ));
+        }
+
+        $this->command->info("tabella ruolo_utenti popolata");
     }
 
 }

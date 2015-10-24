@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stato extends Model
+class Stato extends BaseModel
 {
-    //
+    protected $table = "stati";
 }

@@ -12,20 +12,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Eloquent::unguard();
+        DB::connection()->disableQueryLog();
         Model::unguard();
-            
-        $this->call(NazioniTableSeeder::class);
-        $this->call(RuoloUtentiTableSeeder::class);
-        $this->call(UtentiTableSeeder::class);
-        $this->call(ClientiTableSeeder::class);
-        $this->call(ImmaginiTableSeeder::class);
-        $this->call(ProdottiTableSeeder::class);
-        $this->call(SpedizioneTableSeeder::class);
-        $this->call(TipoPagamentoTableSeeder::class);
-        $this->call(ScontiPagamentoTableSeeder::class);
-        $this->call(ScontiQuantitaTableSeeder::class);
-        $this->call(StatiTableSeeder::class);
-
+        DB::table('spedizione')->delete();
+        DB::table('stati')->delete();
+        DB::table('prodotti')->delete();
+        DB::table('immagini')->delete();
+        DB::table('sconti_quantita')->delete();
+        DB::table('sconti_tipopagamento')->delete();
+        DB::table('tipopagamento')->delete();
+        DB::table('clienti')->delete();
+        DB::table('utenti')->delete();
+        DB::table('ruolo_utenti')->delete();
+        DB::table('nazioni')->delete();
+        $this->call('NazioniTableSeeder');
+        $this->call('RuoloUtentiTableSeeder');
+        $this->call('UtentiTableSeeder');
+        $this->call('ClientiTableSeeder');
+        $this->call('TipoPagamentoTableSeeder');
+        $this->call('ScontiQuantitaTableSeeder');
+        $this->call('ScontiPagamentoTableSeeder');
+        $this->call('ImmaginiTableSeeder');
+        $this->call('ProdottiTableSeeder');
+        $this->call('StatiTableSeeder');
+        $this->call('SpedizioneTableSeeder');
         Model::reguard();
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Stato;
+use Illuminate\Support\Facades\File;
 
 class StatiTableSeeder extends Seeder
 {
@@ -11,12 +13,14 @@ class StatiTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('stati')->insert(
-                array(
-                    array('stato' => '0', 'descrizione' => 'ANNULLATO'),
-                    array('stato' => '1', 'descrizione' => 'IN ATTESA PAGAMENTO'),
-                    array('stato' => '2', 'descrizione' => 'LAVORAZIONE'),
-                    array('stato' => '3', 'descrizione' => 'EVASO')
-        ));
+        $json = File::get(database_path() . '/data/stati.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            Stato::create(array(
+                'id' => $obj->id,
+                'descrizione' => $obj->descrizione,
+            ));
+        }
+        $this->command->info("tabella stati popolata");
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\OrdineTesta ;
+use Illuminate\Support\Facades\File;
 
 class OrdiniTestaTableSeeder extends Seeder
 {

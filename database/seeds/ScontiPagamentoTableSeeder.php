@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\ScontoTipoPagamento;
+use Illuminate\Support\Facades\File;
 
 class ScontiPagamentoTableSeeder extends Seeder
 {
@@ -11,13 +13,15 @@ class ScontiPagamentoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sconti_tipopagamento')->insert(
-                array(
-                    array('pagamento' => 1, 'sconto' => 0),
-                    array('pagamento' => 2, 'sconto' => 7),
-                    array('pagamento' => 3, 'sconto' => 7),
-                    array('pagamento' => 4, 'sconto' => 7),
-        ));
-        
+        $json = File::get(database_path() . '/data/sconto_tipopagamento.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            ScontoTipoPagamento::create(array(
+                'id' => $obj->id,
+                'pagamento' => $obj->pagamento,
+                'sconto' => $obj->sconto
+            ));
+        }
+        $this->command->info("tabella sconti_tipopagamento popolata");
     }
 }

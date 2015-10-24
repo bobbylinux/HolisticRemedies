@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Spedizione;
+use Illuminate\Support\Facades\File;
 
 class SpedizioneTableSeeder extends Seeder
 {
@@ -11,9 +13,16 @@ class SpedizioneTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('spedizione')->insert(
-                array(
-                    array('id' => '1', 'spedizione' => 'spedizione da Italia','costo'=>9.60,'massimale'=>79.99)
-        ));
+        $json = File::get(database_path() . '/data/spedizione.json');
+        $data = json_decode($json);
+        foreach ($data as $obj) {
+            Spedizione::create(array(
+                'id' => $obj->id,
+                'spedizione' => $obj->spedizione,
+                'costo' => $obj->costo,
+                'massimale' => $obj->massimale
+            ));
+        }
+        $this->command->info("tabella spedizione popolata");
     }
 }

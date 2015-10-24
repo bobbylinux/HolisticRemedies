@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spedizione extends BaseModel
+class Nazioni extends BaseModel
 {
-    protected $table = "spedizione";
+    protected $table = "nazioni";
+
 }
