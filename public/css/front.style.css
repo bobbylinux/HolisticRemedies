@@ -38,6 +38,10 @@ html {
     src: url('../fonts/fanwood-webfont.eot?') format('eot'), url('../fonts/fanwood-webfont.woff') format('woff'), url('../fonts/fanwood-webfont.ttf') format('truetype');
 }
 
+.img-responsive-sm {
+    margin: 0 auto;
+}
+
 .intro-section {
     min-height: 100%;
     text-align: center;

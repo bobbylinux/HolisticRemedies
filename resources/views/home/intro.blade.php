@@ -3,11 +3,11 @@
         @if (App::getLocale() == 'it')
         <img class="img-responsive hidden-sm hidden-xs" src="{!!url('/img/intro.png')!!}">
         <img class="img-responsive hidden-md hidden-xs hidden-lg" src="{!!url('/img/intro-sm.png')!!}">
-        <img class="img-responsive hidden-sm hidden-md hidden-lg" src="{!!url('/img/intro-xs.png')!!}">
+        <img class="img-responsive hidden-sm hidden-md hidden-lg img-responsive-sm" src="{!!url('/img/intro-xs.png')!!}">
         @elseif (App::getLocale() == 'en')
         <img class="img-responsive hidden-sm hidden-xs" src="{!!url('/img/intro-en.png')!!}">
         <img class="img-responsive hidden-md hidden-xs hidden-lg" src="{!!url('/img/intro-sm-en.png')!!}">
-        <img class="img-responsive hidden-sm hidden-md hidden-lg" src="{!!url('/img/intro-xs-en.png')!!}">
+        <img class="img-responsive hidden-sm hidden-md hidden-lg img-responsive-sm" src="{!!url('/img/intro-xs-en.png')!!}">
         @endif
     </div>
 </div>
