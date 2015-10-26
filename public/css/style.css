@@ -49,6 +49,7 @@ html {
     padding-top: 150px;
     text-align: left;
     background: #edebd6;
+    font-size: 25px;
 }
 
 .ingredients-section {
@@ -57,9 +58,10 @@ html {
     padding-top: 150px;
     text-align: left;
     background: #edebd6;
+    font-size: 25px;
 }
 
-.contact-section {
+.shop-section {
     min-height: 100%;
     font-family: 'Fanwood';
     padding-top: 150px;
@@ -75,9 +77,6 @@ html {
     margin-top:10%;
 }
 
-p {
-    font-size: 25px;
-}
 
 #panel-newsletter {
     background: #edebd6;

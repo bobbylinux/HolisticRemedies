@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrdineVettura extends BaseModel
 {
-    protected $table = "ordini_stato";
+    protected $table = "ordini_vettura";
 }

@@ -49,6 +49,7 @@ html {
     padding-top: 150px;
     text-align: left;
     background: #edebd6;
+    font-size: 25px;
 }
 
 .ingredients-section {
@@ -57,14 +58,16 @@ html {
     padding-top: 150px;
     text-align: left;
     background: #edebd6;
+    font-size: 25px;
 }
 
-.contact-section {
+.shop-section {
     min-height: 100%;
     font-family: 'Fanwood';
     padding-top: 150px;
     text-align: left;
     background: #edebd6;
+    padding-bottom: 150px;
 }
 
 .navbar-front {
@@ -75,9 +78,6 @@ html {
     margin-top:10%;
 }
 
-p {
-    font-size: 25px;
-}
 
 #panel-newsletter {
     background: #edebd6;
@@ -119,16 +119,12 @@ p {
     border-top-right-radius: 0;
 }
 
-.dropdown-login {
-    background: #edebd6;
-    padding: 10px;
+.thumbnail{
+    height:350px;
 }
 
-.dropdown-langs {
-    background: #edebd6;
-    padding: 10px;
-}
-
-a:link  {
-    color: #62643f;
+.jumbotron {
+    background: url("../img/shop-jumbo.png")  no-repeat center center;
+    color: #FFF;
+    font-size: 18px;
 }

@@ -1,23 +1,22 @@
 @extends('layouts.back')
 @section('content')
     <div class="page-header">
-        <h2>{{ Lang::choice('messages.dash_sconti_quantita_index_titolo',0) }}</h2><a href="{{ url('/admin/sconti/quantita/create') }}"
-                                                                               class="btn btn-success">{{ Lang::choice('messages.dash_sconti_quantita_index_pulsante_nuovo',0) }}</a>
+        <h2>{{ Lang::choice('messages.dash_ordini_index_titolo',0) }}</h2>
     </div>
-    <div class="col-md-8 col-md-offset-2">
+    <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            {{ $scontiquantita->render() }}
+            <div class="col-md-8 col-md-offset-2">
+                {!! $ordini->render() !!}
+            </div>
         </div>
     </div>
+
     <ol class="breadcrumb">
         <li class="active">
             <i class="fa fa-dashboard"></i>  <a href="{{url('admin')}}">Pannello di controllo</a>
         </li>
         <li class="active">
-            <i class="fa fa-money"></i> Sconti
-        </li>
-        <li class="active">
-             Quantità
+            <i class="fa fa-money"></i> Ordini
         </li>
     </ol>
     <div class="panel-body">
@@ -25,22 +24,29 @@
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                 <tr>
-                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_quantita_index_quantita_massima',0) }}</th>
-                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_quantita_index_quantita_minima',0) }}</th>
-                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_sconti_quantita_index_sconto',0) }}</th>
-                    <th class="col-lg-3 col-md-4">{{ Lang::choice('messages.dash_prodotti_index_azioni_nome',0) }}</th>
+                    <th class="col-lg-1 col-md-2">{{ Lang::choice('messages.dash_ordini_index_numero_ordine',0) }}</th>
+                    <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_ordini_index_data_ordine',0) }}</th>
+                    <th class="col-lg-1 col-md-2">{{ Lang::choice('messages.dash_ordini_index_costo_ordine',0) }}</th>
+                    <th class="col-lg-4 col-md-2">{{ Lang::choice('messages.dash_ordini_index_cliente',0) }}</th>
+                    <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_ordini_index_stato',0) }}</th>
+                    <th class="col-lg-1 col-md-2">{{ Lang::choice('messages.dash_ordini_index_azioni_nome',0) }}</th>
+
+
                 </tr>
                 <thead>
                 <tbody>
-                @foreach($scontiquantita as $scontoquantita)
+                @foreach($ordini as $ordine)
                     <tr>
-                        <td>{{@$scontoquantita['quantita_min']}}</td>
-                        <td>{{@$scontoquantita['quantita_max']}}</td>
-                        <td>{{@$scontoquantita['sconto']}}</td>
+                        <td>{{@$ordine->id}}</td>
+                        <td>{{@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))}}</td>
+                        <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }}</td>
+                        <td><?php echo $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' .$ordine->utenti->username?></td>
+                        @foreach($ordine->stati as $stato)
+                        <td>{{@$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}</td>
+                        @endforeach
                         <td>
-                            <a href="{{ url('/admin/sconti/quantita/'.$prodotto['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
-                            <a href="{{ url('/admin/sconti/quantita/'.$prodotto['id']) }}" class="btn btn-danger btn-cancella"
-                               data-token="<?= csrf_token() ?>">{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
+                            <a href="{{ url('/admin/clienti/'.$ordine['id'].'/edit') }}"><button type="button" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                            <a href="{{ url('/admin/clienti/'.$ordine['id']) }}" class="btn-elimina" data-token="<?= csrf_token() ?>"><button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a>
                         </td>
                     </tr>
                 @endforeach

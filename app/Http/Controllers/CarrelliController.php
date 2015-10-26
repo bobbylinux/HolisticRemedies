@@ -3,11 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Carrello;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Contracts\Auth\Guard;
 
 class CarrelliController extends Controller
 {
+
+    /**
+     * the model instance
+     * @var User
+     */
+    protected $carrello;
+    /**
+     * The Guard implementation.
+     *
+     * @var Authenticator
+     */
+    protected $auth;
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @param  Authenticator  $auth
+     * @return void
+     */
+    public function __construct(Guard $auth, Carrello $carrello)
+    {
+        $this->carrello = $carrello;
+        $this->auth = $auth;
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +43,8 @@ class CarrelliController extends Controller
      */
     public function index()
     {
-        //
+        $carrello = $this->carrello->where('utente','=',$this->auth->user()->id)->get();
+        return view('carrello.index',compact('carrello'));
     }
 
     /**
@@ -36,7 +65,41 @@ class CarrelliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = array(
+            'prodotto'  => $request->get('prodotto'),
+            'quantita'  => $request->get('quantita'),
+            'utente'        => $this->auth->user()->id
+        );
+
+        if ($this->carrello->validate($data)) {
+            //controllo conflitti nel carrello
+            $carrello = $this->carrello;
+            if ($carrello->where('prodotto','=',$request->get('prodotto'))->count() > 0) {
+                $carrello = $carrello->where('prodotto','=',$request->get('prodotto'))->first();
+                $quantita = $carrello->quantita;
+                $data['quantita'] += $quantita;
+                $this->destroy( $carrello->id );
+            }
+
+            $this->carrello->store($data);
+            //ricavo il numero di oggetti totali nel carrello
+            $units = $this->carrello->getCartItemsNumber($this->auth->user()->id);
+            return Response::json(array(
+                'code' => '200', //OK
+                'msg' => 'OK',
+                'units' => $units,
+            ));
+        } else {
+            $errors = $this->carrello->getErrors();
+            return Response::json(array(
+                'code' => '500', //KO
+                'msg' => 'KO',
+                'errors' => $errors,
+            ));
+        }
+
+
     }
 
     /**
@@ -81,6 +144,6 @@ class CarrelliController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->carrello->trash($id);
     }
 }

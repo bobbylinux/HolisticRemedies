@@ -17,6 +17,7 @@ class ImmaginiTableSeeder extends Seeder
         $data = json_decode($json);
         foreach ($data as $obj) {
             Immagine::create(array(
+                'id' => $obj->id,
                 'nomefile' => $obj->nomefile,
                 'didascalia' => $obj->didascalia
             ));

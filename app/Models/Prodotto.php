@@ -103,6 +103,11 @@ class Prodotto extends BaseModel
      * set the relationships
      *
      * */
+
+    public function immagini() {
+        return $this->belongsTo('App\Models\Immagine','immagine');
+    }
+
     public function ordini() {
 
         return $this->belongsToMany('App\User\OrdineTesta', 'ordini_dettaglio','prodotto','ordine');

@@ -5,9 +5,37 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\OrdineTesta;
+use Illuminate\Contracts\Auth\Guard;
 
 class OrdiniController extends Controller
 {
+
+    /**
+     * the model instance
+     * @var OrdineTesta
+     */
+    protected $ordine;
+    /**
+     * The Guard implementation.
+     *
+     * @var Authenticator
+     */
+    protected $auth;
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @param  Authenticator  $auth
+     * @return void
+     */
+    public function __construct(Guard $auth, OrdineTesta $ordine)
+    {
+        $this->ordine = $ordine;
+        $this->auth = $auth;
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +43,16 @@ class OrdiniController extends Controller
      */
     public function index()
     {
-        //
+        switch ($this->auth->user()->ruolo) {
+            case 1 : //admin
+                $ordini = $this->ordine->orderby('id','desc')->with('utenti.clienti')->with('stati')->paginate(20);
+                break;
+            case 2 : //user
+                $ordini = $this->ordine->where('utente','=',$this->auth->user()->id)->paginate(20);
+                break;
+        }
+
+        return view('ordini.index',compact('ordini'));
     }
 
     /**

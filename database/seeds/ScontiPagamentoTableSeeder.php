@@ -18,7 +18,7 @@ class ScontiPagamentoTableSeeder extends Seeder
         foreach ($data as $obj) {
             ScontoTipoPagamento::create(array(
                 'id' => $obj->id,
-                'pagamento' => $obj->pagamento,
+                'pagamento' => $obj->idPagamento,
                 'sconto' => $obj->sconto
             ));
         }

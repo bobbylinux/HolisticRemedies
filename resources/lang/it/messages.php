@@ -57,7 +57,11 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
                 trifoglio, corteccia di frassino spinoso (variet&agrave; autoctona canadese) e
                 Piantaggine. ",
     'shop_titolo' => 'Shop',
-
+    'shop_titolo_jumbotron' => 'Spedizione Dall\'Italia',
+    'shop_contenuto_jumbotron' => '<ul><li>Lo sconto vale per il totale dei pezzi di qualsiasi tipologia</li><li>Spese di spedizione € 9.60 per ordini inferiori a € 80</li><li>Le spedizioni avvengono tramite corriere espresso e partono il giorno lavorativo successivo all\'ordine (ordini del sabato e domenica, partenza il lunedì). Consegna 1-2 giorni lavorativi in tutta Italia, isole un giorno in piú. In caso di ritardo contattarci a info@caisse.it e ordini@caisse.it o seguire il vostro ordine cliccando su "controlla lo stato del tuo ordine"</li></ul>',
+    'shop_aggiungi_al_carrello' => 'Aggiungi al carrello',
+    'shop_quantita' => 'Quantità',
+    'shop_come_ordinare'=>'Come Ordinare',
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
     'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',
@@ -108,6 +112,13 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_clienti_index_attivo' => 'Attivo',
     'dash_clienti_index_ruolo' => 'Ruolo',
     'dash_clienti_index_azioni_nome' => 'Azioni',
+    'dash_ordini_index_titolo' => 'Gestione Ordini',
+    'dash_ordini_index_numero_ordine' => '# Ordine',
+    'dash_ordini_index_data_ordine'=>'Data Ordine',
+    'dash_ordini_index_costo_ordine'=>'Totale',
+    'dash_ordini_index_cliente'=>'Cliente',
+    'dash_ordini_index_stato' => 'Stato',
+    'dash_ordini_index_azioni_nome' => 'Azioni',
 
     'menu_accedi' => 'ACCEDI',
 
