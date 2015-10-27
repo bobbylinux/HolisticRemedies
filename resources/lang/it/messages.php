@@ -62,6 +62,10 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'shop_aggiungi_al_carrello' => 'Aggiungi al carrello',
     'shop_quantita' => 'Quantità',
     'shop_come_ordinare'=>'Come Ordinare',
+    'carrello_prodotto' => 'Prodotto',
+    'carrello_costo' => 'Costo',
+    'carrello_quantita' => 'Quantità',
+    'carrello_totale' => 'Totale',
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
     'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',

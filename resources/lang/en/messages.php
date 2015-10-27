@@ -93,6 +93,10 @@ return array(
     'shop_aggiungi_al_carrello' => 'Add to cart',
     'shop_quantita' => 'Units',
     'shop_come_ordinare'=>'How to order',
+    'carrello_prodotto' => 'Product',
+    'carrello_costo' => 'Price',
+    'carrello_quantita' => 'Units',
+    'carrello_totale' => 'Total',
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
     'dash_prodotti_index_pulsante_nuovo' => 'Nuovo Prodotto',

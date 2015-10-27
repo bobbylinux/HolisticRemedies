@@ -43,8 +43,9 @@ class CarrelliController extends Controller
      */
     public function index()
     {
-        $carrello = $this->carrello->where('utente','=',$this->auth->user()->id)->get();
-        return view('carrello.index',compact('carrello'));
+        $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
+        $carrello = $this->carrello->with('prodotti.immagini')->where('utente','=',$this->auth->user()->id)->get();
+        return view('carrello.index',compact('carrello','cartcount'));
     }
 
     /**
