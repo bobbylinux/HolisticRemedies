@@ -26,7 +26,7 @@ class Carrello extends BaseModel
      *
      */
     private $total = 0;
-
+    
 
     /**
      * The variable for validation rules
@@ -129,13 +129,33 @@ class Carrello extends BaseModel
      * get total cart for logged user
      *
      * */
-    public function getTotal($user)
+    public function getTotal($user, $scontiQuantita)
     {
         $this->total = 0;
         $carrello = $this->with('prodotti')->where('utente', '=', $user)->get();
+        $sconti = $scontiQuantita->orderBy('id','asc')->get();
+        $quantita = 0;
+        $sconto = 0;
+        
         foreach ($carrello as $item) {
             $this->total += ($item->prodotti->prezzo * $item->quantita);
+            $quantita += $item->quantita;
         }
+        //calcolo sconto quantita
+        $qta_max = 0;
+        $qta_min = 0;
+        foreach($sconti as $item) {
+            $qta_max = $item->quantita_max;
+            $qta_min = $item->quantita_min;
+            if ($qta_max == 0) {
+                $qta_max = $quantita;
+            }
+            if ($quantita >= $qta_min && $quantita <= $qta_max) {
+                $sconto = $item->sconto;
+            }
+        }
+        $sconto = ($sconto/100) * $this->total;
+        $this->total -= $sconto;
         return number_format($this->total, 2);
     }
 

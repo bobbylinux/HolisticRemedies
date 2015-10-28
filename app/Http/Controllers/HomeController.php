@@ -7,6 +7,7 @@ use App\Models\Immagine;
 use App\Models\Carrello;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -38,9 +39,10 @@ class HomeController extends Controller
     {
         $prodotti = $this->prodotto->with('immagini')->get();
         if ($this->auth->check()) {
+            $cookie_test = Cookie::make('cookies_check', '1');
             $carrello = $this->carrello->where('utente','=',$this->auth->user()->id)->with('prodotti')->get();
             $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-            return view('index',compact('prodotti','carrello','cartcount'));
+            return view('index',compact('prodotti','carrello','cartcount'))->withCookie($cookie_test);
         } else {
             return view('index',compact('prodotti'));
         }
