@@ -24,10 +24,12 @@ class CarrelliController extends Controller
      */
     protected $auth;
 
+    protected $prodotto;
+
     /**
      * Create a new authentication controller instance.
      *
-     * @param  Authenticator  $auth
+     * @param  Authenticator $auth
      * @return void
      */
     public function __construct(Guard $auth, Carrello $carrello)
@@ -36,6 +38,7 @@ class CarrelliController extends Controller
         $this->auth = $auth;
 
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,8 +47,8 @@ class CarrelliController extends Controller
     public function index()
     {
         $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-        $carrello = $this->carrello->with('prodotti.immagini')->where('utente','=',$this->auth->user()->id)->get();
-        return view('carrello.index',compact('carrello','cartcount'));
+        $carrello = $this->carrello->with('prodotti.immagini')->where('utente', '=', $this->auth->user()->id)->orderby('prodotto','asc')->get();
+        return view('carrello.index', compact('carrello', 'cartcount'));
     }
 
     /**
@@ -61,26 +64,26 @@ class CarrelliController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
         $data = array(
-            'prodotto'  => $request->get('prodotto'),
-            'quantita'  => $request->get('quantita'),
-            'utente'        => $this->auth->user()->id
+            'prodotto' => $request->get('prodotto'),
+            'quantita' => $request->get('quantita'),
+            'utente' => $this->auth->user()->id
         );
 
         if ($this->carrello->validate($data)) {
             //controllo conflitti nel carrello
             $carrello = $this->carrello;
-            if ($carrello->where('prodotto','=',$request->get('prodotto'))->count() > 0) {
-                $carrello = $carrello->where('prodotto','=',$request->get('prodotto'))->first();
+            if ($carrello->where('prodotto', '=', $request->get('prodotto'))->count() > 0) {
+                $carrello = $carrello->where('prodotto', '=', $request->get('prodotto'))->first();
                 $quantita = $carrello->quantita;
                 $data['quantita'] += $quantita;
-                $this->destroy( $carrello->id );
+                $this->destroy($carrello->id);
             }
 
             $this->carrello->store($data);
@@ -106,7 +109,7 @@ class CarrelliController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -117,7 +120,7 @@ class CarrelliController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -128,23 +131,51 @@ class CarrelliController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array(
+            "id" => $id,
+            "prodotto" => $request->get("prodotto"),
+            "quantita" => $request->get("quantita"),
+            "utente" => $this->auth->user()->id
+        );
+
+        $carrello = $this->carrello->with('prodotti')->find($id);
+
+        if ($this->carrello->validate($data)) {
+            $carrello->refresh($data);
+            $data['prezzo'] = number_format($carrello->prodotti->prezzo * $carrello->quantita,2);
+            $data['totale'] = $carrello->getTotal($this->auth->user()->id);
+            $data['items'] = $carrello->getCartItemsNumber($this->auth->user()->id);
+
+            return Response::json(array(
+                'code' => '200', //OK
+                'msg' => 'OK',
+                'item' => $data));
+        } else {
+            $errors = $carrello->getErrors();
+            return Response::json(array(
+                'code' => '500', //OK
+                'msg' => 'KO',
+                'errors' => $errors
+            ));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $this->carrello->trash($id);
     }
+
+
 }

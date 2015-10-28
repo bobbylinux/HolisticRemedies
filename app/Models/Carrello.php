@@ -22,6 +22,13 @@ class Carrello extends BaseModel
     protected $now = null;
 
     /**
+     * The variable for system date time
+     *
+     */
+    private $total = 0;
+
+
+    /**
      * The variable for validation rules
      *
      */
@@ -79,32 +86,67 @@ class Carrello extends BaseModel
     }
 
     /**
+     * The function for update in database from view
+     *
+     * @data array
+     */
+    public function refresh($data)
+    {
+        $this->prodotto = $data['prodotto'];
+        $this->quantita = $data['quantita'];
+        $this->utente = $data['utente'];
+
+        $this->save();
+    }
+
+    /**
      * The function for delete in database from view
      *
      * @data array
      */
-    public function trash($id) {
+    public function trash($id)
+    {
         $this->destroy($id);
     }
+
     /**
      * The function return the numbers of item in the cart for logged user
      *
      * @data array
      */
-    public function getCartItemsNumber($user) {
-        $carrello = $this->where('utente','=',$user)->get();
+    public function getCartItemsNumber($user)
+    {
+        $carrello = $this->where('utente', '=', $user)->get();
         $this->units = 0;
         foreach ($carrello as $item) {
-            $this->units+=$item->quantita;
+            $this->units += $item->quantita;
         }
         return $this->units;
     }
+
+    /*
+     *
+     * get total cart for logged user
+     *
+     * */
+    public function getTotal($user)
+    {
+        $this->total = 0;
+        $carrello = $this->with('prodotti')->where('utente', '=', $user)->get();
+        foreach ($carrello as $item) {
+            $this->total += ($item->prodotti->prezzo * $item->quantita);
+        }
+        return number_format($this->total, 2);
+    }
+
     /*
      *
      * set the relationships
      *
      * */
-    public function prodotti() {
-        return $this->belongsTo('App\Models\Prodotto','prodotto');
+    public function prodotti()
+    {
+        return $this->belongsTo('App\Models\Prodotto', 'prodotto');
     }
+
 }

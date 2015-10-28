@@ -6,12 +6,11 @@ $(document).ready(function () {
         event.preventDefault();
         var $url = $(this).attr("href");
         var $product = $(this).data("product");
-        var $units =$(this).parent().prev().find(".units  option:selected").text();
+        var $units = $(this).parent().prev().find(".units  option:selected").text();
         var $token = $(this).data("token");
-        console.log("prodotto="+$product+"/quantità="+$units);
 
         $.ajax({
-            url : $url,
+            url: $url,
             type: "POST",
             async: false,
             data: {
@@ -20,16 +19,61 @@ $(document).ready(function () {
                 quantita: $units,
                 _token: $token
             },
-            dataType : 'json',
-            success : function (data) {
+            dataType: 'json',
+            success: function (data) {
                 $units = data.units;
                 $(".cart-count").html($units);
-                console.log(data);
             },
-            error : function (data) {
+            error: function (data) {
                 console.log(data);
             }
         });
     });
 
-});
+    $(document).on("change", ".units-select", function () {
+        var $units = $(this).val();
+        var $item = $(this).data("item");
+        var $product = $(this).data("product");
+        var $token = $(this).data("token");
+        var $url = window.location.href + "/" + $item;
+
+        if ($item === null || $item === "") {
+            return;
+        }
+
+        $.ajax({
+            context: this, /*used for pass object dom into ajax*/
+            url: $url,
+            type: "POST",
+            async: false,
+            data: {
+                _method: "PUT",
+                item: $item,
+                quantita: $units,
+                prodotto: $product,
+                _token: $token
+            },
+            dataType: 'json',
+            success: function (data) {
+                var $totale = 0;
+                var $prezzo = 0;
+                var $items = 0;
+                $.each(data , function(key , value){ // First Level
+                    if (key === "item") {
+                        $prezzo = value.prezzo;
+                        $totale = value.totale;
+                        $items = value.items;
+                    }
+                });
+
+                $(this).closest('tr').children(".item-total").html($prezzo);
+                $(".cart-count").html($items);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    })
+    ;
+})
+;

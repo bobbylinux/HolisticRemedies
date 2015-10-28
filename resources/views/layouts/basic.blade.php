@@ -50,7 +50,7 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                   
+
                     <ul class="nav navbar-nav navbar-right">
                         @if (!Auth::check())
                             <li class="dropdown hidden-xs hidden-sm">
@@ -134,6 +134,7 @@
         <!-- Scrolling Nav JavaScript -->
         <script src="{{ url('js/jquery.easing.min.js') }}"></script>
         <script src="{{ url('js/front.script.js') }}"></script>
+        <script src="{{ url('js/cart.script.js') }}"></script>
 
     </body>
 

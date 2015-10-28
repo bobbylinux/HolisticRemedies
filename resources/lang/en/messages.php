@@ -159,9 +159,9 @@ return array(
 
     /*pulsangi generici*/
     'registrazione' => 'Sign Up',
-    'pulsante_modifica' => 'Modifica',
-    'pulsante_elimina' => 'Elimina',
-    'pulsante_annulla' => 'Annulla',
+    'pulsante_modifica' => 'Update',
+    'pulsante_elimina' => 'Delete',
+    'pulsante_annulla' => 'Undo',
     'pulsante_registrati' => 'Sign Up',
     'pulsante_accedi' => 'Sign In',
     'pulsante_iscriviti' => 'Sign Up',
