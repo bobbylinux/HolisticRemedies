@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Carrello;
 use App\Models\ScontoQuantita;
+use App\Models\TipoPagamento;
+use App\Models\Spedizione;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
@@ -26,6 +28,8 @@ class CarrelliController extends Controller {
     protected $auth;
     protected $prodotto;
     protected $scontiQuantita;
+    protected $tipoPagamento;
+    protected $spedizione;
     
     /**
      * Create a new authentication controller instance.
@@ -33,10 +37,16 @@ class CarrelliController extends Controller {
      * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, Carrello $carrello, ScontoQuantita $scontiQuantita) {
+    public function __construct(Guard $auth, Carrello $carrello, ScontoQuantita $scontiQuantita,TipoPagamento $tipoPagamento, Spedizione $spedizione) {
+        
+        $this->middleware('auth', ['except' => ['getLogout']]);
+        
         $this->carrello = $carrello;
         $this->auth = $auth;
         $this->scontiQuantita = $scontiQuantita;
+        $this->tipoPagamento = $tipoPagamento;
+        $this->spedizione = $spedizione;
+        
     }
 
     /**
@@ -48,7 +58,9 @@ class CarrelliController extends Controller {
         $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
         $carrello = $this->carrello->with('prodotti.immagini')->where('utente', '=', $this->auth->user()->id)->orderby('prodotto', 'asc')->get();
         $carttotal = $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita);
-        return view('carrello.index', compact('carrello', 'cartcount', 'carttotal'));
+        $tipopagamento = $this->tipoPagamento->get();
+        $spedizione = $this->spedizione->get();
+        return view('carrello.index', compact('carrello', 'cartcount', 'carttotal','tipopagamento','spedizione'));
     }
 
     /**
@@ -73,7 +85,6 @@ class CarrelliController extends Controller {
             'quantita' => $request->get('quantita'),
             'utente' => $this->auth->user()->id
         );
-
         if ($this->carrello->validate($data)) {
             //controllo conflitti nel carrello
             $carrello = $this->carrello;
@@ -87,18 +98,10 @@ class CarrelliController extends Controller {
             $this->carrello->store($data);
             //ricavo il numero di oggetti totali nel carrello
             $units = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-            return Response::json(array(
-                        'code' => '200', //OK
-                        'msg' => 'OK',
-                        'units' => $units,
-            ));
+            return Response::json(array('code' => '200','msg' => 'OK','units' => $units,));
         } else {
             $errors = $this->carrello->getErrors();
-            return Response::json(array(
-                        'code' => '500', //KO
-                        'msg' => 'KO',
-                        'errors' => $errors,
-            ));
+            return Response::json(array('code' => '500','msg' => 'KO','errors' => $errors,));
         }
     }
 
@@ -145,17 +148,10 @@ class CarrelliController extends Controller {
             $data['totale'] = $carrello->getTotal($this->auth->user()->id,$this->scontiQuantita);
             $data['items'] = $carrello->getCartItemsNumber($this->auth->user()->id);
 
-            return Response::json(array(
-                        'code' => '200', //OK
-                        'msg' => 'OK',
-                        'item' => $data));
+            return Response::json(array('code' => '200','msg' => 'OK','item' => $data));
         } else {
             $errors = $carrello->getErrors();
-            return Response::json(array(
-                        'code' => '500', //OK
-                        'msg' => 'KO',
-                        'errors' => $errors
-            ));
+            return Response::json(array('code' => '500','msg' => 'KO','errors' => $errors));
         }
     }
 

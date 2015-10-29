@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     $(document).on("change", ".units-select", function (event) {
         event.preventDefault();
-        var $units = $(this).val();
+        var $units = parseInt($(this).val()) + 1;
         var $item = $(this).data("item");
         var $product = $(this).data("product");
         var $token = $(this).data("token");
@@ -67,9 +67,9 @@ $(document).ready(function () {
                     }
                 });
 
-                $(this).closest('tr').children(".item-total").html($prezzo+" &euro;");
+                $(this).closest('tr').children(".item-total").html($prezzo + " &euro;");
                 $(".cart-count").html($items);
-                $(".cart-total").html($totale+" &euro;");
+                $(".cart-total").html($totale + " &euro;");
             },
             error: function (data) {
                 console.log(data);
@@ -109,12 +109,36 @@ $(document).ready(function () {
                     }
                 });
                 $(".cart-count").html($quantita);
-                $(".cart-total").html($totale+" &euro;");
+                $(".cart-total").html($totale + " &euro;");
             },
             error: function (data) {
                 console.log(data);
             }
         });
     });
-})
-        ;
+
+    $(document).on("click", ".cart-confirm", function (event) {
+        event.preventDefault();
+        
+        
+    });
+    $(document).on("click", ".payment-info", function (event) {
+        event.preventDefault();
+        $id = "#modal-payment-info-" + $(this).data("item");
+        $($id).modal("show");
+    });
+
+    $(document).on("click", ".payment-select", function (event) {
+        event.preventDefault();
+
+        
+    });
+
+    /*submit form carrello*/
+    $(document).on("submit", ".cart-form", function (event) {
+        event.preventDefault();
+    });
+
+
+
+});

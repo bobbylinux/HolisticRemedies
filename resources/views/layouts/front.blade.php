@@ -68,8 +68,8 @@
                     <a class="page-scroll" href="#buy"> {!!Lang::choice('messages.menu_front_acquista',0)!!}</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @if (!Auth::check())
+            <ul class="nav navbar-nav navbar-right">      
+                @if (!Auth::check())                
                     <li class="dropdown hidden-xs hidden-sm">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><i
@@ -80,11 +80,11 @@
                             @foreach($errors->all() as $error)
                                 <p class="alert alert-danger" style="font-size: 12px;">{!!$error!!}</p>
                             @endforeach
-                            {!!Form::open(['url'=>'auth/login','class'=>'form-signin','style'=>'margin-top:10px'])!!}
+                            {!!Form::open(['url'=>'auth/login','class'=>'form-signin','data-token' => csrf_token(),'style'=>'margin-top:10px'])!!}
                             <label for="inputEmail" class="sr-only">Email</label>
                             {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
                             <label for="inputPassword" class="sr-only">Password</label>
-                            {!! Form::password('password',['class'=>'form-control','placeholder'=>'Password']) !!}
+                            {!! Form::password('password',['class'=>'form-control','placeholder'=>'Password','id'=>'password']) !!}
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"
@@ -174,6 +174,7 @@
 <script src="{{ url('js/jquery.easing.min.js') }}"></script>
 <script src="{{ url('js/front.script.js') }}"></script>
 <script src="{{ url('js/cart.script.js') }}"></script>
+<script src="{{ url('js/login.script.js') }}"></script>
 
 </body>
 
