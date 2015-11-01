@@ -143,7 +143,7 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="{{ url('js/bootstrap.min.js') }}"></script>
-        <script src="{{ url('js/back.scritp.js') }}"></script>
+        <script src="{{ url('js/back.script.js') }}"></script>
 
     </body>
 

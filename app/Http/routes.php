@@ -28,6 +28,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::group(array('middleware' => 'auth'), function() {
     Route::resource('carrello', 'CarrelliController');
+    Route::get('carrello/{idPagamento}/pagamento','CarrelliController@getTotalWithPaymentDiscount');
 });
 
 // Gestione backoffice

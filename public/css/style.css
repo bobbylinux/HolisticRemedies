@@ -117,3 +117,7 @@ html {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+#payment, #shipping,.payment-price-tr,#conferma-ordine {
+    display: none;
+}

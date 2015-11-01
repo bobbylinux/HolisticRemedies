@@ -26,7 +26,7 @@ class Carrello extends BaseModel
      *
      */
     private $total = 0;
-    
+
 
     /**
      * The variable for validation rules
@@ -125,38 +125,88 @@ class Carrello extends BaseModel
     }
 
     /*
+    *
+    * get total with discounts for logged user
+    *
+    * */
+    public function getTotalCart($user, &$totalCart, &$quantita)
+    {
+        $totalCart = 0;
+        $carrello = $this->with('prodotti')->where('utente', '=', $user)->get();
+        $quantita = 0;
+
+        foreach ($carrello as $item) {
+            $totalCart += ($item->prodotti->prezzo * $item->quantita);
+            $quantita += $item->quantita;
+        }
+
+        $totalCart = number_format($totalCart, 2);
+    }
+
+    /*
      *
-     * get total cart for logged user
+     * get total with discounts for logged user
      *
      * */
-    public function getTotal($user, $scontiQuantita)
+    public function getTotal($user, $scontiQuantita = null, $scontiPagamento = null, $paymentId = 0, $spedizione = null, &$totalDiscounted = 0, &$discountUnits = 0, &$discountPayment = 0, &$percentagePayment = 0, &$shipping = 0, &$total = 0)
     {
         $this->total = 0;
         $carrello = $this->with('prodotti')->where('utente', '=', $user)->get();
-        $sconti = $scontiQuantita->orderBy('id','asc')->get();
         $quantita = 0;
-        $sconto = 0;
-        
+        $scontoQuantita = 0;
+        $scontoPagamento = 0;
+
         foreach ($carrello as $item) {
             $this->total += ($item->prodotti->prezzo * $item->quantita);
             $quantita += $item->quantita;
         }
-        //calcolo sconto quantita
-        $qta_max = 0;
-        $qta_min = 0;
-        foreach($sconti as $item) {
-            $qta_max = $item->quantita_max;
-            $qta_min = $item->quantita_min;
-            if ($qta_max == 0) {
-                $qta_max = $quantita;
-            }
-            if ($quantita >= $qta_min && $quantita <= $qta_max) {
-                $sconto = $item->sconto;
+
+        $total = number_format($this->total, 2);
+
+        //calcolo la spesa di spedizione
+        if ($spedizione != null) {
+            $costoSpedizione = $spedizione->orderBy('id', 'asc')->first();
+            if ($this->total <= $costoSpedizione->massimale) {
+                $speseSpedizione = $costoSpedizione->costo;
+            } else {
+                $speseSpedizione = 0;
             }
         }
-        $sconto = ($sconto/100) * $this->total;
-        $this->total -= $sconto;
-        return number_format($this->total, 2);
+
+        //calcolo sconto quantita
+        if ($scontiQuantita != null) {
+            $tmpScontiQuantita = $scontiQuantita->orderBy('id', 'asc')->get();
+            $qta_max = 0;
+            $qta_min = 0;
+            foreach ($tmpScontiQuantita as $item) {
+                $qta_max = $item->quantita_max;
+                $qta_min = $item->quantita_min;
+                if ($qta_max == 0) {
+                    $qta_max = $quantita;
+                }
+                if ($quantita >= $qta_min && $quantita <= $qta_max) {
+                    $scontoQuantita = $item->sconto;
+                }
+            }
+            $scontoQuantita = ($scontoQuantita / 100) * $this->total;
+        }
+
+        $this->total -= $scontoQuantita;
+
+        //calcolo sconto tipo pagamento
+        if ($scontiPagamento != null) {
+            $scontoPagamento = $scontiPagamento->where('pagamento', '=', $paymentId)->first();
+            $scontoPagamento = $scontoPagamento->sconto;
+            $percentagePayment = $scontoPagamento;
+            $scontoPagamento = ($scontoPagamento / 100) * $this->total;
+        }
+
+        $this->total -= $scontoPagamento;
+
+        $totalDiscounted = number_format($this->total + $speseSpedizione, 2);
+        $discountUnits = number_format($scontoQuantita, 2);
+        $discountPayment = number_format($scontoPagamento, 2);
+        $shipping = number_format($speseSpedizione,2);
     }
 
     /*

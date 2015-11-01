@@ -114,4 +114,7 @@ class ScontiTipoPagamentoController extends Controller
     {
         //
     }
+
+
+
 }
