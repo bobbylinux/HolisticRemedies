@@ -72,12 +72,12 @@ $(document).ready(function () {
                     }
                 });
 
-                $(this).closest('tr').children(".item-total").html($prezzo + " &euro;");
+                $(this).closest('tr').children(".item-total").html($prezzo);
                 $(".cart-count").html($items);
-                $(".cart-total").html($totale + " &euro;");
-                $(".cart-total-discounted").html($totaleScontato + " &euro;");
-                $(".shipping-price").html($spedizione + " &euro;");
-                $(".discount-units-price").html($sconto + " &euro;");
+                $(".cart-total").html($totale);
+                $(".cart-total-discounted").html($totaleScontato);
+                $(".shipping-price").html($spedizione);
+                $(".discount-units-price").html($sconto);
             },
             error: function (data) {
                 console.error(data);
@@ -126,10 +126,10 @@ $(document).ready(function () {
                     location.reload();
                 } else {
                     $(".cart-count").html($quantita);
-                    $(".cart-total").html($totale + " &euro;");
-                    $(".cart-total-discounted").html($totaleScontato + " &euro;");
-                    $(".shipping-price").html($spedizione + " &euro;");
-                    $(".discount-units-price").html($sconto + " &euro;");
+                    $(".cart-total").html($totale);
+                    $(".cart-total-discounted").html($totaleScontato);
+                    $(".shipping-price").html($spedizione);
+                    $(".discount-units-price").html($sconto);
                 }
 
             },
@@ -182,13 +182,14 @@ $(document).ready(function () {
                     }
                 });
                 $(".cart-count").html($quantita);
-                $(".cart-total").html($totale + " &euro;");
-                $(".cart-total-discounted").html($totaleScontato + " &euro;");
-                $(".shipping-price").html($spedizione + " &euro;");
-                $(".discount-units-price").html($sconto + " &euro;");
-                $(".discount-payment-price").html($scontoPagamento + " &euro;");
+                $(".cart-total").html($totale);
+                $(".cart-total-discounted").html($totaleScontato);
+                $(".shipping-price").html($spedizione);
+                $(".discount-units-price").html($sconto);
+                $(".discount-payment-price").html($scontoPagamento);
                 $(".percentage").html($percentuale);
                 $(".payment-type").html($tipoPagamento);
+                $("#payment-type").val($item);
                 $('#payment').slideUp();
                 $(".payment-price-tr").show();
                 $("#conferma-ordine").show();
@@ -226,7 +227,35 @@ $(document).ready(function () {
 
     $(document).on("click",".btn-paga-conferma",function(event) {
         event.preventDefault();
-        alert("submit");
+        var $url = "ordini";
+        var $token = $(this).data("token");
+        var $discountUnits = $(".discount-units-price").html();
+        var $discountPayment = $(".discount-payment-price").html();
+        var $cartTotalDiscounted = $(".cart-total-discounted").html();
+        var $cartTotal = $(".cart-total").html();
+        var $paymenType = $("#payment-type").val();
+        $.ajax({
+            context: this, /*used for pass object dom into ajax*/
+            url: $url,
+            type: "POST",
+            async: false,
+            data: {
+                _method: "POST",
+                _token: $token,
+                discountUnits: $discountUnits,
+                discountPayment: $discountPayment,
+                cartTotal: $cartTotal,
+                cartTotalDiscounted: $cartTotalDiscounted,
+                paymentType: $paymenType,
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (data) {
+                console.error(data);
+            }
+        });
     });
 
 });

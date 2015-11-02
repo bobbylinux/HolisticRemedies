@@ -29,6 +29,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(array('middleware' => 'auth'), function() {
     Route::resource('carrello', 'CarrelliController');
     Route::get('carrello/{idPagamento}/pagamento','CarrelliController@getTotalWithPaymentDiscount');
+    Route::resource('ordini', 'OrdiniController');
 });
 
 // Gestione backoffice
@@ -38,7 +39,6 @@ Route::group(array('middleware' => 'admin'), function() {
         Route::resource('sconti/quantita', 'ScontiQuantitaController');
         Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
         Route::resource('clienti', 'ClientiController');
-        Route::resource('ordini', 'OrdiniController');
     });
 });
 // Cambio linguaggio

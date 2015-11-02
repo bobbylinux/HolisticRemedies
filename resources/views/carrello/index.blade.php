@@ -79,7 +79,7 @@
     </div>
 </div><!-- riepilogo ordine-->
 <div class="row">
-    <div class="well" id="discount">
+    <div class="well" id="summary">
         <table class="table table-responsive">
             <thead>
                 <tr>
@@ -88,25 +88,26 @@
             <thead>
             <tbody>
                 <tr>
-                    <td class="amout col-lg-11">{{ Lang::choice('messages.carrello_totale_provvisorio',0) }}</td>
-                    <td class="cart-total col-lg-1">{{$carttotal}} &euro;</td>
+                    <td class="col-lg-11"><span class="amout">{{ Lang::choice('messages.carrello_totale_provvisorio',0) }}</span></td>
+                    <td class="col-lg-1"><span class="cart-total">{{$carttotal}}</span> &euro;</td>
                 </tr>
                 <tr>
-                    <td class="discount-units col-lg-11"> {!! Lang::choice('messages.carrello_sconto_quantita',$cartcount,['quantita' => $cartcount]) !!}</td>
-                    <td class="discount-units-price col-lg-1">{{$discount}} &euro;</td>
+                    <td class="col-lg-11"><span class="discount-units">{!! Lang::choice('messages.carrello_sconto_quantita',$cartcount,['quantita' => $cartcount]) !!}</span></td>
+                    <td class="col-lg-1"><span class="discount-units-price">{{$discount}}</span> &euro;</td>
                 </tr>
                 <tr>
-                    <td class="shipping col-lg-11"> {!! Lang::choice('messages.carrello_spese_di_spedizione',0) !!}</td>
+                    <td class="col-lg-11"><span class="shipping">{!! Lang::choice('messages.carrello_spese_di_spedizione',0) !!}</span></td>
 
-                    <td class="shipping-price col-lg-1">{{$spedizione}} &euro;</td>
+                    <td class="col-lg-1"><span class="shipping-price">{{$spedizione}}</span> &euro;</td>
                 </tr>
                 <tr class="payment-price-tr">
-                    <td class="discount-payment col-lg-11"> {!! Lang::choice('messages.carrello_sconto_pagamento',0) !!}</td>
-                    <td class="discount-payment-price col-lg-1"> </td>
+                    <td class="col-lg-11"><span class="discount-payment">{!! Lang::choice('messages.carrello_sconto_pagamento',0) !!}</span></td>
+                    <td class="col-lg-1"><span class="discount-payment-price"></span> &euro;</td>
+                    <input type="hidden" name="payment-type" id="payment-type" value="">
                 </tr>
                 <tr>
-                    <td class="discount-payment col-lg-11"> {!! Lang::choice('messages.carrello_totale',0) !!}</td>
-                    <td class="cart-total-discounted col-lg-1">{{$carttotaldiscounted}} &euro;</td>
+                    <td class="col-lg-11">{!! Lang::choice('messages.carrello_totale',0) !!}</td>
+                    <td class="col-lg-1"><span class="cart-total-discounted ">{{$carttotaldiscounted}}</span> &euro;</td>
                 </tr>
             </tbody>
         </table>

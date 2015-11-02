@@ -179,6 +179,7 @@ return array(
     'pulsante_info' => 'Info',
     'pulsante_cancella' => 'Delete',
     'pulsante_chiudi' => 'Close',
+    'pulsante_paga_e_conferma' => 'Submit & Pay',
     'check_ricordami' => 'Remember me',
 
     /*registrazione*/

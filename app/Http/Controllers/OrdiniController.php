@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\OrdineTesta;
+use App\Models\Carrello;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Response;
 
 class OrdiniController extends Controller
 {
@@ -23,16 +25,19 @@ class OrdiniController extends Controller
      */
     protected $auth;
 
+    protected $carrello;
+
     /**
      * Create a new authentication controller instance.
      *
      * @param  Authenticator  $auth
      * @return void
      */
-    public function __construct(Guard $auth, OrdineTesta $ordine)
+    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello)
     {
         $this->ordine = $ordine;
         $this->auth = $auth;
+        $this->carrello = $carrello;
 
     }
 
@@ -62,7 +67,7 @@ class OrdiniController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -73,7 +78,32 @@ class OrdiniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = $this->auth->user()->id;
+
+        $count = $this->carrello->where('utente','=',$user)->count();
+        if ($count == 0) {
+            return Response::json(array(
+                'code' => '500', //OK
+                'msg' => 'KO',
+                'error' => 'No items into cart for user.'));
+        }
+
+        $carrello = $this->carrello->where('utente','=',$user)->get();
+        $totaleCarrello = number_format($request->cartTotal,2);
+        $scontoQuantita = number_format($request->discountUnits,2);
+        $scontoPagamento = number_format($request->discountPayment,2);
+        $totaleCarrelloScontato = number_format($request->cartTotalDiscounted,2);
+        $tipoPagamento = $request->paymentType;
+        $sconto = $scontoPagamento+ $scontoQuantita;
+
+        foreach($carrello as $item) {
+
+        }
+
+        return Response::json(array(
+            'code' => '200', //OK
+            'msg' => 'OK',
+            'item' => $tipoPagamento));
     }
 
     /**

@@ -148,6 +148,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'pulsante_info' => 'Info',
     'pulsante_cancella' => 'Cancella',
     'pulsante_chiudi' => 'Chiudi',
+    'pulsante_paga_e_conferma' => 'Conferma & Paga',
     'check_ricordami' => 'Ricordami',
 
     /*registrazione*/
