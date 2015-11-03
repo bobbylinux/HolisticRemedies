@@ -60,7 +60,7 @@ class ProdottiController extends Controller {
         );
         //validate images
         if (!$this->immagine->validate($data)) {
-            $errors = $this->prodotto->getErrors();
+            $errors = $this->immagine->getErrors();
             return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
         }
         //validates products

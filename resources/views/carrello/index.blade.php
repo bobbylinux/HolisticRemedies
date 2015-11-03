@@ -118,8 +118,8 @@
         </div>
     </div>
 </div>
-<div id="paypal">
-    <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="bascketp">
+<div id="paypal-div">
+    <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="info@caisse.it">
         <input type="hidden" name="currency_code" value="EUR">

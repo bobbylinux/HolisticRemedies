@@ -234,6 +234,7 @@ $(document).ready(function () {
         var $cartTotalDiscounted = $(".cart-total-discounted").html();
         var $cartTotal = $(".cart-total").html();
         var $paymenType = $("#payment-type").val();
+        var $shippingPrice = $(".shipping-price").html();
         $.ajax({
             context: this, /*used for pass object dom into ajax*/
             url: $url,
@@ -247,10 +248,13 @@ $(document).ready(function () {
                 cartTotal: $cartTotal,
                 cartTotalDiscounted: $cartTotalDiscounted,
                 paymentType: $paymenType,
+                shippingPrice: $shippingPrice,
             },
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                if (data.code === "200") {
+                    //$("#paypal").submit();
+                }
             },
             error: function (data) {
                 console.error(data);

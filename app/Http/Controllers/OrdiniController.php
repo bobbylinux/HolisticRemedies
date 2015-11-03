@@ -7,17 +7,18 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\OrdineTesta;
 use App\Models\Carrello;
+use App\Models\Stato;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
 
-class OrdiniController extends Controller
-{
+class OrdiniController extends Controller {
 
     /**
      * the model instance
      * @var OrdineTesta
      */
     protected $ordine;
+
     /**
      * The Guard implementation.
      *
@@ -25,20 +26,27 @@ class OrdiniController extends Controller
      */
     protected $auth;
 
+    /**
+     * The cart variable
+     *
+     * @var Authenticator
+     */
     protected $carrello;
 
+    protected $stato;
+    
+    
     /**
      * Create a new authentication controller instance.
      *
      * @param  Authenticator  $auth
      * @return void
      */
-    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello)
-    {
+    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato) {
         $this->ordine = $ordine;
         $this->auth = $auth;
         $this->carrello = $carrello;
-
+        $this->stato = $stato;
     }
 
     /**
@@ -46,18 +54,17 @@ class OrdiniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         switch ($this->auth->user()->ruolo) {
             case 1 : //admin
-                $ordini = $this->ordine->orderby('id','desc')->with('utenti.clienti')->with('stati')->paginate(20);
+                $ordini = $this->ordine->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
                 break;
             case 2 : //user
-                $ordini = $this->ordine->where('utente','=',$this->auth->user()->id)->paginate(20);
+                $ordini = $this->ordine->where('utente', '=', $this->auth->user()->id)->paginate(20);
                 break;
         }
 
-        return view('ordini.index',compact('ordini'));
+        return view('ordini.index', compact('ordini'));
     }
 
     /**
@@ -65,9 +72,8 @@ class OrdiniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
+    public function create() {
+        
     }
 
     /**
@@ -76,34 +82,56 @@ class OrdiniController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $user = $this->auth->user()->id;
 
-        $count = $this->carrello->where('utente','=',$user)->count();
+        $count = $this->carrello->where('utente', '=', $user)->count();
         if ($count == 0) {
             return Response::json(array(
-                'code' => '500', //OK
-                'msg' => 'KO',
-                'error' => 'No items into cart for user.'));
+                        'code' => '500', //OK
+                        'msg' => 'KO',
+                        'error' => 'No items into cart for user.'));
         }
 
-        $carrello = $this->carrello->where('utente','=',$user)->get();
-        $totaleCarrello = number_format($request->cartTotal,2);
-        $scontoQuantita = number_format($request->discountUnits,2);
-        $scontoPagamento = number_format($request->discountPayment,2);
-        $totaleCarrelloScontato = number_format($request->cartTotalDiscounted,2);
+        $carrello = $this->carrello->with('prodotti')->where('utente', '=', $user)->get();
+        
+        $totaleCarrello = number_format($request->get('cartTotal'), 2);
+        $scontoQuantita = number_format($request->get('discountUnits'), 2);
+        $scontoPagamento = number_format($request->get('discountPayment'), 2);
+        $costoSpedizione = number_format($request->get('shippingPrice'), 2);
+        $totaleCarrelloScontato = number_format($request->get('cartTotalDiscounted'), 2);
         $tipoPagamento = $request->paymentType;
-        $sconto = $scontoPagamento+ $scontoQuantita;
+        $sconto = $scontoPagamento + $scontoQuantita;
 
-        foreach($carrello as $item) {
-
+        //valido i dati di ingresso per la testata dell'ordine
+        $data = array(
+            'utente' => $this->auth->user()->id,
+            'costo' => $totaleCarrello,
+            'costospedizione' => $costoSpedizione,
+            'sconto' => $sconto,
+            'tipopagamento' => $tipoPagamento
+        );
+        //validate images
+        if (!$this->ordine->validate($data)) {
+            $errors = $this->ordine->getErrors();
+            return Response::json(array(
+                        'code' => '500', //OK
+                        'msg' => 'KO',
+                        'error' => $errors));
         }
-
+        //salvo la testata
+        $this->ordine->store($data);
+        //salvo il dettaglio
+        foreach ($carrello as $item) {
+            $this->ordine->prodotti()->attach($item->prodotto, ['quantita' => $item->quantita,'costo'=> $item->prodotti->prezzo]);
+        }
+        //salvo lo stato
+        $stato = $this->stato->where('descrizione','=','IN ATTESA PAGAMENTO')->first();
+        $this->ordine->stati()->attach($stato);
+        
         return Response::json(array(
-            'code' => '200', //OK
-            'msg' => 'OK',
-            'item' => $tipoPagamento));
+                    'code' => '200', //OK
+                    'msg' => 'OK'));
     }
 
     /**
@@ -112,8 +140,7 @@ class OrdiniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -123,8 +150,7 @@ class OrdiniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -135,8 +161,7 @@ class OrdiniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -146,8 +171,8 @@ class OrdiniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
