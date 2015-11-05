@@ -11,7 +11,8 @@ use App\Models\Stato;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
 
-class OrdiniController extends Controller {
+class OrdiniController extends Controller
+{
 
     /**
      * the model instance
@@ -34,15 +35,16 @@ class OrdiniController extends Controller {
     protected $carrello;
 
     protected $stato;
-    
-    
+
+
     /**
      * Create a new authentication controller instance.
      *
-     * @param  Authenticator  $auth
+     * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato) {
+    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato)
+    {
         $this->ordine = $ordine;
         $this->auth = $auth;
         $this->carrello = $carrello;
@@ -54,7 +56,8 @@ class OrdiniController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         switch ($this->auth->user()->ruolo) {
             case 1 : //admin
                 $ordini = $this->ordine->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
@@ -72,29 +75,31 @@ class OrdiniController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        
+    public function create()
+    {
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $user = $this->auth->user()->id;
 
         $count = $this->carrello->where('utente', '=', $user)->count();
         if ($count == 0) {
             return Response::json(array(
-                        'code' => '500', //OK
-                        'msg' => 'KO',
-                        'error' => 'No items into cart for user.'));
+                'code' => '500', //OK
+                'msg' => 'KO',
+                'error' => 'No items into cart for user.'));
         }
 
         $carrello = $this->carrello->with('prodotti')->where('utente', '=', $user)->get();
-        
+
         $totaleCarrello = number_format($request->get('cartTotal'), 2);
         $scontoQuantita = number_format($request->get('discountUnits'), 2);
         $scontoPagamento = number_format($request->get('discountPayment'), 2);
@@ -115,64 +120,96 @@ class OrdiniController extends Controller {
         if (!$this->ordine->validate($data)) {
             $errors = $this->ordine->getErrors();
             return Response::json(array(
-                        'code' => '500', //OK
-                        'msg' => 'KO',
-                        'error' => $errors));
+                'code' => '500', //OK
+                'msg' => 'KO',
+                'error' => $errors));
         }
         //salvo la testata
         $this->ordine->store($data);
         //salvo il dettaglio
         foreach ($carrello as $item) {
-            $this->ordine->prodotti()->attach($item->prodotto, ['quantita' => $item->quantita,'costo'=> $item->prodotti->prezzo]);
+            $this->ordine->prodotti()->attach($item->prodotto, ['quantita' => $item->quantita, 'costo' => $item->prodotti->prezzo]);
         }
         //salvo lo stato
-        $stato = $this->stato->where('descrizione','=','IN ATTESA PAGAMENTO')->first();
+        $stato = $this->stato->where('descrizione', '=', 'IN ATTESA PAGAMENTO')->first();
         $this->ordine->stati()->attach($stato);
-        
+
+        $cliente = $this->auth->user()->clienti()->where('utente','=',$this->auth->user()->id)->first();
+        $nome = $cliente->nome . ' ' . $cliente->cognome;
+        //ritorno
+        $data = array(
+            'item_name' => $this->ordine->id,
+            'amount' => $totaleCarrelloScontato,
+            'return' => "http://localhost/ordini/" . $this->ordine->id . "/edit",
+            'name' => $nome,
+            'username' => $this->auth->user()->username
+        );
+
+        //cancello il carrello dell'utente
+        foreach ($carrello as $item) {
+            $this->carrello->destroy($item->id);
+        }
+
         return Response::json(array(
-                    'code' => '200', //OK
-                    'msg' => 'OK'));
+            'code' => '200', //OK
+            'msg' => 'OK',
+            'item' => $data));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function esito($id)
+    {
+        return view('ordini.esito');
     }
 
 }

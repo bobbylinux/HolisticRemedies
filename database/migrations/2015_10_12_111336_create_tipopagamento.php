@@ -16,6 +16,7 @@ class CreateTipopagamento extends Migration
             $table->increments('id');
             $table->string('pagamento', 50);
             $table->string('informazioni', 2000)->nullable();
+            $table->string('forms', 4000)->nullable();
             $table->boolean('cancellato')->default(false); //flag di cancellazione: true = cancellato, false = non cancellato, default = false
             $table->timestamp('data_creazione')->default(DB::raw('CURRENT_TIMESTAMP')); //data creazione default sysdate
             $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate

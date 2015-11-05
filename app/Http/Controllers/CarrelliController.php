@@ -190,6 +190,9 @@ class CarrelliController extends Controller {
     public function getTotalWithPaymentDiscount($idPagamento) {
         $quantita = $this->carrello->getCartItemsNumber($this->auth->user()->id);
         $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,$this->scontiTipoPagamento,$idPagamento, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$percentualePagamento,$spedizione,$totale);
+
+        $formPagamento = $this->tipoPagamento->find($idPagamento)->forms;
+
         $data = array(
             'quantita' => $quantita,
             'totale' => $totale,
@@ -197,7 +200,8 @@ class CarrelliController extends Controller {
             'scontoPagamento' => $scontoPagamento,
             'percentualePagamento' => $percentualePagamento,
             'spedizione' => $spedizione,
-            'totaleScontato' => $totaleScontato
+            'totaleScontato' => $totaleScontato,
+            'formPagamento' => $formPagamento
         );
         return Response::json(array(
             'code' => '200', //OK

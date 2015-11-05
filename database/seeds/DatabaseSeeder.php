@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         DB::table('immagini')->delete();
         DB::table('sconti_quantita')->delete();
         DB::table('sconti_tipopagamento')->delete();
-        DB::table('tipopagamento')->delete();
+        //DB::table('tipopagamento')->delete();
         DB::table('clienti')->delete();
         DB::table('utenti')->delete();
         DB::table('ruolo_utenti')->delete();
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call('RuoloUtentiTableSeeder');
         $this->call('UtentiTableSeeder');
         $this->call('ClientiTableSeeder');
-        $this->call('TipoPagamentoTableSeeder');
+        //$this->call('TipoPagamentoTableSeeder');
         $this->call('ScontiQuantitaTableSeeder');
         $this->call('ScontiPagamentoTableSeeder');
         $this->call('ImmaginiTableSeeder');

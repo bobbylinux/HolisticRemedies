@@ -169,6 +169,7 @@ $(document).ready(function () {
                 var $sconto = 0;
                 var $scontoPagamento = 0;
                 var $percentuale = 0;
+                var $formPagamento = "";
                 $(this).closest('tr').remove();
                 $.each(data, function (key, value) { // First Level
                     if (key === "item") {
@@ -179,6 +180,7 @@ $(document).ready(function () {
                         $sconto = value.sconto;
                         $scontoPagamento = value.scontoPagamento;
                         $percentuale = value.percentualePagamento;
+                        $formPagamento = value.formPagamento;
                     }
                 });
                 $(".cart-count").html($quantita);
@@ -193,6 +195,7 @@ $(document).ready(function () {
                 $('#payment').slideUp();
                 $(".payment-price-tr").show();
                 $("#conferma-ordine").show();
+                $(".forms").append($formPagamento);
             },
             error: function (data) {
                 console.error(data);
@@ -253,7 +256,29 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.code === "200") {
-                    //$("#paypal").submit();
+                    var $item_name = "";
+                    var $return = "";
+                    var $amount = 0;
+                    var $username = "";
+                    var $name = "";
+                    var $amountCard="";
+                    $.each(data, function (key, value) { // First Level
+                        if (key === "item") {
+                            $item_name = value.item_name.toString()+"/00";
+                            $amount = value.amount;
+                            $amountCard = value.amount.replace(".","");
+                            $return = value.return;
+                            $username = value.username;
+                            $name = value.name;
+                        }
+                    });
+                    $("#item-name").val($item_name);
+                    $("#amount").val($amount);
+                    $("#amount-card").val($amountCard);
+                    $("#return").val($return);
+                    $("#_nome").val($name);
+                    $("#_email").val($username);
+                    $("#payment-form").submit();
                 }
             },
             error: function (data) {

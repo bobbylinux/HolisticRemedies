@@ -118,30 +118,8 @@
         </div>
     </div>
 </div>
-<div id="paypal-div">
-    <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="info@caisse.it">
-        <input type="hidden" name="currency_code" value="EUR">
-        <input type="hidden" name="item_name" value="' . $_SESSION['idordine'] . '">
-        <input type="hidden" name="amount" value="' . $importocarta . '">
-        <input type="hidden" name="return" value="http://www.holisticremedies.it/esito_paypal.cfm">
-        <input type="hidden" name="rm" value="2">
-        <!---<table class ="box-table-a" summary="Payment" id="tbl_paypal"  >
-            <thead>
-            <input type="hidden" name = "idpagamento" id="pagamentopaypal" value="4"/>
-            <th scope="cell" align="center">PAGAMENTO TRAMITE PAYPAL</th>
-            </thead>
-            <tbody>
-                <tr align="center"><td><select><option selected="selected">Euro ' . $importopaypal . '</option></select></td></tr>
-                <tr align="center">
-                    <td><input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" id="pagapaypal" border="0" name="submitpaypal" alt="PayPal - Il sistema di pagamento online più facile e sicuro!">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-                    </td>
-                </tr>
-            </tbody>
-        </table>-->
-    </form>
+<div class="forms">
+
 </div>
 @foreach($tipopagamento as $item)
 @if ($item->informazioni != "" && $item->informazioni != null)
