@@ -32,7 +32,7 @@ class Carrello extends BaseModel
      * The variable for validation rules
      *
      */
-    private $rules = array(
+    protected $rules = array(
         'prodotto' => 'required|numeric|exists:prodotti,id',
         'quantita' => 'min:1|max:100',
         'utente' => 'required|numeric|exists:utenti,id'

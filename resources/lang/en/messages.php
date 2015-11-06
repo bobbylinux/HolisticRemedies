@@ -183,7 +183,14 @@ return array(
     'check_ricordami' => 'Remember me',
 
     /*registrazione*/
-    'registrazione' => 'Registrazione',
+    'nome' => 'Name',
+    'cognome' => 'Surname',
+    'indirizzo' => 'Address',
+    'citta' => 'City',
+    'cap' => 'Zip Code',
+    'provincia' => 'Region',
+    'stato' => 'State',
+    'telefono' => 'Phone Number',
     'username' => 'Mail Address',
     'username_c' => 'Insert again to confirm',
     'password' => 'Password',

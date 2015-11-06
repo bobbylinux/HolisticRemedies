@@ -137,11 +137,11 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'registrazione' => 'Registrazione',
     'pulsante_modifica' => 'Modifica',
     'pulsante_elimina' => 'Elimina',
-    'pulsante_annulla' => 'Undo',
+    'pulsante_annulla' => 'Annulla',
     'pulsante_registrati' => 'Registrati',
     'pulsante_accedi' => 'Accedi',
     'pulsante_iscriviti' => 'Iscriviti',
-    'pulsante_crea_account' => 'Crea Account',
+    'pulsante_crea_account' => 'Conferma',
     'pulsante_conferma_acquisto' => 'Conferma',
     'pulsante_torna_allo_shop' => 'Torna allo Shop',
     'pulsante_scegli' => 'Scegli',
@@ -152,12 +152,19 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'check_ricordami' => 'Ricordami',
 
     /*registrazione*/
-
+    'nome' => 'Nome',
+    'cognome' => 'Cognome',
+    'indirizzo' => 'Indirizzo',
+    'citta' => 'Città',
+    'cap' => 'Cap',
+    'provincia' => 'Provincia',
+    'stato' => 'Stato',
+    'telefono' => 'Telefono',
     'username' => 'Indirizzo e-mail',
     'username_c' => 'Inserisci di nuovo per confermare',
     'password' => 'Password',
     'password_c' => 'Inserisci di nuovo per confermare',
-    
+
     'titolo_newsletter' => 'Iscriviti alla nostra mailing list',
 
     'newsletter' => 'Se siete interessati a ricevere informazioni da Holistic Remedies<br>iscrivetevi alla nostra mailing list.',

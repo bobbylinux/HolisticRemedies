@@ -1,6 +1,5 @@
 <?php namespace App\Models;
 
-use Illuminate\Support\Facades\Validator as Validator;
 
 class Prodotto extends BaseModel
 {
@@ -27,46 +26,12 @@ class Prodotto extends BaseModel
      * The variable for validation rules
      *
      */
-    private $rules = array(
+    protected $rules = array(
         'prodotto' => 'required|min:2|max:200',
         'descrizione' => 'required|max:1000',
-        'immagine' => 'required',
+        'immagine' => 'required|numeric',
         'prezzo' => 'required|numeric|min:0'
     );
-
-    /**
-     * The variable for validation rules
-     *
-     */
-    private $errors = "";
-
-    /**
-     * The function for validate
-     *
-     * @data array
-     */
-    public function validate($data)
-    {
-        $validation = Validator::make($data, $this->rules, $this->messages);
-
-        if ($validation->fails()) {
-            // set errors and return false
-            $this->errors = $validation->errors();
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * The function that incapsulate the error variable
-     *
-     * @errors array
-     */
-    public function getErrors()
-    {
-        return $this->errors;
-    }
 
     /**
      * The function for store in database from view

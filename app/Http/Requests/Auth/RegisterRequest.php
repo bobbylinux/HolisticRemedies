@@ -12,9 +12,14 @@ class RegisterRequest extends FormRequest {
     public function rules()
     {
         return [
-            'username' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:8',
+            'username' => '',
+            'password' => '',
         ];
+        //bypasso perchè gestisco le validazioni ne modello!
+        /*return [
+            'username' => 'required|email|unique:utenti',
+            'password' => 'required|confirmed|min:8',
+        ];*/
     }
 
     /**

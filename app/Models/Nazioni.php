@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-class Nazioni extends BaseModel
+class Nazione extends BaseModel
 {
     protected $table = "nazioni";
 

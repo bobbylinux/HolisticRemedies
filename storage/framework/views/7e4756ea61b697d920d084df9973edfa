@@ -1,0 +1,90 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="page-header">
+        <h2><?php echo Lang::choice('messages.dash_prodotti_edit_titolo',0); ?></h2>
+    </div>
+    <ol class="breadcrumb">
+        <li class="active">
+            <i class="fa fa-dashboard"></i>  <a href="<?php echo e(url('admin')); ?>">Pannello di controllo</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-th-large"></i> <a href="<?php echo e(url('admin/prodotti')); ?>">Prodotti</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-edit"></i> Modifica
+        </li>
+    </ol>
+    <?php echo Form::open(array('url'=>'admin/prodotti/'.$prodotto->id,'method'=>'PUT')); ?>
+
+    <?php foreach($errors->get('codice') as $message): ?>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('titolo_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_nome',0)); ?>
+
+                <?php echo Form::text('titolo_prodotto', $prodotto->prodotto, array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('titolo') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('descrizione_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_descrizione',0)); ?>
+
+                <?php echo Form::textarea('descrizione_prodotto', $prodotto->descrizione , array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('descrizione') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('immagini_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_immagine',0)); ?>
+
+                <?php echo Form::file('immagini_prodotto', array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+
+    <?php foreach($errors->get('immagine') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::submit(Lang::choice('messages.dash_prodotti_create_pulsante_crea',0), array('class' =>'btn btn-success')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.back', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Holistic Remedies</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo e(url('css/bootstrap.min.css')); ?>" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo e(url('css/style.css')); ?>" rel="stylesheet">
+
+    <!-- font-flag CSS-->
+    <link href="<?php echo e(url('css/flag-icon.min.css')); ?>" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="<?php echo e(url('fonts/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-front navbar-default navbar-fixed-top" role="navigation" id="nav-main">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">HOLISTIC</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#tips"> <?php echo Lang::choice('messages.menu_front_consigli',0); ?></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#ingredients"> <?php echo Lang::choice('messages.menu_front_ingredienti',0); ?></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#buy"> <?php echo Lang::choice('messages.menu_front_acquista',0); ?></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about"><i class="fa fa-facebook"></i> FACEBOOK</a></li>
+                <?php if(App::getLocale() == 'it'): ?>
+                    <li><a href="<?php echo url('lang/en'); ?>"><span class="flag-icon flag-icon-gb"></span> ENGLISH</a></li>
+                <?php elseif(App::getLocale() == 'en'): ?>
+                    <li><a href="<?php echo url('lang/it'); ?>"><span class="flag-icon flag-icon-it"></span> ITALIANO</a></li>
+                <?php endif; ?>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section">
+    <div class="container">
+        <?php echo $__env->yieldContent('intro'); ?>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="tips" class="tips-section">
+    <div class="container">
+        <?php echo $__env->yieldContent('tips'); ?>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="ingredients" class="ingredients-section">
+    <div class="container">
+        <?php echo $__env->yieldContent('ingredients'); ?>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="buy" class="contact-section">
+    <div class="container">
+        <?php echo $__env->yieldContent('shop'); ?>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="<?php echo e(url('js/jquery.js')); ?>"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo e(url('js/bootstrap.min.js')); ?>"></script>
+
+<!-- Scrolling Nav JavaScript -->
+<script src="<?php echo e(url('js/jquery.easing.min.js')); ?>"></script>
+<script src="<?php echo e(url('js/front.script.js')); ?>"></script>
+
+</body>
+
+</html>

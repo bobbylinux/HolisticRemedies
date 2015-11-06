@@ -1,0 +1,13 @@
+<?php $__env->startSection('intro'); ?>
+    <?php echo $__env->make('home.intro', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('tips'); ?>
+    <?php echo $__env->make('home.tips', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('ingredients'); ?>
+    <?php echo $__env->make('home.ingredients', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('shop'); ?>
+    <?php echo $__env->make('home.shop', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

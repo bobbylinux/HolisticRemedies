@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2><?php echo Lang::choice('messages.ingredienti_titolo',0); ?></h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <?php if(Lang::has('messages.ingredienti_paragrafo_1')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_1',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_2')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_2',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_3')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_3',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_4')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_4',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_5')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_5',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_6')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_6',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_7')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_7',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_8')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_8',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_9')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_9',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_10')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_10',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_11')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_11',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_12')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_12',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_13')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_13',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_14')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_14',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_15')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_15',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_16')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_16',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_17')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_17',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_18')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_18',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_19')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_19',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_20')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_20',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_21')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_21',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_22')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_22',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_23')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_23',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_24')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_24',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_25')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_25',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_26')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_26',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_27')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_27',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_28')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_28',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_29')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_29',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_30')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_30',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_31')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_31',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_32')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_32',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_33')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_33',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_34')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_34',0); ?></p>
+        <?php endif; ?>
+        <?php if(Lang::has('messages.ingredienti_paragrafo_35')): ?>
+            <p><?php echo Lang::choice('messages.ingredienti_paragrafo_35',0); ?></p>
+        <?php endif; ?>
+    </div>
+</div>

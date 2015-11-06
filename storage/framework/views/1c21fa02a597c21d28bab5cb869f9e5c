@@ -1,0 +1,3 @@
+<?php $__env->startSection('content'); ?>
+        <p class="alert alert-danger"><?php echo $errors; ?></p>
+<?php echo $__env->yieldSection(); ?>

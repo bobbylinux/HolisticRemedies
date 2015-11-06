@@ -1,0 +1,70 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="page-header">
+        <h2><?php echo Lang::choice('messages.dash_sconti_pagamento_create_titolo',0); ?></h2>
+    </div>
+    <ol class="breadcrumb">
+        <li class="active">
+            <i class="fa fa-dashboard"></i>  <a href="<?php echo e(url('admin')); ?>">Pannello di controllo</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-money"></i> Sconti
+        </li>
+        <li class="active">
+            <i class="fa fa-money"></i> <a href="<?php echo e(url('admin/sconti/pagamento')); ?>">Pagamento</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-file"></i> Nuovo
+        </li>
+    </ol>
+    <?php echo Form::open(array('url'=>'admin/sconti/pagamento','method'=>'POST','id'=>'form-sconti-pagamento' )); ?>
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('tipo_pagamento', Lang::choice('messages.dash_sconti_pagamento_create_tipo_pagamento',0)); ?>
+
+                <?php echo Form::select('tipo_pagamento', array('0' => Lang::choice('messages.dash_sconti_pagamento_create_seleziona_tipo_pagamento',0)) +
+            $tipopagamento, 0,array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('tipo_pagamento') as $message): ?>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('sconto', Lang::choice('messages.dash_sconti_pagamento_create_sconto',0)); ?>
+
+                <?php echo Form::text('sconto', '', array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('sconto') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::submit(Lang::choice('messages.dash_sconti_pagamento_create_pulsante_crea',0), array('class' =>'btn btn-success')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.back', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

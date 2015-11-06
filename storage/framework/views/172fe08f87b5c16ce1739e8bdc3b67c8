@@ -1,0 +1,86 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="page-header">
+        <h2><?php echo e(Lang::choice('messages.dash_sconti_quantita_create_titolo',0)); ?></h2>
+    </div>
+    <ol class="breadcrumb">
+        <li class="active">
+            <i class="fa fa-dashboard"></i>  <a href="<?php echo e(url('admin')); ?>">Pannello di controllo</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-money"></i> Sconti
+        </li>
+        <li class="active">
+            <i class="fa fa-money"></i> <a href="<?php echo e(url('admin/sconti/quantita')); ?>">Quantit&agrave;</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-file"></i> Nuovo
+        </li>
+    </ol>
+    <?php echo Form::open(array('url'=>'admin/sconti/quantita','method'=>'POST','id'=>'form-sconto-quantita' )); ?>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('quantita_min', Lang::choice('messages.dash_sconti_quantita_create_quantita_minima',0)); ?>
+
+                <?php echo Form::text('quantita_min', '', array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('quantita_min') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('quantita_max', Lang::choice('messages.dash_sconti_quantita_create_quantita_massima',0)); ?>
+
+                <?php echo Form::text('quantita_max', '', array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('quantita_max') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::label('sconto', Lang::choice('messages.dash_sconti_quantita_create_sconto',0)); ?>
+
+                <?php echo Form::text('sconto', '', array('class'=>'form-control')); ?>
+
+            </div>
+        </div>
+    </div>
+    <?php foreach($errors->get('sconto') as $message): ?>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="bg-danger"><?php echo $message; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <?php echo Form::submit(Lang::choice('messages.dash_sconti_quantita_create_pulsante_crea',0), array('class' =>'btn btn-success')); ?>
+
+            </div>
+        </div>
+    </div>z                
+    <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.back', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Nazione;
+use App\Models\Cliente;
 use App\Models\Utente as User;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 
@@ -26,15 +30,38 @@ class AuthController extends Controller {
     protected $auth;
 
     /**
+     * The nazioni model.
+     *
+     * @var Nazione
+     */
+    protected $nazione;
+
+    /**
+     * The cliente model.
+     *
+     * @var Nazione
+     */
+    protected $cliente;
+
+    /**
+     * The sysdate variable.
+     *
+     * @var Nazione
+     */
+    protected $now;
+
+    /**
      * Create a new authentication controller instance.
      *
      * @param  Authenticator  $auth
      * @return void
      */
-    public function __construct(Guard $auth, User $user) {
+    public function __construct(Guard $auth, User $user, Nazione $nazione, Cliente $cliente) {
         $this->user = $user;
         $this->auth = $auth;
-
+        $this->nazione = $nazione;
+        $this->cliente = $cliente;
+        $this->now = date('Y-m-d');
         $this->middleware('guest', ['except' => ['getLogout']]);
     }
 
@@ -44,7 +71,8 @@ class AuthController extends Controller {
      * @return Response
      */
     public function getRegister() {
-        return view('auth.register');
+        $nazioni = $this->nazione->where('inizio_validita','<',$this->now)->where('fine_validita','>',$this->now)->lists('nazione', 'id')->all();
+        return view('auth.register',compact("nazioni"));
     }
 
     /**
@@ -54,11 +82,39 @@ class AuthController extends Controller {
      * @return Response
      */
     public function postRegister(RegisterRequest $request) {
-        $this->user->username = $request->username;
+        //valido l'utente e il cliente
+        $data = array(
+            'cognome' => $request->get('cognome'),
+            'nome' => $request->get('nome'),
+            'indirizzo' => $request->get('indirizzo'),
+            'citta' => $request->get('citta'),
+            'cap' => $request->get('cap'),
+            'provincia' => $request->get('provincia'),
+            'stato' => $request->get('stato'),
+            'telefono' => $request->get('telefono'),
+            'username' => $request->get('username'),
+            'username_c' => $request->get('username_c'),
+            'password' => $request->get('password'),
+            'password_c' => $request->get('password_c')
+        );
+
+        //validate user
+        if (!$this->user->validate($data)) {
+            $errors = $this->user->getErrors();
+            return Redirect::action('Auth\AuthController@getRegister')->withInput()->withErrors($errors);
+        }
+        //validate client
+        if (!$this->cliente->validate($data)) {
+            $errors = $this->cliente->getErrors();
+            return Redirect::action('Auth\AuthController@getRegister')->withInput()->withErrors($errors);
+        }
+        //memorizzo i dati
+        /*$this->user->username = $request->username;
         $this->user->password = Hash::make($request->getPassword());
         $this->user->save();
-        $this->auth->login($this->user);
-        return redirect('/');
+        //redirect invio conferma
+        $this->auth->login($this->user);*/
+        //return redirect('/');
     }
 
     /**

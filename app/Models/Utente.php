@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -39,10 +38,29 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
     protected $hidden = ['password', 'remember_token'];
 
     /**
+ * The variable for validation rules
+ *
+ */
+    protected $rules = array(
+        'username' => 'required|email|unique:utenti,username',
+        'username_c' => 'required|email|same:username',
+        'password' => 'required|min:6',
+        'password_c' => 'same:password'
+    );
+
+    /**
+     * The variable for validation rules
+     *
+     */
+    protected $errors = "";
+
+
+    /**
      * set the relationships
      *
      *
      */
+
     public function ruoli()
     {
         return $this->belongsTo('App\Models\Ruolo','ruolo');
