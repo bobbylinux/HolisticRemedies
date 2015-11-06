@@ -43,7 +43,7 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
  */
     protected $rules = array(
         'username' => 'required|email|unique:utenti,username',
-        'username_c' => 'required|email|same:username',
+        'username_c' => 'same:username',
         'password' => 'required|min:6',
         'password_c' => 'same:password'
     );

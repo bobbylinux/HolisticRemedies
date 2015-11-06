@@ -60,9 +60,7 @@
                                             class="caret"></span></a>
 
                                 <div class="dropdown-menu dropdown-login">
-                                    @foreach($errors->all() as $error)
-                                        <p class="alert alert-danger" style="font-size: 12px;">{!!$error!!}</p>
-                                    @endforeach
+                                   
                                     {!!Form::open(['url'=>'auth/login','class'=>'form-signin','style'=>'margin-top:10px'])!!}
                                     <label for="inputEmail" class="sr-only">Email</label>
                                     {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}

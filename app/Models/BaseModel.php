@@ -58,10 +58,9 @@ abstract class BaseModel extends Model {
         if ($validation->fails()) {
             // set errors and return false
             $this->errors = $validation->messages();
-            return false;
         }
 
-        return true;
+        return $validation;
     }
 
     /**

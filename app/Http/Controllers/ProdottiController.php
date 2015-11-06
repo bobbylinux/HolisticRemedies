@@ -58,17 +58,15 @@ class ProdottiController extends Controller {
             'prezzo' => $request->get('prezzo_prodotto'),
             'didascalia' => $request->get('titolo_prodotto')
         );
-        //validate images
-        if (!$this->immagine->validate($data)) {
-            $errors = $this->immagine->getErrors();
-            return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
+        //validate user and cliente
+        $validatorImage = $this->immagine->validate($data);
+        $validatorProdotto = $this->prodotto->validate($data);
+        if ($validatorImage->fails() or $validatorProdotto->fails()) {
+            $errors = array_merge_recursive($validatorImage->messages()->toArray(), $validatorProdotto->messages()->toArray());
+            
+            return Redirect::action('Auth\ProdottiController@create')->withInput()->withErrors($errors);
         }
-        //validates products
-        if (!$this->prodotto->validate($data)) {
-            $errors = $this->prodotto->getErrors();
-            return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
-        }
-
+        
         $img_id = $this->immagine->store($data);
         $data['immagine'] = $img_id;
         $this->prodotto->store($data);

@@ -98,14 +98,12 @@ class AuthController extends Controller {
             'password_c' => $request->get('password_c')
         );
 
-        //validate user
-        if (!$this->user->validate($data)) {
-            $errors = $this->user->getErrors();
-            return Redirect::action('Auth\AuthController@getRegister')->withInput()->withErrors($errors);
-        }
-        //validate client
-        if (!$this->cliente->validate($data)) {
-            $errors = $this->cliente->getErrors();
+        //validate user and cliente
+        $validatorUser = $this->user->validate($data);
+        $validatorCliente = $this->cliente->validate($data);
+        if ($validatorUser->fails() or $validatorCliente->fails()) {
+            $errors = array_merge_recursive($validatorUser->messages()->toArray(), $validatorCliente->messages()->toArray());
+            
             return Redirect::action('Auth\AuthController@getRegister')->withInput()->withErrors($errors);
         }
         //memorizzo i dati
