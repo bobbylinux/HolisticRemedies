@@ -29,6 +29,11 @@ class Immagine extends BaseModel
         'didascalia' => 'required|max:1000',
         'immagine' => 'mimes:jpeg,jpg,png'
     );
+    /**
+     * The variable for validation rules
+     *
+     */
+    protected $errors = "";
 
 
     /**

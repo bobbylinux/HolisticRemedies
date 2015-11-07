@@ -32,6 +32,12 @@ class Prodotto extends BaseModel
         'immagine' => 'required|numeric',
         'prezzo' => 'required|numeric|min:0'
     );
+    /**
+     * The variable for validation rules
+     *
+     */
+    protected $errors = "";
+
 
     /**
      * The function for store in database from view

@@ -23,7 +23,7 @@ class ScontoQuantita extends BaseModel
      * The variable for validation rules
      *
      */
-    private $rules = array(
+    protected $rules = array(
         'quantita_min' => 'required|min:0',
         'quantita_max' => 'required|min:0',
         'sconto' => 'required|min:0'
@@ -33,24 +33,8 @@ class ScontoQuantita extends BaseModel
      * The variable for validation rules
      *
      */
-    private $errors = "";
+    protected $errors = "";
 
-    /**
-     * The function for validate
-     *
-     * @data array
-     */
-    public function validate($data)
-    {
-        $validation = Validator::make($data, $this->rules, $this->messages);
-
-        if ($validation->fails()) {
-            // set errors and return false
-            $this->errors = $validation->errors();
-            return false;
-        }
-        return true;
-    }
 
     /**
      * The function that incapsulate the error variable

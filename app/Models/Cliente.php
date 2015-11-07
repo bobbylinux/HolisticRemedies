@@ -15,6 +15,13 @@ class Cliente extends BaseModel
         'telefono' => 'required|max:20'
     );
 
+    /**
+     * The variable for validation rules
+     *
+     */
+    protected $errors = "";
+
+
     public function store($data) {
 
         $this->cognome = strtoupper($data['cognome']);
@@ -23,9 +30,10 @@ class Cliente extends BaseModel
         $this->comune = strtoupper($data['citta']);
         $this->cap = strtoupper($data['cap']);
         $this->provincia = strtoupper($data['provincia']);
-        $this->nazione = $data['nazione'];
+        $this->nazione = $data['stato'];
         $this->telefono = strtoupper($data['telefono']);
-
+        $this->utente = $data['utente'];
+        self::save();
     }
 
     /**

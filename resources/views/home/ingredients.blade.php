@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h2>{!!Lang::choice('messages.ingredienti_titolo',0)!!}</h2>
+        <h1>{!!Lang::choice('messages.ingredienti_titolo',0)!!}</h1>
     </div>
 </div>
 <div class="row">

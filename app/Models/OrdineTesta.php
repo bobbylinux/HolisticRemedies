@@ -12,37 +12,20 @@ class OrdineTesta extends BaseModel
      * The variable for validation rules
      *
      */
-    private $rules = array(
+    protected $rules = array(
         'utente' => 'required|numeric|exists:utenti,id',
         'costo' => 'required|numeric|min:0',
         'costospedizione' => 'required|numeric|min:0',
         'sconto' => 'required|numeric|min:0',
         'tipopagamento' => 'required|numeric|exists:tipopagamento,id'
     );
-    
+
     /**
      * The variable for validation rules
      *
      */
-    private $errors = "";
+    protected $errors = "";
 
-    /**
-     * The function for validate
-     *
-     * @data array
-     */
-    public function validate($data)
-    {
-        $validation = Validator::make($data, $this->rules, $this->messages);
-
-        if ($validation->fails()) {
-            // set errors and return false
-            $this->errors = $validation->errors();
-            return false;
-        }
-
-        return true;
-    }
 
     /**
      * The function that incapsulate the error variable

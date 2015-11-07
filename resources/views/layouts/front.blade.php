@@ -40,6 +40,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-front navbar-default navbar-fixed-top" role="navigation" id="nav-main">
     <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -47,7 +48,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">HOLISTIC REMEDIES</a>
+            <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-fw fa-home hidden-lg"></i><span
+                        class="hidden-md hidden-sm hidden-xs">HOLISTIC REMEDIES</span></a>
+            <a class="navbar-brand hidden-md hidden-lg" href="https://www.facebook.com/CaisseFormula/"
+               target="_blank"><i
+                        class="fa fa-facebook"></i></a>
+            @if (Auth::check())
+               <a class="navbar-brand hidden-md hidden-lg" href="{!! url('carrello') !!}"><span class="badge cart-count">{!! $cartcount !!}</span><i
+                            class="fa fa-shopping-cart"></i></a>
+            @endif
+            @if (App::getLocale() == "en")
+                <a class="navbar-brand hidden-md hidden-lg" href="{!! url('lang/it') !!}"><span
+                            class="flag-icon flag-icon-it"></span><span
+                            class="hidden-sm hidden-xs"> {{ Config::get('languages')[App::getLocale()] }}</span></a>
+            @elseif (App::getLocale() == "it")
+                <a class="navbar-brand hidden-md hidden-lg" href="{!! url('lang/en') !!}"><span
+                            class="flag-icon flag-icon-gb"></span><span
+                            class="hidden-sm hidden-xs"> {{ Config::get('languages')[App::getLocale()] }}</span></a>
+            @endif
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,8 +86,11 @@
                     <a class="page-scroll" href="#buy"> {!!Lang::choice('messages.menu_front_acquista',0)!!}</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">      
-                @if (!Auth::check())                
+            <ul class="nav navbar-nav navbar-right">
+                @if (!Auth::check())
+                    <li>
+                        <a class="hidden-md hidden-lg" href="auth/login"><i class="fa fa-fw fa-user"></i>  {!! Lang::choice('messages.menu_accedi',0) !!}</a>
+                    </li>
                     <li class="dropdown hidden-xs hidden-sm">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><i
@@ -77,9 +98,7 @@
                                     class="caret"></span></a>
 
                         <div class="dropdown-menu dropdown-login">
-                            @foreach($errors->all() as $error)
-                                <p class="alert alert-danger" style="font-size: 12px;">{!!$error!!}</p>
-                            @endforeach
+
                             {!!Form::open(['url'=>'auth/login','class'=>'form-signin','data-token' => csrf_token(),'style'=>'margin-top:10px'])!!}
                             <label for="inputEmail" class="sr-only">Email</label>
                             {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
@@ -98,18 +117,22 @@
                         </div>
                     </li>
                 @else
-                    <li><a href="{!! url('carrello') !!}" ><span class="badge cart-count">{!! $cartcount !!}</span><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="hidden-sm hidden-xs"><a href="{!! url('carrello') !!}"><span class="badge cart-count">{!! $cartcount !!}</span><i
+                                    class="fa fa-shopping-cart"></i></a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! Auth::user()->username !!} <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span
+                                    >{!! Auth::user()->username !!}</span> <b
+                                    class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                <a href="#"><i
+                                            class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
+                                </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                <a href="#"><i
+                                            class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
+                                </a>
                             </li>
                             <li class="divider"></li>
                             <li>
@@ -119,14 +142,16 @@
                     </li>
                 @endif
 
-                <li><a href="https://www.facebook.com/CaisseFormula/" target="_blank"><i
+                <li class="hidden-sm hidden-xs"><a href="https://www.facebook.com/CaisseFormula/" target="_blank"><i
                                 class="fa fa-facebook"></i><span class="hidden-sm"> FACEBOOK</span></a></li>
                 @if (App::getLocale() == "en")
-                    <li><a href="{!! url('lang/it') !!}"><span class="flag-icon flag-icon-it"></span><span
-                                    class="hidden-sm"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
+                    <li><a class="hidden-sm hidden-xs" href="{!! url('lang/it') !!}"><span
+                                    class="flag-icon flag-icon-it"></span><span
+                                    class="hidden-md"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
                 @elseif (App::getLocale() == "it")
-                    <li><a href="{!! url('lang/en') !!}"><span class="flag-icon flag-icon-gb"></span><span
-                                    class="hidden-sm"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
+                    <li><a class="hidden-sm hidden-xs" href="{!! url('lang/en') !!}"><span
+                                    class="flag-icon flag-icon-gb"></span><span
+                                    class="hidden-md"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
                 @endif
             </ul>
 

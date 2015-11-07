@@ -40,6 +40,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-front navbar-default navbar-fixed-top" role="navigation" id="nav-main">
     <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -47,7 +48,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">HOLISTIC REMEDIES</a>
+            <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-fw fa-home hidden-lg"></i><span
+                        class="hidden-md hidden-sm hidden-xs">HOLISTIC REMEDIES</span></a>
+            <a class="navbar-brand hidden-md hidden-lg" href="https://www.facebook.com/CaisseFormula/"
+               target="_blank"><i
+                        class="fa fa-facebook"></i></a>
+            <?php if(Auth::check()): ?>
+               <a class="navbar-brand hidden-md hidden-lg" href="<?php echo url('carrello'); ?>"><span class="badge cart-count"><?php echo $cartcount; ?></span><i
+                            class="fa fa-shopping-cart"></i></a>
+            <?php endif; ?>
+            <?php if(App::getLocale() == "en"): ?>
+                <a class="navbar-brand hidden-md hidden-lg" href="<?php echo url('lang/it'); ?>"><span
+                            class="flag-icon flag-icon-it"></span><span
+                            class="hidden-sm hidden-xs"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a>
+            <?php elseif(App::getLocale() == "it"): ?>
+                <a class="navbar-brand hidden-md hidden-lg" href="<?php echo url('lang/en'); ?>"><span
+                            class="flag-icon flag-icon-gb"></span><span
+                            class="hidden-sm hidden-xs"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a>
+            <?php endif; ?>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,8 +86,11 @@
                     <a class="page-scroll" href="#buy"> <?php echo Lang::choice('messages.menu_front_acquista',0); ?></a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">      
-                <?php if(!Auth::check()): ?>                
+            <ul class="nav navbar-nav navbar-right">
+                <?php if(!Auth::check()): ?>
+                    <li>
+                        <a class="hidden-md hidden-lg" href="auth/login"><i class="fa fa-fw fa-user"></i>  <?php echo Lang::choice('messages.menu_accedi',0); ?></a>
+                    </li>
                     <li class="dropdown hidden-xs hidden-sm">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><i
@@ -77,9 +98,7 @@
                                     class="caret"></span></a>
 
                         <div class="dropdown-menu dropdown-login">
-                            <?php foreach($errors->all() as $error): ?>
-                                <p class="alert alert-danger" style="font-size: 12px;"><?php echo $error; ?></p>
-                            <?php endforeach; ?>
+
                             <?php echo Form::open(['url'=>'auth/login','class'=>'form-signin','data-token' => csrf_token(),'style'=>'margin-top:10px']); ?>
 
                             <label for="inputEmail" class="sr-only">Email</label>
@@ -104,18 +123,24 @@
                         </div>
                     </li>
                 <?php else: ?>
-                    <li><a href="<?php echo url('carrello'); ?>" ><span class="badge cart-count"><?php echo $cartcount; ?></span><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="hidden-sm hidden-xs"><a href="<?php echo url('carrello'); ?>"><span class="badge cart-count"><?php echo $cartcount; ?></span><i
+                                    class="fa fa-shopping-cart"></i></a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo Auth::user()->username; ?> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span
+                                    ><?php echo Auth::user()->username; ?></span> <b
+                                    class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                <a href="#"><i
+                                            class="fa fa-fw fa-truck"></i> <?php echo Lang::choice('messages.miei_ordini',0); ?>
+
+                                </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                <a href="#"><i
+                                            class="fa fa-fw fa-cog"></i> <?php echo Lang::choice('messages.profilo',0); ?>
+
+                                </a>
                             </li>
                             <li class="divider"></li>
                             <li>
@@ -125,14 +150,16 @@
                     </li>
                 <?php endif; ?>
 
-                <li><a href="https://www.facebook.com/CaisseFormula/" target="_blank"><i
+                <li class="hidden-sm hidden-xs"><a href="https://www.facebook.com/CaisseFormula/" target="_blank"><i
                                 class="fa fa-facebook"></i><span class="hidden-sm"> FACEBOOK</span></a></li>
                 <?php if(App::getLocale() == "en"): ?>
-                    <li><a href="<?php echo url('lang/it'); ?>"><span class="flag-icon flag-icon-it"></span><span
-                                    class="hidden-sm"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a></li>
+                    <li><a class="hidden-sm hidden-xs" href="<?php echo url('lang/it'); ?>"><span
+                                    class="flag-icon flag-icon-it"></span><span
+                                    class="hidden-md"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a></li>
                 <?php elseif(App::getLocale() == "it"): ?>
-                    <li><a href="<?php echo url('lang/en'); ?>"><span class="flag-icon flag-icon-gb"></span><span
-                                    class="hidden-sm"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a></li>
+                    <li><a class="hidden-sm hidden-xs" href="<?php echo url('lang/en'); ?>"><span
+                                    class="flag-icon flag-icon-gb"></span><span
+                                    class="hidden-md"> <?php echo e(Config::get('languages')[App::getLocale()]); ?></span></a></li>
                 <?php endif; ?>
             </ul>
 

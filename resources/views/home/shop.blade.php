@@ -1,26 +1,5 @@
 @if (!Auth::check())
-    <div class="row hidden-md hidden-lg hidden-print">
-        <div class="col-md-4 col-md-offset-4">
-            @foreach($errors->all() as $error)
-                <p class="alert alert-danger">{!!$error!!}</p>
-            @endforeach
-            {!!Form::open(['url'=>'auth/login','class'=>'form-signin','style'=>'margin-top:10px'])!!}
-            <label for="inputEmail" class="sr-only">Email</label>
-            {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
-            <label for="inputPassword" class="sr-only">Password</label>
-            {!! Form::password('password',['class'=>'form-control']) !!}
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
-                </label>
-            </div>
-            {!!Form::submit(Lang::choice('messages.pulsante_accedi',0),['class'=>'btn btn-lg btn-default btn-block'])!!}
-            <a href="{!! url('auth/register')!!}"
-               class="btn btn-default btn-lg btn-block">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
-            {!!Form::close()!!}
 
-        </div>
-    </div>
 @endif
 <div class="row">
     <div class="jumbotron">
@@ -31,8 +10,13 @@
 
             <p>{!! Lang::choice('messages.shop_contenuto_jumbotron',0) !!}</p>
 
-            <p><a class="btn btn-default btn-lg" href="#"
-                  role="button">{!! Lang::choice('messages.shop_come_ordinare',0) !!}</a></p>
+            <p><a class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#modal-shop"
+                  role="button">{!! Lang::choice('messages.shop_come_ordinare',0) !!}</a>
+                <a class="btn btn-success btn-lg" href="auth/register"
+                   role="button">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
+                <a class="btn btn-warning btn-lg" href="auth/login"
+                   role="button">{!! Lang::choice('messages.pulsante_accedi',0) !!}</a>
+            </p>
         </div>
     </div>
 </div>
@@ -71,4 +55,51 @@
             </div>
         </div>
     @endforeach
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-shop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h3>{!! Lang::choice('messages.shop_come_ordinare',0) !!}</h3>
+            </div>
+            <div class="modal-body">
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_1'))
+                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_1',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_2'))
+                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_2',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_3'))
+                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_3',0)!!}</p>
+                @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_4'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_4',0)!!}</p>
+                    @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_5'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_5',0)!!}</p>
+                    @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_6'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_6',0)!!}</p>
+                    @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_7'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_7',0)!!}</p>
+                    @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_8'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_8',0)!!}</p>
+                    @endif
+                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_9'))
+                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_9',0)!!}</p>
+                    @endif
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        data-dismiss="modal" class="btn btn-default">{!! Lang::choice('messages.pulsante_chiudi',0) !!}</button>
+            </div>
+        </div>
+    </div>
 </div>

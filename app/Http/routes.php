@@ -24,6 +24,7 @@ Route::group(['prefix' => 'auth'], function () {
 // Registration routes...
     Route::get('register', 'Auth\AuthController@getRegister');
     Route::post('register', 'Auth\AuthController@postRegister');
+    Route::get('verify/{code}',['middleware' => 'guest', 'uses' => 'Auth\AuthController@verifyUser']);
 });
 
 Route::group(array('middleware' => 'auth'), function() {

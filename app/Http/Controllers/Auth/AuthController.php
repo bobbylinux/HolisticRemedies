@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Nazione;
 use App\Models\Cliente;
+use App\Models\Ruolo;
 use App\Models\Utente as User;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -44,6 +45,12 @@ class AuthController extends Controller {
     protected $cliente;
 
     /**
+     * The role id variable
+     *
+     *
+    */
+    protected $ruolo;
+    /**
      * The sysdate variable.
      *
      * @var Nazione
@@ -56,11 +63,12 @@ class AuthController extends Controller {
      * @param  Authenticator  $auth
      * @return void
      */
-    public function __construct(Guard $auth, User $user, Nazione $nazione, Cliente $cliente) {
+    public function __construct(Guard $auth, User $user, Nazione $nazione, Cliente $cliente, Ruolo $ruolo) {
         $this->user = $user;
         $this->auth = $auth;
         $this->nazione = $nazione;
         $this->cliente = $cliente;
+        $this->ruolo = $ruolo;;
         $this->now = date('Y-m-d');
         $this->middleware('guest', ['except' => ['getLogout']]);
     }
@@ -95,7 +103,9 @@ class AuthController extends Controller {
             'username' => $request->get('username'),
             'username_c' => $request->get('username_c'),
             'password' => $request->get('password'),
-            'password_c' => $request->get('password_c')
+            'password_c' => $request->get('password_c'),
+            'codice_conferma' => str_random(30),
+            'ruolo' => $this->ruolo->where('ruolo','=','user')->first()->id
         );
 
         //validate user and cliente
@@ -107,6 +117,16 @@ class AuthController extends Controller {
             return Redirect::action('Auth\AuthController@getRegister')->withInput()->withErrors($errors);
         }
         //memorizzo i dati
+
+        $this->user->store($data);
+        $data['utente'] = $this->user->id;
+        $this->cliente->store($data);
+        $codice = $data['codice_conferma'];
+        Mail::send('email.verify', compact('codice'), function($message) {
+            $message->to($this->user->username, $this->user->username)
+                ->subject('Conferma iscrizione');
+        });
+        //invio mail conferma
         /*$this->user->username = $request->username;
         $this->user->password = Hash::make($request->getPassword());
         $this->user->save();
@@ -178,4 +198,37 @@ class AuthController extends Controller {
         return Lang::has('auth.failed') ? Lang::get('auth.failed') : 'These credentials do not match our records.';
     }
 
+    /**
+     * Confirm the registration procedure through a code control
+     *
+     * @return \Illuminate\View\View
+     *
+     */
+    public function verifyUser($code)
+    {
+        if (!$code) {
+            $data['errore'] = true;
+            $data['titolo'] = Lang::choice("messages.errore",0);
+            $data['conferma'] = Lang::choice('messages.errore_signin',0);
+            return view('auth.confirm', $data);
+        }
+
+        $user = $this->user->where('codice_conferma', '=', $code)->first();
+
+        if (!$user) {
+            $data['errore'] = true;
+            $data['titolo'] = Lang::choice("messages.errore",0);
+            $data['conferma'] = Lang::choice('messages.errore_signin',0);
+            return view('auth.confirm', $data);
+        } else {
+
+            $user->confermato = true;
+            $user->codice_conferma = null;
+            $user->save();
+            $data['conferma'] = Lang::choice('messages.conferma_iscrizione_testo',0);
+            $data['errore'] = false;
+            $data['titolo'] = Lang::choice('messages.conferma_iscrizione_titolo',0);
+            return view('auth.confirm', $data);
+        }
+    }
 }

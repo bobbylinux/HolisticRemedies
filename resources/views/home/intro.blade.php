@@ -16,7 +16,7 @@
     <div class="col-lg-6 col-lg-offset-3">
         <div class="panel panel-default" id="panel-newsletter">
             <div class="panel-body">
-                <a href="#about" data-toggle="modal" data-target="#modal-news"><i class="fa fa-envelope"></i> {!! Lang::choice('messages.newsletter',0) !!} </a>
+                <a href="#" data-toggle="modal" data-target="#modal-news"><i class="fa fa-envelope"></i> {!! Lang::choice('messages.newsletter',0) !!} </a>
             </div>
         </div>
     </div>

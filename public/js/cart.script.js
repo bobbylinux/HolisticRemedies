@@ -230,6 +230,7 @@ $(document).ready(function () {
 
     $(document).on("click",".btn-paga-conferma",function(event) {
         event.preventDefault();
+        $.blockUI({message: $('#wait-msg')});
         var $url = "ordini";
         var $token = $(this).data("token");
         var $discountUnits = $(".discount-units-price").html();
@@ -278,11 +279,13 @@ $(document).ready(function () {
                     $("#return").val($return);
                     $("#_nome").val($name);
                     $("#_email").val($username);
+                    $(document).ajaxStop($.unblockUI);
                     $("#payment-form").submit();
                 }
             },
             error: function (data) {
                 console.error(data);
+                $(document).ajaxStop($.unblockUI);
             }
         });
     });

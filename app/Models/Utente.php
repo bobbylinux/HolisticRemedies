@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Support\Facades\Hash as Hash;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
@@ -38,9 +39,9 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
     protected $hidden = ['password', 'remember_token'];
 
     /**
- * The variable for validation rules
- *
- */
+     * The variable for validation rules
+     *
+     */
     protected $rules = array(
         'username' => 'required|email|unique:utenti,username',
         'username_c' => 'same:username',
@@ -54,6 +55,20 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      */
     protected $errors = "";
 
+    /**
+     * The function for store in database from view
+     *
+     * @data array
+     */
+    public function store($data)
+    {
+        $this->username = strtolower($data['username']);
+        $this->password = Hash::make($data['password']);
+        $this->ruolo = $data['ruolo'];
+        $this->confermato = false;
+        $this->codice_conferma = $data['codice_conferma'];
+        self::save();
+    }
 
     /**
      * set the relationships
@@ -63,9 +78,9 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
 
     public function ruoli()
     {
-        return $this->belongsTo('App\Models\Ruolo','ruolo');
+        return $this->belongsTo('App\Models\Ruolo', 'ruolo');
     }
-    
+
     /**
      * set the relationships
      *
@@ -73,7 +88,7 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      */
     public function clienti()
     {
-        return $this->hasOne('App\Models\Cliente','utente');
+        return $this->hasOne('App\Models\Cliente', 'utente');
     }
 
 }

@@ -22,14 +22,9 @@ return array(
     'consigli_titolo' => 'Instructions',
     'ingredienti_titolo' => 'The Herbs',
     'acquista_titolo' => 'Shop',
-    'ingredienti_paragrafo_1' => '',
-    'ingredienti_paragrafo_2' => '',
-
-
-    /*menu*/
-    'menu_front_consigli' => 'INSTRUCTIONS',
-    'menu_front_ingredienti' => 'THE HERBS',
-    'menu_front_acquista' => 'SHOP',
+    'miei_ordini' => 'My Orders Status',
+    'profilo' => 'My Profile',
+    /*contenuti*/
     'consigli_titolo' => 'Instructions',
     'consigli_paragrafo1' => "The Caisse Formula is available in bottles of 60 or 120 grams of micro-grinded powder and in bottles of 100 and 200 capsules.
                               One dose = one teaspoonful of powder or three capsules.",
@@ -93,6 +88,35 @@ return array(
     'shop_aggiungi_al_carrello' => 'Add to cart',
     'shop_quantita' => 'Units',
     'shop_come_ordinare'=>'How to order',
+    'shop_come_ordinare_paragrafo_1' => 'To order 1 or more bottles of Caisse Formula you must choose how many units and then click on "Add to cart" button.',
+    'shop_come_ordinare_paragrafo_2' => '<span class="Stile6">Example:</span> You want to buy 1 bottle of 200 capsules and 2 bottles of 120 gram powder, with a 5% discount. ',
+    'shop_come_ordinare_paragrafo_3' => '<ol><li>Click on the units under the bottle of 200 capsules and insert 1, then click on "Add to cart" button. <br />
+          The cart items number on the top of the page will be increase the number of items in your cart and you can proceed to the next part of your order.</li>',
+    'shop_come_ordinare_paragrafo_4' => '<li>Click on the units under the bottle of 120 gram powder and insert 2, then click on "Add to cart" button. <br />
+          Once again, cart items number on the top of the page will be increase the number of items.</li>',
+    'shop_come_ordinare_paragrafo_5' => '<li>Your order is finished and you can now click on CART icon on the top of the page. <br />
+          You will see the total amount of your order and the discount.</li>',
+    'shop_come_ordinare_paragrafo_6' => '<li>If you want to change any item, simply insert a new quantity units or click "Delete" button, the item will be deleted from your cart.<br>
+            The cart will automatically update your items and your amounts.</li></ol>',
+    'shop_come_ordinare_paragrafo_7' => '<span class="titoletti">Login page:</span><br />
+          If this is your first order, you will need to create an account with Holistic Remedies. <br />
+          Click on If this is your first order and you will be directed to a registration page.<br />
+          If you are already registered, simply input your email address and password, then click Entra (to enter the online shopping).',
+    'shop_come_ordinare_paragrafo_8' => '<span class="titoletti">Your contact info:</span><br />
+          <ol>
+          <li>You need to fill in all the information requested.</li>
+          <li>If you want to be part of our mailing list choose SI otherwise NO.</li>
+          <li>When you&rsquo;ve finished, click on VERIFICA DATA (to register your contact info).</li>
+          <li>You will be directed to a screen that will ask you to insert a password (6-8 letters).</li>
+          <li>Click on FINE REGISTRAZIONE &ndash; END. You are now registered with Holistic Remedies online shopping.</li>
+          <li>You will be directed to a screen that will show your contact info and customer number.</li>
+          <li>Click on Proceed with your order and finish your order by designating your payment method.</li>
+          <li>COD (contrassegno) is only valid for destinations in Italy.</li>
+          <li>Complete the information required by the bank and your order will be mailed to you within 2 business days.</li>
+          If you have any questions, contact us at info@caisse.it or ordini@caisse.it',
+    'shop_come_ordinare_paragrafo_9' => 'Thank you,,<br />Holistic Remedies<br />',
+
+
     'carrello_riepilogo_ordine' => 'Order Summary',
     'carrello_prodotto' => 'Product',
     'carrello_costo' => 'Price',
@@ -195,4 +219,14 @@ return array(
     'username_c' => 'Insert again to confirm',
     'password' => 'Password',
     'password_c' => 'Insert again to confirm',
+    'conferma_iscrizione_titolo' => 'Registration Confirm',
+    'conferma_iscrizione_testo' =>'Registration confirmed. Welcome in our virtual shop',
+    'errore_signin' => 'An error is verified, please contact the system administrator',
+    'errore' => 'Error',
+
+    /*errori*/
+    '404title' => 'Ups! Pay Attention Please',
+    '404body' => 'Page Not Found',
+    '503title' => 'Ups! Pay Attention Please',
+    '503body' => 'Service Unavailable. See You Back',
 );

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h2><?php echo Lang::choice('messages.consigli_titolo',0); ?></h2>
+        <h1><?php echo Lang::choice('messages.consigli_titolo',0); ?></h1>
     </div>
 </div>
 <div class="row">
@@ -12,7 +12,7 @@
     <div class="col-lg-6">
         <div class="row">
             <div class="col-lg-12">
-                <h3><?php echo Lang::choice('messages.consigli_titolo_polvere',0); ?></h3>
+                <h2><?php echo Lang::choice('messages.consigli_titolo_polvere',0); ?></h2>
             </div>
         </div>
         <div class="row">
@@ -29,7 +29,7 @@
     <div class="col-lg-6">
         <div class="row">
             <div class="col-lg-12">
-                <h3><?php echo Lang::choice('messages.consigli_titolo_capsule',0); ?></h3>
+                <h2><?php echo Lang::choice('messages.consigli_titolo_capsule',0); ?></h2>
             </div>
         </div>
         <div class="row">
@@ -53,7 +53,7 @@
 <!-- sezione dosaggio -->
 <div class="row">
     <div class="col-lg-12">
-        <h3><?php echo Lang::choice('messages.consigli_titolo_dosaggio',0); ?></h3>
+        <h2><?php echo Lang::choice('messages.consigli_titolo_dosaggio',0); ?></h2>
     </div>
 </div>
 <div class="row">
@@ -64,7 +64,7 @@
 <!-- sezione attenzione -->
 <div class="row">
     <div class="col-lg-12">
-        <h3><?php echo Lang::choice('messages.consigli_titolo_attenzione',0); ?></h3>
+        <h2><?php echo Lang::choice('messages.consigli_titolo_attenzione',0); ?></h2>
     </div>
 </div>
 <div class="row">

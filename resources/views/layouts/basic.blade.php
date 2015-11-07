@@ -84,13 +84,14 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! Auth::user()->username !!} <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                                        <a href="#"><i
+                                                    class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                        <a href="#"><i
+                                                    class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
+                                        </a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -99,9 +100,6 @@
                                 </ul>
                             </li>
                         @endif
-
-                        <li><a href="https://www.facebook.com/CaisseFormula/" target="_blank"><i
-                                        class="fa fa-facebook"></i><span class="hidden-sm"> FACEBOOK</span></a></li>
                         @if (App::getLocale() == "en")
                             <li><a href="{!! url('lang/it') !!}"><span class="flag-icon flag-icon-it"></span><span
                                             class="hidden-sm"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
@@ -122,7 +120,9 @@
                 @yield('content')
             </div>
         </section>
-
+        <div id="wait-msg" class="col-sm-12" style="display:none;">
+            <h3>{!!Lang::choice('messages.attendere',0)!!}</h3>
+        </div>
         <!-- jQuery -->
         <script src="{{ url('js/jquery.js') }}"></script>
 
@@ -132,8 +132,8 @@
         <!-- Scrolling Nav JavaScript -->
         <script src="{{ url('js/jquery.easing.min.js') }}"></script>
         <script src="{{ url('js/front.script.js') }}"></script>
+        <script src="{{ url('js/blockui.js') }}"></script>
         <script src="{{ url('js/cart.script.js') }}"></script>
-
     </body>
 
 </html>
