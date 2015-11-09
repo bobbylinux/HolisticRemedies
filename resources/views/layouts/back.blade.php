@@ -138,6 +138,28 @@
         </div>
         <!-- /#wrapper -->
 
+        <!-- Modal -->
+        <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-md " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <h4>{!! Lang::choice('messages.attenzione',0) !!}</h4>
+                    </div>
+                    <div class="modal-body">
+                      {!! Lang::choice('messages.modal_cancellazione',0) !!}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                                class="btn btn-danger btn-delete">{!! Lang::choice('messages.pulsante_conferma',0) !!}</button>
+                        <button type="button"
+                                data-dismiss="modal" class="btn btn-default">{!! Lang::choice('messages.pulsante_annulla',0) !!}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- jQuery -->
         <script src="{{ url('js/jquery.js') }}"></script>
 

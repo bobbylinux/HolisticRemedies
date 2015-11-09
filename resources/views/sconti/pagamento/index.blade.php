@@ -37,8 +37,6 @@
                         <td>{{$scontopagamento->sconto}}</td>
                         <td>
                             <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
-                            <a href="{{ url('/admin/sconti/pagamento/'.$scontopagamento['id']) }}" class="btn btn-danger btn-cancella"
-                               data-token="<?= csrf_token() ?>">{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
                         </td>
                     </tr>
                 @endforeach

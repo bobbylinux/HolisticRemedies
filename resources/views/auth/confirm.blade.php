@@ -9,14 +9,16 @@
                 </div>
             </div>
         @else
-            <div class="page-header">
+            <div class="panel panel-default">
+            <div class="panel-heading">
                 <h2>{!!$titolo!!}</h2>
             </div>
             <div class="panel panel-success">
-                <div class="panel-body">
+                <div class="panel-body" style="text-align: center">
                     <p>{!!$conferma!!}</p>
                     <a href="{!!url('/')!!}"
-                       class="btn btn-primary">{!!Lang::choice('messages.pulsante_home_page',0)!!}</a>
+                       class="btn btn-default"><i
+                                class="fa fa-fw fa-arrow-left"></i>{!!Lang::choice('messages.pulsante_home_page',0)!!}</a>
                 </div>
             </div>
         @endif

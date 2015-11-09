@@ -31,8 +31,6 @@
                     <th class="col-lg-4 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_cliente',0)); ?></th>
                     <th class="col-lg-3 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_stato',0)); ?></th>
                     <th class="col-lg-1 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_azioni_nome',0)); ?></th>
-
-
                 </tr>
                 <thead>
                 <tbody>
@@ -40,14 +38,13 @@
                     <tr>
                         <td><?php echo e(@$ordine->id); ?></td>
                         <td><?php echo e(@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))); ?></td>
-                        <td><?php echo e(@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2)); ?></td>
+                        <td><?php echo e(@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2)); ?> €</td>
                         <td><?php echo $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' .$ordine->utenti->username?></td>
                         <?php foreach($ordine->stati as $stato): ?>
                         <td><?php echo e(@$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione))); ?></td>
                         <?php endforeach; ?>
                         <td>
-                            <a href="<?php echo e(url('/admin/clienti/'.$ordine['id'].'/edit')); ?>"><button type="button" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
-                            <a href="<?php echo e(url('/admin/clienti/'.$ordine['id'])); ?>" class="btn-elimina" data-token="<?= csrf_token() ?>"><button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a>
+                            <a href="<?php echo e(url('/admin/clienti/'.$ordine['id'].'/edit')); ?>"><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -55,6 +52,7 @@
             </table>
         </div>
     </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.back', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

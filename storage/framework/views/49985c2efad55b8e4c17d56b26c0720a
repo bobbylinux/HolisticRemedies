@@ -39,9 +39,9 @@
                         <td><?php echo e(@$scontoquantita['quantita_max']); ?></td>
                         <td><?php echo e(@$scontoquantita['sconto']); ?></td>
                         <td>
-                            <a href="<?php echo e(url('/admin/sconti/quantita/'.$scontoquantita['id'].'/edit')); ?>" class="btn btn-primary"><?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?></a>
+                            <a href="<?php echo e(url('/admin/sconti/quantita/'.$scontoquantita['id'].'/edit')); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?></a>
                             <a href="<?php echo e(url('/admin/sconti/quantita/'.$scontoquantita['id'])); ?>" class="btn btn-danger btn-cancella"
-                               data-token="<?= csrf_token() ?>"><?php echo e(Lang::choice('messages.pulsante_elimina',0)); ?></a>
+                               data-token="<?= csrf_token() ?>"><span class="glyphicon glyphicon-trash"></span><?php echo e(Lang::choice('messages.pulsante_elimina',0)); ?></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

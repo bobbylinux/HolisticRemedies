@@ -105,6 +105,20 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
           <br />
           Se invece vorremo azzerare l’ordine si andrà in fondo alla pagina e si cliccherà su <span class="Stile6">Azzerare l’ordine</span> e poi si effettuerà il logout sulla pagina iniziale di <span class="Stile6">Shop</span>.          ',
     'shop_come_ordinare_paragrafo_6' => 'Per qualsiasi problema non esitate a contattarci a info@caisse.it e ordini@caisse.it oppure al numero 055 8395388.        ',
+
+
+    'pannello_di_controllo' => 'Pannello di controllo',
+
+    'ordini_utente_titolo' => 'Segui il tuo ordine',
+    'ordini_utente_segui_il_tuo_ordine' => 'Segnati il numero con cui è contrassegnato, cercalo qui sotto e copia il relativo numero della lettera di vettura di 13 cifre.<br>
+                                Vai sul sito <a href="http://www.sda.it">www.sda.it</a> e incolla il numero della LDV nella casella Ricerca spedizioni e Vai.<br>',
+    'ordini' => 'Ordini',
+    'ordini_utente_numero_ordine' => 'Numero Ordine ',
+    'ordini_utente_data' => 'Data Conferma Ordine',
+    'ordini_utente_costo' => 'Prezzo Ordine',
+    'ordini_utente_stato' => 'Stato Ordine',
+    'ordini_utente_vettura' => 'Lettera Vettura',
+
     'carrello_riepilogo_ordine' => 'Riepilogo Ordine',
     'carrello_prodotto' => 'Prodotto',
     'carrello_costo' => 'Costo',
@@ -164,8 +178,23 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_clienti_index_societa' => 'Società',
     'dash_clienti_index_username' => 'Username',
     'dash_clienti_index_attivo' => 'Attivo',
-    'dash_clienti_index_ruolo' => 'Ruolo',
+    'dash_clienti_index_ruolo' => 'Amministratore',
     'dash_clienti_index_azioni_nome' => 'Azioni',
+    'dash_clienti_edit_titolo' => 'Modifica Cliente',
+    'dash_clienti_edit_user_id' => 'User ID',
+    'dash_clienti_edit_cognome' => 'Cognome',
+    'dash_clienti_edit_nome' => 'Nome',
+    'dash_clienti_edit_telefono' => 'Telefono',
+    'dash_clienti_edit_societa' => 'Società',
+    'dash_clienti_edit_citta' => 'Comune',
+    'dash_clienti_edit_email' => 'Indirizzo E-Mail/Username',
+    'dash_clienti_edit_indirizzo' => 'Indirizzo',
+    'dash_clienti_edit_cap' => 'CAP',
+    'dash_clienti_edit_provincia' => 'Provincia',
+    'dash_clienti_edit_stato' => 'Stato',
+    'dash_clienti_edit_confermato' => 'Attivo',
+    'dash_clienti_edit_ruolo' => 'Amministratore',
+    'dash_clienti_edit_pulsante_modifica' => 'Modifica Cliente',
     'dash_ordini_index_titolo' => 'Gestione Ordini',
     'dash_ordini_index_numero_ordine' => '# Ordine',
     'dash_ordini_index_data_ordine' => 'Data Ordine',
@@ -175,6 +204,8 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_ordini_index_azioni_nome' => 'Azioni',
 
     'menu_accedi' => 'ACCEDI',
+    'attenzione' => 'Attenzione',
+    'modal_cancellazione' => 'Sei sicuro di voler cancellare?<br>Operazione non reversibile',
 
     /*pulsangi generici*/
     'registrazione' => 'Registrazione',
@@ -192,7 +223,10 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'pulsante_info' => 'Info',
     'pulsante_cancella' => 'Cancella',
     'pulsante_chiudi' => 'Chiudi',
+    'pulsante_ricerca' => 'Ricerca',
     'pulsante_paga_e_conferma' => 'Conferma & Paga',
+    'pulsante_conferma' => 'Conferma',
+    'pulsante_home_page' =>'Torna alla Home Page',
     'check_ricordami' => 'Ricordami',
 
     /*registrazione*/
@@ -208,10 +242,18 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'username_c' => 'Inserisci di nuovo per confermare',
     'password' => 'Password',
     'password_c' => 'Inserisci di nuovo per confermare',
-    'conferma_iscrizione_titolo' => 'Conferma Registrazione',
-    'conferma_iscrizione_testo' => 'Registazione confermata correttamente. Benvenuto nel nostro sito',
+    'conferma_titolo' => 'Conferma',
+    'conferma_testo' => 'Operazione confermata correttamente. Benvenuto nel nostro sito',
     'errore_signin' => 'Si è verificato un errore, contattare l\'amministratore del sistema',
     'errore' => 'Errore',
+    'titolo_recupera_password' => 'Reset Password',
+    'nuova_password' => 'Nuova Password',
+    'password_dimenticata' => 'Password dimenticata?',
+    'istruzioni_reset_password' => 'Inserisci il tuo indirizzo di registrazione, la nuova password e reinseriscila per conferma.<br>Al termine riceverai una email di conferma',
+
+    'si' => strtoupper('sì'),
+    'no' => 'NO',
+    'in_data' => 'in data',
     /*newsletter*/
     'titolo_newsletter' => 'Iscriviti alla nostra mailing list',
     'newsletter' => 'Se siete interessati a ricevere informazioni da Holistic Remedies<br>iscrivetevi alla nostra mailing list.',

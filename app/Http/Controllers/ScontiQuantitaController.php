@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect as Redirect;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -122,8 +123,14 @@ class ScontiQuantitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+
+        $sconto = $this->scontoQuantita->find($id);
+        $sconto->trash();
+
+        return Response::json(array(
+            'code' => '200', //OK
+            'msg' => 'OK',
+            'id' => $id));
     }
 }

@@ -37,7 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $prodotti = $this->prodotto->with('immagini')->get();
+        $prodotti = $this->prodotto->with('immagini')->orderby('id','asc')->get();
         if ($this->auth->check()) {
             $cookie_test = Cookie::make('cookies_check', '1');
             $carrello = $this->carrello->where('utente','=',$this->auth->user()->id)->with('prodotti')->get();

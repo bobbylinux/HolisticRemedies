@@ -31,9 +31,9 @@
                     <tr>
                         <td><?php echo e(@$prodotto['prodotto']); ?></td>
                         <td>
-                            <a href="<?php echo e(url('/admin/prodotti/'.$prodotto['id'].'/edit')); ?>" class="btn btn-primary"><?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?></a>
-                            <a href="<?php echo e(url('/admin/prodotti/'.$prodotto['id'])); ?>" class="btn btn-danger btn-cancella"
-                               data-token="<?= csrf_token() ?>"><?php echo e(Lang::choice('messages.pulsante_elimina',0)); ?></a>
+                            <a href="<?php echo e(url('/admin/prodotti/'.$prodotto['id'].'/edit')); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?></a>
+                            <a href="<?php echo url('/admin/prodotti/'.$prodotto['id']); ?>" data-token="<?php echo csrf_token(); ?>" class="btn btn-danger btn-cancella"
+                               data-token="<?= csrf_token() ?>"><span class="glyphicon glyphicon-trash"></span><?php echo e(Lang::choice('messages.pulsante_elimina',0)); ?></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

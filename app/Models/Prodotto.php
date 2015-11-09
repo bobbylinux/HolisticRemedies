@@ -17,19 +17,12 @@ class Prodotto extends BaseModel
     protected $fillable = array('prodotto', 'descrizione', 'foto', 'prezzo');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
      * The variable for validation rules
      *
      */
     protected $rules = array(
         'prodotto' => 'required|min:2|max:200',
         'descrizione' => 'required|max:1000',
-        'immagine' => 'required|numeric',
         'prezzo' => 'required|numeric|min:0'
     );
     /**
@@ -37,7 +30,6 @@ class Prodotto extends BaseModel
      *
      */
     protected $errors = "";
-
 
     /**
      * The function for store in database from view
@@ -69,6 +61,17 @@ class Prodotto extends BaseModel
         $this->save();
     }
 
+    /**
+     * The function for delete in database from view
+     *
+     * @data array
+     */
+    public function trash() {
+        $this->cancellato = true;
+        $this->data_cancellazione = $this->now;
+        $this->save();
+    }
+
     /*
      *
      * set the relationships
@@ -81,7 +84,7 @@ class Prodotto extends BaseModel
 
     public function ordini() {
 
-        return $this->belongsToMany('App\User\OrdineTesta', 'ordini_dettaglio','prodotto','ordine');
+        return $this->belongsToMany('App\User\OrdineTesta', 'ordini_dettaglio','prodotto','ordine')->withPivot('quantita', 'costo','cancellato');
     }
 
 

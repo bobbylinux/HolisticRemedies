@@ -56,8 +56,6 @@
         </div>
     @endforeach
 </div>
-
-
 <!-- Modal -->
 <div class="modal fade" id="modal-shop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">

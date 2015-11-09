@@ -16,13 +16,7 @@ class Carrello extends BaseModel
     protected $fillable = array('prodotto', 'utente');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
-     * The variable for system date time
+     * The variable for cart total
      *
      */
     private $total = 0;

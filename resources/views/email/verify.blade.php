@@ -7,8 +7,8 @@
         <h2>Conferma Iscrizione a Holistic Remedies</h2>
 
         <div>
-            Grazie per esserti iscritto al nostro sito e-commerce.
-            Per confermare la tua iscrizione ti preghiamo di fare click sul link sottostante<br/>
+            Grazie per essersi iscritto al nostro sito.
+            Per confermare la Sua iscrizione la preghiamo di fare click sul link sottostante<br/>
             {!! URL::to('auth/verify/' . $codice) !!}<br/>
         </div>
 

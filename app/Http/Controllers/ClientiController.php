@@ -6,20 +6,32 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Cliente;
+use App\Models\Nazione;
 
 class ClientiController extends Controller
 {
     
     protected $cliente;
-    
+
+    protected $nazioni;
+
+    /**
+     * The sysdate variable.
+     *
+     * @var Nazione
+     */
+    protected $now;
+
     /**
      * Constructor for Dipendency Injection
      *
      * @return none
      *
      */
-    public function __construct(Cliente $cliente) {
+    public function __construct(Cliente $cliente, Nazione $nazioni) {
         $this->cliente = $cliente;
+        $this->nazioni = $nazioni;
+        $this->now = date('Y-m-d');
     }
     
     /**
@@ -73,7 +85,9 @@ class ClientiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cliente = $this->cliente->with('utenti')->find($id);
+        $nazioni = $this->nazioni->where('cancellato','=',false)->where('inizio_validita','<=',$this->now)->where('fine_validita','>=',$this->now)->lists('nazione', 'id')->all();
+        return view('clienti.edit', compact('cliente','nazioni'));
     }
 
     /**

@@ -58,14 +58,7 @@ class OrdiniController extends Controller
      */
     public function index()
     {
-        switch ($this->auth->user()->ruolo) {
-            case 1 : //admin
-                $ordini = $this->ordine->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
-                break;
-            case 2 : //user
-                $ordini = $this->ordine->where('utente', '=', $this->auth->user()->id)->paginate(20);
-                break;
-        }
+        $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
 
         return view('ordini.index', compact('ordini'));
     }
@@ -164,7 +157,13 @@ class OrdiniController extends Controller
      */
     public function show($id)
     {
-        //
+        $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
+
+        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
+        $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+        $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
+        $totale = $tempTot - $scontoPagamento;
+        return view('ordini.esito',compact('ordine','totale','stati'));
     }
 
     /**
@@ -211,5 +210,17 @@ class OrdiniController extends Controller
     {
         return view('ordini.esito');
     }
+    /**
+     * Get the current user logged Orders
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getUserOrders()
+    {
+        $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
+        $ordini = $this->ordine->where('utente','=',$this->auth->user()->id)->with('stati','tracking','pagamenti.scontiTipoPagamento')->orderBy('data_creazione','desc')->paginate(20);
+        return view('ordini.user',compact('ordini','cartcount'));
+    }
+
 
 }

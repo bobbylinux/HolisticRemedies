@@ -35,7 +35,6 @@ class Immagine extends BaseModel
      */
     protected $errors = "";
 
-
     /**
      * The function for store in database from view
      *
@@ -56,6 +55,16 @@ class Immagine extends BaseModel
         self::save();
         return $this->id;
     }
-    
+
+    /**
+     * The function for delete in database from view
+     *
+     * @data array
+     */
+    public function trash() {
+        $this->cancellato = true;
+        $this->data_cancellazione = $this->now;
+        $this->save();
+    }
     
 }

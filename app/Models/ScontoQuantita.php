@@ -71,4 +71,15 @@ class ScontoQuantita extends BaseModel
         $this->sconto       = $data['sconto'];
         $this->save();
     }
+
+    /**
+     * The function for delete in database from view
+     *
+     * @data array
+     */
+    public function trash() {
+        $this->cancellato = true;
+        $this->data_cancellazione = $this->now;
+        $this->save();
+    }
 }

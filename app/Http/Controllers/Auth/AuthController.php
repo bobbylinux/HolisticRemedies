@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Auth\LoginRequest;
@@ -68,7 +69,7 @@ class AuthController extends Controller {
         $this->auth = $auth;
         $this->nazione = $nazione;
         $this->cliente = $cliente;
-        $this->ruolo = $ruolo;;
+        $this->ruolo = $ruolo;
         $this->now = date('Y-m-d');
         $this->middleware('guest', ['except' => ['getLogout']]);
     }
@@ -126,13 +127,8 @@ class AuthController extends Controller {
             $message->to($this->user->username, $this->user->username)
                 ->subject('Conferma iscrizione');
         });
-        //invio mail conferma
-        /*$this->user->username = $request->username;
-        $this->user->password = Hash::make($request->getPassword());
-        $this->user->save();
-        //redirect invio conferma
-        $this->auth->login($this->user);*/
-        //return redirect('/');
+
+        return redirect('/');
     }
 
     /**
@@ -173,9 +169,16 @@ class AuthController extends Controller {
                 return redirect('/');
             }
         }
-        return redirect('/auth/login')->withErrors([
-                    'email' => $this->getFailedLoginMessage()
-        ]);
+
+        if ($request->ajax()) {
+            return Response::json(array(
+                'code' => '500', //OK
+                'msg' => $this->getFailedLoginMessage()));
+        } else {
+            return redirect('/auth/login')->withErrors([
+                'email' => $this->getFailedLoginMessage()
+            ]);
+        }
     }
 
     /**
@@ -225,10 +228,59 @@ class AuthController extends Controller {
             $user->confermato = true;
             $user->codice_conferma = null;
             $user->save();
-            $data['conferma'] = Lang::choice('messages.conferma_iscrizione_testo',0);
+            $data['conferma'] = Lang::choice('messages.conferma_testo',0);
             $data['errore'] = false;
-            $data['titolo'] = Lang::choice('messages.conferma_iscrizione_titolo',0);
+            $data['titolo'] = Lang::choice('messages.conferma_titolo',0);
             return view('auth.confirm', $data);
         }
+    }
+
+    /**
+     * Change your password submit
+     *
+     * @return \Illuminate\View\View
+     *
+     */
+    public function getPassword()
+    {
+        return view('auth.password');
+    }
+
+    /**
+     * Change your password submit
+     *
+     * @return \Illuminate\View\View
+     *
+     */
+    public function postPassword(Request $request)
+    {
+        $data = array(
+          'email' => $request->get('email'),
+          'password' => $request->get('password'),
+          'password_c' => $request->get('password_c')
+        );
+
+        //validate user
+        $validatorUser = $this->user->validate($data,$this->user->passwordChangeRules);
+        if ($validatorUser->fails()) {
+            $errors = $this->user->getErrors();
+            return Redirect::action('Auth\AuthController@getPassword')->withInput()->withErrors($errors);
+        }
+        //se validato devo aggiornare il db
+        $user = $this->user->where('username','=',$data['email'])->first();
+
+        $codice = str_random(30);
+
+        $data['codice'] = $codice;
+
+        $user->password($data);
+
+        //invio mail di conferma
+        Mail::send('email.password', ['codice' => $codice, 'user' => $user], function($message) use($user,$codice) {
+            $message->to($user->username, $user->username)
+                ->subject('Conferma cambio password');
+        });
+        //ritorno alla home page
+        return redirect('/');
     }
 }

@@ -30,8 +30,6 @@
                     <th class="col-lg-4 col-md-2">{{ Lang::choice('messages.dash_ordini_index_cliente',0) }}</th>
                     <th class="col-lg-3 col-md-2">{{ Lang::choice('messages.dash_ordini_index_stato',0) }}</th>
                     <th class="col-lg-1 col-md-2">{{ Lang::choice('messages.dash_ordini_index_azioni_nome',0) }}</th>
-
-
                 </tr>
                 <thead>
                 <tbody>
@@ -39,14 +37,13 @@
                     <tr>
                         <td>{{@$ordine->id}}</td>
                         <td>{{@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))}}</td>
-                        <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }}</td>
+                        <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }} €</td>
                         <td><?php echo $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' .$ordine->utenti->username?></td>
                         @foreach($ordine->stati as $stato)
                         <td>{{@$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}</td>
                         @endforeach
                         <td>
-                            <a href="{{ url('/admin/clienti/'.$ordine['id'].'/edit') }}"><button type="button" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
-                            <a href="{{ url('/admin/clienti/'.$ordine['id']) }}" class="btn-elimina" data-token="<?= csrf_token() ?>"><button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a>
+                            <a href="{{ url('/admin/clienti/'.$ordine['id'].'/edit') }}"><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
                         </td>
                     </tr>
                 @endforeach
@@ -54,4 +51,5 @@
             </table>
         </div>
     </div>
+
 @stop

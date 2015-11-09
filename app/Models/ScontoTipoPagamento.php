@@ -57,6 +57,17 @@ class ScontoTipoPagamento extends BaseModel
     }
 
     /**
+     * The function for delete in database from view
+     *
+     * @data array
+     */
+    public function trash() {
+        $this->cancellato = true;
+        $this->data_cancellazione = $this->now;
+        $this->save();
+    }
+
+    /**
      * The relationships
      *
      */

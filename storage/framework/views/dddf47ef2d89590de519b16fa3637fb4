@@ -1,16 +1,16 @@
 
 <?php $__env->startSection('content'); ?>
-<div class="container">
-   <div class="col-md-4 col-md-offset-4">
+<div class="row">
+   <div class="col-md-4 col-md-offset-4 col-sm-12">
         <?php foreach($errors->all() as $error): ?>
             <p class="alert alert-danger"><?php echo $error; ?></p>
         <?php endforeach; ?>
         <?php echo Form::open(['url'=>'auth/login','class'=>'cart-form','data-token' => csrf_token(),'style'=>'margin-top:10px']); ?>
 
-        <label for="inputEmail" class="sr-only">Email</label>
+        <label for="username" >Email</label>
         <?php echo Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email']); ?>
 
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="password" >Password</label>
         <?php echo Form::password('password',['class'=>'form-control','placeholder'=>'Password','id'=>'password']); ?>
 
         <div class="checkbox">
@@ -24,6 +24,7 @@
 
         <a href="<?php echo url('auth/register'); ?>"
            class="btn btn-default btn-lg btn-block"><?php echo Lang::choice('messages.pulsante_registrati',0); ?></a>
+        <a href="<?php echo url('auth/password'); ?>" ><?php echo Lang::choice('messages.password_dimenticata',0); ?></a>
         <?php echo Form::close(); ?>
 
     </div>

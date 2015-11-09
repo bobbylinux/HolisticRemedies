@@ -38,9 +38,9 @@
                         <td>{{@$scontoquantita['quantita_max']}}</td>
                         <td>{{@$scontoquantita['sconto']}}</td>
                         <td>
-                            <a href="{{ url('/admin/sconti/quantita/'.$scontoquantita['id'].'/edit') }}" class="btn btn-primary">{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
+                            <a href="{{ url('/admin/sconti/quantita/'.$scontoquantita['id'].'/edit') }}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>{{ Lang::choice('messages.pulsante_modifica',0) }}</a>
                             <a href="{{ url('/admin/sconti/quantita/'.$scontoquantita['id']) }}" class="btn btn-danger btn-cancella"
-                               data-token="<?= csrf_token() ?>">{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
+                               data-token="<?= csrf_token() ?>"><span class="glyphicon glyphicon-trash"></span>{{ Lang::choice('messages.pulsante_elimina',0) }}</a>
                         </td>
                     </tr>
                 @endforeach

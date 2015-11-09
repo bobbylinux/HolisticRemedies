@@ -15,13 +15,6 @@
     </li>
 </ol>
 {!!Form::open(array('url'=>'admin/prodotti/'.$prodotto->id,'method'=>'PUT','files' => true,'id'=>'form-prodotto'))!!}
-@foreach($errors->get('codice') as $message)
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-        <p class="bg-danger">{!! $message !!}</p>
-    </div>
-</div>
-@endforeach
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div class="form-group">
@@ -30,12 +23,12 @@
         </div>
     </div>
 </div>
-@foreach($errors->get('titolo') as $message)
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <p class="bg-danger">{!! $message !!}</p>
+@foreach($errors->get('prodotto') as $message)
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <p class="bg-danger">{!! $message !!}</p>
+        </div>
     </div>
-</div>
 @endforeach
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -57,12 +50,12 @@
         
         <div class="panel panel-default">
             <div class="panel-body">
-                <img class="img-rounded" src="{{ url('/uploads/'.$immagine->nomefile) }}" />
+                <img class="img-thumbnail" src="{{ url('/uploads/'.$immagine->nomefile) }}" />
             </div>
         </div>
         <div class="form-group">
-            {!! Form::label('immagini_prodotto', Lang::choice('messages.dash_prodotti_edit_prodotto_immagine',0)) !!}
-            {!! Form::file('immagini_prodotto', array('class'=>'form-control')) !!}
+            {!! Form::label('immagine_prodotto', Lang::choice('messages.dash_prodotti_edit_prodotto_immagine',0)) !!}
+            {!! Form::file('immagine_prodotto', array('class'=>'form-control')) !!}
         </div>
     </div>
 </div>

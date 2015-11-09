@@ -1,21 +1,32 @@
 @extends('layouts.back')
 @section('content')
     <div class="page-header">
-        <h2>{!!Lang::choice('messages.dash_prodotti_edit_titolo',0)!!}</h2>
+        <h2>{!!Lang::choice('messages.dash_sconti_pagamento_create_titolo',0)!!}</h2>
     </div>
     <ol class="breadcrumb">
         <li class="active">
             <i class="fa fa-dashboard"></i>  <a href="{{url('admin')}}">Pannello di controllo</a>
         </li>
         <li class="active">
-            <i class="fa fa-th-large"></i> <a href="{{url('admin/sconti/pagamento')}}">Prodotti</a>
+            <i class="fa fa-money"></i> Sconti
         </li>
         <li class="active">
-            <i class="fa fa-edit"></i> Modifica
+            <i class="fa fa-money"></i> <a href="{{url('admin/sconti/pagamento')}}">Pagamento</a>
+        </li>
+        <li class="active">
+            <i class="fa fa-file"></i> Nuovo
         </li>
     </ol>
-    {!!Form::open(array('url'=>'admin/prodotti/'.$prodotto->id,'method'=>'PUT'))!!}
-    @foreach($errors->get('codice') as $message)
+    {!!Form::open(array('url'=>'admin/sconti/pagamento/'.$sconto->id,'method'=>'PUT','id'=>'form-sconti-pagamento' ))!!}
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+            <div class="form-group">
+                {!! Form::label('tipo_pagamento', Lang::choice('messages.dash_sconti_pagamento_create_tipo_pagamento',0)) !!}
+                {!! Form::select('tipo_pagamento', $tipopagamento, $sconto->pagamento,array('class'=>'form-control')) !!}
+            </div>
+        </div>
+    </div>
+    @foreach($errors->get('tipo_pagamento') as $message)
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <p class="bg-danger">{!! $message !!}</p>
@@ -23,14 +34,14 @@
         </div>
     @endforeach
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-2 col-md-offset-2">
             <div class="form-group">
-                {!! Form::label('titolo_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_nome',0)) !!}
-                {!! Form::text('titolo_prodotto', $prodotto->prodotto, array('class'=>'form-control')) !!}
+                {!! Form::label('sconto', Lang::choice('messages.dash_sconti_pagamento_create_sconto',0)) !!}
+                {!! Form::text('sconto', $sconto->sconto, array('class'=>'form-control')) !!}
             </div>
         </div>
     </div>
-    @foreach($errors->get('titolo') as $message)
+    @foreach($errors->get('sconto') as $message)
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <p class="bg-danger">{!! $message !!}</p>
@@ -40,39 +51,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                {!! Form::label('descrizione_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_descrizione',0)) !!}
-                {!! Form::textarea('descrizione_prodotto', $prodotto->descrizione , array('class'=>'form-control')) !!}
-            </div>
-        </div>
-    </div>
-    @foreach($errors->get('descrizione') as $message)
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <p class="bg-danger">{!! $message !!}</p>
-            </div>
-        </div>
-    @endforeach
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="form-group">
-                {!! Form::label('immagini_prodotto', Lang::choice('messages.dash_prodotti_create_prodotto_immagine',0)) !!}
-                {!! Form::file('immagini_prodotto', array('class'=>'form-control')) !!}
-            </div>
-        </div>
-    </div>
-
-    @foreach($errors->get('immagine') as $message)
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <p class="bg-danger">{!! $message !!}</p>
-            </div>
-        </div>
-    @endforeach
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="form-group">
-                {!! Form::submit(Lang::choice('messages.dash_prodotti_create_pulsante_crea',0), array('class' =>'btn btn-success'))!!}
+                {!! Form::submit(Lang::choice('messages.dash_sconti_pagamento_create_pulsante_crea',0), array('class' =>'btn btn-success'))!!}
             </div>
         </div>
     </div>

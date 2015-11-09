@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(document).on("submit", ".form-signin", function (event) {
         event.preventDefault();
-
+        $(".login-errors").empty();
         var $token = $(this).data("token");
 
         $.ajax({
@@ -16,11 +16,17 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                location.reload();
+                //
+                if (data.code === "200") {
+
+                    location.reload();
+                } else {
+                    $(".login-errors").html(data.msg);
+
+                }
             },
-            error: function (xhr, status, error) {
-                var err = eval("(" + xhr.responseText + ")");
-                alert(err.Message);
+            error: function(data){
+                // Render the errors with js ...
             }
         });
 

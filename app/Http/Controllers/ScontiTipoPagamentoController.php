@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\ScontoTipoPagamento as ScontoTipoPagamento;
-use App\Models\TipoPagamento as TipoPagamento;
+use App\Models\ScontoTipoPagamento;
+use App\Models\TipoPagamento;
 use Illuminate\Support\Facades\Lang;
 
 class ScontiTipoPagamentoController extends Controller
@@ -89,7 +90,9 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sconto = $this->scontoPagamento->find($id);
+        $tipopagamento = $this->tipoPagamento->where('cancellato','=',false)->orderBy('pagamento', 'asc')->lists('pagamento', 'id')->all(); //aggiornamento necessario per laravel 5.1
+        return view('sconti.pagamento.edit',compact('tipopagamento','sconto'));
     }
 
     /**
@@ -101,7 +104,19 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array(
+            'pagamento'  => $request->get('tipo_pagamento'),
+            'sconto'        => $request->get('sconto')
+        );
+
+        if ($this->scontoPagamento->validate($data)) {
+            $sconto = $this->scontoPagamento->find($id);
+            $sconto->edit($data);
+            return Redirect::action('ScontiTipoPagamentoController@index');
+        } else {
+            $errors = $this->scontoPagamento->getErrors();
+            return Redirect::action('ScontiTipoPagamentoController@edit',[$id])->withInput()->withErrors($errors);
+        }
     }
 
     /**
@@ -110,9 +125,15 @@ class ScontiTipoPagamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+
+        $sconto = $this->scontoPagamento->find($id);
+        $sconto->trash();
+
+        return Response::json(array(
+            'code' => '200', //OK
+            'msg' => 'OK',
+            'id' => $id));
     }
 
 

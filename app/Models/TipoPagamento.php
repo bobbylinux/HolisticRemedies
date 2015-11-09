@@ -31,6 +31,11 @@ class TipoPagamento extends BaseModel
      */
     public function scontiTipoPagamento() {
 
-        return  $this->hasOne('App\Models\ScontiTipoPagamento','pagamento');
+        return  $this->hasOne('App\Models\ScontoTipoPagamento','pagamento');
+    }
+
+
+    public function ordini() {
+        return $this->HasMany('App\Models\OrdineTesta','tipo_pagamento');
     }
 }

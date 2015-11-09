@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Prodotto as Prodotto;
-use App\Models\Immagine as Immagine;
+use App\Models\Prodotto;
+use App\Models\Immagine;
 
 class ProdottiController extends Controller {
 
@@ -64,7 +65,7 @@ class ProdottiController extends Controller {
         if ($validatorImage->fails() or $validatorProdotto->fails()) {
             $errors = array_merge_recursive($validatorImage->messages()->toArray(), $validatorProdotto->messages()->toArray());
             
-            return Redirect::action('Auth\ProdottiController@create')->withInput()->withErrors($errors);
+            return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
         }
         
         $img_id = $this->immagine->store($data);
@@ -111,26 +112,37 @@ class ProdottiController extends Controller {
             'prezzo' => $request->get('prezzo_prodotto'),
             'didascalia' => $request->get('titolo_prodotto')
         );
-        //validate images
-        if (null !== $request->file('immagine_prodotto')) {
-            if (!$this->immagine->validate($data)) {
+
+        $prodotto = $this->prodotto->find($id);
+
+        if ($request->hasFile('immagine_prodotto')) {
+            //validate image and product
+            $validatorImage = $this->immagine->validate($data);
+            $validatorProdotto = $this->prodotto->validate($data);
+            if ($validatorImage->fails() or $validatorProdotto->fails()) {
+                $errors = array_merge_recursive($validatorImage->messages()->toArray(), $validatorProdotto->messages()->toArray());
+
+                return Redirect::action('ProdottiController@edit',[$id])->withInput()->withErrors($errors);
+            }
+
+            $img_id = $this->immagine->store($data);
+            $data['immagine'] = $img_id;
+        } else {
+            //vuol dire che non è stata aggiunta una nuova foto
+            $img_id = $prodotto->immagine;
+            $data['immagine'] = $img_id;
+            $validatorProdotto = $this->prodotto->validate($data);
+            if ($validatorProdotto->fails()) {
                 $errors = $this->prodotto->getErrors();
-                return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
+
+                return Redirect::action('ProdottiController@edit',[$id])->withInput()->withErrors($errors);
             }
         }
-        //validates products
-        if (!$this->prodotto->validate($data)) {
-            $errors = $this->prodotto->getErrors();
-            return Redirect::action('ProdottiController@create')->withInput()->withErrors($errors);
-        }
-        
-        if (null !==$request->file('immagine_prodotto')) {
-            $img_id = $this->immagine->store($data);
-        }
-        $data['immagine'] = $img_id;
-        $this->prodotto->store($data);
+
+        $prodotto->edit($data);
 
         return Redirect::action('ProdottiController@index');
+
     }
 
     /**
@@ -140,7 +152,18 @@ class ProdottiController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+
+        $prodotto = $this->prodotto->find($id);
+        $prodotto->trash();
+
+        $imgId = $prodotto->immagine;
+        $immagine = $this->immagine->find($imgId);
+        $immagine->trash();
+
+        return Response::json(array(
+            'code' => '200', //OK
+            'msg' => 'OK',
+            'id' => $id));
     }
 
 }

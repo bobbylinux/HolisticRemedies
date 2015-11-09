@@ -49,11 +49,18 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
         'password_c' => 'same:password'
     );
 
+    public $passwordChangeRules = array (
+        'email' => 'required|email|exists:utenti,username',
+        'password' => 'required|min:6',
+        'password_c' => 'same:password'
+    );
+
     /**
      * The variable for validation rules
      *
      */
     protected $errors = "";
+
 
     /**
      * The function for store in database from view
@@ -68,6 +75,19 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
         $this->confermato = false;
         $this->codice_conferma = $data['codice_conferma'];
         self::save();
+    }
+
+    /**
+     * The function for store in database from view
+     *
+     * @data array
+     */
+    public function password($data)
+    {
+        $this->password = Hash::make($data['password']);
+        $this->confermato = false;
+        $this->codice_conferma = $data['codice'];
+        $this->save();
     }
 
     /**

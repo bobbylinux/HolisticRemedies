@@ -83,6 +83,13 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! Auth::user()->username !!} <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    @if (Auth::user()->ruolo == 1)
+                                    <li>
+                                        <a href="{!! url('admin') !!}"><i
+                                                    class="fa fa-fw fa-dashboard"></i> {!! Lang::choice('messages.pannello_di_controllo',0) !!}
+                                        </a>
+                                    </li>
+                                    @endif
                                     <li>
                                         <a href="#"><i
                                                     class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}

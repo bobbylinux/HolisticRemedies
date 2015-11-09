@@ -33,9 +33,27 @@ abstract class BaseModel extends Model {
      */
     protected $guarded = array('id', 'data_creazione', 'data_modifica');
 
+    /**
+     * The variable for errors messages
+     *
+     */
     protected $messages = array(
 
     );
+
+    /**
+     * The variable for system date time
+     *
+     */
+    protected $now = null;
+
+    /**
+     * The override of construct function
+     *
+     */
+    public function __construct() {
+        $this->now = date('Y-m-d H:i:s');
+    }
 
     /**
      * The variable for validation rules
@@ -45,18 +63,18 @@ abstract class BaseModel extends Model {
 
     );
 
-
     /**
      * The function for validate
      *
      * @data array
      */
-    public function validate($data)
+    public function validate($data, $rules = null)
     {
-        $validation = Validator::make($data, $this->rules, $this->messages);
+        $rules = (is_null($rules)) ? $this->rules : $rules;
+        $validation = Validator::make($data, $rules, $this->messages);
 
         if ($validation->fails()) {
-            // set errors and return false
+            // set errors
             $this->errors = $validation->messages();
         }
 
@@ -72,8 +90,5 @@ abstract class BaseModel extends Model {
     {
         return $this->errors;
     }
-
-
-
 
 }

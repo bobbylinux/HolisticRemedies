@@ -12,11 +12,20 @@
     </li>
 </ol>
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6 ">
+        <form class="form-inline" role="search">
+            <div class="form-group ">
+                <input type="text" class="form-control" placeholder="{!! Lang::choice('messages.pulsante_ricerca',0) !!}">
+            </div>
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 ">
         {!! $clienti->render() !!}
     </div>
 </div>
-
 <div class="panel-body">
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped table-responsive">
@@ -24,11 +33,10 @@
                 <tr>
                     <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_cognome',0) }}</th>
                     <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_nome',0) }}</th>
-                    <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_societa',0) }}</th>
+                    <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_username',0) }}</th>
                     <th class="col-lg-2 col-md-4">{{ Lang::choice('messages.dash_clienti_index_attivo',0) }}</th>
                     <th class="col-lg-2 col-md-4">{{ Lang::choice('messages.dash_clienti_index_ruolo',0) }}</th>
                     <th class="col-lg-1 col-md-4">{{ Lang::choice('messages.dash_clienti_index_azioni_nome',0) }}</th>
-
                 </tr>
             <thead>
             <tbody>
@@ -36,12 +44,19 @@
                 <tr>
                     <td>{{@$cliente->cognome}}</td>
                     <td>{{@$cliente->nome}}</td>
-                    <td>{{@$cliente->societa}}</td>
-                    <td>{{@$cliente->confermato}}</td>
-                    <td>{{@$cliente->utenti->ruoli->ruolo}}</td>
+                    <td>{{@$cliente->utenti->username}}</td>
+                    @if ($cliente->utenti->confermato == 1)
+                    <td>{!! Lang::choice('messages.si',0) !!}</td>
+                    @else
+                    <td>{!! Lang::choice('messages.no',0) !!}</td>
+                    @endif
+                    @if ($cliente->utenti->ruoli->id == 1)
+                    <td>{!! Lang::choice('messages.si',0) !!}</td>
+                    @else
+                    <td>{!! Lang::choice('messages.no',0) !!}</td>
+                    @endif
                     <td>
-                        <a href="{{ url('/admin/clienti/'.$cliente['id'].'/edit') }}"><button type="button" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
-                        <a href="{{ url('/admin/clienti/'.$cliente['id']) }}" class="btn-elimina" data-token="<?= csrf_token() ?>"><button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a>
+                        <a href="{{ url('/admin/clienti/'.$cliente['id'].'/edit') }}"><button type="button" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-pencil"></span> Modifica</button> </a>
                     </td>
                 </tr>
                 @endforeach
