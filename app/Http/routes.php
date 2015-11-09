@@ -17,42 +17,39 @@ Route::get('/', 'HomeController@index');
 Route::get('admin', 'DashBoardController@index');
 
 Route::group(['prefix' => 'auth'], function () {
-// Authentication routes...
+    // Authentication routes...
     Route::post('login', 'Auth\AuthController@postLogin');
     Route::get('login', 'Auth\AuthController@getLogin');
     Route::get('logout', 'Auth\AuthController@getLogout');
-// Registration routes...
+    // Registration routes...
     Route::get('register', 'Auth\AuthController@getRegister');
     Route::post('register', 'Auth\AuthController@postRegister');
     //cambio password
     Route::get('password', 'Auth\AuthController@getPassword');
     Route::post('password', 'Auth\AuthController@postPassword');
     //pagina di verifica
-    Route::get('verify/{code}',['middleware' => 'guest', 'uses' => 'Auth\AuthController@verifyUser']);
+    Route::get('verify/{code}', ['middleware' => 'guest', 'uses' => 'Auth\AuthController@verifyUser']);
 });
-
-Route::get('ordini/esito/{id}','OrdiniController@show');
 
 Route::group(array('middleware' => 'auth'), function() {
     Route::resource('carrello', 'CarrelliController');
-    Route::get('carrello/{idPagamento}/pagamento','CarrelliController@getTotalWithPaymentDiscount');
+    Route::get('carrello/{idPagamento}/pagamento', 'CarrelliController@getTotalWithPaymentDiscount');
     //ordini utente
     Route::get('ordini/utente', 'OrdiniController@getUserOrders');
     //esito dell'ordine
-    Route::post('ordini/esito','OrdiniController@esito');
-
+    Route::post('ordini/esito', 'OrdiniController@esito');
 });
 
 // Gestione backoffice
-Route::group(array('middleware' => 'admin'), function() {
-    Route::group(['prefix' => 'admin'], function () {
 
-        Route::resource('ordini', 'OrdiniController');
-        Route::resource('prodotti', 'ProdottiController');
-        Route::resource('sconti/quantita', 'ScontiQuantitaController');
-        Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
-        Route::resource('clienti', 'ClientiController');
-    });
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::resource('ordini', 'OrdiniController');
+    Route::resource('prodotti', 'ProdottiController');
+    Route::resource('sconti/quantita', 'ScontiQuantitaController');
+    Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
+    Route::resource('clienti', 'ClientiController');
 });
+
 // Cambio linguaggio
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguagesController@switchLang']);

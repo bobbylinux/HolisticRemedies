@@ -230,6 +230,7 @@ return array(
     'pulsante_scegli' => 'Select',
     'pulsante_info' => 'Info',
     'pulsante_cancella' => 'Delete',
+    'pulsante_salva' => 'Save',
     'pulsante_chiudi' => 'Close',
     'pulsante_ricerca' => 'Search',
     'pulsante_paga_e_conferma' => 'Submit & Pay',

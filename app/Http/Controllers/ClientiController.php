@@ -29,6 +29,8 @@ class ClientiController extends Controller
      *
      */
     public function __construct(Cliente $cliente, Nazione $nazioni) {
+        $this->middleware('admin', ['except' => ['getLogout']]);
+        
         $this->cliente = $cliente;
         $this->nazioni = $nazioni;
         $this->now = date('Y-m-d');

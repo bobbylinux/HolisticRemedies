@@ -202,7 +202,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_ordini_index_cliente' => 'Cliente',
     'dash_ordini_index_stato' => 'Stato',
     'dash_ordini_index_azioni_nome' => 'Azioni',
-
+    
     'menu_accedi' => 'ACCEDI',
     'attenzione' => 'Attenzione',
     'modal_cancellazione' => 'Sei sicuro di voler cancellare?<br>Operazione non reversibile',
@@ -222,6 +222,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'pulsante_scegli' => 'Scegli',
     'pulsante_info' => 'Info',
     'pulsante_cancella' => 'Cancella',
+    'pulsante_salva' => 'Salva',
     'pulsante_chiudi' => 'Chiudi',
     'pulsante_ricerca' => 'Ricerca',
     'pulsante_paga_e_conferma' => 'Conferma & Paga',

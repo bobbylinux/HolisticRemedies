@@ -39,4 +39,33 @@ $(document).ready(function(){
         $token = $(this).data('token');
         $("#modal-delete").modal("show");
     });
+    
+    $(document).on("click",".btn-edit-order",function(event){
+       event.preventDefault();
+       var $url = $(this).attr("href");
+       $token = $(this).data('token');
+       
+       if ($url === null || $url === "") {
+           return;
+       } 
+       
+       $.ajax({
+            context: this, /*used for pass object dom into ajax*/
+            url: $url,
+            type: "POST",
+            async: false,
+            data: {
+                _method: "GET",
+                _token: $token
+            },
+            dataType: 'html',
+            success: function (data) {
+                $("#modal-edit-order").modal("show");
+                
+            },
+            error: function (data) {
+                console.error(data);
+            }
+        });
+    });
 });

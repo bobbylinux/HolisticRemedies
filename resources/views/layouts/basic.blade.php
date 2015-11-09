@@ -45,74 +45,60 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="{!! url('/')!!}">HOLISTIC REMEDIES</a>
+                    <a class="navbar-brand page-scroll" href="{!! url('/')!!}"><i class="fa fa-fw fa-home hidden-lg"></i><span
+                            class="hidden-md hidden-sm hidden-xs">HOLISTIC REMEDIES</span></a>
+                    @if (App::getLocale() == "en")
+                    <a class="navbar-brand hidden-md hidden-lg" href="{!! url('lang/it') !!}"><span
+                            class="flag-icon flag-icon-it"></span><span
+                            class="hidden-sm hidden-xs"> {{ Config::get('languages')[App::getLocale()] }}</span></a>
+                    @elseif (App::getLocale() == "it")
+                    <a class="navbar-brand hidden-md hidden-lg" href="{!! url('lang/en') !!}"><span
+                            class="flag-icon flag-icon-gb"></span><span
+                            class="hidden-sm hidden-xs"> {{ Config::get('languages')[App::getLocale()] }}</span></a>
+                    @endif        
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
 
                     <ul class="nav navbar-nav navbar-right">
-                        @if (!Auth::check())
-                            <li class="dropdown hidden-xs hidden-sm">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                   aria-expanded="false"><i
-                                            class="fa fa-fw fa-user"></i> {!! Lang::choice('messages.menu_accedi',0) !!}<span
-                                            class="caret"></span></a>
-
-                                <div class="dropdown-menu dropdown-login">
-                                   
-                                    {!!Form::open(['url'=>'auth/login','class'=>'form-signin','style'=>'margin-top:10px'])!!}
-                                    <label for="inputEmail" class="sr-only">Email</label>
-                                    {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
-                                    <label for="inputPassword" class="sr-only">Password</label>
-                                    {!! Form::password('password',['class'=>'form-control','placeholder'=>'Password']) !!}
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"
-                                                   value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
-                                        </label>
-                                    </div>
-                                    {!!Form::submit(Lang::choice('messages.pulsante_accedi',0),['class'=>'btn btn-lg btn-default btn-block'])!!}
-                                    <a href="{!! url('auth/register')!!}"
-                                       class="btn btn-default btn-lg btn-block">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
-                                    {!!Form::close()!!}
-                                </div>
-                            </li>
-                        @else
-                            <li><a href="{!! url('carrello') !!}" ><span class="badge cart-count">{!! $cartcount !!}</span><i class="fa fa-shopping-cart"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! Auth::user()->username !!} <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    @if (Auth::user()->ruolo == 1)
-                                    <li>
-                                        <a href="{!! url('admin') !!}"><i
-                                                    class="fa fa-fw fa-dashboard"></i> {!! Lang::choice('messages.pannello_di_controllo',0) !!}
-                                        </a>
-                                    </li>
-                                    @endif
-                                    <li>
-                                        <a href="#"><i
-                                                    class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i
-                                                    class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="{!! url('/auth/logout')!!}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                                    </li>
-                                </ul>
-                            </li>
+                        @if (Auth::check())
+                        <li><a href="{!! url('carrello') !!}" ><span class="badge cart-count">{!! $cartcount !!}</span><i class="fa fa-shopping-cart"></i></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! Auth::user()->username !!} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                @if (Auth::user()->ruolo == 1)
+                                <li>
+                                    <a href="{!! url('admin') !!}"><i
+                                            class="fa fa-fw fa-dashboard"></i> {!! Lang::choice('messages.pannello_di_controllo',0) !!}
+                                    </a>
+                                </li>
+                                @endif
+                                <li>
+                                    <a href="#"><i
+                                            class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><i
+                                            class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{!! url('/auth/logout')!!}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
                         @endif
                         @if (App::getLocale() == "en")
-                            <li><a href="{!! url('lang/it') !!}"><span class="flag-icon flag-icon-it"></span><span
-                                            class="hidden-sm"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
+                        <li><a class="hidden-sm hidden-xs" href="{!! url('lang/it') !!}"><span
+                                    class="flag-icon flag-icon-it"></span><span
+                                    class="hidden-md"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
                         @elseif (App::getLocale() == "it")
-                            <li><a href="{!! url('lang/en') !!}"><span class="flag-icon flag-icon-gb"></span><span
-                                            class="hidden-sm"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
+                        <li><a class="hidden-sm hidden-xs" href="{!! url('lang/en') !!}"><span
+                                    class="flag-icon flag-icon-gb"></span><span
+                                    class="hidden-md"> {{ Config::get('languages')[App::getLocale()] }}</span></a></li>
                         @endif
                     </ul>
 

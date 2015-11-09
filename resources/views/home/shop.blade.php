@@ -1,21 +1,17 @@
-@if (!Auth::check())
-
-@endif
 <div class="row">
     <div class="jumbotron">
         <div class="container">
             <h1>{!! Lang::choice('messages.shop_titolo',0) !!}</h1>
-
             <p>{!!  Lang::choice('messages.shop_titolo_jumbotron',0) !!}</p>
-
             <p>{!! Lang::choice('messages.shop_contenuto_jumbotron',0) !!}</p>
-
             <p><a class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#modal-shop"
                   role="button">{!! Lang::choice('messages.shop_come_ordinare',0) !!}</a>
-                <a class="btn btn-success btn-lg" href="auth/register"
+                @if (!Auth::check())
+                <a class="btn btn-success btn-lg" href="{!! url('auth/register') !!}"
                    role="button">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
-                <a class="btn btn-warning btn-lg" href="auth/login"
+                <a class="btn btn-warning btn-lg" href="{!! url('auth/login') !!}"
                    role="button">{!! Lang::choice('messages.pulsante_accedi',0) !!}</a>
+                @endif
             </p>
         </div>
     </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\OrdineTesta;
 use App\Models\Carrello;
 use App\Models\Stato;
+use App\Models\Utente;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
 
@@ -26,7 +27,7 @@ class OrdiniController extends Controller
      * @var Authenticator
      */
     protected $auth;
-
+    protected $utente;
     /**
      * The cart variable
      *
@@ -43,12 +44,14 @@ class OrdiniController extends Controller
      * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato)
+    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato, Utente $utente)
     {
+        $this->middleware('admin', ['only' => ['index', 'update','edit','destroy']]);
         $this->ordine = $ordine;
         $this->auth = $auth;
         $this->carrello = $carrello;
         $this->stato = $stato;
+        $this->utente = $utente;
     }
 
     /**
@@ -158,12 +161,19 @@ class OrdiniController extends Controller
     public function show($id)
     {
         $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
-
+        
         $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
-        $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
-        $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
-        $totale = $tempTot - $scontoPagamento;
-        return view('ordini.esito',compact('ordine','totale','stati'));
+     
+        if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
+            $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+            $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
+            $totale = $tempTot - $scontoPagamento;
+            $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
+        
+            return view('ordini.show',compact('ordine','totale','stati','cartcount'));
+        } else {
+            return redirect('/');
+        }
     }
 
     /**
@@ -174,7 +184,13 @@ class OrdiniController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
+
+        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
+        $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+        $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
+        $totale = $tempTot - $scontoPagamento;
+        return view('ordini.edit',compact('ordine','totale','stati'));
     }
 
     /**

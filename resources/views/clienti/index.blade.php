@@ -13,16 +13,16 @@
 </ol>
 <div class="row">
     <div class="col-md-6 ">
-        <form class="form-inline" role="search">
-            <div class="form-group ">
-                <input type="text" class="form-control" placeholder="{!! Lang::choice('messages.pulsante_ricerca',0) !!}">
-            </div>
-            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
-        </form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="{!! Lang::choice('messages.pulsante_ricerca',0) !!}">
+            <span class="input-group-btn">                
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
+            </span>
+        </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4 ">
+    <div class="col-md-8">
         {!! $clienti->render() !!}
     </div>
 </div>

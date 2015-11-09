@@ -9,7 +9,7 @@ class DashBoardController extends Controller {
      */
     public function __construct()
     {
-        $this->middleware('App\Http\Middleware\Administrator');
+        $this->middleware('admin', ['except' => ['getLogout']]);
     }
 
     /**

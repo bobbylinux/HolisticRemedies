@@ -43,7 +43,7 @@
                         <td>{{@$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}</td>
                         @endforeach
                         <td>
-                            <a href="{{ url('/admin/clienti/'.$ordine['id'].'/edit') }}"><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                            <a href="{{ url('/admin/ordini/'.$ordine['id'].'/edit') }}" data-token ="<?= csrf_token() ?>" class='btn-edit-order'><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
                         </td>
                     </tr>
                 @endforeach
@@ -51,5 +51,5 @@
             </table>
         </div>
     </div>
-
+    
 @stop

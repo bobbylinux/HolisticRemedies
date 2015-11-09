@@ -41,7 +41,7 @@ class CarrelliController extends Controller {
      */
     public function __construct(Guard $auth, Carrello $carrello, ScontoQuantita $scontiQuantita, ScontoTipoPagamento $scontiTipoPagamento,TipoPagamento $tipoPagamento, Spedizione $spedizione) {
         
-        $this->middleware('auth', ['except' => ['getLogout']]);
+        $this->middleware('auth');
         
         $this->carrello = $carrello;
         $this->auth = $auth;
