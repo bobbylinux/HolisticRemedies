@@ -139,7 +139,8 @@ class OrdiniController extends Controller
         $data = array(
             'item_name' => $this->ordine->id,
             'amount' => $totaleCarrelloScontato,
-            'return' => "http://localhost/ordini/" . $this->ordine->id . "/edit",
+            //'return' => "http://localhost/ordini/" . $this->ordine->id . "/edit",
+            'return' => url('/admin/ordini/'.$this->ordine->id),
             'name' => $nome,
             'username' => $this->auth->user()->username
         );
@@ -148,7 +149,9 @@ class OrdiniController extends Controller
         foreach ($carrello as $item) {
             $this->carrello->destroy($item->id);
         }
-
+        //tutto ok ora invio le mail di conferma
+        
+        
         return Response::json(array(
             'code' => '200', //OK
             'msg' => 'OK',

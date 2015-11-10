@@ -279,8 +279,8 @@ $(document).ready(function () {
                     $("#return").val($return);
                     $("#_nome").val($name);
                     $("#_email").val($username);
-                    $(document).ajaxStop($.unblockUI);
-                    $("#payment-form").submit();
+                    window.location = $return;
+                    //$("#payment-form").submit();
                 }
             },
             error: function (data) {

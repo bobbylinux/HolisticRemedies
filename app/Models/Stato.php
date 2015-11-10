@@ -16,6 +16,6 @@ class Stato extends BaseModel
 
     public function ordini()
     {
-        return $this->belongsToMany('App\Models\OrdineTesta', 'ordini_stato', 'stato', 'ordine')->last();
+        return $this->belongsToMany('App\Models\OrdineTesta', 'ordini_stato', 'stato', 'ordine')->withPivot('data_creazione');
     }
 }

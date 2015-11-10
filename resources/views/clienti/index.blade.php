@@ -11,7 +11,7 @@
         <i class="fa fa-user"></i> Clienti
     </li>
 </ol>
-<div class="row">
+<!--<div class="row">
     <div class="col-md-6 ">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="{!! Lang::choice('messages.pulsante_ricerca',0) !!}">
@@ -20,7 +20,7 @@
             </span>
         </div>
     </div>
-</div>
+</div>-->
 <div class="row">
     <div class="col-md-8">
         {!! $clienti->render() !!}
