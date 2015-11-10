@@ -231,7 +231,7 @@ $(document).ready(function () {
     $(document).on("click",".btn-paga-conferma",function(event) {
         event.preventDefault();
         $.blockUI({message: $('#wait-msg')});
-        var $url = "ordini";
+        var $url = "admin/ordini";
         var $token = $(this).data("token");
         var $discountUnits = $(".discount-units-price").html();
         var $discountPayment = $(".discount-payment-price").html();

@@ -1,11 +1,11 @@
 /**
  * Created by roberto on 10/10/15.
  */
-$(document).ready(function(){
+$(document).ready(function () {
     var $url_delete = "";
     var $token = "";
 
-    $(document).on("click",".btn-delete",function(event){
+    $(document).on("click", ".btn-delete", function (event) {
         event.preventDefault();
 
         if ($token === null || $token === "") {
@@ -33,39 +33,20 @@ $(document).ready(function(){
         });
     });
 
-    $(document).on("click",".btn-cancella",function(event) {
+    $(document).on("click", ".btn-cancella", function (event) {
         event.preventDefault();
         $url_delete = $(this).attr("href");
         $token = $(this).data('token');
         $("#modal-delete").modal("show");
     });
-    
-    $(document).on("click",".btn-edit-order",function(event){
-       event.preventDefault();
-       var $url = $(this).attr("href");
-       $token = $(this).data('token');
-       
-       if ($url === null || $url === "") {
-           return;
-       } 
-       
-       $.ajax({
-            context: this, /*used for pass object dom into ajax*/
-            url: $url,
-            type: "POST",
-            async: false,
-            data: {
-                _method: "GET",
-                _token: $token
-            },
-            dataType: 'html',
-            success: function (data) {
-                $("#modal-edit-order").modal("show");
-                
-            },
-            error: function (data) {
-                console.error(data);
-            }
-        });
+
+    $(document).on("change",".order-state",function() {
+        var $id = $(this).val();
+        if ($id === "3") {
+            $(".vettura").show();
+        } else {
+            $(".vettura-text").val("");
+            $(".vettura").hide();
+        }
     });
 });

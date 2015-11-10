@@ -9,9 +9,10 @@ use App\Models\OrdineTesta;
 use App\Models\Carrello;
 use App\Models\Stato;
 use App\Models\Utente;
+use App\Models\OrdineVettura;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
-
+use Illuminate\Support\Facades\Redirect;
 class OrdiniController extends Controller
 {
 
@@ -37,6 +38,7 @@ class OrdiniController extends Controller
 
     protected $stato;
 
+    protected $vettura;
 
     /**
      * Create a new authentication controller instance.
@@ -44,7 +46,7 @@ class OrdiniController extends Controller
      * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato, Utente $utente)
+    public function __construct(Guard $auth, OrdineTesta $ordine, Carrello $carrello, Stato $stato, Utente $utente, OrdineVettura $vettura)
     {
         $this->middleware('admin', ['only' => ['index', 'update','edit','destroy']]);
         $this->ordine = $ordine;
@@ -52,6 +54,7 @@ class OrdiniController extends Controller
         $this->carrello = $carrello;
         $this->stato = $stato;
         $this->utente = $utente;
+        $this->vettura = $vettura;
     }
 
     /**
@@ -61,7 +64,7 @@ class OrdiniController extends Controller
      */
     public function index()
     {
-        $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
+        $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->orderby('data_creazione','asc')->paginate(20);
 
         return view('ordini.index', compact('ordini'));
     }
@@ -186,7 +189,7 @@ class OrdiniController extends Controller
     {
         $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
 
-        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
+        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati' ,'tracking')->find($id);
         $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
         $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
         $totale = $tempTot - $scontoPagamento;
@@ -202,7 +205,39 @@ class OrdiniController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->get('ordine');
+        $codice = $request->get('vettura');
+        $stato = $request->get('stato');
+
+        $stato = $this->stato->find($stato);
+        $this->ordine->find($id)->stati()->save($stato);
+
+        $vettura = $this->vettura->where('ordine','=',$id)->first();
+
+        if ($codice == null || trim($codice) == "") {
+            if ($vettura != null) {
+                $vettura->trash();
+            }
+            return Redirect::action('OrdiniController@index');
+        }
+
+        $data = array(
+            'ordine' => $id,
+            'vettura' => $codice
+        );
+
+        if ($this->vettura->validate($data)) {
+            if ($vettura != null) {
+                $vettura->edit($data);
+            } else {
+                $this->vettura->store($data);
+            }
+            return Redirect::action('OrdiniController@index');
+        } else {
+            $errors = $this->vettura->getErrors();
+            return Redirect::action('OrdiniController@edit',[$id])->withInput()->withErrors($errors);
+        }
+
     }
 
     /**

@@ -126,6 +126,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'carrello_totale' => 'Totale',
     'carrello_totale_provvisorio' => 'Totale Provvisorio',
     'carrello_tipo_pagamento' => 'Scegli il metodo di pagamento',
+    'tipo_pagamento' => 'Tipo di Pagamento',
     'carrello_titolo_info' => 'Informazioni',
     'carrello_spese_di_spedizione' => 'Spese di spedizione',
     'carrello_sconto_quantita' => 'Sconto cumulativo per <span class="cart-count">:quantita</span>articolo|Sconto cumulativo per <span class="cart-count">:quantita</span> articoli',
@@ -178,7 +179,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_clienti_index_societa' => 'Società',
     'dash_clienti_index_username' => 'Username',
     'dash_clienti_index_attivo' => 'Attivo',
-    'dash_clienti_index_ruolo' => 'Amministratore',
+    'dash_clienti_index_ruolo' => 'Admin',
     'dash_clienti_index_azioni_nome' => 'Azioni',
     'dash_clienti_edit_titolo' => 'Modifica Cliente',
     'dash_clienti_edit_user_id' => 'User ID',
@@ -206,6 +207,11 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'menu_accedi' => 'ACCEDI',
     'attenzione' => 'Attenzione',
     'modal_cancellazione' => 'Sei sicuro di voler cancellare?<br>Operazione non reversibile',
+
+    'nuovi_iscritti_newsletter' => 'Nuovi iscritti alla news',
+    'vai' => 'Vai!',
+    'nuovi_ordini'=>'Nuovi ordini',
+    'nuovi_utenti'=> 'Nuovi utenti',
 
     /*pulsangi generici*/
     'registrazione' => 'Registrazione',
@@ -255,10 +261,12 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'si' => strtoupper('sì'),
     'no' => 'NO',
     'in_data' => 'in data',
+    'conferma_mail' => 'Riceverai una conferma di acquisto alla tua casella di posta elettronica',
     /*newsletter*/
     'titolo_newsletter' => 'Iscriviti alla nostra mailing list',
     'newsletter' => 'Se siete interessati a ricevere informazioni da Holistic Remedies<br>iscrivetevi alla nostra mailing list.',
-
+    'stampa' => 'Stampa Pagina',
+    'dettaglio_ordine' => 'Dettaglio Ordine',
     /*errori*/
     '404title' => 'Attenzione!',
     '404body' => 'Pagina Non Trovata',

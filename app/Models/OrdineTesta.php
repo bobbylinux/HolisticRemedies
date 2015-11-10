@@ -71,7 +71,12 @@ class OrdineTesta extends BaseModel
 
     public function stati()
     {
-        return $this->belongsToMany('App\Models\Stato', 'ordini_stato', 'ordine', 'stato')->withPivot('data_creazione')->latest("data_creazione");
+        return $this->belongsToMany('App\Models\Stato', 'ordini_stato', 'ordine', 'stato')->withPivot('data_creazione');
+    }
+
+    public function lastStato()
+    {
+        return $this->hasOne('Price')->latest();
     }
 
     public function tracking() {

@@ -1,4 +1,4 @@
-@extends('layouts.blank')
+@extends('layouts.back')
 @section('content')
     <div class="row" style="text-align: center;">
         <h4>
@@ -86,23 +86,39 @@
                     <?php $statoOrdine = $stato->id;?>
                 @endforeach
                 <div class="col-xs-12">
-                    {!! Form::select('stato', $stati, $statoOrdine ,array('class'=>'form-control')) !!}
+                    {!! Form::select('stato', $stati, $statoOrdine ,array('class'=>'form-control order-state')) !!}
                 </div>
             </div>
             @if ($statoOrdine == 3)
-            <div class="row">
+                <div class="row vettura">
+            @else
+                 <div class="row vettura" style="display: none">
+            @endif
                 <div class="col-xs-12">
                     <h4>Lettera di Vettura</h4>
                 </div>
-            </div><div class="row">
+            </div>
+            @if ($statoOrdine == 3)
+                <div class="row vettura">
+            @else
+                <div class="row vettura" style="display: none">
+            @endif
                 <div class="col-xs-12">
-                    {!! Form::text('vettura', $ordine->tracking->vettura, array('class'=>'form-control')) !!}
+                    @if ($ordine->tracking != null)
+                    {!! Form::text('vettura',$ordine->tracking->vettura , array('class'=>'form-control vettura-text')) !!}
+                    @else
+                    {!! Form::text('vettura','' , array('class'=>'form-control vettura-text')) !!}
+                    @endif
                 </div>
             </div>
-            @endif
             <div class="row" style="margin-top:2%;">
                 <div class="col-xs-12">
                     {!! Form::submit(Lang::choice('messages.pulsante_salva',0), array('class' =>'btn btn-primary btn-block'))!!}
+                </div>
+            </div>
+            <div class="row" style="margin-top:2%;">
+                <div class="col-xs-12">
+                    <a href="{!! url('admin/ordini') !!}" class="btn btn-danger btn-block">{{Lang::choice('messages.pulsante_annulla',0) }}</a>
                 </div>
             </div>
         </div>

@@ -39,6 +39,8 @@
                     </tr>
                 </tbody>
             </table>
+            <?php echo Form::token(); ?>
+
             <?php echo Form::close(); ?>
 
         </div>

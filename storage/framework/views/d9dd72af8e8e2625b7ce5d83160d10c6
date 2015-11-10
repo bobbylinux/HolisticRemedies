@@ -13,16 +13,16 @@
 </ol>
 <div class="row">
     <div class="col-md-6 ">
-        <form class="form-inline" role="search">
-            <div class="form-group ">
-                <input type="text" class="form-control" placeholder="<?php echo Lang::choice('messages.pulsante_ricerca',0); ?>">
-            </div>
-            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
-        </form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="<?php echo Lang::choice('messages.pulsante_ricerca',0); ?>">
+            <span class="input-group-btn">                
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
+            </span>
+        </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4 ">
+    <div class="col-md-8">
         <?php echo $clienti->render(); ?>
 
     </div>
@@ -32,8 +32,8 @@
         <table class="table table-bordered table-hover table-striped table-responsive">
             <thead>
                 <tr>
-                    <th class="col-lg-2 col-md-2"><?php echo e(Lang::choice('messages.dash_clienti_index_cognome',0)); ?></th>
-                    <th class="col-lg-2 col-md-2"><?php echo e(Lang::choice('messages.dash_clienti_index_nome',0)); ?></th>
+                    <th class="col-lg-2 col-md-2 hidden-sm hidden-xs"><?php echo e(Lang::choice('messages.dash_clienti_index_cognome',0)); ?></th>
+                    <th class="col-lg-2 col-md-2 hidden-sm hidden-xs"><?php echo e(Lang::choice('messages.dash_clienti_index_nome',0)); ?></th>
                     <th class="col-lg-2 col-md-2"><?php echo e(Lang::choice('messages.dash_clienti_index_username',0)); ?></th>
                     <th class="col-lg-2 col-md-4"><?php echo e(Lang::choice('messages.dash_clienti_index_attivo',0)); ?></th>
                     <th class="col-lg-2 col-md-4"><?php echo e(Lang::choice('messages.dash_clienti_index_ruolo',0)); ?></th>
@@ -43,8 +43,8 @@
             <tbody>
                 <?php foreach($clienti as $cliente): ?>
                 <tr>
-                    <td><?php echo e(@$cliente->cognome); ?></td>
-                    <td><?php echo e(@$cliente->nome); ?></td>
+                    <td class="col-lg-2 col-md-2 hidden-sm hidden-xs"><?php echo e(@$cliente->cognome); ?></td>
+                    <td class="col-lg-2 col-md-2 hidden-sm hidden-xs"><?php echo e(@$cliente->nome); ?></td>
                     <td><?php echo e(@$cliente->utenti->username); ?></td>
                     <?php if($cliente->utenti->confermato == 1): ?>
                     <td><?php echo Lang::choice('messages.si',0); ?></td>

@@ -136,6 +136,7 @@ return array(
     'carrello_totale_provvisorio' => 'Provisional Amount',
     'carrello_tipo_pagamento' => 'Chose your payment method',
     'carrello_titolo_info' => 'Informations',
+    'tipo_pagamento' => 'Payment Type',
     'carrello_spese_di_spedizione' => 'Shipping price',
     'carrello_sconto_quantita' => 'Discount for <span class="cart-count">:quantita</span> unit|Discount for <span class="cart-count">:quantita</span> units',
     'carrello_sconto_pagamento' => 'Sconto del <span class="percentage">:sconto</span> % per pagamento con <span class="payment-type">:pagamento</span>',
@@ -216,6 +217,11 @@ return array(
     'attenzione' => 'Warning',
     'modal_cancellazione'=>'Are you sure to delete this item?<br>Operation not reversible',
 
+    'nuovi_iscritti_newsletter' => 'New subscriptions to news',
+    'vai' => 'Go!',
+    'nuovi_ordini'=>'New orders',
+    'nuovi_utenti'=> 'New users',
+
     /*pulsangi generici*/
     'registrazione' => 'Sign Up',
     'pulsante_modifica' => 'Update',
@@ -260,10 +266,18 @@ return array(
     'password_dimenticata' => 'Forgotten password?',
     'istruzioni_reset_password' => 'Inserisci il tuo indirizzo di registrazione, la nuova password e reinseriscila per conferma<br> al termine riceverai una email di conferma',
 
+    'esito_paragrafo_1' => 'Dagli indiani canadesi Ojibwa la formula di sette erbe usate da Rene Caisse e migliorata da Rick De Sylva',
+    'esito_paragrafo_2' => 'Caisse Formula è prodotta da: Herb Works Guelph Ontario Canada',
+    'esito_paragrafo_3' => 'Distribuita in Italia da: Holistic Remedies Via Piave, 99 50068 Rufina (Firenze) Tel.+39.055. 8395388 Fax +39.055.8395989',
+    'esito_paragrafo_4' => 'Le informazioni contenute in questo sito non possono essere utilizzate in sostituzione dei consigli del medico curante (Nota Privacy)',
+
     'si' => strtoupper('yes'),
     'no' => 'NO',
     'in_data' => 'on date',
 
+    'conferma_mail' => 'You will recive a mail with a purchase confirmation',
+    'stampa' => 'Print Page',
+    'dettaglio_ordine' => 'Order Detail',
     /*errori*/
     '404title' => 'Ups! Pay Attention Please',
     '404body' => 'Page Not Found',

@@ -31,8 +31,8 @@
         <table class="table table-bordered table-hover table-striped table-responsive">
             <thead>
                 <tr>
-                    <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_cognome',0) }}</th>
-                    <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_nome',0) }}</th>
+                    <th class="col-lg-2 col-md-2 hidden-sm hidden-xs">{{ Lang::choice('messages.dash_clienti_index_cognome',0) }}</th>
+                    <th class="col-lg-2 col-md-2 hidden-sm hidden-xs">{{ Lang::choice('messages.dash_clienti_index_nome',0) }}</th>
                     <th class="col-lg-2 col-md-2">{{ Lang::choice('messages.dash_clienti_index_username',0) }}</th>
                     <th class="col-lg-2 col-md-4">{{ Lang::choice('messages.dash_clienti_index_attivo',0) }}</th>
                     <th class="col-lg-2 col-md-4">{{ Lang::choice('messages.dash_clienti_index_ruolo',0) }}</th>
@@ -42,8 +42,8 @@
             <tbody>
                 @foreach ($clienti as $cliente)
                 <tr>
-                    <td>{{@$cliente->cognome}}</td>
-                    <td>{{@$cliente->nome}}</td>
+                    <td class="col-lg-2 col-md-2 hidden-sm hidden-xs">{{@$cliente->cognome}}</td>
+                    <td class="col-lg-2 col-md-2 hidden-sm hidden-xs">{{@$cliente->nome}}</td>
                     <td>{{@$cliente->utenti->username}}</td>
                     @if ($cliente->utenti->confermato == 1)
                     <td>{!! Lang::choice('messages.si',0) !!}</td>

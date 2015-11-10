@@ -36,6 +36,19 @@ class Cliente extends BaseModel
         self::save();
     }
 
+    public function edit($data) {
+
+        $this->cognome = strtoupper($data['cognome']);
+        $this->nome = strtoupper($data['nome']);
+        $this->societa = strtoupper($data['societa']);
+        $this->indirizzo = strtoupper($data['indirizzo']);
+        $this->comune = strtoupper($data['citta']);
+        $this->cap = strtoupper($data['cap']);
+        $this->provincia = strtoupper($data['provincia']);
+        $this->nazione = $data['stato'];
+        $this->telefono = strtoupper($data['telefono']);
+        $this->save();
+    }
     /**
      * set the relationships
      *

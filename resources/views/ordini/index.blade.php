@@ -4,10 +4,18 @@
         <h2>{{ Lang::choice('messages.dash_ordini_index_titolo',0) }}</h2>
     </div>
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="col-md-8 col-md-offset-2">
-                {!! $ordini->render() !!}
+        <div class="col-md-6 ">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="{!! Lang::choice('messages.pulsante_ricerca',0) !!}">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
+            </span>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+                {!! $ordini->render() !!}
         </div>
     </div>
 
@@ -39,11 +47,15 @@
                         <td>{{@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))}}</td>
                         <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }} €</td>
                         <td><?php echo $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' .$ordine->utenti->username?></td>
+                        <?php $idx=0; ?>
                         @foreach($ordine->stati as $stato)
-                        <td>{{@$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}</td>
+                            <?php $idx++;?>
+                            @if ($idx == count($ordine->stati))
+                            <td>{{$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}</td>
+                            @endif
                         @endforeach
                         <td>
-                            <a href="{{ url('/admin/ordini/'.$ordine['id'].'/edit') }}" data-token ="<?= csrf_token() ?>" class='btn-edit-order'><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                            <a href="{{ url('/admin/ordini/'.$ordine['id'].'/edit') }}" data-token ="<?= csrf_token() ?>" class='btn-edit-order'><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span> {{Lang::choice('messages.pulsante_modifica',0)}}</button></a>
                         </td>
                     </tr>
                 @endforeach
@@ -51,5 +63,6 @@
             </table>
         </div>
     </div>
-    
+
+
 @stop

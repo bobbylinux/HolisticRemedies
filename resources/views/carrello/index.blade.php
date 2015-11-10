@@ -38,6 +38,7 @@
                     </tr>
                 </tbody>
             </table>
+            {!! Form::token() !!}
             {!!Form::close()!!}
         </div>
     </div>

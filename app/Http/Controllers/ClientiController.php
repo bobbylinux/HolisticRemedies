@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Cliente;
 use App\Models\Nazione;
+use App\Models\Utente;
+use Symfony\Component\VarDumper\VarDumper;
 
 class ClientiController extends Controller
 {
@@ -28,11 +31,12 @@ class ClientiController extends Controller
      * @return none
      *
      */
-    public function __construct(Cliente $cliente, Nazione $nazioni) {
-        $this->middleware('admin', ['except' => ['getLogout']]);
+    public function __construct(Cliente $cliente, Nazione $nazioni, Utente $utente) {
+        $this->middleware('admin');
         
         $this->cliente = $cliente;
         $this->nazioni = $nazioni;
+        $this->utente = $utente;
         $this->now = date('Y-m-d');
     }
     
@@ -101,7 +105,46 @@ class ClientiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array(
+            'cognome' => $request->get('cognome'),
+            'nome' => $request->get('nome'),
+            'societa' => $request->get('societa'),
+            'indirizzo' => $request->get('indirizzo'),
+            'citta' => $request->get('comune'),
+            'cap' => $request->get('cap'),
+            'provincia' => $request->get('provincia'),
+            'stato' => $request->get('nazione'),
+            'telefono' => $request->get('telefono'),
+            'ruolo' => $request->get('ruolo'),
+            'confermato' => $request->get('confermato')
+        );
+
+        //validate cliente
+        $validatorCliente = $this->cliente->validate($data);
+        if ($validatorCliente->fails()) {
+            $errors = $validatorCliente->messages();
+            var_dump($errors);
+            //return Redirect::action('ClientiController@edit',[$id])->withInput()->withErrors($errors);
+        }
+        $cliente = $this->cliente->find($id);
+        $cliente->edit($data);
+        $userId = $cliente->utente;
+        $utente = $this->utente->find($userId);
+
+        if ($utente != null) {
+            if ($data['confermato'] == null) {
+                $utente->confermato = false;
+            } else {
+                $utente->confermato = true;
+            }
+            if ($data['ruolo'] == null) {
+                $utente->ruolo = 2;
+            } else {
+                $utente->ruolo = 1;
+            }
+            $utente->save();
+        }
+        return Redirect::action('ClientiController@index');
     }
 
     /**
