@@ -67,44 +67,37 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'shop_aggiungi_al_carrello' => 'Aggiungi al carrello',
     'shop_quantita' => 'Quantità',
     'shop_come_ordinare' => 'Come Ordinare',
-    'shop_come_ordinare_paragrafo_1' => 'Se si vuole ordinare uno o più pezzi di confezioni di Caisse Formula e così ottenere gli sconti previsti è necessario scegliere la quantità e poi cliccare sul disegno del carrello. <br /><span class="testoplus Stile6">Esempio: </span><br />
-        Vogliamo acquistare 2 pezzi di polvere 120gr e 1 pezzo 200 capsule che danno diritto ad uno sconto del 5%.
-        Cliccare sul carrello spesa capsule 200 cps scegliendo così la quantità preselezionata di 1 pezzo. La pagina si aggiorna, scorrere la pagina verso il basso e cliccare sulla quantità di polvere 120 gr, selezionando il numero 2 e poi cliccare sul carrello, la pagina si aggiorna.
-        Scorrere verso il basso e verificare che l’ordine e lo sconto corrispondano al desierato.',
-    'shop_come_ordinare_paragrafo_2' => '<span class="titoletti">Cambiare il riepilogo ordine:</span>          <br />
-          Se si è selezionata una quantità sbagliata di un prodotto basta selezionare la quantità giusta e cliccare su <span class="Stile6">Aggiorna</span>.
-          <br />
-          Se si vuole azzerare un prodotto basta cliccare su zero e poi su <span class="Stile6">Aggiorna</span>.
-          <br />
-          Quando si è sicuri dell’ordine cliccare su <span class="Stile6">Conferma d’ordine</span>.          ',
-    'shop_come_ordinare_paragrafo_3' => '<span class="titoletti">Pagina del login:
-          </span><br />
-          Se è la prima volta che si ordina sul nuovo sito aggiornato nel maggio 2007, ci si registrerà cliccando su <span class="Stile6">Per il primo acquisto è necessario registrarsi</span> se invece siamo già stati registrati basterà immettere il proprio e mail e la password e poi cliccare su <span class="Stile6">Entra</span>.
-          <br />
-          Se non si ricorda la password cliccare su <span class="Stile6">Recupera password</span>.          ',
-    'shop_come_ordinare_paragrafo_4' => '<span class="titoletti">Registrarsi:</span>          <br />
-          Compilare tutti i dati con precisione <span class="Stile6">ricordandosi che l’indirizzo è quello dove vogliamo l’invio della merce</span>. Tutti i dati sono obbligatori.
-          <br />
-          Se vogliamo ricevere notizie da parte del sito riguardo ad eventi, libri e comunicazioni su Caisse Formula cliccare su <span class="Stile6">SI</span> altrimenti su <span class="Stile6">NO</span>.
-          Poi cliccare su <span class="Stile6">Verifica dati</span>.
-          <br />
-          Controllato che i dati sono giusti inserire una password da <span class="Stile6">6 a massimo 8 caratteri</span>, poi cliccare su <span class="Stile6">Fine registrazione</span>.
-          <br />
-          Apparirà un riepilogo dei dati inseriti. A questo punto si clicca su <span class="Stile6">Conferma d’ordine</span>.          ',
-    'shop_come_ordinare_paragrafo_5' => 'Apparirà di nuovo il carrello con l’ordine effettuato e dovremo dunque scegliere il metodo di pagamento.
-          <br />
-          Contrassegno oppure carta di credito con ulteriore sconto del 7%.
-          <br />
-          Se si è scelto contrassegno si riceverà una conferma d’ordine col riepilogo dei dati al proprio e mail.
-          <br />
-          Se si sceglie carta di credito apparirà la finestra del sito sicuro BCC SOAR che vi chiederà i dati della carta di credito.
-          <br />
-          Si riceverà sul proprio e mail sia la conferma d’acquisto della banca sia la conferma dell’ordine.
-          <br />
-          Alla fine è consigliabile effettuare il logout che si trova nella pagina iniziale di shop vicino ai propri dati anagrafici.
-          <br />
-          Se invece vorremo azzerare l’ordine si andrà in fondo alla pagina e si cliccherà su <span class="Stile6">Azzerare l’ordine</span> e poi si effettuerà il logout sulla pagina iniziale di <span class="Stile6">Shop</span>.          ',
-    'shop_come_ordinare_paragrafo_6' => 'Per qualsiasi problema non esitate a contattarci a info@caisse.it e ordini@caisse.it oppure al numero 055 8395388.        ',
+    'shop_come_ordinare_paragrafo_1' => '<strong>Registrarsi:</strong><br>
+          Prima di effettuare un acquisto è necessario registrarsi.<br>Compilare tutti i dati con precisione <strong>ricordandosi che l’indirizzo è quello dove vogliamo l’invio della merce</strong>. Tutti i dati sono obbligatori.
+          <br>
+          Se vogliamo ricevere notizie da parte del sito riguardo ad eventi, libri e comunicazioni su Caisse Formula cliccare su <strong>SI</strong> altrimenti su <strong>NO</strong>.
+          <br>
+          Controllato che i dati siano giusti, quindi inserire una password di <strong>almeno 6 caratteri</strong>, digitarla nuovamente per conferma, poi cliccare su <strong>"Conferma"</strong>.',       
+    'shop_come_ordinare_paragrafo_2' => '<strong>Login:</strong><br>
+          Se è la prima volta che si ordina, ci si registrerà cliccando su <strong>"Registrati"</strong> se invece siamo già stati registrati basterà immettere il proprio e mail e la password dopo aver cliccato sul pulsante <strong>"Login"</strong> oppure in alto nel menu sul pulsante <strong>"Accedi"</strong> quindi fare click sul pulsante<strong>"Accedi"</strong>.
+          <br>
+          Se non si ricorda la password cliccare su <strong>"Password Dimenticata?"</strong> sempre nel menu in alto sotto la voce <strong>"Accedi"</strong>.',
+    'shop_come_ordinare_paragrafo_4' => '<strong>Cambiare il riepilogo ordine:</strong><br>
+          Se si è selezionata una quantità sbagliata di un prodotto basta fare click sul pulsante col simbolo del carrello in alto nel menu. Una volta nella pagina del carrello identificare il prodotto per il quale cambiare la quantità e cambiare la quantità.<br>Il totale si aggiornerà in tempo reale senza necessità di fare altro.
+          <br>
+          Se si vuole azzerare un prodotto basta cliccare sul pulsante rosso <strong>"Cancella"</strong> alla destra del prodotto.
+          <br>
+          Quando si è sicuri dell’ordine cliccare su <strong>"Conferma"</strong>.<br>
+          Selezionare il tipo di pagamento cliccando su <strong>"Scegli"</strong>.<br>
+          Confermare l\'ordine premendo su <strong>"Conferma & Paga"</strong>',
+    'shop_come_ordinare_paragrafo_3' => 'Se si vuole ordinare uno o più pezzi di confezioni di Caisse Formula e così ottenere gli sconti previsti è necessario scegliere la quantità e poi cliccare sul pulsante "aggiungi al carrello". <br /><strong>Esempio:</strong><br />
+        Vogliamo acquistare 2 pezzi di polvere 120gr e 1 pezzo 200 capsule che danno diritto ad uno sconto.<br>
+        Cliccare sul pulsante "aggiungi al carrello" dell\'articolo capsule 200 cps scegliendo così la quantità preselezionata di 1 pezzo. L\'icona del carrello in alto nel menu si aggiornerà, fare click sulla quantità di polvere 120 gr, selezionando il numero 2 e poi fare click sul pulsante "aggiungi al carrello" , l\'icona del carrello in alto nel menu si aggiornerà.
+        Fare click sul carrello in alto nel menu per accedere al carrello.',
+    'shop_come_ordinare_paragrafo_5' => '<Strong>Pagamento:</strong><br>Si riceverà una conferma d’ordine col riepilogo dei dati al proprio e mail.
+          <br>
+          Se si sceglie il metodo di pagamento <strong>carta di credito</strong> apparirà la finestra del sito sicuro BCC SOAR che vi chiederà i dati della carta di credito.
+          <br>
+          Se si sceglie il metodo di pagamento <strong>paypal</strong> si verrà indirizzati al sito sicuro PAYPAL dove vi verrenno chiesti i dati del vostro account PAYPAL o i dati della vostra carta di credito qualora non vogliate registrarvi al sito.
+          <br>
+          Alla fine del pagamento dal sito PAYPAL potrete vedere il riepilogo ordine cliccando sul pulsante per tornare al nostro sito.<br>
+          Si riceverà sul proprio e mail sia la conferma d\'acquisto della banca sia la conferma dell’ordine.',
+    'shop_come_ordinare_paragrafo_6' => '<strong>Per qualsiasi problema non esitate a contattarci a info@caisse.it e ordini@caisse.it oppure al numero 055 8395388.</strong>',
 
 
     'pannello_di_controllo' => 'Pannello di controllo',
@@ -236,6 +229,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'pulsante_paga_e_conferma' => 'Conferma & Paga',
     'pulsante_conferma' => 'Conferma',
     'pulsante_home_page' =>'Torna alla Home Page',
+    'pulsante_visualizza' => 'Visualizza',
     'check_ricordami' => 'Ricordami',
 
     /*registrazione*/

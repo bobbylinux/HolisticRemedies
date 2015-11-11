@@ -200,7 +200,9 @@
         @yield('shop')
     </div>
 </section>
-
+<section id="footer" class="footer-section">
+    
+</section>
 <!-- jQuery -->
 <script src="{{ url('js/jquery.js') }}"></script>
 

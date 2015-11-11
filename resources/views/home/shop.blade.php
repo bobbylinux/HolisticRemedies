@@ -18,38 +18,38 @@
 </div>
 <div class="row">
     @foreach($prodotti as $prodotto)
-        <div class="col-sm-6 col-lg-3 col-md-3">
-            <div class="thumbnail product-section">
-                <img src="{!! url('uploads/' . $prodotto->immagini->nomefile) !!}" alt="">
+    <div class="col-sm-6 col-lg-3 col-md-3">
+        <div class="thumbnail product-section">
+            <img src="{!! url('uploads/' . $prodotto->immagini->nomefile) !!}" alt="">
 
-                <div class="caption">
-                    <h5 class="pull-right">&euro; {{number_format($prodotto->prezzo,2)}}</h5>
-                    <h5><a href="#">{{$prodotto->prodotto}}</a></h5>
+            <div class="caption">
+                <h5 class="pull-right">&euro; {{number_format($prodotto->prezzo,2)}}</h5>
+                <h5><strong>{{$prodotto->prodotto}}</strong></h5>
 
-                    <p>{!! $prodotto->descrizione !!} </p>
+                <p>{!! $prodotto->descrizione !!} </p>
 
-                    <p>
-                        <label for="units">{!! Lang::choice('messages.shop_quantita',0) !!}</label>
-                        <select class="form-control units">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </p>
-                    <p><a class="btn btn-success add-to-cart" href="{!!url('carrello')!!}" role="button"
-                          data-product="{{@$prodotto->id}}" data-token="{!! csrf_token() !!}"><i
-                                    class="fa fa-fw fa-shopping-cart"></i>{!! Lang::choice('messages.shop_aggiungi_al_carrello',0) !!}
-                        </a></p>
-                </div>
+                <p>
+                    <label for="units">{!! Lang::choice('messages.shop_quantita',0) !!}</label>
+                    <select class="form-control units">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </p>
+                <p><a class="btn btn-success btn-block add-to-cart" href="{!!url('carrello')!!}" role="button"
+                      data-product="{{@$prodotto->id}}" data-token="{!! csrf_token() !!}"><i
+                            class="fa fa-fw fa-shopping-cart"></i>{!! Lang::choice('messages.shop_aggiungi_al_carrello',0) !!}
+                    </a></p>
             </div>
         </div>
+    </div>
     @endforeach
 </div>
 <!-- Modal -->
@@ -58,37 +58,46 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                        aria-hidden="true">&times;</span></button>
                 <h3>{!! Lang::choice('messages.shop_come_ordinare',0) !!}</h3>
             </div>
             <div class="modal-body">
                 @if (Lang::has('messages.shop_come_ordinare_paragrafo_1'))
-                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_1',0)!!}</p>
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_1',0)!!}</p>
                 @endif
                 @if (Lang::has('messages.shop_come_ordinare_paragrafo_2'))
-                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_2',0)!!}</p>
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_2',0)!!}</p>
                 @endif
                 @if (Lang::has('messages.shop_come_ordinare_paragrafo_3'))
-                    <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_3',0)!!}</p>
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_3',0)!!}</p>
                 @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_4'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_4',0)!!}</p>
-                    @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_5'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_5',0)!!}</p>
-                    @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_6'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_6',0)!!}</p>
-                    @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_7'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_7',0)!!}</p>
-                    @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_8'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_8',0)!!}</p>
-                    @endif
-                    @if (Lang::has('messages.shop_come_ordinare_paragrafo_9'))
-                        <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_9',0)!!}</p>
-                    @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_4'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_4',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_5'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_5',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_6'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_6',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_7'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_7',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_8'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_8',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_9'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_9',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_10'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_10',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_11'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_11',0)!!}</p>
+                @endif
+                @if (Lang::has('messages.shop_come_ordinare_paragrafo_12'))
+                <p>{!!Lang::choice('messages.shop_come_ordinare_paragrafo_12',0)!!}</p>
+                @endif
             </div>
             <div class="modal-footer">
                 <button type="button"

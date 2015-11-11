@@ -12,7 +12,7 @@
  */
 
 return array(
-    /*menu*/
+    /* menu */
     'menu_front_consigli' => 'INSTRUCTIONS',
     'menu_front_ingredienti' => 'THE HERBS',
     'menu_front_acquista' => 'SHOP',
@@ -24,7 +24,7 @@ return array(
     'acquista_titolo' => 'Shop',
     'miei_ordini' => 'My Orders Status',
     'profilo' => 'My Profile',
-    /*contenuti*/
+    /* contenuti */
     'consigli_titolo' => 'Instructions',
     'consigli_paragrafo1' => "The Caisse Formula is available in bottles of 60 or 120 grams of micro-grinded powder and in bottles of 100 and 200 capsules.
                               One dose = one teaspoonful of powder or three capsules.",
@@ -41,7 +41,6 @@ return array(
     'ingredienti_paragrafo_1' => "</span>Botanical Name: <em>Arctium lappa, A. Minus</em>",
     'ingredienti_paragrafo_2' => "Description: this is a biennial which produces only a few leaves at the base of the plant in the first year. The heart-shaped, long oval leaves have indented edges and are soft, green and hairless on the upper side. In the second year, it produces an upright flower stem from 50 to 200 cm high. The flowers are a purple/pink colour. The burrs are oblong and brownish grey with black marks and a short, silky pappus. It flowers between July and August.",
     'ingredienti_paragrafo_3' => "Parts used: Its roots are used and sometimes the leaves. The roots are collected in the autumn of the first year of growth and in the spring of the second prior to the appearance of the floral shaft. Leaves are collected between spring and summer in the second year before the flowers appear.",
-
     'ingredienti_paragrafo_4' => "Properties and Indications for use: burdock is known as an excellent fortifier of the immune system, a tonic for the liver, the kidneys and the lungs. It purifies the blood and is able to neutralise toxins and to clean out the lymphatic system. It is able to destroy bacteria and fungus and acts as an anti-tumour agent. It is an internal and external remedy in the treatment of the more common skin disorders. It has been recognized for its diuretic properties and acts as stimulant in liver and bile disorders. When used internally it performs a regulatory effect in conditions of diabetes and hypoglycaemia due to the presence of inulin in the root (up to 45%) and vitamins from group B which interact in sugar metabolism.",
     'ingredienti_paragrafo_5' => "In the Far East it is used for its strengthening and nutritional properties. In 502 A.D. in China, it was cited as a remedy by the name of \"Niu bang\". It was used by the American Indian Micmac and Menomonee tribes. Ayurvedic medicine recognizes its beneficial action on blood and plasma as well as its use in treating skin allergies, fevers and kidney stones.<br>
                                   Many scientific studies have demonstrated the anti-tumour activity of burdock on animals. The expression, \"the burdock factor\", was coined by scientists from the Kawasaki School of Medicine in Okayama, Japan. Laboratory studies have discovered that \"the burdock factor\" is active in fighting HIV (the AIDS virus). The inulin contained in burdock is able to stimulate the surface of white blood cells enabling them to function better.",
@@ -87,38 +86,38 @@ return array(
     'shop_contenuto_jumbotron' => '<ul><li>Discount for the total number of pieces of any kind</li><li>Postal charge UE: € 9.60 for orders less than € 80</li><li>Postal charge outside UE please mail your request</li><li>Delivery by priority postal parcel</li></ul>',
     'shop_aggiungi_al_carrello' => 'Add to cart',
     'shop_quantita' => 'Units',
-    'shop_come_ordinare'=>'How to order',
-    'shop_come_ordinare_paragrafo_1' => 'To order 1 or more bottles of Caisse Formula you must choose how many units and then click on "Add to cart" button.',
-    'shop_come_ordinare_paragrafo_2' => '<span class="Stile6">Example:</span> You want to buy 1 bottle of 200 capsules and 2 bottles of 120 gram powder, with a 5% discount. ',
-    'shop_come_ordinare_paragrafo_3' => '<ol><li>Click on the units under the bottle of 200 capsules and insert 1, then click on "Add to cart" button. <br />
-          The cart items number on the top of the page will be increase the number of items in your cart and you can proceed to the next part of your order.</li>',
-    'shop_come_ordinare_paragrafo_4' => '<li>Click on the units under the bottle of 120 gram powder and insert 2, then click on "Add to cart" button. <br />
-          Once again, cart items number on the top of the page will be increase the number of items.</li>',
-    'shop_come_ordinare_paragrafo_5' => '<li>Your order is finished and you can now click on CART icon on the top of the page. <br />
-          You will see the total amount of your order and the discount.</li>',
-    'shop_come_ordinare_paragrafo_6' => '<li>If you want to change any item, simply insert a new quantity units or click "Delete" button, the item will be deleted from your cart.<br>
-            The cart will automatically update your items and your amounts.</li></ol>',
-    'shop_come_ordinare_paragrafo_7' => '<span class="titoletti">Login page:</span><br />
-          If this is your first order, you will need to create an account with Holistic Remedies. <br />
-          Click on If this is your first order and you will be directed to a registration page.<br />
+    'shop_come_ordinare' => 'How to order',
+    'shop_come_ordinare_paragrafo_1' => '<strong>Login page:</strong><br>
+          If this is your first order, you will need to create an account with Holistic Remedies. <br>
+          Click on If this is your first order and you will be directed to a registration page.<br>
           If you are already registered, simply input your email address and password, then click Entra (to enter the online shopping).',
-    'shop_come_ordinare_paragrafo_8' => '<span class="titoletti">Your contact info:</span><br />
+    'shop_come_ordinare_paragrafo_2' => '<strong>Your contact info:</strong><br>
           <ol>
           <li>You need to fill in all the information requested.</li>
           <li>If you want to be part of our mailing list choose SI otherwise NO.</li>
           <li>When you&rsquo;ve finished, click on VERIFICA DATA (to register your contact info).</li>
           <li>You will be directed to a screen that will ask you to insert a password (6-8 letters).</li>
-          <li>Click on FINE REGISTRAZIONE &ndash; END. You are now registered with Holistic Remedies online shopping.</li>
+          <li>Click on SUBMIT. You are now registered with Holistic Remedies online shopping.</li>
           <li>You will be directed to a screen that will show your contact info and customer number.</li>
           <li>Click on Proceed with your order and finish your order by designating your payment method.</li>
           <li>COD (contrassegno) is only valid for destinations in Italy.</li>
           <li>Complete the information required by the bank and your order will be mailed to you within 2 business days.</li>
-          If you have any questions, contact us at info@caisse.it or ordini@caisse.it',
-    'shop_come_ordinare_paragrafo_9' => 'Thank you,,<br />Holistic Remedies<br />',
-
-
+          </ol>',
+    'shop_come_ordinare_paragrafo_3' => 'To order 1 or more bottles of Caisse Formula you must choose how many units and then click on <strong>"Add to cart"</strong> button.',
+    'shop_come_ordinare_paragrafo_4' => '<strong>Example:</strong> You want to buy 1 bottle of 200 capsules and 2 bottles of 120 gram powder, with a 5% discount. ',
+    'shop_come_ordinare_paragrafo_5' => '<ol><li>Click on the units under the bottle of 200 capsules and insert 1, then click on "Add to cart" button. <br />
+          The cart items number on the top of the page will be increase the number of items in your cart and you can proceed to the next part of your order.</li>',
+    'shop_come_ordinare_paragrafo_6' => '<li>Click on the units under the bottle of 120 gram powder and insert 2, then click on <strong>"Add to cart"</strong> button.<br>
+          Once again, cart items number on the top of the page will be increase the number of items.</li>',
+    'shop_come_ordinare_paragrafo_7' => '<li>Your order is finished and you can now click on <strong>CART</strong> icon on the top of the page. <br />
+          You will see the total amount of your order and the discount.</li>',
+    'shop_come_ordinare_paragrafo_8' => '<li>If you want to change any item, simply insert a new quantity units or click <strong>"Delete"</strong> button, the item will be deleted from your cart.<br>
+            The cart will automatically update your items and your amounts.</li>',
+    'shop_come_ordinare_paragrafo_9' => '<li>You can proceed with your horder simple click on <strong>"Proceed"</strong> button in your cart page, then select payment type clicking on button <strong>"Select"</strong></li>',
+    'shop_come_ordinare_paragrafo_10' => '<li>Your order will be completed clicking on <strong>"Submit & Pay"</strong> button</strong></li>',
+    'shop_come_ordinare_paragrafo_11' => '<li>If you pay with credit card you will be redirected on BCC SOAR page. If you will pay with PAYPAL you will be redirected on PAYPAL page.</li></ol>',
+    'shop_come_ordinare_paragrafo_12' => '<strong>If you have any questions, contact us at info@caisse.it or ordini@caisse.it</strong><br>Thank you,,<br>Holistic Remedies',
     'pannello_di_controllo' => 'Dashboard',
-
     'ordini_utente_titolo' => 'Follow your order',
     'ordini_utente_segui_il_tuo_ordine' => '',
     'ordini' => 'Orders',
@@ -127,7 +126,6 @@ return array(
     'ordini_utente_costo' => 'Order Price',
     'ordini_utente_stato' => 'Order Status',
     'ordini_utente_vettura' => 'Waybill',
-
     'carrello_riepilogo_ordine' => 'Order Summary',
     'carrello_prodotto' => 'Product',
     'carrello_costo' => 'Price',
@@ -141,7 +139,7 @@ return array(
     'carrello_sconto_quantita' => 'Discount for <span class="cart-count">:quantita</span> unit|Discount for <span class="cart-count">:quantita</span> units',
     'carrello_sconto_pagamento' => 'Sconto del <span class="percentage">:sconto</span> % per pagamento con <span class="payment-type">:pagamento</span>',
     'carrello_vuoto' => 'Sorry! Your cart is empty',
-    /*pannello di controllo / dash*/
+    /* pannello di controllo / dash */
     'dash_prodotti_index_titolo' => 'Manage Products',
     'dash_prodotti_index_pulsante_nuovo' => 'New Product',
     'dash_prodotti_index_prodotto_nome' => 'Product',
@@ -207,23 +205,21 @@ return array(
     'dash_clienti_edit_pulsante_modifica' => 'Edit Customer',
     'dash_ordini_index_titolo' => 'Manage Order',
     'dash_ordini_index_numero_ordine' => '# Orders',
-    'dash_ordini_index_data_ordine'=>'Order date',
-    'dash_ordini_index_costo_ordine'=>'Amount',
-    'dash_ordini_index_cliente'=>'Customer',
+    'dash_ordini_index_data_ordine' => 'Order date',
+    'dash_ordini_index_costo_ordine' => 'Amount',
+    'dash_ordini_index_cliente' => 'Customer',
     'dash_ordini_index_stato' => 'State',
     'dash_ordini_index_azioni_nome' => 'Actions',
     'conferma_ordine_oggetto_mail' => 'Order Confirm',
     'attendere' => 'Please Wait...',
     'menu_accedi' => 'SIGN IN',
     'attenzione' => 'Warning',
-    'modal_cancellazione'=>'Are you sure to delete this item?<br>Operation not reversible',
-
+    'modal_cancellazione' => 'Are you sure to delete this item?<br>Operation not reversible',
     'nuovi_iscritti_newsletter' => 'New subscriptions to news',
     'vai' => 'Go!',
-    'nuovi_ordini'=>'New orders',
-    'nuovi_utenti'=> 'New users',
-
-    /*pulsangi generici*/
+    'nuovi_ordini' => 'New orders',
+    'nuovi_utenti' => 'New users',
+    /* pulsangi generici */
     'registrazione' => 'Sign Up',
     'pulsante_modifica' => 'Update',
     'pulsante_elimina' => 'Delete',
@@ -242,10 +238,10 @@ return array(
     'pulsante_ricerca' => 'Search',
     'pulsante_paga_e_conferma' => 'Submit & Pay',
     'pulsante_conferma' => 'Submit',
-    'pulsante_home_page' =>'Back to Home Page',
+    'pulsante_home_page' => 'Back to Home Page',
+    'pulsante_visualizza' => 'View',
     'check_ricordami' => 'Remember me',
-
-    /*registrazione*/
+    /* registrazione */
     'nome' => 'Name',
     'cognome' => 'Surname',
     'indirizzo' => 'Address',
@@ -259,27 +255,24 @@ return array(
     'password' => 'Password',
     'password_c' => 'Insert again to confirm',
     'conferma_titolo' => 'Confirm',
-    'conferma_testo' =>'Confirmed! Welcome in our virtual shop',
+    'conferma_testo' => 'Confirmed! Welcome in our virtual shop',
     'errore_signin' => 'An error is verified, please contact the system administrator',
     'errore' => 'Error',
     'titolo_recupera_password' => 'Reset Password',
     'nuova_password' => 'New Password',
     'password_dimenticata' => 'Forgotten password?',
     'istruzioni_reset_password' => 'Inserisci il tuo indirizzo di registrazione, la nuova password e reinseriscila per conferma<br> al termine riceverai una email di conferma',
-
     'esito_paragrafo_1' => 'Dagli indiani canadesi Ojibwa la formula di sette erbe usate da Rene Caisse e migliorata da Rick De Sylva',
     'esito_paragrafo_2' => 'Caisse Formula è prodotta da: Herb Works Guelph Ontario Canada',
     'esito_paragrafo_3' => 'Distribuita in Italia da: Holistic Remedies Via Piave, 99 50068 Rufina (Firenze) Tel.+39.055. 8395388 Fax +39.055.8395989',
     'esito_paragrafo_4' => 'Le informazioni contenute in questo sito non possono essere utilizzate in sostituzione dei consigli del medico curante (Nota Privacy)',
-
     'si' => strtoupper('yes'),
     'no' => 'NO',
     'in_data' => 'on date',
-
     'conferma_mail' => 'You will recive a mail with a purchase confirmation',
     'stampa' => 'Print Page',
     'dettaglio_ordine' => 'Order Detail',
-    /*errori*/
+    /* errori */
     '404title' => 'Ups! Pay Attention Please',
     '404body' => 'Page Not Found',
     '503title' => 'Ups! Pay Attention Please',
