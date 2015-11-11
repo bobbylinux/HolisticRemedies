@@ -32,7 +32,7 @@
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-<body>
+<body style="background: #edebd6">
 
 <!-- Content Section -->
 <section id="main" class="main-section">

@@ -61,7 +61,7 @@ class CarrelliController extends Controller {
         $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
         $carrello = $this->carrello->with('prodotti.immagini')->where('utente', '=', $this->auth->user()->id)->orderby('prodotto', 'asc')->get();
         $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita, null, 0, $this->spedizione, $carttotaldiscounted, $discount, $discountPayment,$percentualePagamento, $spedizione,$carttotal);
-        $tipopagamento = $this->tipoPagamento->get();
+        $tipopagamento = $this->tipoPagamento->orderby('pagamento','asc')->get();
         //$spedizione = $this->spedizione->get();
         return view('carrello.index', compact('carrello', 'cartcount','discount','carttotaldiscounted','carttotal','tipopagamento','spedizione'));
     }
@@ -95,7 +95,7 @@ class CarrelliController extends Controller {
                 $carrello = $carrello->where('prodotto', '=', $request->get('prodotto'))->first();
                 $quantita = $carrello->quantita;
                 $data['quantita'] += $quantita;
-                $this->carello->trash($carrello->id);
+                $this->carrello->trash($carrello->id);
             }
 
             $this->carrello->store($data);

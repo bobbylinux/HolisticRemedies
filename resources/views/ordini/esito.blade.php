@@ -73,37 +73,5 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-primary">
-        <div class="panel-body text-center">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>Stato</h4>
-                </div>
-            </div>
-            <div class="row">
-                @foreach($ordine->stati as $stato)
-                    <?php $statoOrdine = $stato->id;?>
-                @endforeach
-                <div class="col-xs-12">
-                    {!! Form::select('stato', $stati, $statoOrdine ,array('class'=>'form-control')) !!}
-                </div>
-            </div>
-            @if ($statoOrdine == 3)
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>Lettera di Vettura</h4>
-                </div>
-            </div><div class="row">
-                <div class="col-xs-12">
-                    {!! Form::text('vettura', $ordine->tracking->vettura, array('class'=>'form-control')) !!}
-                </div>
-            </div>
-            @endif
-            <div class="row" style="margin-top:2%;">
-                <div class="col-xs-12">
-                    <button class="btn btn-block btn-primary">Salva</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @stop

@@ -13,6 +13,9 @@ use App\Models\OrdineVettura;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Lang;
+
 class OrdiniController extends Controller
 {
 
@@ -139,7 +142,6 @@ class OrdiniController extends Controller
         $data = array(
             'item_name' => $this->ordine->id,
             'amount' => $totaleCarrelloScontato,
-            //'return' => "http://localhost/ordini/" . $this->ordine->id . "/edit",
             'return' => url('/admin/ordini/'.$this->ordine->id),
             'name' => $nome,
             'username' => $this->auth->user()->username
@@ -150,7 +152,8 @@ class OrdiniController extends Controller
             $this->carrello->destroy($item->id);
         }
         //tutto ok ora invio le mail di conferma
-        
+        $this->sendMail($this->ordine->id);
+
         
         return Response::json(array(
             'code' => '200', //OK
@@ -262,7 +265,17 @@ class OrdiniController extends Controller
      */
     public function esito($id)
     {
-        return view('ordini.esito');
+        $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
+        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
+        if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
+            $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+            $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
+            $totale = $tempTot - $scontoPagamento;
+            $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
+            return view('ordini.esito',compact('ordine','totale','stati','cartcount'));
+        } else {
+            return redirect('/');
+        }
     }
     /**
      * Get the current user logged Orders
@@ -276,5 +289,34 @@ class OrdiniController extends Controller
         return view('ordini.user',compact('ordini','cartcount'));
     }
 
+    public function sendMail($id) {
+
+        /*$destinatari = 'info@caisse.it';
+        $email = "info@caisse.it";
+        $cc_address = "ordini@caisse.it";
+        $cc_address2 = "holistic@caisse.it";
+        $subject = 'Ordine numero ' . $_SESSION['idordine'] . ' Ricevuto';
+        //mando prima una mail a info@caisse.it e poi una al cliente
+        $message = $mail;*/
+
+        $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
+        $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
+        if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
+            $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+            $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
+            $totale = $tempTot - $scontoPagamento;
+
+            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) {
+                $message->to('bobbylinux@hotmail.it')->from('info@caisse.it')
+                    ->subject(Lang::choice('conferma_ordine_oggetto_mail',0));
+            });
+
+        } else {
+            return Response::json(array(
+                'code' => '401', //OK
+                'msg' => 'KO',
+                'error' => "unauthorized"));
+        }
+    }
 
 }

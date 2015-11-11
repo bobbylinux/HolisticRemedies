@@ -212,7 +212,8 @@ return array(
     'dash_ordini_index_cliente'=>'Customer',
     'dash_ordini_index_stato' => 'State',
     'dash_ordini_index_azioni_nome' => 'Actions',
-
+    'conferma_ordine_oggetto_mail' => 'Order Confirm',
+    'attendere' => 'Please Wait...',
     'menu_accedi' => 'SIGN IN',
     'attenzione' => 'Warning',
     'modal_cancellazione'=>'Are you sure to delete this item?<br>Operation not reversible',

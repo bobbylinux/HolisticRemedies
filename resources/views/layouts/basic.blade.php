@@ -75,7 +75,7 @@
                                 </li>
                                 @endif
                                 <li>
-                                    <a href="#"><i
+                                    <a href="{!! url('ordini/utente') !!}"><i
                                             class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
                                     </a>
                                 </li>

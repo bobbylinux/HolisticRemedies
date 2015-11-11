@@ -76,7 +76,7 @@
                                 </li>
                                 <?php endif; ?>
                                 <li>
-                                    <a href="#"><i
+                                    <a href="<?php echo url('ordini/utente'); ?>"><i
                                             class="fa fa-fw fa-truck"></i> <?php echo Lang::choice('messages.miei_ordini',0); ?>
 
                                     </a>

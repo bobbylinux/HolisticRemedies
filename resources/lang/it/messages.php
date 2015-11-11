@@ -203,7 +203,9 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_ordini_index_cliente' => 'Cliente',
     'dash_ordini_index_stato' => 'Stato',
     'dash_ordini_index_azioni_nome' => 'Azioni',
-    
+
+    'attendere' => 'Attendere Prego...',
+    'conferma_ordine_oggetto_mail' => 'Conferma Ordine',
     'menu_accedi' => 'ACCEDI',
     'attenzione' => 'Attenzione',
     'modal_cancellazione' => 'Sei sicuro di voler cancellare?<br>Operazione non reversibile',

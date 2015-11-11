@@ -72,8 +72,8 @@
                 </table>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button class="btn btn-block btn-success">{{Lang::choice('messages.stampa',0)}}</button>
-                        <a href="{!! url('/') !!}" class="btn btn-block btn-default">{!! Lang::choice('messages.pulsante_home_page',0) !!}</a>
+                        <button class="btn btn-block btn-success btn-print hidden-print">{{Lang::choice('messages.stampa',0)}}</button>
+                        <a href="{!! url('/') !!}" class="btn btn-block btn-default hidden-print">{!! Lang::choice('messages.pulsante_home_page',0) !!}</a>
                     </div>
                 </div>
                 <div class="row">

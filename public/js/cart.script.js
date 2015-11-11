@@ -196,6 +196,7 @@ $(document).ready(function () {
                 $(".payment-price-tr").show();
                 $("#conferma-ordine").show();
                 $(".forms").append($formPagamento);
+
             },
             error: function (data) {
                 console.error(data);
@@ -265,7 +266,7 @@ $(document).ready(function () {
                     var $amountCard="";
                     $.each(data, function (key, value) { // First Level
                         if (key === "item") {
-                            $item_name = value.item_name.toString()+"/00";
+                            $item_name = value.item_name.toString();
                             $amount = value.amount;
                             $amountCard = value.amount.replace(".","");
                             $return = value.return;
@@ -273,14 +274,18 @@ $(document).ready(function () {
                             $name = value.name;
                         }
                     });
-                    $("#item-name").val($item_name);
+                    var $action = $("#payment-form").attr("action");
+                    var $res = $action.replace("{ordine}",$item_name);
+                    $("#payment-form").attr("action",$res);
+                    $("#item-name").val($item_name+'/00');
                     $("#amount").val($amount);
                     $("#amount-card").val($amountCard);
                     $("#return").val($return);
                     $("#_nome").val($name);
                     $("#_email").val($username);
-                    window.location = $return;
-                    //$("#payment-form").submit();
+                    $("#payment-form").submit();
+                } else {
+                    $(document).ajaxStop($.unblockUI);
                 }
             },
             error: function (data) {
@@ -290,4 +295,7 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on("click",".btn-print",function(){
+        window.print();
+    });
 });

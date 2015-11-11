@@ -36,8 +36,6 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::get('carrello/{idPagamento}/pagamento', 'CarrelliController@getTotalWithPaymentDiscount');
     //ordini utente
     Route::get('ordini/utente', 'OrdiniController@getUserOrders');
-    //esito dell'ordine
-    Route::post('ordini/esito', 'OrdiniController@esito');
 });
 
 // Gestione backoffice
