@@ -2,6 +2,7 @@ body {
     width: 100%;
     height: 100%;
     background: #edebd6;
+    padding-bottom: 70px;
 }
 
 html {
@@ -39,34 +40,16 @@ html {
 }
 
 .intro-section {
-    min-height: 100%;
+    min-height: 90%;
     font-family: 'Fanwood';
 }
 
-.tips-section {
+.footer-section {
     font-family: 'Fanwood';
-    min-height: 100%;
-    padding-top: 150px;
-    text-align: left;
+    padding-top: 1%;
+    padding-bottom: 1%;
     background: #edebd6;
-    font-size: 25px;
-}
-
-.ingredients-section {
-    min-height: 100%;
-    font-family: 'Fanwood';
-    padding-top: 150px;
-    text-align: left;
-    background: #edebd6;
-    font-size: 25px;
-}
-
-.shop-section {
-    min-height: 100%;
-    font-family: 'Fanwood';
-    padding-top: 150px;
-    text-align: left;
-    background: #edebd6;
+    text-align: center;
 }
 
 .navbar-front {
@@ -77,47 +60,6 @@ html {
     margin-top:10%;
 }
 
-
-#panel-newsletter {
-    background: #edebd6;
-}
-
-.form-signin {
-    max-width: 330px;
-    min-width: 250px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-    margin-bottom: 10px;
-}
-.form-signin .checkbox {
-    font-weight: normal;
-}
-.form-signin .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 12px;
-}
-.form-signin .form-control:focus {
-    z-index: 2;
-}
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-#payment, #shipping,.payment-price-tr,#conferma-ordine {
+#payment, #shipping,.payment-price-tr,#conferma-ordine,#annulla-ordine {
     display: none;
 }

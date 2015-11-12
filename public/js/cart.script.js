@@ -195,6 +195,7 @@ $(document).ready(function () {
                 $('#payment').slideUp();
                 $(".payment-price-tr").show();
                 $("#conferma-ordine").show();
+                $("#annulla-ordine").show();
                 $(".forms").append($formPagamento);
 
             },
@@ -227,6 +228,13 @@ $(document).ready(function () {
         event.preventDefault();
         $('#payment').slideUp();
         $('#cart').slideDown();
+    });
+
+    $(document).on("click",".btn-annulla-ordine",function(event){
+        even.preventDefault();
+        $('#payment').slideDown();
+        $('#conferma-ordine').hide();
+        $(this).hide();
     });
 
     $(document).on("click",".btn-paga-conferma",function(event) {

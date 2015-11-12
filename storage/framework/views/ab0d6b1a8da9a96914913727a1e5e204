@@ -4,12 +4,12 @@
             <h1><?php echo Lang::choice('messages.shop_titolo',0); ?></h1>
             <p><?php echo Lang::choice('messages.shop_titolo_jumbotron',0); ?></p>
             <p><?php echo Lang::choice('messages.shop_contenuto_jumbotron',0); ?></p>
-            <p><a class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#modal-shop"
+            <p><a class="btn btn-default btn-md" href="#" data-toggle="modal" data-target="#modal-shop"
                   role="button"><?php echo Lang::choice('messages.shop_come_ordinare',0); ?></a>
                 <?php if(!Auth::check()): ?>
-                <a class="btn btn-success btn-lg" href="<?php echo url('auth/register'); ?>"
+                <a class="btn btn-success btn-md" href="<?php echo url('auth/register'); ?>"
                    role="button"><?php echo Lang::choice('messages.pulsante_registrati',0); ?></a>
-                <a class="btn btn-warning btn-lg" href="<?php echo url('auth/login'); ?>"
+                <a class="btn btn-warning btn-md" href="<?php echo url('auth/login'); ?>"
                    role="button"><?php echo Lang::choice('messages.pulsante_accedi',0); ?></a>
                 <?php endif; ?>
             </p>
@@ -18,39 +18,39 @@
 </div>
 <div class="row">
     <?php foreach($prodotti as $prodotto): ?>
-        <div class="col-sm-6 col-lg-3 col-md-3">
-            <div class="thumbnail product-section">
-                <img src="<?php echo url('uploads/' . $prodotto->immagini->nomefile); ?>" alt="">
+    <div class="col-sm-6 col-lg-3 col-md-3">
+        <div class="thumbnail product-section">
+            <img src="<?php echo url('uploads/' . $prodotto->immagini->nomefile); ?>" alt="">
 
-                <div class="caption">
-                    <h5 class="pull-right">&euro; <?php echo e(number_format($prodotto->prezzo,2)); ?></h5>
-                    <h5><a href="#"><?php echo e($prodotto->prodotto); ?></a></h5>
+            <div class="caption">
+                <h5 class="pull-right">&euro; <?php echo e(number_format($prodotto->prezzo,2)); ?></h5>
+                <h5><strong><?php echo e($prodotto->prodotto); ?></strong></h5>
 
-                    <p><?php echo $prodotto->descrizione; ?> </p>
+                <p><?php echo $prodotto->descrizione; ?> </p>
 
-                    <p>
-                        <label for="units"><?php echo Lang::choice('messages.shop_quantita',0); ?></label>
-                        <select class="form-control units">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </p>
-                    <p><a class="btn btn-success add-to-cart" href="<?php echo url('carrello'); ?>" role="button"
-                          data-product="<?php echo e(@$prodotto->id); ?>" data-token="<?php echo csrf_token(); ?>"><i
-                                    class="fa fa-fw fa-shopping-cart"></i><?php echo Lang::choice('messages.shop_aggiungi_al_carrello',0); ?>
+                <p>
+                    <label for="units"><?php echo Lang::choice('messages.shop_quantita',0); ?></label>
+                    <select class="form-control units">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </p>
+                <p><a class="btn btn-success btn-block add-to-cart" href="<?php echo url('carrello'); ?>" role="button"
+                      data-product="<?php echo e(@$prodotto->id); ?>" data-token="<?php echo csrf_token(); ?>"><i
+                            class="fa fa-fw fa-shopping-cart"></i><?php echo Lang::choice('messages.shop_aggiungi_al_carrello',0); ?>
 
-                        </a></p>
-                </div>
+                    </a></p>
             </div>
         </div>
+    </div>
     <?php endforeach; ?>
 </div>
 <!-- Modal -->
@@ -59,37 +59,46 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                        aria-hidden="true">&times;</span></button>
                 <h3><?php echo Lang::choice('messages.shop_come_ordinare',0); ?></h3>
             </div>
             <div class="modal-body">
                 <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_1')): ?>
-                    <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_1',0); ?></p>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_1',0); ?></p>
                 <?php endif; ?>
                 <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_2')): ?>
-                    <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_2',0); ?></p>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_2',0); ?></p>
                 <?php endif; ?>
                 <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_3')): ?>
-                    <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_3',0); ?></p>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_3',0); ?></p>
                 <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_4')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_4',0); ?></p>
-                    <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_5')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_5',0); ?></p>
-                    <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_6')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_6',0); ?></p>
-                    <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_7')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_7',0); ?></p>
-                    <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_8')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_8',0); ?></p>
-                    <?php endif; ?>
-                    <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_9')): ?>
-                        <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_9',0); ?></p>
-                    <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_4')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_4',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_5')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_5',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_6')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_6',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_7')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_7',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_8')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_8',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_9')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_9',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_10')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_10',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_11')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_11',0); ?></p>
+                <?php endif; ?>
+                <?php if(Lang::has('messages.shop_come_ordinare_paragrafo_12')): ?>
+                <p><?php echo Lang::choice('messages.shop_come_ordinare_paragrafo_12',0); ?></p>
+                <?php endif; ?>
             </div>
             <div class="modal-footer">
                 <button type="button"

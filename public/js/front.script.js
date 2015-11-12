@@ -31,3 +31,8 @@ $(function () {
         $('.navbar-collapse.in').collapse('hide');
     });
 });
+
+$(document).on("click",".btn-iscriviti-news",function(event){
+    event.preventDefault;
+    $("#modal-news").modal("hide");
+});

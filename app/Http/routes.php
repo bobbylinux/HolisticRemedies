@@ -51,3 +51,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Cambio linguaggio
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguagesController@switchLang']);
+
+Route::get('email/{order}', array('as' => 'group', 'uses' => 'OrdiniController@sendMail'));

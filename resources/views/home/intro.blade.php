@@ -16,7 +16,8 @@
     <div class="col-lg-6 col-lg-offset-3">
         <div class="panel panel-default" id="panel-newsletter">
             <div class="panel-body">
-                <a href="#" data-toggle="modal" data-target="#modal-news"><i class="fa fa-envelope"></i> {!! Lang::choice('messages.newsletter',0) !!} </a>
+                <p>{!! Lang::choice('messages.newsletter',0) !!}</p>
+                <a href="#" data-toggle="modal" data-target="#modal-news" class="btn-news"><i class="fa fa-3x fa-envelope"></i>  </a>
             </div>
         </div>
     </div>
@@ -43,7 +44,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default">{!! Lang::choice('messages.pulsante_iscriviti',0) !!}</button>
+                <button type="button" class="btn btn-default btn-iscriviti-news">{!! Lang::choice('messages.pulsante_iscriviti',0) !!}</button>
             </div>
         </div>
     </div>

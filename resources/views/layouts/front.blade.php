@@ -54,7 +54,8 @@
                target="_blank"><i
                         class="fa fa-facebook"></i></a>
             @if (Auth::check())
-               <a class="navbar-brand hidden-md hidden-lg" href="{!! url('carrello') !!}"><span class="badge cart-count">{!! $cartcount !!}</span><i
+                <a class="navbar-brand hidden-md hidden-lg" href="{!! url('carrello') !!}"><span
+                            class="badge cart-count">{!! $cartcount !!}</span><i
                             class="fa fa-shopping-cart"></i></a>
             @endif
             @if (App::getLocale() == "en")
@@ -89,7 +90,8 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (!Auth::check())
                     <li>
-                        <a class="hidden-md hidden-lg" href="auth/login"><i class="fa fa-fw fa-user"></i>  {!! Lang::choice('messages.menu_accedi',0) !!}</a>
+                        <a class="hidden-md hidden-lg" href="auth/login"><i
+                                    class="fa fa-fw fa-user"></i> {!! Lang::choice('messages.menu_accedi',0) !!}</a>
                     </li>
                     <li class="dropdown hidden-xs hidden-sm">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -98,31 +100,40 @@
                                     class="caret"></span></a>
 
                         <div class="dropdown-menu dropdown-login">
-                            {!!Form::open(['url'=>'auth/login','class'=>'form-signin','data-token' => csrf_token(),'style'=>'margin-top:10px'])!!}
-                            <label for="inputEmail" class="sr-only">Email</label>
-                            {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
-                            <label for="inputPassword" class="sr-only">Password</label>
-                            {!! Form::password('password',['class'=>'form-control','placeholder'=>'Password','id'=>'password']) !!}
-                            <div class="col-xs-12">
-                                <p class="bg-danger login-errors"></p>
+                            {!!Form::open(['url'=>'auth/login','class'=>'form-login form-signin','data-token' => csrf_token(),'style'=>'margin:10%;'])!!}
+                            <div class="form-group">
+                                <label for="username">Email</label>
+                                {!! Form::text('username','',['class'=>'form-control','type'=>'email','id'=>'username','placeholder'=>'Email'])!!}
                             </div>
-                            <a href="{!! url('auth/password')!!}" >{!! Lang::choice('messages.password_dimenticata',0) !!}</a>
-
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                {!! Form::password('password',['class'=>'form-control','placeholder'=>'Password','id'=>'password']) !!}
+                            </div>
+                            <div class="form-group">
+                                <p class="bg-success login-errors" style="text-align: center;"></p>
+                            </div>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"
                                            value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
                                 </label>
                             </div>
-                            {!!Form::submit(Lang::choice('messages.pulsante_accedi',0),['class'=>'btn btn-lg btn-default btn-block'])!!}
-                            <a href="{!! url('auth/register')!!}"
-                               class="btn btn-default btn-lg btn-block">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
-
+                            <div class="form-group">
+                                <a href="{!! url('auth/password')!!}">{!! Lang::choice('messages.password_dimenticata',0) !!}</a>
+                            </div>
+                            <div class="form-group">
+                                {!!Form::submit(Lang::choice('messages.pulsante_accedi',0),['class'=>'btn btn-lg btn-default btn-block'])!!}
+                            </div>
+                            <div class="form-group">
+                                <a href="{!! url('auth/register')!!}"
+                                   class="btn btn-default btn-lg btn-block">{!! Lang::choice('messages.pulsante_registrati',0) !!}</a>
+                            </div>
                             {!!Form::close()!!}
                         </div>
                     </li>
                 @else
-                    <li class="hidden-sm hidden-xs"><a href="{!! url('carrello') !!}"><span class="badge cart-count">{!! $cartcount !!}</span><i
+                    <li class="hidden-sm hidden-xs"><a href="{!! url('carrello') !!}"><span
+                                    class="badge cart-count">{!! $cartcount !!}</span><i
                                     class="fa fa-shopping-cart"></i></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span
@@ -130,11 +141,11 @@
                                     class="caret"></b></a>
                         <ul class="dropdown-menu">
                             @if (Auth::user()->ruolo == 1)
-                            <li>
-                                <a href="{!! url('admin') !!}"><i
-                                            class="fa fa-fw fa-dashboard"></i> {!! Lang::choice('messages.pannello_di_controllo',0) !!}
-                                </a>
-                            </li>
+                                <li>
+                                    <a href="{!! url('admin') !!}"><i
+                                                class="fa fa-fw fa-dashboard"></i> {!! Lang::choice('messages.pannello_di_controllo',0) !!}
+                                    </a>
+                                </li>
                             @endif
                             <li>
                                 <a href="{!! url('ordini/utente') !!}"><i
@@ -172,28 +183,24 @@
     </div>
     <!-- /.container -->
 </nav>
-
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="container">
         @yield('intro')
     </div>
 </section>
-
 <!-- Tips Section -->
 <section id="tips" class="tips-section">
     <div class="container">
         @yield('tips')
     </div>
 </section>
-
 <!-- Ingredients Section -->
 <section id="ingredients" class="ingredients-section">
     <div class="container">
         @yield('ingredients')
     </div>
 </section>
-
 <!-- Shop Section -->
 <section id="buy" class="shop-section">
     <div class="container">
@@ -201,11 +208,13 @@
     </div>
 </section>
 <section id="footer" class="footer-section">
-    
+    <h5>Caisse Formula è un integratore alimentare prodotto da: Herb Works - Guelph Ontario - Canada</h5>
+    <h6>Distribuito in Italia da: Holistic Remedies - Via Piave, 99 - 50068 Rufina (Firenze)</h6>
+    <h6>Tel.: +39.055. 8395388 - Fax: +39.055.8395989 - Mail: info@caisse.it</h6>
+    <h6>Iscrizione REA Firenze 503598 - Registro Imprese 19717 - P. IVA 04957430483</h6>
 </section>
 <!-- jQuery -->
 <script src="{{ url('js/jquery.js') }}"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ url('js/bootstrap.min.js') }}"></script>
 
