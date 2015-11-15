@@ -133,7 +133,7 @@
         </div>
     </div>
 </div>
-@foreach($errors->get('comune') as $message)
+@foreach($errors->get('citta') as $message)
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <p class="bg-danger">{!! $message !!}</p>

@@ -3,67 +3,112 @@
     <div class="page-header">
         <h2><?php echo e(Lang::choice('messages.dash_ordini_index_titolo',0)); ?></h2>
     </div>
+    <?php echo Form::open(array('url'=>'admin/ordini/search','method'=>'post')); ?>
+
     <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-xs-2">
+            <select class="form-control" name="field" id="field-filter">
+                <option value="ordine"><?php echo e(strtolower(Lang::choice('messages.dash_ordini_index_numero_ordine',0))); ?></option>
+                <option value="id"><?php echo e(strtolower(Lang::choice('messages.dash_ordini_index_id',0))); ?></option>
+                <option value="cliente"><?php echo e(strtolower(Lang::choice('messages.dash_ordini_index_cliente',0))); ?></option>
+                <!--<option value="stato"><?php echo e(strtolower(Lang::choice('messages.dash_ordini_index_stato',0))); ?></option>-->
+            </select>
+        </div>
+        <div class="col-xs-1">
+            <select class="form-control" name="operator">
+                <option value="="><?php echo e(Lang::choice('messages.search_equals',0)); ?></option>
+                <option value="like"><?php echo e(Lang::choice('messages.search_contain',0)); ?></option>
+            </select>
+        </div>
+        <div class="col-xs-4 search-filter">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="<?php echo Lang::choice('messages.pulsante_ricerca',0); ?>">
+                <input type="text" class="form-control"
+                       placeholder="<?php echo Lang::choice('messages.pulsante_ricerca',0); ?>" name="value">
             <span class="input-group-btn">
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
             </span>
             </div>
         </div>
+        <div class="col-xs-4 order-status-filter" style="display: none;">
+            <div class="input-group">
+                <select class="form-control" name="order-status-value">
+                    <?php foreach($stati as $stato): ?>
+                        <option value="<?php echo e($stato->id); ?>"><?php echo e($stato->descrizione); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </span>
+            </div>
+        </div>
+        <div class="col-xs-1">
+            <a href="<?php echo url('admin/ordini'); ?>" class="btn btn-primary">Reset</a>
+        </div>
     </div>
+
+    <?php echo Form::close(); ?>
+
     <div class="row">
         <div class="col-md-8">
-                <?php echo $ordini->render(); ?>
+            <?php echo $ordini->render(); ?>
 
         </div>
     </div>
 
     <ol class="breadcrumb">
         <li class="active">
-            <i class="fa fa-dashboard"></i>  <a href="<?php echo e(url('admin')); ?>">Pannello di controllo</a>
+            <i class="fa fa-dashboard"></i> <a href="<?php echo e(url('admin')); ?>">Pannello di controllo</a>
         </li>
         <li class="active">
             <i class="fa fa-money"></i> Ordini
         </li>
     </ol>
-    <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                <tr>
-                    <th class="col-lg-1 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_numero_ordine',0)); ?></th>
-                    <th class="col-lg-2 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_data_ordine',0)); ?></th>
-                    <th class="col-lg-1 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_costo_ordine',0)); ?></th>
-                    <th class="col-lg-4 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_cliente',0)); ?></th>
-                    <th class="col-lg-3 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_stato',0)); ?></th>
-                    <th class="col-lg-1 col-md-2"><?php echo e(Lang::choice('messages.dash_ordini_index_azioni_nome',0)); ?></th>
-                </tr>
-                <thead>
-                <tbody>
-                <?php foreach($ordini as $ordine): ?>
-                    <tr>
-                        <td><?php echo e(@$ordine->id); ?></td>
-                        <td><?php echo e(@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))); ?></td>
-                        <td><?php echo e(@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2)); ?> €</td>
-                        <td><?php echo $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' .$ordine->utenti->username?></td>
-                        <?php $idx=0; ?>
-                        <?php foreach($ordine->stati as $stato): ?>
-                            <?php $idx++;?>
-                            <?php if($idx == count($ordine->stati)): ?>
-                            <td><?php echo e($stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione))); ?></td>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                        <td>
-                            <a href="<?php echo e(url('/admin/ordini/'.$ordine['id'].'/edit')); ?>" data-token ="<?= csrf_token() ?>" class='btn-edit-order'><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span> <?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?></button></a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th class="col-lg-1"><?php echo e(Lang::choice('messages.dash_ordini_index_numero_ordine',0)); ?></th>
+            <th class="col-lg-2"><?php echo e(Lang::choice('messages.dash_ordini_index_data_ordine',0)); ?></th>
+            <th class="col-lg-1"><?php echo e(Lang::choice('messages.dash_ordini_index_costo_ordine',0)); ?></th>
+            <th class="col-lg-1"><?php echo e(Lang::choice('messages.dash_ordini_index_id',0)); ?></th>
+            <th class="col-lg-2"><?php echo e(Lang::choice('messages.dash_ordini_index_cliente',0)); ?></th>
+            <th class="col-lg-3"><?php echo e(Lang::choice('messages.dash_ordini_index_stato',0)); ?></th>
+            <th class="col-lg-1"><?php echo e(Lang::choice('messages.dash_ordini_index_azioni_nome',0)); ?></th>
+        </tr>
+        <thead>
+        <tbody>
+        <?php foreach($ordini as $ordine): ?>
+            <tr>
+                <td class="col-lg-1"><?php echo e(@$ordine->id); ?></td>
+                <td class="col-lg-2"><?php echo e(@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))); ?></td>
+                <td class="col-lg-1"><?php echo e(@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2)); ?>
+
+                    €
+                </td>
+                <td class="col-lg-1"><?php echo e($ordine->utenti->id); ?></td>
+                <td class="col-lg-2"><?php echo e($ordine->utenti->username); ?></td>
+                <?php $idx = 0; ?>
+                <td class="col-lg-3">
+                    <?php foreach($ordine->stati as $stato): ?>
+                        <?php $idx++; ?>
+                        <?php if($idx == count($ordine->stati)): ?>
+                            <?php echo e($stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione))); ?>
+
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </td>
+                <td class="col-lg-1">
+                    <a href="<?php echo e(url('/admin/ordini/'.$ordine['id'].'/edit')); ?>" data-token="<?= csrf_token() ?>"
+                       class='btn-edit-order'>
+                        <button type="button" class="btn btn-primary"><span
+                                    class="glyphicon glyphicon-pencil"></span> <?php echo e(Lang::choice('messages.pulsante_modifica',0)); ?>
+
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 
 
 <?php $__env->stopSection(); ?>

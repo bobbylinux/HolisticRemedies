@@ -49,4 +49,15 @@ $(document).ready(function () {
             $(".vettura").hide();
         }
     });
+
+    $(document).on("change","#field-filter",function() {
+        var $value = $(this).val();
+        if ($value === "stato") {
+            $(".search-filter").hide();
+            $(".order-status-filter").show();
+        } else {
+            $(".search-filter").show();
+            $(".order-status-filter").hide();
+        }
+    });
 });

@@ -22,8 +22,16 @@ $(document).ready(function () {
             success: function (data) {
                 $units = data.units;
                 $(".cart-count").html($units);
+                $("#modal-cart").modal("show");
+                window.setTimeout(function(){
+                    $("#modal-cart").modal("hide");
+                }, 2000); // your 2 seconds delay before it calls the modal function
             },
             error: function (data) {
+                $("#modal-cart-error").modal("show");
+                window.setTimeout(function(){
+                    $("#modal-cart-error").modal("hide");
+                }, 2000); // your 2 seconds delay before it calls the modal function
                 console.error(data);
             }
         });
@@ -306,4 +314,5 @@ $(document).ready(function () {
     $(document).on("click",".btn-print",function(){
         window.print();
     });
+
 });

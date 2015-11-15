@@ -86,7 +86,7 @@ class Carrello extends BaseModel
         $carrello = $this->where('utente', '=', $user)->get();
         $this->units = 0;
         foreach ($carrello as $item) {
-            $this->units += $item->quantita;
+            $this->units += intval($item->quantita);
         }
         return $this->units;
     }

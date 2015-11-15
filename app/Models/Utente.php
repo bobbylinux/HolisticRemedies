@@ -42,7 +42,7 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
      * The variable for validation rules
      *
      */
-    protected $rules = array(
+    public $rules = array(
         'username' => 'required|email|unique:utenti,username',
         'username_c' => 'same:username',
         'password' => 'required|min:6',
@@ -53,6 +53,10 @@ class Utente extends BaseModel implements AuthenticatableContract, AuthorizableC
         'email' => 'required|email|exists:utenti,username',
         'password' => 'required|min:6',
         'password_c' => 'same:password'
+    );
+    public $editProfileRules = array(
+        'username' => 'required|email|unique:utenti,username',
+        'username_c' => 'same:username'
     );
 
     /**

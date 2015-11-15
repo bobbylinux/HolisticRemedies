@@ -35,7 +35,9 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::resource('carrello', 'CarrelliController');
     Route::get('carrello/{idPagamento}/pagamento', 'CarrelliController@getTotalWithPaymentDiscount');
     //ordini utente
-    Route::get('ordini/utente', 'OrdiniController@getUserOrders');
+    Route::get('utente/ordini', 'OrdiniController@getUserOrders');
+    Route::get('utente/profilo', 'ClientiController@editProfile');
+    Route::post('utente/profilo', 'ClientiController@updateProfile');
 });
 
 // Gestione backoffice
@@ -47,6 +49,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('sconti/quantita', 'ScontiQuantitaController');
     Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
     Route::resource('clienti', 'ClientiController');
+    Route::post('clienti/search', 'ClientiController@search');
+    Route::post('ordini/search', 'OrdiniController@search');
 });
 
 // Cambio linguaggio

@@ -112,7 +112,7 @@ html {
 
 }
 
-.thumbnail{
+.product-section{
     height:350px;
 }
 
@@ -140,4 +140,8 @@ html {
 
 .btn-news{
     color: inherit;
+}
+
+#modal-cart {
+    font-family: 'Fanwood';
 }

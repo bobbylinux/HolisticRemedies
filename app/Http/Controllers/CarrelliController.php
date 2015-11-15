@@ -84,17 +84,17 @@ class CarrelliController extends Controller {
     public function store(Request $request) {
 
         $data = array(
-            'prodotto' => $request->get('prodotto'),
-            'quantita' => $request->get('quantita'),
+            'prodotto' => intval($request->get('prodotto')),
+            'quantita' => intval($request->get('quantita')),
             'utente' => $this->auth->user()->id
         );
         if ($this->carrello->validate($data)) {
             //controllo conflitti nel carrello
-            $carrello = $this->carrello;
-            if ($carrello->where('prodotto', '=', $request->get('prodotto'))->count() > 0) {
-                $carrello = $carrello->where('prodotto', '=', $request->get('prodotto'))->first();
+            $count = $this->carrello->where('utente','=',$this->auth->user()->id)->where('prodotto', '=', $request->get('prodotto'))->count();
+            if ($count > 0) {
+                $carrello = $this->carrello->where('utente','=',$this->auth->user()->id)->where('prodotto', '=', $request->get('prodotto'))->first();
                 $quantita = $carrello->quantita;
-                $data['quantita'] += $quantita;
+                $data['quantita'] += intval($quantita);
                 $this->carrello->trash($carrello->id);
             }
 
@@ -166,12 +166,13 @@ class CarrelliController extends Controller {
      */
     public function destroy($id) {
         //per sicurezza faccio un controllo id carrello->utente se coincidono 
-        $utente = $this->carrello->find($id)->first()->utente;
-        if ($utente == $this->auth->user()->id) {
+        $utente = $this->carrello->find($id);
+        if (intval($utente->utente) == intval($this->auth->user()->id)) {
             $this->carrello->trash($id);
             //una volta cancellato devo ricalcolare il totale
             $quantita = $this->carrello->getCartItemsNumber($this->auth->user()->id);
             $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,null,0, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$percentualePagamento,$spedizione,$totale);
+
             $data = array(
                 'quantita' => $quantita,
                 'totale' => $totale,
@@ -184,6 +185,11 @@ class CarrelliController extends Controller {
                         'msg' => 'OK',
                         'item' => $data));
         }
+        return Response::json(array(
+            'code' => '401', //OK
+            'msg' => 'KO',
+            'error' => $utente->utente));
+
     }
 
 

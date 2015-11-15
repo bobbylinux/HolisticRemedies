@@ -181,6 +181,7 @@ return array(
     'dash_sconti_pagamento_edit_pulsante_modifica' => 'Edit Discounts',
     'dash_clienti_index_titolo' => 'Manage Customers',
     'dash_clienti_index_pulsante_nuovo' => 'New Customer',
+    'dash_clienti_index_id' => 'Id',
     'dash_clienti_index_cognome' => 'Surname',
     'dash_clienti_index_nome' => 'Name',
     'dash_clienti_index_societa' => 'Society',
@@ -205,6 +206,7 @@ return array(
     'dash_clienti_edit_pulsante_modifica' => 'Edit Customer',
     'dash_ordini_index_titolo' => 'Manage Order',
     'dash_ordini_index_numero_ordine' => '# Orders',
+    'dash_ordini_index_id' => 'Id',
     'dash_ordini_index_data_ordine' => 'Order date',
     'dash_ordini_index_costo_ordine' => 'Amount',
     'dash_ordini_index_cliente' => 'Customer',
@@ -242,6 +244,7 @@ return array(
     'pulsante_visualizza' => 'View',
     'check_ricordami' => 'Remember me',
     /* registrazione */
+    'profilo_titolo' => 'Update Profile',
     'nome' => 'Name',
     'cognome' => 'Surname',
     'indirizzo' => 'Address',
@@ -272,6 +275,13 @@ return array(
     'conferma_mail' => 'You will recive a mail with a purchase confirmation',
     'stampa' => 'Print Page',
     'dettaglio_ordine' => 'Order Detail',
+
+    'search_equals' => 'Equal',
+    'search_contain' => 'Contain',
+
+    'modal_cart_title' => 'Cart',
+    'modal_cart_body' => 'Item added to cart',
+    'modal_cart_error_body' => 'Error while adding item to cart',
     /* errori */
     '404title' => 'Ups! Pay Attention Please',
     '404body' => 'Page Not Found',

@@ -167,6 +167,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_sconti_pagamento_edit_pulsante_modifica' => 'Modifica Sconto',
     'dash_clienti_index_titolo' => 'Gestione Clienti',
     'dash_clienti_index_pulsante_nuovo' => 'Nuovo Cliente',
+    'dash_clienti_index_id' => 'Id',
     'dash_clienti_index_cognome' => 'Cognome',
     'dash_clienti_index_nome' => 'Nome',
     'dash_clienti_index_societa' => 'Società',
@@ -191,6 +192,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_clienti_edit_pulsante_modifica' => 'Modifica Cliente',
     'dash_ordini_index_titolo' => 'Gestione Ordini',
     'dash_ordini_index_numero_ordine' => '# Ordine',
+    'dash_ordini_index_id' => 'Id',
     'dash_ordini_index_data_ordine' => 'Data Ordine',
     'dash_ordini_index_costo_ordine' => 'Totale',
     'dash_ordini_index_cliente' => 'Cliente',
@@ -233,6 +235,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'check_ricordami' => 'Ricordami',
 
     /*registrazione*/
+    'profilo_titolo' => 'Aggiorna Profilo',
     'nome' => 'Nome',
     'cognome' => 'Cognome',
     'indirizzo' => 'Indirizzo',
@@ -258,6 +261,14 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'no' => 'NO',
     'in_data' => 'in data',
     'conferma_mail' => 'Riceverai una conferma di acquisto alla tua casella di posta elettronica',
+
+    'search_equals' => 'Uguale',
+    'search_contain' => 'Contiene',
+
+    'modal_cart_title' => 'Carrello',
+    'modal_cart_body' => 'Oggetto aggiunto al carrello',
+    'modal_cart_error_body' => 'Error durante inserimento elemento nel carrello',
+
     /*newsletter*/
     'titolo_newsletter' => 'Iscriviti alla nostra mailing list',
     'newsletter' => 'Se siete interessati a ricevere informazioni da Holistic Remedies<br>iscrivetevi alla nostra mailing list.',

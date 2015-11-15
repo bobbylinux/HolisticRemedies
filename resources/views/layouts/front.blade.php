@@ -148,12 +148,12 @@
                                 </li>
                             @endif
                             <li>
-                                <a href="{!! url('ordini/utente') !!}"><i
+                                <a href="{!! url('utente/ordini') !!}"><i
                                             class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
                                 </a>
                             </li>
                             <li>
-                                <a href="#"><i
+                                <a href="utente/profilo"><i
                                             class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
                                 </a>
                             </li>
@@ -213,6 +213,43 @@
     <h6>Tel.: +39.055. 8395388 - Fax: +39.055.8395989 - Mail: info@caisse.it</h6>
     <h6>Iscrizione REA Firenze 503598 - Registro Imprese 19717 - P. IVA 04957430483</h6>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="text-center"><strong>{!! Lang::choice('messages.modal_cart_title',0) !!}</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class="thumbnail">
+                    <img src="{!! url('img/checked.png') !!}" alt="">
+                    <h4 class="text-center"><strong>{!! Lang::choice('messages.modal_cart_body',0) !!}</strong></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal-cart-error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="text-center"><strong>{!! Lang::choice('messages.modal_cart_title',0) !!}</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class="thumbnail">
+                    <img src="{!! url('img/error.png') !!}" alt="">
+                    <h4 class="text-center"><strong>{!! Lang::choice('messages.modal_cart_error_body',0) !!}</strong></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery -->
 <script src="{{ url('js/jquery.js') }}"></script>
 <!-- Bootstrap Core JavaScript -->

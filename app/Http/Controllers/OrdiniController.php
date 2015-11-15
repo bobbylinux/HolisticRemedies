@@ -67,9 +67,9 @@ class OrdiniController extends Controller
      */
     public function index()
     {
-        $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->orderby('data_creazione','asc')->paginate(20);
-
-        return view('ordini.index', compact('ordini'));
+        $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
+        $stati = $this->stato->get();
+        return view('ordini.index', compact('ordini','stati'));
     }
 
     /**
@@ -323,5 +323,59 @@ class OrdiniController extends Controller
         }
 
     }
+
+    public function search(Request $request)
+    {
+        $field = $request->get("field");
+        $operator = $request->get("operator");
+
+        if ($operator == "like") {
+            $value = "%" . trim($request->get("value")) . "%";
+        } else {
+            $value = trim($request->get("value"));
+        }
+
+        if ($field == "id" || $field == "ordine") {
+            $operator = "=";
+            $value = intval($request->get("value"),0);
+        }
+
+        try {
+            if ($field == "id" || $field == "cliente") {
+                if ($field == "cliente") {
+                    $value = strtolower($value);
+                    $field = "username";
+                }
+                $ordini = $this->ordine->with('utenti.clienti')->with('stati')->whereHas('utenti', function ($q) use ($field,$operator,$value) {
+                    $q->where($field, $operator, $value);
+                })->orderby('id', 'desc')->paginate(20);
+            } else {
+                if ( $field == "ordine" ) {
+                    $field = "id";
+                }
+                if ($field =="stato") {
+                    $value = intval($request->get("order-status-value"));
+                    $operator = "=";
+                    $ordini = $this->ordine->with('utenti.clienti')->with('stati')->whereHas('stati', function ($q) use ($field,$operator,$value) {
+                        $q->where($field, $operator, $value);
+                    })->orderby('id', 'desc')->paginate(20);
+                } else {
+                    $ordini = $this->ordine->with('utenti.clienti')->with('stati')->where($field, $operator, $value)->orderby('id', 'desc')->paginate(20);
+                }
+            }
+            if (count($ordini) == 0) {
+                $ordini = $this->ordine->where('cancellato','=',false)->with('utenti.clienti')->with('stati')->orderby('id','desc')->paginate(20);
+            }
+            $stati = $this->stato->get();
+            return view('ordini.index', compact('ordini','stati'));
+        } catch (QueryException $err) {
+            $ordini = $this->ordine->where('cancellato','=',false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
+            $stati = $this->stato->get();
+            return view('ordini.index', compact('ordini','stati'));
+        }
+
+
+    }
+
 
 }
