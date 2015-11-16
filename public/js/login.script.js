@@ -12,6 +12,7 @@ $(document).ready(function () {
                 _method: "POST",
                 username: $('#username').val(),
                 password: $('#password').val(),
+                remember: $('#remember-me').val(),
                 _token: $token
             },
             dataType: 'json',

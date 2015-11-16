@@ -13,7 +13,7 @@
                 <!--<option value="stato">{{ strtolower(Lang::choice('messages.dash_ordini_index_stato',0)) }}</option>-->
             </select>
         </div>
-        <div class="col-xs-1">
+        <div class="col-xs-2">
             <select class="form-control" name="operator">
                 <option value="=">{{ Lang::choice('messages.search_equals',0) }}</option>
                 <option value="like">{{ Lang::choice('messages.search_contain',0) }}</option>
@@ -44,8 +44,8 @@
             <a href="{!! url('admin/ordini') !!}" class="btn btn-primary">Reset</a>
         </div>
     </div>
-
     {!! Form::close() !!}
+    
     <div class="row">
         <div class="col-md-8">
             {!! $ordini->render() !!}

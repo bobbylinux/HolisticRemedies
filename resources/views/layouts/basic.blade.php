@@ -76,13 +76,13 @@
                                     </a>
                                 </li>
                             @endif
-                            <li>
-                                <a href="{!! url('ordini/utente') !!}"><i
+                             <li>
+                                <a href="{!! url('utente/ordini') !!}"><i
                                             class="fa fa-fw fa-truck"></i> {!! Lang::choice('messages.miei_ordini',0) !!}
                                 </a>
                             </li>
                             <li>
-                                <a href="#"><i
+                                <a href="{!! url('utente/profilo') !!}"><i
                                             class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
                                 </a>
                             </li>
@@ -136,6 +136,8 @@
 <script src="{{ url('js/front.script.js') }}"></script>
 <script src="{{ url('js/blockui.js') }}"></script>
 <script src="{{ url('js/cart.script.js') }}"></script>
+<!-- cookies law bar -->
+<script src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>
 </body>
 
 </html>

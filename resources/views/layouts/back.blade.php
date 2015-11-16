@@ -135,7 +135,8 @@
         <!-- Bootstrap Core JavaScript -->
         <script src="{{ url('js/bootstrap.min.js') }}"></script>
         <script src="{{ url('js/back.script.js') }}"></script>
-
+        <!-- cookies law bar -->
+        <script src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>
     </body>
 
 </html>

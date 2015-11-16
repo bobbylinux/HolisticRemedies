@@ -150,25 +150,28 @@ class AuthController extends Controller {
 
         $user = User::where('username', '=', $request->username)->first();
 
-        if (isset($user)) {
+        if (isset($user)) {            
             if ($user->password == md5($request->password)) { // If their password is still MD5
                 $user->password = bcrypt($request->password); // Convert to new format
                 $user->save();
             }
+            if ($user->confermato) {
+              $remember = (null !==$request->get("remember-me")) ? true : false;
+              if ($this->auth->attempt($request->only('username', 'password'),$remember)) {  
+                 if ($request->ajax()) {
+                    return Response::json(array(
+                                'code' => '200', //OK
+                                'msg' => 'OK'));
+                    } else if ($this->auth->user()->ruolo == 1) {
+                            return redirect('admin');
+                        
+                    } else {
+                        return redirect('/');
+                    }
+                }
+            } 
         }
-
-        if ($this->auth->attempt($request->only('username', 'password'))) {
-            if ($request->ajax()) {
-                return Response::json(array(
-                            'code' => '200', //OK
-                            'msg' => 'OK'));
-            } else if ($this->auth->user()->ruolo == 1) {
-                    return redirect('admin');
-                
-            } else {
-                return redirect('/');
-            }
-        }
+           
 
         if ($request->ajax()) {
             return Response::json(array(

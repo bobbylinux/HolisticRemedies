@@ -18,7 +18,7 @@
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"
+                        <input type="checkbox" name="remember-me" id="remember-me"
                                value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
                     </label>
                 </div>

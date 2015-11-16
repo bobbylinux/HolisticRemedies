@@ -264,7 +264,7 @@ class ClientiController extends Controller
                 $clienti = $this->cliente->with('utenti.ruoli')->whereHas('utenti', function ($q) use ($field,$operator, $value) {
                     $q->where($field, $operator, $value);
 
-                })->paginate(20);
+                })->orderby('cognome','asc')->paginate(20);
             } else {
                 $clienti = $this->cliente->with('utenti.ruoli')->where($field, $operator, $value)->paginate(20);
             }

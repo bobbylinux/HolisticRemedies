@@ -174,7 +174,6 @@
                             </div>
                         </div>
                     </div>
-                    <?php var_dump($errors->all());?>
                 </div>
             </div>
             {!! Form::close() !!}

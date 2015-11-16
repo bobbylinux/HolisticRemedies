@@ -114,7 +114,7 @@
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox"
+                                    <input type="checkbox" id="remember-me" name="remember-me"
                                            value="remember-me"> {!! Lang::choice('messages.check_ricordami',0) !!}
                                 </label>
                             </div>
@@ -153,7 +153,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="utente/profilo"><i
+                                <a href="{!! url('utente/profilo') !!}"><i
                                             class="fa fa-fw fa-cog"></i> {!! Lang::choice('messages.profilo',0) !!}
                                 </a>
                             </li>
@@ -260,7 +260,8 @@
 <script src="{{ url('js/front.script.js') }}"></script>
 <script src="{{ url('js/cart.script.js') }}"></script>
 <script src="{{ url('js/login.script.js') }}"></script>
-
+<!-- cookies law bar -->
+<script src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>
 </body>
 
 </html>

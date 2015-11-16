@@ -29,8 +29,8 @@ class DashBoardController extends Controller {
      */
     public function index()
     {
-        $newOrders = $this->ordini->stati()->where('stato','=',1)->count();
-        $newUsers = $this->utenti->where('confermato','=',false)->count();
+        $newOrders = count($this->ordini->stati()->where('stato','=',1));
+        $newUsers = count($this->utenti->where('confermato','=',false));
         return view('dash',compact('newOrders','newUsers'));
     }
 

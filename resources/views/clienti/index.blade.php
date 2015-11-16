@@ -22,7 +22,7 @@
             <option value="attivo">{{ strtolower(Lang::choice('messages.dash_clienti_index_attivo',0)) }}</option>
         </select>
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-2">
         <select class="form-control" name="operator">
             <option value="=">{{ Lang::choice('messages.search_equals',0) }}</option>
             <option value="like">{{ Lang::choice('messages.search_contain',0) }}</option>
