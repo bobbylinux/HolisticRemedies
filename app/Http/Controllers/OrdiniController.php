@@ -306,15 +306,17 @@ class OrdiniController extends Controller
             $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
             $totale = $tempTot - $scontoPagamento;
 
-            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine) {
-                $message->to('bobbylinux@hotmail.it')
+            $destination = $this->auth->user()->username;
+
+            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine,$destination) {
+                $message->to($destination)
                     ->subject('Conferma Ordine ' . $ordine['id']);
             });
 
-            /*Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine) {
+            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine) {
                 $message->to('info@caisse.it')->cc('ordini@caisse.it')->cc('holistic@caisse.it')
                     ->subject('Conferma Ordine ' . $ordine['id']);
-            });*/
+            });
         } else {
             return Response::json(array(
                 'code' => '401', //OK
