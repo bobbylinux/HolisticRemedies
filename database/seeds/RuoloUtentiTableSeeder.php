@@ -9,8 +9,7 @@ class RuoloUtentiTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('ruolo_utenti')->delete();
-        $json = File::get(database_path() . '/data/ruolo_utenti.json');
+        $json = File::get(database_path().'/data/ruoloutenti.json');
         $data = json_decode($json);
         foreach ($data as $obj) {
             Ruolo::create(array(

@@ -29,7 +29,7 @@ class ClientiController extends Controller
     /**
      * The sysdate variable.
      *
-     * @var Nazione
+     * @var now
      */
     protected $now;
 

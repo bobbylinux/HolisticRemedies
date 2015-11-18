@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Nazioni;
+use App\Models\Nazione;
 use Illuminate\Support\Facades\File;
 
 class NazioniTableSeeder extends Seeder
@@ -16,7 +16,7 @@ class NazioniTableSeeder extends Seeder
         $json = File::get(database_path().'/data/nazioni.json');
         $data = json_decode($json);
         foreach ($data as $obj) {
-            Nazioni::create(array(
+            Nazione::create(array(
                 'id' => $obj->id,
                 'nazione' => $obj->nazione,
                 'inizio_validita' => $obj->inizio_validita,

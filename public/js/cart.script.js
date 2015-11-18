@@ -239,7 +239,7 @@ $(document).ready(function () {
     });
 
     $(document).on("click",".btn-annulla-ordine",function(event){
-        even.preventDefault();
+        event.preventDefault();
         $('#payment').slideDown();
         $('#conferma-ordine').hide();
         $(this).hide();

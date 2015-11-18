@@ -14,12 +14,6 @@ class ScontoQuantita extends BaseModel
     protected $fillable = array('quantita_min', 'quantita_max','sconto');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
      * The variable for validation rules
      *
      */
@@ -78,8 +72,9 @@ class ScontoQuantita extends BaseModel
      * @data array
      */
     public function trash() {
+        $now = date('Y-m-d H:i:s');
         $this->cancellato = true;
-        $this->data_cancellazione = $this->now;
+        $this->data_cancellazione = $now;
         $this->save();
     }
 }

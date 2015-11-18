@@ -20,12 +20,6 @@ class TipoPagamento extends BaseModel
     protected $fillable = array('nomefile', 'didascalia');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
      * The relationships
      *
      */

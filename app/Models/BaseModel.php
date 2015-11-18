@@ -40,21 +40,7 @@ abstract class BaseModel extends Model {
     protected $messages = array(
 
     );
-
-    /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
-     * The override of construct function
-     *
-     */
-    public function __construct() {
-        $this->now = date('Y-m-d H:i:s');
-    }
-
+    
     /**
      * The variable for validation rules
      *

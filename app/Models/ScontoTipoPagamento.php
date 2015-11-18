@@ -12,12 +12,6 @@ class ScontoTipoPagamento extends BaseModel
     protected $fillable = array('pagamento','sconto');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
      * The variable for validation rules
      *
      */
@@ -62,8 +56,9 @@ class ScontoTipoPagamento extends BaseModel
      * @data array
      */
     public function trash() {
+        $now = date('Y-m-d H:i:s');
         $this->cancellato = true;
-        $this->data_cancellazione = $this->now;
+        $this->data_cancellazione = $now;
         $this->save();
     }
 

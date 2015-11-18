@@ -16,12 +16,6 @@ class Immagine extends BaseModel
     protected $fillable = array('nomefile', 'didascalia');
 
     /**
-     * The variable for system date time
-     *
-     */
-    protected $now = null;
-
-    /**
      * The variable for validation rules
      *
      */
@@ -62,8 +56,9 @@ class Immagine extends BaseModel
      * @data array
      */
     public function trash() {
+        $now = date('Y-m-d H:i:s');
         $this->cancellato = true;
-        $this->data_cancellazione = $this->now;
+        $this->data_cancellazione = $now;
         $this->save();
     }
     

@@ -16,14 +16,14 @@ class UtentiTableSeeder extends Seeder {
         $data = json_decode($json);
         foreach ($data as $obj) {
             Utente::create(array(
-                'id' => $obj->id,
-                'username' => $obj->username,
-                'password' => $obj->password,
-                'ruolo' => $obj->ruolo,
-                'confermato' => $obj->confermato,
-                'cancellato' => $obj->cancellato
-            ));
-        }
+                    'id' => $obj->id,
+                    'username' => $obj->username,
+                    'password' => $obj->password,
+                    'ruolo' => $obj->ruolo,
+                    'confermato' => $obj->confermato,
+                    'cancellato' => $obj->cancellato
+            ));  
+        }    
         $this->command->info("tabella utenti popolata");
     }
 
