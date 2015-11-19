@@ -46,7 +46,7 @@
                         <td class="col-xs-6">{{Lang::choice('messages.sconto',0)}}</td>
                         <td class="col-xs-2"></td>
                         <td class="col-xs-1"></td>
-                        <td class="text-right">-{{number_format($ordine->sconto,2) }} €</td>
+                        <td class="text-right">-{{number_format($sconto,2) }} €</td>
                     </tr>
                     <tr>
                         <td class="col-xs-1"></td>
