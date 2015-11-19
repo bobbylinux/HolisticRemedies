@@ -198,7 +198,10 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_ordini_index_cliente' => 'Cliente',
     'dash_ordini_index_stato' => 'Stato',
     'dash_ordini_index_azioni_nome' => 'Azioni',
-
+    'sconto' => 'Sconto',
+    'spese_spedizione' => 'Spese di spedizione',
+    'tipo_pagamento' => 'Tipo pagamento',
+    'totale' => 'Totale',
     'attendere' => 'Attendere Prego...',
     'conferma_ordine_oggetto_mail' => 'Conferma Ordine',
     'menu_accedi' => 'ACCEDI',

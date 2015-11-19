@@ -215,6 +215,8 @@ return array(
     'conferma_ordine_oggetto_mail' => 'Order Confirm',
     'attendere' => 'Please Wait...',
     'menu_accedi' => 'SIGN IN',
+    'sconto' => 'Discount',
+    'spese_spedizione' => 'Shipping fees',
     'attenzione' => 'Warning',
     'modal_cancellazione' => 'Are you sure to delete this item?<br>Operation not reversible',
     'nuovi_iscritti_newsletter' => 'New subscriptions to news',

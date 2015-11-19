@@ -54,10 +54,9 @@
                             <tbody>
                             <tr>
                                 <td width="50"></td>
-                                <td width="250">Sconto per {{$qta_tot}} pezzi</td>
-                                <td width="150"></td>
+                                <td width="250">Sconto</td>                                <td width="150"></td>
                                 <td width="100"></td>
-                                <td width="150">{{number_format($ordine->sconto,2) }} €</td>
+                                <td width="150">-{{number_format($sconto,2) }} €</td>
                             </tr>
                             <tr>
                                 <td width="20"></td>

@@ -302,21 +302,22 @@ class OrdiniController extends Controller
         $stati = $this->stato->where('cancellato','=',false)->orderby('id','asc')->lists('descrizione', 'id')->all();
         $ordine = $this->ordine->with('prodotti','utenti.clienti','pagamenti.scontiTipoPagamento','stati')->find($id);
         if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
-            $tempTot = $ordine->costo + $ordine->costospedizione - $ordine->sconto;
+            $tempTot = $ordine->costo + $ordine->costospedizione;
             $scontoPagamento = $tempTot * ($ordine->pagamenti->scontiTipoPagamento->sconto/100);
-            $totale = $tempTot - $scontoPagamento;
+            $sconto = $ordine->sconto + $scontoPagamento;
+            $totale = $tempTot - $sconto;
 
             $destination = $this->auth->user()->username;
 
-            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine,$destination) {
+            Mail::send('email.order', compact('ordine','totale','stati','cartcount','sconto'), function($message) use($ordine,$destination) {
                 $message->to($destination)
                     ->subject('Conferma Ordine ' . $ordine['id']);
             });
 
-            Mail::send('email.order', compact('ordine','totale','stati','cartcount'), function($message) use($ordine) {
+            /*Mail::send('email.order', compact('ordine','totale','stati','cartcount','sconto'), function($message) use($ordine) {
                 $message->to('info@caisse.it')->cc('ordini@caisse.it')->cc('holistic@caisse.it')
                     ->subject('Conferma Ordine ' . $ordine['id']);
-            });
+            });*/
         } else {
             return Response::json(array(
                 'code' => '401', //OK

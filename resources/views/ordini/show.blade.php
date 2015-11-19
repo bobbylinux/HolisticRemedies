@@ -1,15 +1,16 @@
 @extends('layouts.basic')
 @section('content')
     <div class="row" style="text-align: center;">
-        <h4>
-            Spett. {{ $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' . $ordine->utenti->clienti->indirizzo . ' - ' . $ordine->utenti->clienti->cap . ' ' . $ordine->utenti->clienti->comune . ' (' . $ordine->utenti->clienti->provincia . ')'   }}</h4>
+        <h4><strong>
+            {{ $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' . $ordine->utenti->clienti->indirizzo . ' - ' . $ordine->utenti->clienti->cap . ' ' . $ordine->utenti->clienti->comune . ' (' . $ordine->utenti->clienti->provincia . ')'   }}</strong></h4>
     </div>
     <div class="row" style="text-align: center;">
-        <h4>{{ Lang::choice('messages.telefono',0) . ' ' .  $ordine->utenti->clienti->telefono . ' - E-Mail:  ' . $ordine->utenti->username}}</h4>
+        <h4><strong>{{ Lang::choice('messages.telefono',0) . ' ' .  $ordine->utenti->clienti->telefono . ' - E-Mail:  ' . $ordine->utenti->username}}</strong></h4>
+    
     </div>
 
     <div class="row">
-        <div class="panel-success">
+        <div class="panel-success" style='font-size: 18px;'>
             <div class="panel-heading">
                 <h5>{{ Lang::choice('messages.dettaglio_ordine',0) . ' ' . $ordine->id}}</h5>
             </div>
@@ -42,10 +43,10 @@
                     <tbody>
                     <tr>
                         <td class="col-xs-1"></td>
-                        <td class="col-xs-6">{!! Lang::choice('messages.carrello_sconto_quantita',$qta_tot,['quantita' => $qta_tot]) !!}</td>
+                        <td class="col-xs-6">{{Lang::choice('messages.sconto',0)}}</td>
                         <td class="col-xs-2"></td>
                         <td class="col-xs-1"></td>
-                        <td class="text-right">{{number_format($ordine->sconto,2) }} €</td>
+                        <td class="text-right">-{{number_format($ordine->sconto,2) }} €</td>
                     </tr>
                     <tr>
                         <td class="col-xs-1"></td>
