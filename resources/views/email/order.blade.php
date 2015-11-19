@@ -9,11 +9,15 @@
 <body style="background: #edebd6; margin: 0; padding: 0;">
 <table align="center" border="1" cellpadding="0" cellspacing="0" width="800">
     <td align="center" bgcolor="#62643f" style="padding: 40px 0 30px 0;">
-        <a href="http://www.condor.globeit.com" target="_blank"><img src="http://www.condor.globeit.com/img/intro.png" alt="Creating Email Magic" width="700" height="270" style="display: block;" /></a>
+        <a href="http://www.holisticremedies.it" target="_blank"><img src="http://www.holisticremedies.it/img/intro.png" alt="Creating Email Magic" width="700" height="270" style="display: block;" /></a>
     </td>
     <tr>
         <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px; text-align:center; font-family: Arial, sans-serif;">
-            <h4>Spett. {{ $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' . $ordine->utenti->clienti->indirizzo . ' - ' . $ordine->utenti->clienti->cap . ' ' . $ordine->utenti->clienti->comune . ' (' . $ordine->utenti->clienti->provincia . ')'   }}</h4>
+            <h4>{{ $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome}}<br>
+                {{ $ordine->utenti->clienti->indirizzo }}<br>
+                {{ $ordine->utenti->clienti->cap . ' ' . $ordine->utenti->clienti->comune . ' ' . $ordine->utenti->clienti->provincia }}<br>
+                {{ $ordine->utenti->clienti->telefono }}<br>
+                {{ $ordine->utenti->username }}</h4>
             <table border="1" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                     <td style="font-size: 18px; font-weight: bold;">
@@ -112,7 +116,7 @@
                             <tr>
                                 <td>
                                     <a href="https://www.facebook.com/CaisseFormula/" target="_blank">
-                                        <img src="http://www.condor.globeit.com/img/fb.png') !!}" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
+                                        <img src="http://www.holisticremedies.it/img/fb.png" alt="Facebook" width="38" height="38" style="display: block;" />
                                     </a>
                                 </td>
                             </tr>

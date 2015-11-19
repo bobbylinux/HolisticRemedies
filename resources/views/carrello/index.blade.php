@@ -20,7 +20,7 @@
                                 <td class="item-product">{{$item->prodotti->prodotto}}</td>
                                 <td class="item-price">{{$item->prodotti->prezzo}} &euro;</td>
                                 <td class="item-units">{!! Form::select('number', [1,2,3,4,5,6,7,8,9,10], $item->quantita-1,array('class'=>'units-select', 'data-item'=> $item->id, 'data-product' => $item->prodotto, 'data-token' => csrf_token())) !!}</td>
-                                <td class="item-total">{{number_format($item->prodotti->prezzo * $item->quantita,2)}} &euro;</td>
+                                <td><span class="item-total">{{number_format($item->prodotti->prezzo * $item->quantita,2)}}</span> &euro;</td>
                                 <td>
                                     <a href="#" data-token="<?= csrf_token() ?>" class="delete-from-cart"
                                        data-item="{{$item->id}}">

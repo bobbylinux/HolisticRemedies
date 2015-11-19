@@ -80,7 +80,7 @@ $(document).ready(function () {
                     }
                 });
 
-                $(this).closest('tr').children(".item-total").html($prezzo);
+                $(".item-total").html($prezzo);//$(this).closest('tr').children(".item-total").html($prezzo);
                 $(".cart-count").html($items);
                 $(".cart-total").html($totale);
                 $(".cart-total-discounted").html($totaleScontato);

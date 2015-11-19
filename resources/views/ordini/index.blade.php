@@ -76,7 +76,7 @@
         @foreach($ordini as $ordine)
             <tr>
                 <td class="col-lg-1">{{@$ordine->id}}</td>
-                <td class="col-lg-2">{{@date('d/m/Y H:m:s', strtotime($ordine->data_creazione))}}</td>
+                <td class="col-lg-2">{{@date('d/m/Y H:i:s', strtotime($ordine->data_creazione))}}</td>
                 <td class="col-lg-1">{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }}
                     €
                 </td>
@@ -87,7 +87,7 @@
                     @foreach($ordine->stati as $stato)
                         <?php $idx++; ?>
                         @if ($idx == count($ordine->stati))
-                            {{$stato->descrizione . ' in data ' . date('d/m/Y H:m:s', strtotime($stato->pivot->data_creazione)) }}
+                            {{$stato->descrizione . ' in data ' . date('d/m/Y H:i:s', strtotime($stato->pivot->data_creazione)) }}
                         @endif
                     @endforeach
                 </td>
