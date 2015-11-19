@@ -132,7 +132,7 @@
                                 data-token="<?= csrf_token() ?>">{{Lang::choice('messages.pulsante_paga_e_conferma',0)}}</button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top:2%;">
                     <div class="col-xs-12" id="annulla-ordine">
                         <button class="btn btn-block btn-default btn-annulla-ordine"
                                 data-token="<?= csrf_token() ?>">{{Lang::choice('messages.pulsante_annulla',0)}}</button>

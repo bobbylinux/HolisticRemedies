@@ -178,7 +178,7 @@ $(document).ready(function () {
                 var $scontoPagamento = 0;
                 var $percentuale = 0;
                 var $formPagamento = "";
-                $(this).closest('tr').remove();
+                //$(this).closest('tr').remove();
                 $.each(data, function (key, value) { // First Level
                     if (key === "item") {
                         $quantita = value.quantita;
@@ -204,6 +204,8 @@ $(document).ready(function () {
                 $(".payment-price-tr").show();
                 $("#conferma-ordine").show();
                 $("#annulla-ordine").show();
+                $(".btn-annulla-ordine").show();
+                $(".forms").empty();
                 $(".forms").append($formPagamento);
 
             },
