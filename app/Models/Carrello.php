@@ -170,10 +170,10 @@ class Carrello extends BaseModel
 
         $this->total -= $scontoPagamento;
 
-        $totalDiscounted = number_format($this->total + $speseSpedizione, 2);
-        $discountUnits = number_format($scontoQuantita, 2);
-        $discountPayment = number_format($scontoPagamento, 2);
-        $shipping = number_format($speseSpedizione,2);
+        $totalDiscounted = number_format(round($this->total + $speseSpedizione, 2),2);
+        $discountUnits = number_format(round($scontoQuantita, 2),2);
+        $discountPayment = number_format(round($scontoPagamento, 2),2);
+        $shipping = number_format(round($speseSpedizione,2),2);
     }
 
     /*

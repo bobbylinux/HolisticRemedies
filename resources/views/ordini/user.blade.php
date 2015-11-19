@@ -39,7 +39,7 @@
                     <td>{{@$ordine->id}}</td>
                     <td>{{@date('d/m/Y H:i:s', strtotime($ordine->data_creazione))}}</td>
                     <?php $scontoPagamento = ($ordine->pagamenti->scontiTipoPagamento->sconto / 100) * ($ordine->costo - $ordine->sconto); ?>
-                    <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione-$scontoPagamento,2) }}</td>
+                    <td>{{@number_format($ordine->costo - $ordine->sconto + $ordine->costospedizione,2) }}</td>
                     <?php $idx = 0; ?>
                     <td>
                         @foreach($ordine->stati as $stato)
