@@ -314,10 +314,10 @@ class OrdiniController extends Controller
                     ->subject('Conferma Ordine ' . $ordine['id']);
             });
 
-            /*Mail::send('email.order', compact('ordine','totale','stati','cartcount','sconto'), function($message) use($ordine) {
+            Mail::send('email.order', compact('ordine','totale','stati','cartcount','sconto'), function($message) use($ordine) {
                 $message->to('info@caisse.it')->cc('ordini@caisse.it')->cc('holistic@caisse.it')
                     ->subject('Conferma Ordine ' . $ordine['id']);
-            });*/
+            });
         } else {
             return Response::json(array(
                 'code' => '401', //OK
