@@ -57,7 +57,7 @@ class ClientiController extends Controller
      */
     public function index()
     {
-        $clienti = $this->cliente->with('utenti.ruoli')->where('cancellato', '=', false)->orderby('cognome', 'asc')->paginate(20);
+        $clienti = $this->cliente->with('utenti.ruoli')->where('cancellato', '=', false)->orderby('data_creazione', 'desc')->paginate(20);
         return view('clienti.index', compact('clienti'));
     }
 
@@ -278,6 +278,15 @@ class ClientiController extends Controller
         }
 
 
+    }
+
+    public function getNewCustomers()
+    {
+        $clienti = $this->cliente->with('utenti.ruoli')->where('cancellato', '=', false)->whereHas('utenti', function ($q)  {
+            $q->where('confermato', '=', false);
+        })->orderby('data_creazione', 'desc')->paginate(20);
+
+        return view('clienti.index', compact('clienti'));
     }
 
 }

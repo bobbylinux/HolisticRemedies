@@ -43,14 +43,15 @@ Route::group(array('middleware' => 'auth'), function() {
 // Gestione backoffice
 
 Route::group(['prefix' => 'admin'], function () {
-
+    Route::get('ordini/new','OrdiniController@getNewOrders');
+    Route::post('ordini/search', 'OrdiniController@search');
     Route::resource('ordini', 'OrdiniController');
     Route::resource('prodotti', 'ProdottiController');
     Route::resource('sconti/quantita', 'ScontiQuantitaController');
     Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
-    Route::resource('clienti', 'ClientiController');
+    Route::get('clienti/new','ClientiController@getNewCustomers');
     Route::post('clienti/search', 'ClientiController@search');
-    Route::post('ordini/search', 'OrdiniController@search');
+    Route::resource('clienti', 'ClientiController');
 });
 
 // Cambio linguaggio

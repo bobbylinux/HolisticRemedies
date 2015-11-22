@@ -29,9 +29,17 @@ class DashBoardController extends Controller {
      */
     public function index()
     {
-        $newOrders = count($this->ordini->stati()->where('stato','=',1));
-        $newUsers = count($this->utenti->where('confermato','=',false));
+        $stato = 1;
+        $orders = \DB::select( \DB::raw("select count(1) as new_orders from (select max(data_creazione), stato, ordine from ordini_stato group by ordine,stato) os where stato = '$stato'") );
+        $newOrders = $orders[0]->new_orders;
+        $users = \DB::table('utenti')
+            ->select(\DB::raw('count(1) as new_users'))
+            ->where('cancellato', '=', false)
+            ->where('confermato', '=', false)
+            ->first();
+        $newUsers = $users->new_users;
         return view('dash',compact('newOrders','newUsers'));
+
     }
 
 }

@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="{!! url('/admin/ordini/new') !!}">
                     <div class="panel-footer">
                         <span class="pull-left">{!! Lang::choice('messages.vai',0) !!}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="{!! url('/admin/clienti/new') !!}">
                     <div class="panel-footer">
                         <span class="pull-left">{!! Lang::choice('messages.vai',0) !!}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

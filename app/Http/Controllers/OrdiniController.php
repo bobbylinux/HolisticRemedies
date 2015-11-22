@@ -367,4 +367,16 @@ class OrdiniController extends Controller {
         }
     }
 
+    public function getNewOrders()
+    {
+        $stato = 1;
+        $orders = \DB::select( \DB::raw("select ordine as id  from (select max(stato) as stato, ordine from ordini_stato group by ordine) os where stato = '$stato'") );
+        $orders_id = json_decode(json_encode($orders), true);//Utilities::objectToArray($orders);
+
+        $ordini = $this->ordine->where('cancellato', '=', false)->whereIn('id',$orders_id)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
+        $stati = $this->stato->get();
+        return view('ordini.index', compact('ordini', 'stati'));
+        //var_dump($ordini);
+    }
+
 }
