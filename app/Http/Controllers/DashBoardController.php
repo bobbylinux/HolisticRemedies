@@ -30,7 +30,7 @@ class DashBoardController extends Controller {
     public function index()
     {
         $stato = 1;
-        $orders = \DB::select( \DB::raw("select count(1) as new_orders from (select max(data_creazione), stato, ordine from ordini_stato group by ordine,stato) os where stato = '$stato'") );
+        $orders = \DB::select( \DB::raw("select count(1) as new_orders from (select * from ordini_stato where (data_creazione,ordine) in (select max(data_creazione), ordine from ordini_stato group by ordine) order by ordine desc) os where stato ='".$stato."'") );
         $newOrders = $orders[0]->new_orders;
         $users = \DB::table('utenti')
             ->select(\DB::raw('count(1) as new_users'))
