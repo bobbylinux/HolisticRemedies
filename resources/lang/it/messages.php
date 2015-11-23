@@ -192,10 +192,10 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_clienti_edit_pulsante_modifica' => 'Modifica Cliente',
     'dash_ordini_index_titolo' => 'Gestione Ordini',
     'dash_ordini_index_numero_ordine' => '# Ordine',
-    'dash_ordini_index_id' => 'Id',
+    'dash_ordini_index_id' => 'ID Cliente',
     'dash_ordini_index_data_ordine' => 'Data Ordine',
     'dash_ordini_index_costo_ordine' => 'Totale',
-    'dash_ordini_index_cliente' => 'Cliente',
+    'dash_ordini_index_cliente' => 'Cognome Nome',
     'dash_ordini_index_stato' => 'Stato',
     'dash_ordini_index_azioni_nome' => 'Azioni',
     'sconto' => 'Sconto',
@@ -215,6 +215,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
 
     /*pulsangi generici*/
     'registrazione' => 'Registrazione',
+    'registrazione_paragrafo' => 'DOPO AVER CONFERMATO LE INFORMAZIONI, RICEVERAI UNA MAIL PER CONFERMARE LA TUA REGISTRAZIONE',
     'pulsante_modifica' => 'Modifica',
     'pulsante_elimina' => 'Elimina',
     'pulsante_annulla' => 'Annulla',

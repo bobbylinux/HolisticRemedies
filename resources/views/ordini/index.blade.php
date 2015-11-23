@@ -81,7 +81,7 @@
                     €
                 </td>
                 <td class="col-lg-1">{{$ordine->utenti->id }}</td>
-                <td class="col-lg-2">{{$ordine->utenti->username }}</td>
+                <td class="col-lg-2">{{$ordine->utenti->clienti->cognome }} {{ $ordine->utenti->clienti->nome}}</td>
                 <?php $idx = 0; ?>
                 <td class="col-lg-3">
                     @foreach($ordine->stati as $stato)

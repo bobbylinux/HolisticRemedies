@@ -206,7 +206,7 @@ return array(
     'dash_clienti_edit_pulsante_modifica' => 'Edit Customer',
     'dash_ordini_index_titolo' => 'Manage Order',
     'dash_ordini_index_numero_ordine' => '# Orders',
-    'dash_ordini_index_id' => 'Id',
+    'dash_ordini_index_id' => 'Customer ID',
     'dash_ordini_index_data_ordine' => 'Order date',
     'dash_ordini_index_costo_ordine' => 'Amount',
     'dash_ordini_index_cliente' => 'Customer',
@@ -225,6 +225,7 @@ return array(
     'nuovi_utenti' => 'New users',
     /* pulsangi generici */
     'registrazione' => 'Sign Up',
+    'registrazione_paragrafo' => 'AFTER SUBMIT THE INFORMATIONS, YOU WILL RECIVE AN MAIL TO CONFIRM YOUR REGISTRATION',
     'pulsante_modifica' => 'Update',
     'pulsante_elimina' => 'Delete',
     'pulsante_annulla' => 'Undo',

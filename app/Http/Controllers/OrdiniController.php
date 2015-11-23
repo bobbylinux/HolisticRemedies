@@ -127,7 +127,7 @@ class OrdiniController extends Controller {
             $this->ordine->prodotti()->attach($item->prodotto, ['quantita' => $item->quantita, 'costo' => $item->prodotti->prezzo]);
         }
         //salvo lo stato
-        $stato = $this->stato->where('descrizione', '=', 'IN ATTESA PAGAMENTO')->first();
+        $stato = $this->stato->where('descrizione', '=', 'LAVORAZIONE')->first();
         $this->ordine->stati()->attach($stato);
 
         $cliente = $this->auth->user()->clienti()->where('utente', '=', $this->auth->user()->id)->first();
@@ -369,7 +369,7 @@ class OrdiniController extends Controller {
 
     public function getNewOrders()
     {
-        $stato = 1;
+        $stato = 2;
         $orders = \DB::select( \DB::raw("select ordine as new_orders from (select * from ordini_stato where (data_creazione,ordine) in (select max(data_creazione), ordine from ordini_stato group by ordine) order by ordine desc) os where stato ='".$stato."'") );
         $orders_id = json_decode(json_encode($orders), true);//Utilities::objectToArray($orders);
 

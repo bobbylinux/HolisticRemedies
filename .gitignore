@@ -5,3 +5,4 @@ Homestead.json
 .env
 /public/update/
 /public/uploads/
+/public/sendletter/

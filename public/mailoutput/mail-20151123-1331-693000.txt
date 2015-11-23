@@ -1,0 +1,10 @@
+To: newsletter@caisse.it
+Subject: Richiesta di adesione
+MIME-Version: 1.0
+Content-type: text/html; charset=utf-8
+From: roberto bani <roberto.bani@gmail.com>
+
+<table border="0"><tr>
+            <td>Nome e Cognome</td><td>roberto bani</td></tr><tr>
+            <td>E-mail</td><td>roberto.bani@gmail.com</td></tr><tr>
+         <!--   <td valign="top">&Egrave; interessato a:</td> --> <td></td></tr></table><br><a href="http://www.holisticremedies.it/sendletter/insert_mailing.php?nome=roberto bani&mail=roberto.bani@gmail.com&interessi " target="_blank">Accetta l'iscrizione</a>
