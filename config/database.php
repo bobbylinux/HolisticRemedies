@@ -66,10 +66,10 @@ return [
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'      => 'localhost',
-            'database'  => 'holistic',
-            'username'  => 'holistic',
-            'password'  => 'holistic',
+            'host'     => env('DB_HOST', 'localhost'),
+            'database' => env('DB_DATABASE', 'holistic'),
+            'username' => env('DB_USERNAME', 'holistic'),
+            'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',

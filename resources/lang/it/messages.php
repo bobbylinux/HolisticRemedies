@@ -260,6 +260,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'nuova_password' => 'Nuova Password',
     'password_dimenticata' => 'Password dimenticata?',
     'istruzioni_reset_password' => 'Inserisci il tuo indirizzo di registrazione, la nuova password e reinseriscila per conferma.<br>Al termine riceverai una email di conferma',
+    'iscrizione_mailinglist' => 'Iscriviti alla nostra newsletter',
 
     'si' => strtoupper('sì'),
     'no' => 'NO',

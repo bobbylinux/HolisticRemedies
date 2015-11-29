@@ -272,6 +272,8 @@ return array(
     'esito_paragrafo_2' => 'Caisse Formula è prodotta da: Herb Works Guelph Ontario Canada',
     'esito_paragrafo_3' => 'Distribuita in Italia da: Holistic Remedies Via Piave, 99 50068 Rufina (Firenze) Tel.+39.055. 8395388 Fax +39.055.8395989',
     'esito_paragrafo_4' => 'Le informazioni contenute in questo sito non possono essere utilizzate in sostituzione dei consigli del medico curante (Nota Privacy)',
+    'iscrizione_mailinglist' => 'Subscribe to our newsletter',
+
     'si' => strtoupper('yes'),
     'no' => 'NO',
     'in_data' => 'on date',

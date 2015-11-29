@@ -213,7 +213,6 @@
     <h6>Tel.: +39.055. 8395388 - Fax: +39.055.8395989 - Mail: info@caisse.it</h6>
     <h6>Iscrizione REA Firenze 503598 - Registro Imprese 19717 - P. IVA 04957430483</h6>
 </section>
-
 <!-- Modal -->
 <div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-xs" role="document">

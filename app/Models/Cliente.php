@@ -49,6 +49,15 @@ class Cliente extends BaseModel
         $this->telefono = strtoupper($data['telefono']);
         $this->save();
     }
+
+    public function submitNewsLetter($data)
+    {
+        $nome = strtoupper($data['cognome']) . ' ' . strtoupper($data['nome']);
+        $indirizzo = strtolower($data['indirizzo']);
+        $db_ext = \DB::connection('mysql');
+        $db_ext->insert('insert into soci (nome, mail) values (?, ?)', array($nome, $indirizzo));
+    }
+
     /**
      * set the relationships
      *

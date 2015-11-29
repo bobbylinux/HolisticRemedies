@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 
-class AuthController extends Controller {
+class AuthController extends Controller
+{
 
     /**
      * the model instance
@@ -49,7 +50,7 @@ class AuthController extends Controller {
      * The role id variable
      *
      *
-    */
+     */
     protected $ruolo;
     /**
      * The sysdate variable.
@@ -61,10 +62,11 @@ class AuthController extends Controller {
     /**
      * Create a new authentication controller instance.
      *
-     * @param  Authenticator  $auth
+     * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, User $user, Nazione $nazione, Cliente $cliente, Ruolo $ruolo) {
+    public function __construct(Guard $auth, User $user, Nazione $nazione, Cliente $cliente, Ruolo $ruolo)
+    {
         $this->user = $user;
         $this->auth = $auth;
         $this->nazione = $nazione;
@@ -79,19 +81,22 @@ class AuthController extends Controller {
      *
      * @return Response
      */
-    public function getRegister() {
-        $nazioni = $this->nazione->where('inizio_validita','<',$this->now)->where('fine_validita','>',$this->now)->lists('nazione', 'id')->all();
-        return view('auth.register',compact("nazioni"));
+    public function getRegister()
+    {
+        $nazioni = $this->nazione->where('inizio_validita', '<', $this->now)->where('fine_validita', '>', $this->now)->lists('nazione', 'id')->all();
+        return view('auth.register', compact("nazioni"));
     }
 
     /**
      * Handle a registration request for the application.
      *
-     * @param  RegisterRequest  $request
+     * @param  RegisterRequest $request
      * @return Response
      */
-    public function postRegister(RegisterRequest $request) {
+    public function postRegister(RegisterRequest $request)
+    {
         //valido l'utente e il cliente
+
         $data = array(
             'cognome' => $request->get('cognome'),
             'nome' => $request->get('nome'),
@@ -123,10 +128,22 @@ class AuthController extends Controller {
         $data['utente'] = $this->user->id;
         $this->cliente->store($data);
         $codice = $data['codice_conferma'];
+
+
+
         Mail::send('email.verify', compact('codice'), function($message) {
             $message->to($this->user->username, $this->user->username)
                 ->subject('Conferma iscrizione');
         });
+
+        if (null != $request->get('confermato')) {
+            $data = array(
+                'cognome' => $request->get('cognome'),
+                'nome' => $request->get('nome'),
+                'indirizzo' => $request->get('username')
+            );
+            $this->cliente->submitNewsLetter($data);
+        }
 
         return redirect('/');
     }
@@ -136,42 +153,44 @@ class AuthController extends Controller {
      *
      * @return Response
      */
-    public function getLogin() {
+    public function getLogin()
+    {
         return view('auth.login');
     }
 
     /**
      * Handle a login request to the application.
      *
-     * @param  LoginRequest  $request
+     * @param  LoginRequest $request
      * @return Response
      */
-    public function postLogin(LoginRequest $request) {
+    public function postLogin(LoginRequest $request)
+    {
 
         $user = User::where('username', '=', $request->username)->first();
 
-        if (isset($user)) {            
+        if (isset($user)) {
             if ($user->password == md5($request->password)) { // If their password is still MD5
                 $user->password = bcrypt($request->password); // Convert to new format
                 $user->save();
             }
             if ($user->confermato) {
-              $remember = (null !==$request->get("remember-me")) ? true : false;
-              if ($this->auth->attempt($request->only('username', 'password'),$remember)) {  
-                 if ($request->ajax()) {
-                    return Response::json(array(
-                                'code' => '200', //OK
-                                'msg' => 'OK'));
+                $remember = (null !== $request->get("remember-me")) ? true : false;
+                if ($this->auth->attempt($request->only('username', 'password'), $remember)) {
+                    if ($request->ajax()) {
+                        return Response::json(array(
+                            'code' => '200', //OK
+                            'msg' => 'OK'));
                     } else if ($this->auth->user()->ruolo == 1) {
-                            return redirect('admin');
-                        
+                        return redirect('admin');
+
                     } else {
                         return redirect('/');
                     }
                 }
-            } 
+            }
         }
-           
+
 
         if ($request->ajax()) {
             return Response::json(array(
@@ -189,7 +208,8 @@ class AuthController extends Controller {
      *
      * @return Response
      */
-    public function getLogout() {
+    public function getLogout()
+    {
         $this->auth->logout();
 
         return redirect('/');
@@ -200,7 +220,8 @@ class AuthController extends Controller {
      *
      * @return string
      */
-    protected function getFailedLoginMessage() {
+    protected function getFailedLoginMessage()
+    {
         return Lang::has('auth.failed') ? Lang::get('auth.failed') : 'These credentials do not match our records.';
     }
 
@@ -214,8 +235,8 @@ class AuthController extends Controller {
     {
         if (!$code) {
             $data['errore'] = true;
-            $data['titolo'] = Lang::choice("messages.errore",0);
-            $data['conferma'] = Lang::choice('messages.errore_signin',0);
+            $data['titolo'] = Lang::choice("messages.errore", 0);
+            $data['conferma'] = Lang::choice('messages.errore_signin', 0);
             return view('auth.confirm', $data);
         }
 
@@ -223,17 +244,17 @@ class AuthController extends Controller {
 
         if (!$user) {
             $data['errore'] = true;
-            $data['titolo'] = Lang::choice("messages.errore",0);
-            $data['conferma'] = Lang::choice('messages.errore_signin',0);
+            $data['titolo'] = Lang::choice("messages.errore", 0);
+            $data['conferma'] = Lang::choice('messages.errore_signin', 0);
             return view('auth.confirm', $data);
         } else {
 
             $user->confermato = true;
             $user->codice_conferma = null;
             $user->save();
-            $data['conferma'] = Lang::choice('messages.conferma_testo',0);
+            $data['conferma'] = Lang::choice('messages.conferma_testo', 0);
             $data['errore'] = false;
-            $data['titolo'] = Lang::choice('messages.conferma_titolo',0);
+            $data['titolo'] = Lang::choice('messages.conferma_titolo', 0);
             return view('auth.confirm', $data);
         }
     }
@@ -258,19 +279,19 @@ class AuthController extends Controller {
     public function postPassword(Request $request)
     {
         $data = array(
-          'email' => $request->get('email'),
-          'password' => $request->get('password'),
-          'password_c' => $request->get('password_c')
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'password_c' => $request->get('password_c')
         );
 
         //validate user
-        $validatorUser = $this->user->validate($data,$this->user->passwordChangeRules);
+        $validatorUser = $this->user->validate($data, $this->user->passwordChangeRules);
         if ($validatorUser->fails()) {
             $errors = $this->user->getErrors();
             return Redirect::action('Auth\AuthController@getPassword')->withInput()->withErrors($errors);
         }
         //se validato devo aggiornare il db
-        $user = $this->user->where('username','=',$data['email'])->first();
+        $user = $this->user->where('username', '=', $data['email'])->first();
 
         $codice = str_random(30);
 
@@ -279,7 +300,7 @@ class AuthController extends Controller {
         $user->password($data);
 
         //invio mail di conferma
-        Mail::send('email.password', ['codice' => $codice, 'user' => $user], function($message) use($user,$codice) {
+        Mail::send('email.password', ['codice' => $codice, 'user' => $user], function ($message) use ($user, $codice) {
             $message->to($user->username, $user->username)
                 ->subject('Conferma cambio password');
         });
