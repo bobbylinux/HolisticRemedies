@@ -17,7 +17,7 @@
         <div class="panel panel-default" id="panel-newsletter">
             <div class="panel-body">
                 <p>{!! Lang::choice('messages.newsletter',0) !!}</p>
-                <a href="{!! url('sendletter/iscrizione.php') !!}" data-toggle="modal" data-target="#modal-news" class="btn-news"><i class="fa fa-3x fa-envelope"></i>  </a>
+                <a href="{!! url('sendletter/iscrizione.php') !!}"><i class="fa fa-3x fa-envelope"></i>  </a>
             </div>
         </div>
     </div>
