@@ -129,10 +129,10 @@ class AuthController extends Controller
         $this->cliente->store($data);
         $codice = $data['codice_conferma'];
 
+        $destination = $this->user->username;
 
-
-        Mail::send('email.verify', compact('codice'), function($message) {
-            $message->to($this->user->username, $this->user->username)
+        Mail::send('email.verify', compact('codice'), function($message) use($destination) {
+            $message->to($destination)
                 ->subject('Conferma iscrizione');
         });
 
