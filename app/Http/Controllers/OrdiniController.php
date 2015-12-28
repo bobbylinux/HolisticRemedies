@@ -301,11 +301,13 @@ class OrdiniController extends Controller {
             $destination = $this->auth->user()->username;
 
             Mail::send('email.order', compact('ordine', 'totale', 'stati', 'cartcount', 'sconto'), function($message) use($ordine, $destination) {
+                $message->from('info@caisse.it', 'Holistic Remedies');
                 $message->to($destination)
                         ->subject('Conferma Ordine ' . $ordine['id']);
             });
 
             Mail::send('email.order', compact('ordine', 'totale', 'stati', 'cartcount', 'sconto'), function($message) use($ordine) {
+                $message->from('info@caisse.it', 'Holistic Remedies');
                 $message->to('info@caisse.it')->cc('ordini@caisse.it')->cc('holistic@caisse.it')
                         ->subject('Conferma Ordine ' . $ordine['id']);
             });

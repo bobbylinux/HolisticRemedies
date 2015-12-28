@@ -131,7 +131,9 @@ class AuthController extends Controller
 
         $destination = $this->user->username;
 
+
         Mail::send('email.verify', compact('codice'), function($message) use($destination) {
+            $message->from('info@caisse.it', 'Holistic Remedies');
             $message->to($destination)
                 ->subject('Conferma iscrizione');
         });
