@@ -8,7 +8,7 @@
 
 <div>
     Gentile cliente,
-    Le confermiamo la sua richiesta di cambio della password da Lei richiesto.
+    Abbiamo ricevuto una richiesta di cambio password.
     Per confermare la preghiamo di fare click sul link sottostante<br/>
     {!! URL::to('auth/verify/' . $codice) !!}<br/>
 </div>

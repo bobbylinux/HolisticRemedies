@@ -138,22 +138,25 @@ class ClientiController extends Controller
         $cliente = $this->cliente->find($id);
         $cliente->edit($data);
         $userId = $cliente->utente;
-        $utente = $this->utente->find($userId);
 
+
+        $utente = $this->utente->find($userId);
         if ($utente != null) {
-            if ($data['confermato'] == null) {
-                $utente->confermato = false;
-            } else {
+            if (isset($data['confermato'])) {
                 $utente->confermato = true;
-            }
-            if ($data['ruolo'] == null) {
-                $utente->ruolo = 2;
             } else {
-                $utente->ruolo = 1;
+                $utente->confermato = false;
             }
-            $utente->save();
+            if (isset($data['ruolo'])) {
+                $utente->ruolo = 1;
+            } else {
+                $utente->ruolo = 2;
+            }
         }
+        
+        $utente->save();
         return Redirect::action('ClientiController@index');
+
     }
 
     /**

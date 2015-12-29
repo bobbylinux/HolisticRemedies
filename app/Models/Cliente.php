@@ -8,7 +8,7 @@ class Cliente extends BaseModel
         'cognome' => 'required|min:2|max:100|alpha',
         'nome' => 'required|min:2|max:100|alpha',
         'indirizzo' => 'required|min:5|max:200',
-        'citta' => 'required|min:2|max:255|alpha',
+        'citta' => 'required|min:2|max:255',
         'cap' => 'alpha_dash|max:5',
         'provincia' => 'max:10',
         'stato' => 'required|numeric|exists:nazioni,id',
