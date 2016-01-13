@@ -5,8 +5,8 @@ class Cliente extends BaseModel
     protected $table = "clienti";
 
     protected $rules = array(
-        'cognome' => 'required|min:2|max:100|alpha',
-        'nome' => 'required|min:2|max:100|alpha',
+        'cognome' => 'required|min:2|max:100',
+        'nome' => 'required|min:2|max:100',
         'indirizzo' => 'required|min:5|max:200',
         'citta' => 'required|min:2|max:255',
         'cap' => 'alpha_dash|max:5',
