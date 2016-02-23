@@ -89,7 +89,7 @@
                     1) dare disposizione di bonifico per l'importo indicato sulla conferma d'ordine a favore di:<br>
                     <b>Holistic Remedies Sas - Via Piave 99 -
                         50068 Rufina (FI) -
-                        Iban IT96L0616038040100000000607</b> <br>
+                        Iban IT24D0616002802100000000737</b> <br>
                     2)  una volta effettuato il bonifico inviare la ricevuta relativa all'indirizzo mail <br><a href="mailto:info@caisse.it">info@caisse.it</a> e anche a <a href="mailto:ordini@caisse.it">ordini@caisse.it</a> <br>oppure un fax al numero 055/8395989<p>
                 </div>
                 @endif
