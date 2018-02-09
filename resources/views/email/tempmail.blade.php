@@ -89,7 +89,7 @@
                                 <b>Holistic Remedies Sas - Via Piave 99 -
                                     50068 Rufina (FI) -
                                     Iban IT96L0616038040100000000607</b> <br>
-                                2)  una volta effettuato il bonifico inviare la ricevuta relativa all'indirizzo mail <br><a href="mailto:info@caisse.it">info@caisse.it</a> e anche a <a href="mailto:ordini@caisse.it">ordini@caisse.it</a> <br>oppure un fax al numero 055/8395989<p>
+                                2)  una volta effettuato il bonifico inviare la ricevuta relativa all'indirizzo mail <br><a href="mailto:info@caisse.it">info@caisse.it</a> e anche a <a href="mailto:ordini@caisse.it">ordini@caisse.it</a><p>
                             </div>
                         @endif
                     </td>
@@ -104,7 +104,7 @@
                     <td width="75%" style="color:#edebd6; text-align: center; font-size:19px;">
                         <h6>Caisse Formula è un integratore alimentare prodotto da: Herb Works - Guelph Ontario - Canada</h6>
                         <h6>Distribuito in Italia da: Holistic Remedies - Via Piave, 99 - 50068 Rufina (Firenze)<br>
-                            Tel.: +39.055. 8395388 - Fax: +39.055.8395989 - Mail: info@caisse.it<br>
+                            Tel.: +39.055. 8395388 - Mail: info@caisse.it<br>
                             Iscrizione REA Firenze 503598 - Registro Imprese 19717 - P. IVA 04957430483</h6>
                     </td>
                     <td align="center">

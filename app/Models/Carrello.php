@@ -115,13 +115,14 @@ class Carrello extends BaseModel
      * get total with discounts for logged user
      *
      * */
-    public function getTotal($user, $scontiQuantita = null, $scontiPagamento = null, $paymentId = 0, $spedizione = null, &$totalDiscounted = 0, &$discountUnits = 0, &$discountPayment = 0, &$percentagePayment = 0, &$shipping = 0, &$total = 0)
+    public function getTotal($user, $scontiQuantita = null, $scontiPagamento = null, $scontiTotaleOrdine = null, $paymentId = 0, $spedizione = null, &$totalDiscounted = 0, &$discountUnits = 0, &$discountPayment = 0, &$discountTotal = 0, &$percentageDiscountTotal = 0, &$percentagePayment = 0, &$shipping = 0, &$total = 0, &$total_min = 0)
     {
         $this->total = 0;
         $carrello = $this->with('prodotti')->where('utente', '=', $user)->get();
         $quantita = 0;
         $scontoQuantita = 0;
         $scontoPagamento = 0;
+        $scontoTotaleOrdine = 0;
 
         foreach ($carrello as $item) {
             $this->total += ($item->prodotti->prezzo * $item->quantita);
@@ -140,9 +141,31 @@ class Carrello extends BaseModel
             }
         }
 
+        //calcolo sconto totale ordine
+        if ($scontiTotaleOrdine != null) {
+            $tmpScontiTotaleOrdine = $scontiTotaleOrdine->where('cancellato','=','0')->orderBy('id', 'asc')->get();
+            $tot_max = 0;
+            $tot_min = 0;
+            foreach ($tmpScontiTotaleOrdine as $item) {
+                $tot_max = $item->totale_max;
+                $tot_min = $item->totale_min;
+                if ($tot_max == 0) {
+                    $tot_max = $total;
+                }
+                if ($total >= $tot_min && $total <= $tot_max) {
+                    $scontoTotaleOrdine = $item->sconto;
+                    $total_min = $tot_min;
+                }
+            }
+            $percentageDiscountTotal = $scontoTotaleOrdine;
+            $scontoTotaleOrdine = ($scontoTotaleOrdine / 100) * $this->total;
+        }
+
+        $this->total -= $scontoTotaleOrdine;
+
         //calcolo sconto quantita
         if ($scontiQuantita != null) {
-            $tmpScontiQuantita = $scontiQuantita->orderBy('id', 'asc')->get();
+            $tmpScontiQuantita = $scontiQuantita->where('cancellato','=','0')->orderBy('id', 'asc')->get();
             $qta_max = 0;
             $qta_min = 0;
             foreach ($tmpScontiQuantita as $item) {
@@ -173,6 +196,7 @@ class Carrello extends BaseModel
         $totalDiscounted = number_format(round($this->total + $speseSpedizione, 2),2);
         $discountUnits = number_format(round($scontoQuantita, 2),2);
         $discountPayment = number_format(round($scontoPagamento, 2),2);
+        $discountTotal = number_format(round($scontoTotaleOrdine, 2),2);
         $shipping = number_format(round($speseSpedizione,2),2);
     }
 

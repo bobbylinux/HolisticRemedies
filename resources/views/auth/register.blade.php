@@ -107,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    @foreach($errors->get('citta') as $message)
+                    @foreach($errors->get('stato') as $message)
                         <div class="row">
                             <div class="col-xs-12">
                                 <p class="bg-danger">{!! $message !!}</p>

@@ -40,7 +40,6 @@ class Cliente extends BaseModel
 
         $this->cognome = strtoupper($data['cognome']);
         $this->nome = strtoupper($data['nome']);
-        //$this->societa = strtoupper($data['societa']);
         $this->indirizzo = strtoupper($data['indirizzo']);
         $this->comune = strtoupper($data['citta']);
         $this->cap = strtoupper($data['cap']);

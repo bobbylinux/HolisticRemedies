@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('prodotti', 'ProdottiController');
     Route::resource('sconti/quantita', 'ScontiQuantitaController');
     Route::resource('sconti/pagamento', 'ScontiTipoPagamentoController');
+    Route::resource('sconti/totale', 'ScontiTotaleOrdineController');
     Route::get('clienti/new','ClientiController@getNewCustomers');
     Route::post('clienti/search', 'ClientiController@search');
     Route::resource('clienti', 'ClientiController');

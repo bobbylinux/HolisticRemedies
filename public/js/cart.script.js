@@ -69,23 +69,35 @@ $(document).ready(function () {
                 var $totaleScontato = 0;
                 var $spedizione = 0;
                 var $sconto = 0;
+                var $totaleMin = 0;
+                var $percentualeScontoSuTotale = 0;
+                var $scontoSuTotale = 0;
+                var $prezzoItems = 0;
                 $.each(data, function (key, value) { // First Level
                     if (key === "item") {
                         $prezzo = value.prezzo;
+                        $quantita = value.quantita;
                         $totale = value.totale;
                         $items = value.items;
                         $totaleScontato = value.totaleScontato;
                         $spedizione = value.spedizione;
                         $sconto = value.sconto;
+                        $totaleMin = value.totale_min;
+                        $percentualeScontoSuTotale = value.percentualeScontoTotaleOrdine;
+                        $scontoSuTotale = value.scontoTotaleOrdine;
                     }
                 });
 
-                $(".item-total").html($prezzo);//$(this).closest('tr').children(".item-total").html($prezzo);
+                $(this).parent('td').parent('tr').children(".item-total").children(".item-total-span").html($prezzo);
                 $(".cart-count").html($items);
                 $(".cart-total").html($totale);
                 $(".cart-total-discounted").html($totaleScontato);
                 $(".shipping-price").html($spedizione);
                 $(".discount-units-price").html($sconto);
+                $(".discount-total-price").html($scontoSuTotale);
+                $(".percentage-total-discount").html($percentualeScontoSuTotale);
+                $(".total-min").html($totaleMin);
+                ($scontoSuTotale > 0) ? $(".discount-on-total-row").show() : $(".discount-on-total-row").hide();
             },
             error: function (data) {
                 console.error(data);
@@ -120,6 +132,9 @@ $(document).ready(function () {
                 var $totaleScontato = 0;
                 var $spedizione = 0;
                 var $sconto = 0;
+                var $totaleMin = 0;
+                var $percentualeScontoSuTotale = 0;
+                var $scontoSuTotale = 0;
                 $(this).closest('tr').remove();
                 $.each(data, function (key, value) { // First Level
                     if (key === "item") {
@@ -128,6 +143,9 @@ $(document).ready(function () {
                         $totaleScontato = value.totaleScontato;
                         $spedizione = value.spedizione;
                         $sconto = value.sconto;
+                        $totaleMin = value.totale_min;
+                        $percentualeScontoSuTotale = value.percentualeScontoTotaleOrdine;
+                        $scontoSuTotale = value.scontoTotaleOrdine;
                     }
                 });
                 if ($quantita === 0) {
@@ -138,8 +156,11 @@ $(document).ready(function () {
                     $(".cart-total-discounted").html($totaleScontato);
                     $(".shipping-price").html($spedizione);
                     $(".discount-units-price").html($sconto);
+                    $(".discount-total-price").html($scontoSuTotale);
+                    $(".percentage-total-discount").html($percentualeScontoSuTotale);
+                    $(".total-min").html($totaleMin);
+                    ($scontoSuTotale > 0) ? $(".discount-on-total-row").show() : $(".discount-on-total-row").hide();
                 }
-
             },
             error: function (data) {
                 console.error(data);
@@ -254,6 +275,7 @@ $(document).ready(function () {
         var $token = $(this).data("token");
         var $discountUnits = $(".discount-units-price").html();
         var $discountPayment = $(".discount-payment-price").html();
+        var $discountTotal = $(".discount-total-price").html();
         var $cartTotalDiscounted = $(".cart-total-discounted").html();
         var $cartTotal = $(".cart-total").html();
         var $paymenType = $("#payment-type").val();
@@ -268,6 +290,7 @@ $(document).ready(function () {
                 _token: $token,
                 discountUnits: $discountUnits,
                 discountPayment: $discountPayment,
+                discountTotal: $discountTotal,
                 cartTotal: $cartTotal,
                 cartTotalDiscounted: $cartTotalDiscounted,
                 paymentType: $paymenType,

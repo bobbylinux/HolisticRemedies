@@ -50,6 +50,13 @@
         </div>
     </div>
 </div>
+<div class="row video-wrapper">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="embed-responsive embed-responsive-16by9 hidden-xs">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/roR2YE50mn0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 <!-- sezione dosaggio -->
 <div class="row">
     <div class="col-lg-12">
