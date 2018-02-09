@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Models\OrdineTesta;
 use App\Models\Carrello;
 use App\Models\Stato;
@@ -14,7 +12,6 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Lang;
 
 class OrdiniController extends Controller {
 
@@ -63,7 +60,7 @@ class OrdiniController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $ordini = $this->ordine->where('cancellato', '=', false)->orderby('id', 'desc')->with('utenti.clienti')->with('stati')->paginate(20);
+        $ordini = $this->ordine->where('cancellato', '=', false)->orderby('id', 'desc')->with('utenti.clienti')->with(['stati' => function ($q) {$q->orderBy('ordini_stato.data_creazione', 'asc');}])->paginate(20);
         $stati = $this->stato->get();
         return view('ordini.index', compact('ordini', 'stati'));
     }
@@ -98,11 +95,12 @@ class OrdiniController extends Controller {
 
         $totaleCarrello = number_format(round($request->get('cartTotal'), 2), 2);
         $scontoQuantita = number_format(round($request->get('discountUnits'), 2), 2);
+        $scontoTotale = number_format(round($request->get('discountTotal'), 2), 2);
         $scontoPagamento = number_format(round($request->get('discountPayment'), 2), 2);
         $costoSpedizione = number_format(round($request->get('shippingPrice'), 2), 2);
         $totaleCarrelloScontato = number_format(round($request->get('cartTotalDiscounted'), 2), 2);
         $tipoPagamento = $request->paymentType;
-        $sconto = number_format(round($scontoPagamento + $scontoQuantita, 2), 2);
+        $sconto = number_format(round($scontoPagamento + $scontoQuantita + $scontoTotale, 2), 2);
 
         //valido i dati di ingresso per la testata dell'ordine
         $data = array(
@@ -162,7 +160,7 @@ class OrdiniController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id')->all();
+        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id');
 
         $ordine = $this->ordine->with('prodotti', 'utenti.clienti', 'pagamenti.scontiTipoPagamento', 'stati')->find($id);
 
@@ -186,7 +184,7 @@ class OrdiniController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id')->all();
+        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id');
 
         $ordine = $this->ordine->with('prodotti', 'utenti.clienti', 'pagamenti.scontiTipoPagamento', 'stati', 'tracking')->find($id);
         $tempTot = $ordine->costo;
@@ -255,7 +253,7 @@ class OrdiniController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function esito($id) {
-        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id')->all();
+        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id');
         $ordine = $this->ordine->with('prodotti', 'utenti.clienti', 'pagamenti.scontiTipoPagamento', 'stati')->find($id);
         if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
             $tempTot = $ordine->costo;
@@ -290,7 +288,7 @@ class OrdiniController extends Controller {
           //mando prima una mail a info@caisse.it e poi una al cliente
           $message = $mail; */
 
-        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id')->all();
+        $stati = $this->stato->where('cancellato', '=', false)->orderby('id', 'asc')->lists('descrizione', 'id');
         $ordine = $this->ordine->with('prodotti', 'utenti.clienti', 'pagamenti.scontiTipoPagamento', 'stati')->find($id);
         if ($this->auth->check() && ($ordine->utente == $this->auth->user()->id || $this->utente->find($this->auth->user()->id)->ruolo == 1)) {
             $tempTot = $ordine->costo;

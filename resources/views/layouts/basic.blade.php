@@ -122,7 +122,7 @@
 <section id="footer" class="footer-section">
     <h5>Caisse Formula è un integratore alimentare prodotto da: Herb Works - Guelph Ontario - Canada</h5>
     <h6>Distribuito in Italia da: Holistic Remedies - Via Piave, 99 - 50068 Rufina (Firenze)</h6>
-    <h6>Tel.: +39.055. 8395388 - Fax: +39.055.8395989 - Mail: info@caisse.it</h6>
+    <h6>Tel.: +39.055. 8395388 - Mail: info@caisse.it</h6>
     <h6>Iscrizione REA Firenze 503598 - Registro Imprese 19717 - P. IVA 04957430483</h6>
 </section>
 <!-- jQuery -->

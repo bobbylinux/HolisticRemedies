@@ -1,10 +1,6 @@
 @extends('layouts.basic')
 @section('content')
     <div class="row" style="text-align: center;">
-        <h4><strong>
-            {{ $ordine->utenti->clienti->cognome . ' ' . $ordine->utenti->clienti->nome . ' - ' . $ordine->utenti->clienti->indirizzo . ' - ' . $ordine->utenti->clienti->cap . ' ' . $ordine->utenti->clienti->comune . ' (' . $ordine->utenti->clienti->provincia . ')'   }}</strong></h4>
-    </div>
-    <div class="row" style="text-align: center;">
         <h4><strong>{{ Lang::choice('messages.telefono',0) . ' ' .  $ordine->utenti->clienti->telefono . ' - E-Mail:  ' . $ordine->utenti->username}}</strong></h4>
     
     </div>
@@ -90,7 +86,7 @@
                     <b>Holistic Remedies Sas - Via Piave 99 -
                         50068 Rufina (FI) -
                         Iban IT24D0616002802100000000737</b> <br>
-                    2)  una volta effettuato il bonifico inviare la ricevuta relativa all'indirizzo mail <br><a href="mailto:info@caisse.it">info@caisse.it</a> e anche a <a href="mailto:ordini@caisse.it">ordini@caisse.it</a> <br>oppure un fax al numero 055/8395989<p>
+                    2)  una volta effettuato il bonifico inviare la ricevuta relativa all'indirizzo mail <br><a href="mailto:info@caisse.it">info@caisse.it</a> e anche a <a href="mailto:ordini@caisse.it">ordini@caisse.it</a><p>
                 </div>
                 @endif
         </div>

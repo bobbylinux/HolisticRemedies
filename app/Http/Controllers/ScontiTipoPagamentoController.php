@@ -45,7 +45,7 @@ class ScontiTipoPagamentoController extends Controller
      */
     public function create()
     {
-        $tipopagamento = $this->tipoPagamento->where('cancellato','=',false)->orderBy('pagamento', 'asc')->lists('pagamento', 'id')->all(); //aggiornamento necessario per laravel 5.1
+        $tipopagamento = $this->tipoPagamento->where('cancellato','=',false)->orderBy('pagamento', 'asc')->lists('pagamento', 'id'); //aggiornamento necessario per laravel 5.1
         return view('sconti.pagamento.create',compact('tipopagamento'));
     }
 
@@ -91,7 +91,7 @@ class ScontiTipoPagamentoController extends Controller
     public function edit($id)
     {
         $sconto = $this->scontoPagamento->find($id);
-        $tipopagamento = $this->tipoPagamento->where('cancellato','=',false)->orderBy('pagamento', 'asc')->lists('pagamento', 'id')->all(); //aggiornamento necessario per laravel 5.1
+        $tipopagamento = $this->tipoPagamento->where('cancellato','=',false)->orderBy('pagamento', 'asc')->lists('pagamento', 'id'); //aggiornamento necessario per laravel 5.1
         return view('sconti.pagamento.edit',compact('tipopagamento','sconto'));
     }
 

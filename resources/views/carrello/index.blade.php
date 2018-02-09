@@ -20,7 +20,10 @@
                                 <td class="item-product">{{$item->prodotti->prodotto}}</td>
                                 <td class="item-price">{{$item->prodotti->prezzo}} &euro;</td>
                                 <td class="item-units">{!! Form::select('number', [1,2,3,4,5,6,7,8,9,10], $item->quantita-1,array('class'=>'units-select', 'data-item'=> $item->id, 'data-product' => $item->prodotto, 'data-token' => csrf_token())) !!}</td>
-                                <td><span class="item-total">{{number_format($item->prodotti->prezzo * $item->quantita,2)}}</span> &euro;</td>
+                                <td class="item-total">
+                                    <span class="item-total-span">{{number_format($item->prodotti->prezzo * $item->quantita,2)}}</span>
+                                    &euro;
+                                </td>
                                 <td>
                                     <a href="#" data-token="<?= csrf_token() ?>" class="delete-from-cart"
                                        data-item="{{$item->id}}">
@@ -99,12 +102,21 @@
                         </td>
                         <td class="col-lg-1"><span class="cart-total">{{$carttotal}}</span> &euro;</td>
                     </tr>
-                    <tr>
+                    <tr class="discount-on-total-row" style="{!! ($discountTotal == 0) ? "display:none" : ""!!}">
                         <td class="col-lg-11"><span
-                                    class="discount-units">{!! Lang::choice('messages.carrello_sconto_quantita',$cartcount,['quantita' => $cartcount]) !!}</span>
+                                    class="discount-total">{!! Lang::choice('messages.carrello_sconto_totale',0,['totale_min' => $totale_min, 'sconto' => $percentageDiscountTotal]) !!}</span>
                         </td>
-                        <td class="col-lg-1"><span class="discount-units-price">{{$discount}}</span> &euro;</td>
+                        <td class="col-lg-1"><span class="discount-total-price">{{$discountTotal}}</span> &euro;</td>
                     </tr>
+                    @if ($discountUnits > 0)
+                        <tr>
+                            <td class="col-lg-11"><span
+                                        class="discount-units">{!! Lang::choice('messages.carrello_sconto_quantita',$cartcount,['quantita' => $cartcount]) !!}</span>
+                            </td>
+                            <td class="col-lg-1"><span class="discount-units-price">{{$discountUnits}}</span> &euro;
+                            </td>
+                        </tr>
+                    @endif
                     <tr>
                         <td class="col-lg-11"><span
                                     class="shipping">{!! Lang::choice('messages.carrello_spese_di_spedizione',0) !!}</span>
@@ -144,41 +156,41 @@
 
         </div>
         @foreach($tipopagamento as $item)
-        @if ($item->informazioni != "" && $item->informazioni != null)
+            @if ($item->informazioni != "" && $item->informazioni != null)
                 <!-- Modal -->
-        <div class="modal fade" id="{{ "modal-payment-info-" . $item->id }}" tabindex="-1" role="dialog"
-             aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title"
-                            id="myModalLabel">{!! Lang::choice('messages.carrello_titolo_info',0) !!}</h4>
-                    </div>
-                    <div class="modal-body">
-                        {!! $item->informazioni !!}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default"
-                                data-dismiss="modal">{!! Lang::choice('messages.pulsante_chiudi',0) !!}</button>
+                <div class="modal fade" id="{{ "modal-payment-info-" . $item->id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"
+                                    id="myModalLabel">{!! Lang::choice('messages.carrello_titolo_info',0) !!}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {!! $item->informazioni !!}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                        data-dismiss="modal">{!! Lang::choice('messages.pulsante_chiudi',0) !!}</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        @endif
+            @endif
         @endforeach
-        @else <!--nessun elemento nel carrello-->
-        <div class="row" style="text-align: center;">
-            <div class="col-xs-12">
-                <div class="panel" style="background:#edebd6; padding:1%; margin-top:10%;">
-                    <h1>{!! Lang::choice('messages.carrello_vuoto',0) !!}</h1>
-                    <a href="{!!url('/')!!}" class="btn btn-default btn-block back-to-shop"><i
-                                class="fa fa-fw fa-arrow-left"></i>{!! Lang::choice('messages.pulsante_torna_allo_shop',0) !!}
-                    </a>
-                </div>
+    @else <!--nessun elemento nel carrello-->
+    <div class="row" style="text-align: center;">
+        <div class="col-xs-12">
+            <div class="panel" style="background:#edebd6; padding:1%; margin-top:10%;">
+                <h1>{!! Lang::choice('messages.carrello_vuoto',0) !!}</h1>
+                <a href="{!!url('/')!!}" class="btn btn-default btn-block back-to-shop"><i
+                            class="fa fa-fw fa-arrow-left"></i>{!! Lang::choice('messages.pulsante_torna_allo_shop',0) !!}
+                </a>
             </div>
         </div>
+    </div>
     @endif
 @stop
 

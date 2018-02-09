@@ -23,8 +23,8 @@
 <table class="table table-hover table-responsive">
     <thead>
         <tr>
-            <th class="col-lg-3">{{ Lang::choice('messages.dash_sconti_quantita_index_quantita_massima',0) }}</th>
             <th class="col-lg-3">{{ Lang::choice('messages.dash_sconti_quantita_index_quantita_minima',0) }}</th>
+            <th class="col-lg-3">{{ Lang::choice('messages.dash_sconti_quantita_index_quantita_massima',0) }}</th>
             <th class="col-lg-3">{{ Lang::choice('messages.dash_sconti_quantita_index_sconto',0) }}</th>
             <th class="col-lg-3">{{ Lang::choice('messages.dash_prodotti_index_azioni_nome',0) }}</th>
         </tr>

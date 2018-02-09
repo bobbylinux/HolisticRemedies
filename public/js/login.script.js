@@ -27,7 +27,14 @@ $(document).ready(function () {
                 }
             },
             error: function(data){
-                // Render the errors with js ...
+                console.log(data);
+                if (data.code === "200") {
+
+                    location.reload();
+                } else {
+                    $(".login-errors").html(data.msg);
+
+                }
             }
         });
 

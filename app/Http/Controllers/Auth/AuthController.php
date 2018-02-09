@@ -19,6 +19,17 @@ use App\Http\Requests\Auth\RegisterRequest;
 class AuthController extends Controller
 {
 
+	/*
+	|--------------------------------------------------------------------------
+	| Registration & Login Controller
+	|--------------------------------------------------------------------------
+	|
+	| This controller handles the registration of new users, as well as the
+	| authentication of existing users. By default, this controller uses
+	| a simple trait to add these behaviors. Why don't you explore it?
+	|
+	*/
+
     /**
      * the model instance
      * @var User
@@ -83,7 +94,7 @@ class AuthController extends Controller
      */
     public function getRegister()
     {
-        $nazioni = $this->nazione->where('inizio_validita', '<', $this->now)->where('fine_validita', '>', $this->now)->lists('nazione', 'id')->all();
+        $nazioni = $this->nazione->where('inizio_validita', '<', $this->now)->where('fine_validita', '>', $this->now)->lists('nazione', 'id');
         return view('auth.register', compact("nazioni"));
     }
 

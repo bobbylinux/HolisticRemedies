@@ -83,7 +83,7 @@ return array(
     'ingredienti_paragrafo_33' => "Properties and Indications for use: prickly ash re-establishes healthy, nutritive processes and generally stimulates body functions. It is a powerful detoxifier and purifier of the blood. It is known for its antiseptic and analgesic properties and its use is suggested in the treatment of :<br>poor digestion (colic or flatulence), abdominal pains, chronic colds, intestinal worms, infections of micro-organisms, and arthritis.",
     'ingredienti_paragrafo_34' => "It is called \"Tumburu\" by the Indians in Ayurvedic medicine, and \"Hua Jiao\" by the Chinese. DeSylva adds: \"... it has a history in the treatment of tuberculosis, cholera and syphilis. Recent research has identified a class of substances known as Furano-coumarins. While research still continues, it appears to have a strong effect on cancer. This helps me understand the insistence of the medicine-man I met on the island of Manitoulin, that I include it in the CAISSE FORMULA.\"",
     'shop_titolo_jumbotron' => 'Delivery outside of Italy',
-    'shop_contenuto_jumbotron' => '<ul><li>Discount for the total number of pieces of any kind</li><li>Postal charge UE: € 9.60 for orders less than € 80</li><li>Postal charge outside UE please mail your request</li><li>Delivery by priority postal parcel</li></ul>',
+    'shop_contenuto_jumbotron' => '<ul><li>Discount for the total number of pieces of any kind</li><li>Postal charge UE: € 9.60 for orders less than € 80</li><li>Postal charge outside UE please mail your request</li><li>Delivery by priority postal parcel</li></ul><p>You have a herbal medicine and want to resell our product? Contact us at phone number +39 0558395388 ',
     'shop_aggiungi_al_carrello' => 'Add to cart',
     'shop_quantita' => 'Units',
     'shop_come_ordinare' => 'How to order',
@@ -286,7 +286,7 @@ return array(
 
     'modal_cart_title' => 'Cart',
     'modal_cart_body' => 'Item added to cart',
-    'modal_cart_error_body' => 'Error while adding item to cart',
+    'modal_cart_error_body' => 'Register before ordering',
     /* errori */
     '404title' => 'Ups! Pay Attention Please',
     '404body' => 'Page Not Found',

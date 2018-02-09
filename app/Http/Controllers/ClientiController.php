@@ -102,7 +102,7 @@ class ClientiController extends Controller
     public function edit($id)
     {
         $cliente = $this->cliente->with('utenti')->find($id);
-        $nazioni = $this->nazioni->where('cancellato', '=', false)->where('inizio_validita', '<=', $this->now)->where('fine_validita', '>=', $this->now)->lists('nazione', 'id')->all();
+        $nazioni = $this->nazioni->where('cancellato', '=', false)->where('inizio_validita', '<=', $this->now)->where('fine_validita', '>=', $this->now)->lists('nazione', 'id');
         return view('clienti.edit', compact('cliente', 'nazioni'));
     }
 
@@ -175,7 +175,7 @@ class ClientiController extends Controller
         $utente = $this->auth->user()->id;
         $cliente = $this->cliente->where('utente', '=', $utente)->first();
         $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-        $nazioni = $this->nazioni->where('cancellato', '=', false)->where('inizio_validita', '<=', $this->now)->where('fine_validita', '>=', $this->now)->lists('nazione', 'id')->all();
+        $nazioni = $this->nazioni->where('cancellato', '=', false)->where('inizio_validita', '<=', $this->now)->where('fine_validita', '>=', $this->now)->lists('nazione', 'id');
         return view('clienti.profile', compact('cliente', 'nazioni', 'cartcount'));
     }
 

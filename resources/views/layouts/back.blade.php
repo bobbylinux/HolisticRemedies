@@ -82,6 +82,9 @@
                                 <li @if(Request::url() === url('/admin/sconti')) class="active" @endif >
                                      <a href="{{ url('/admin/sconti/pagamento') }}"> Tipo Pagamento</a>
                                 </li>
+                                <li @if(Request::url() === url('/admin/sconti')) class="active" @endif >
+                                    <a href="{{ url('/admin/sconti/totale') }}"> Totale Ordine</a>
+                                </li>
                             </ul>
                         </li>
                         <li @if(Request::url() === url('/admin/ordini')) class="active" @endif >

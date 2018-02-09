@@ -63,11 +63,13 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
                 Piantaggine. ",
     'shop_titolo' => 'Shop',
     'shop_titolo_jumbotron' => 'Spedizione Dall\'Italia',
-    'shop_contenuto_jumbotron' => '<ul><li>Lo sconto vale per il totale dei pezzi di qualsiasi tipologia</li><li>Spese di spedizione € 9.60 per ordini inferiori a € 80</li><li>Le spedizioni avvengono tramite corriere espresso e partono il giorno lavorativo successivo all\'ordine (ordini del sabato e domenica, partenza il lunedì). Consegna 1-2 giorni lavorativi in tutta Italia, isole un giorno in piú. In caso di ritardo contattarci a info@caisse.it e ordini@caisse.it o seguire il vostro ordine cliccando su "controlla lo stato del tuo ordine"</li></ul>',
+    'shop_contenuto_jumbotron' => '<ul><li>Ci sono sconti per quantità che arrivano al 10%, verificate sul carrello. Ulteriori sconti per pagamento anticipato: carta, paypal o bonifico.
+<br>Lo sconto vale per il numero di pezzi di qualsiasi tipologia.
+</li><li>Spese di spedizione € 9.60 per ordini inferiori a € 80</li><li>Le spedizioni avvengono tramite corriere espresso e partono il giorno lavorativo successivo all\'ordine (ordini del sabato e domenica, partenza il lunedì). Consegna 1-2 giorni lavorativi in tutta Italia, isole un giorno in piú. In caso di ritardo contattarci a info@caisse.it e ordini@caisse.it o seguire il vostro ordine cliccando su "controlla lo stato del tuo ordine"</li></ul><p>Hai una erboristeria e  vuoi rivendere il nostro prodotto? Contattaci al numero 0558395388 ',
     'shop_aggiungi_al_carrello' => 'Aggiungi al carrello',
     'shop_quantita' => 'Quantità',
     'shop_come_ordinare' => 'Come Ordinare',
-    'shop_come_ordinare_paragrafo_1' => '<strong>Registrarsi:</strong><br>
+        'shop_come_ordinare_paragrafo_1' => '<strong>Registrarsi:</strong><br>
           Prima di effettuare un acquisto è necessario registrarsi.<br>Compilare tutti i dati con precisione <strong>ricordandosi che l’indirizzo è quello dove vogliamo l’invio della merce</strong>. Tutti i dati sono obbligatori.
           <br>
           Se vogliamo ricevere notizie da parte del sito riguardo ad eventi, libri e comunicazioni su Caisse Formula cliccare su <strong>SI</strong> altrimenti su <strong>NO</strong>.
@@ -124,6 +126,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'carrello_spese_di_spedizione' => 'Spese di spedizione',
     'carrello_sconto_quantita' => 'Sconto cumulativo per <span class="cart-count">:quantita</span>articolo|Sconto cumulativo per <span class="cart-count">:quantita</span> articoli',
     'carrello_sconto_pagamento' => 'Sconto del <span class="percentage">:sconto</span> % per pagamento con <span class="payment-type">:pagamento</span>',
+    'carrello_sconto_totale' => 'Sconto del <span class="percentage-total-discount">:sconto</span> % per importo superiore a <span class="total-min">:totale_min</span> &euro;',
     'carrello_vuoto' => 'Scusaci! Il tuo carrello è vuoto',
     /*pannello di controllo / dash*/
     'dash_prodotti_index_titolo' => 'Gestione Prodotti',
@@ -144,14 +147,27 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_sconti_quantita_create_quantita_minima' => 'Quantità Minima',
     'dash_sconti_quantita_create_sconto' => 'Sconto Percentuale',
     'dash_sconti_quantita_create_pulsante_crea' => 'Salva',
-    'dash_sconti_quantita_create_titolo' => 'Nuogo Sconto Quantità',
-    'dash_sconti_quantita_edit_titolo' => 'Nuogo Sconto Quantità',
+    'dash_sconti_quantita_create_titolo' => 'Nuovo Sconto Quantità',
+    'dash_sconti_quantita_edit_titolo' => 'Nuovo Sconto Quantità',
     'dash_sconti_quantita_index_pulsante_nuovo' => 'Nuovo Sconto',
     'dash_sconti_quantita_index_quantita_massima' => 'Quantità Massima',
     'dash_sconti_quantita_index_quantita_minima' => 'Quantità Minima',
     'dash_sconti_quantita_index_sconto' => 'Sconto',
     'dash_sconti_quantita_index_azioni_nome' => 'Azioni',
     'dash_sconti_quantita_edit_pulsante_modifica' => 'Modifica Sconto',
+    'dash_sconti_totale_index_titolo' => 'Gestione sconti totale ordine',
+    'dash_sconti_totale_create_quantita_massima' => 'Totale Massimo',
+    'dash_sconti_totale_create_quantita_minima' => 'Totale Minimo',
+    'dash_sconti_totale_create_sconto' => 'Sconto Percentuale',
+    'dash_sconti_totale_create_pulsante_crea' => 'Salva',
+    'dash_sconti_totale_create_titolo' => 'Nuovo Sconto Totale Ordine',
+    'dash_sconti_totale_edit_titolo' => 'Nuovo Sconto Totale Ordine',
+    'dash_sconti_totale_index_pulsante_nuovo' => 'Nuovo Sconto',
+    'dash_sconti_totale_index_quantita_massima' => 'Totale Massimo',
+    'dash_sconti_totale_index_quantita_minima' => 'Totale Minimo',
+    'dash_sconti_totale_index_sconto' => 'Sconto',
+    'dash_sconti_totale_index_azioni_nome' => 'Azioni',
+    'dash_sconti_totale_edit_pulsante_modifica' => 'Modifica Sconto',
     'dash_sconti_pagamento_index_titolo' => 'Gestione sconti tipo di pagamento',
     'dash_sconti_pagamento_create_tipo_pagamento' => 'Tipo Pagamento',
     'dash_sconti_pagamento_create_sconto' => 'Sconto Percentuale',
@@ -272,7 +288,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
 
     'modal_cart_title' => 'Carrello',
     'modal_cart_body' => 'Oggetto aggiunto al carrello',
-    'modal_cart_error_body' => 'Error durante inserimento elemento nel carrello',
+    'modal_cart_error_body' => 'Per poter fare un ordine è necessario registrarsi al sito: dal menù ACCEDI --> REGISTRATI',
 
     /*newsletter*/
     'titolo_newsletter' => 'Iscriviti alla nostra mailing list',

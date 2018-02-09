@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ScontoTipoPagamento;
+use App\Models\ScontoTotaleOrdine;
 use Illuminate\Http\Request;
 use App\Models\Carrello;
 use App\Models\ScontoQuantita;
@@ -30,6 +31,7 @@ class CarrelliController extends Controller {
     protected $prodotto;
     protected $scontiQuantita;
     protected $scontiTipoPagamento;
+    protected $scontiTotaleOrdine;
     protected $tipoPagamento;
     protected $spedizione;
     
@@ -39,7 +41,7 @@ class CarrelliController extends Controller {
      * @param  Authenticator $auth
      * @return void
      */
-    public function __construct(Guard $auth, Carrello $carrello, ScontoQuantita $scontiQuantita, ScontoTipoPagamento $scontiTipoPagamento,TipoPagamento $tipoPagamento, Spedizione $spedizione) {
+    public function __construct(Guard $auth, Carrello $carrello, ScontoQuantita $scontiQuantita, ScontoTipoPagamento $scontiTipoPagamento, ScontoTotaleOrdine $scontiTotaleOrdine, TipoPagamento $tipoPagamento, Spedizione $spedizione) {
         
         $this->middleware('auth');
         
@@ -47,6 +49,7 @@ class CarrelliController extends Controller {
         $this->auth = $auth;
         $this->scontiQuantita = $scontiQuantita;
         $this->scontiTipoPagamento = $scontiTipoPagamento;
+        $this->scontiTotaleOrdine = $scontiTotaleOrdine;
         $this->tipoPagamento = $tipoPagamento;
         $this->spedizione = $spedizione;
         
@@ -60,10 +63,10 @@ class CarrelliController extends Controller {
     public function index() {
         $cartcount = $this->carrello->getCartItemsNumber($this->auth->user()->id);
         $carrello = $this->carrello->with('prodotti.immagini')->where('utente', '=', $this->auth->user()->id)->orderby('prodotto', 'asc')->get();
-        $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita, null, 0, $this->spedizione, $carttotaldiscounted, $discount, $discountPayment,$percentualePagamento, $spedizione,$carttotal);
+        $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita, null, $this->scontiTotaleOrdine, 0, $this->spedizione, $carttotaldiscounted, $discountUnits, $discountPayment, $discountTotal, $percentageDiscountTotal, $percentualePagamento, $spedizione,$carttotal, $totale_min);
         $tipopagamento = $this->tipoPagamento->orderby('pagamento','asc')->get();
         //$spedizione = $this->spedizione->get();
-        return view('carrello.index', compact('carrello', 'cartcount','discount','carttotaldiscounted','carttotal','tipopagamento','spedizione'));
+        return view('carrello.index', compact('carrello', 'cartcount','discountUnits','discountTotal','carttotaldiscounted','carttotal','tipopagamento','spedizione', 'totale_min', 'percentageDiscountTotal'));
     }
 
     /**
@@ -148,7 +151,7 @@ class CarrelliController extends Controller {
         if ($this->carrello->validate($data)) {
             $carrello->refresh($data);
             $data['prezzo'] = number_format($carrello->prodotti->prezzo * $carrello->quantita, 2);
-            $carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,null, 0, $this->spedizione,$data['totaleScontato'],$data['sconto'],$data['scontoPagamento'],$data['percentualePagamento'],$data['spedizione'],$data['totale']);
+            $carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,null,$this->scontiTotaleOrdine,0,$this->spedizione,$data['totaleScontato'],$data['sconto'],$data['scontoPagamento'],$data['scontoTotaleOrdine'],$data['percentualeScontoTotaleOrdine'],$data['percentualePagamento'],$data['spedizione'],$data['totale'],$data['totale_min']);
             $data['items'] = $carrello->getCartItemsNumber($this->auth->user()->id);
 
             return Response::json(array('code' => '200','msg' => 'OK','item' => $data));
@@ -171,14 +174,17 @@ class CarrelliController extends Controller {
             $this->carrello->trash($id);
             //una volta cancellato devo ricalcolare il totale
             $quantita = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-            $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,null,0, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$percentualePagamento,$spedizione,$totale);
+            $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita, null, $this->scontiTotaleOrdine, 0, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$scontoSuTotale,$percentualeScontoSuTotale, $percentualePagamento,$spedizione,$totale, $total_min);
 
             $data = array(
                 'quantita' => $quantita,
                 'totale' => $totale,
                 'sconto' => $sconto,
                 'spedizione' => $spedizione,
-                'totaleScontato' => $totaleScontato
+                'totaleScontato' => $totaleScontato,
+                'totale_min' => $total_min,
+                'percentualeScontoTotaleOrdine' => $percentualeScontoSuTotale,
+                'scontoTotaleOrdine' => $scontoSuTotale
             );
             return Response::json(array(
                         'code' => '200', //OK
@@ -195,7 +201,7 @@ class CarrelliController extends Controller {
 
     public function getTotalWithPaymentDiscount($idPagamento) {
         $quantita = $this->carrello->getCartItemsNumber($this->auth->user()->id);
-        $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,$this->scontiTipoPagamento,$idPagamento, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$percentualePagamento,$spedizione,$totale);
+        $this->carrello->getTotal($this->auth->user()->id,$this->scontiQuantita,$this->scontiTipoPagamento, $this->scontiTotaleOrdine, $idPagamento, $this->spedizione,$totaleScontato,$sconto,$scontoPagamento,$scontoSuTotale,$percentualeScontoSuTotale,$percentualePagamento,$spedizione,$totale, $total_min);
 
         $formPagamento = $this->tipoPagamento->find($idPagamento)->forms;
 
@@ -204,9 +210,12 @@ class CarrelliController extends Controller {
             'totale' => $totale,
             'sconto' => $sconto,
             'scontoPagamento' => $scontoPagamento,
+            'scontoSuTotale' => $scontoSuTotale,
+            'percentualeScontoSuTotale' => $percentualeScontoSuTotale,
             'percentualePagamento' => $percentualePagamento,
             'spedizione' => $spedizione,
             'totaleScontato' => $totaleScontato,
+            'total_min' => $total_min,
             'formPagamento' => $formPagamento
         );
         return Response::json(array(
