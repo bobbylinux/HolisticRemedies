@@ -161,7 +161,7 @@ Le informazioni contenute in questo sito non possono essere utilizzate in sostit
     'dash_sconti_totale_create_sconto' => 'Sconto Percentuale',
     'dash_sconti_totale_create_pulsante_crea' => 'Salva',
     'dash_sconti_totale_create_titolo' => 'Nuovo Sconto Totale Ordine',
-    'dash_sconti_totale_edit_titolo' => 'Nuovo Sconto Totale Ordine',
+    'dash_sconti_totale_edit_titolo' => 'Modifica Sconto Totale Ordine',
     'dash_sconti_totale_index_pulsante_nuovo' => 'Nuovo Sconto',
     'dash_sconti_totale_index_quantita_massima' => 'Totale Massimo',
     'dash_sconti_totale_index_quantita_minima' => 'Totale Minimo',
